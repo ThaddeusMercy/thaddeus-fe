@@ -4,13 +4,14 @@ import {
   EnvelopeSimple,
   Globe,
   TiktokLogo,
-  Check
+  Check,
+  Eye
 } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 
 export default function KitPage() {
   const stats = [
-    { label: "Following", value: "103,0000+" },
+    { label: "Following", value: "153,000+" },
     { label: "Platforms", value: "Instagram, TikTok" },
     { label: "Niche", value: "AI Tools & Content Creation" },
     { label: "Audience", value: "Tech-savvy creators, AI enthusiasts" }
@@ -290,6 +291,15 @@ export default function KitPage() {
             Let&apos;s Work Together
           </h2>
           <div className="space-y-3">
+          <a
+              href="https://attentionfactory.io?ref=mercythaddeus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            >
+              <Eye size={18} />
+              <span className="text-sm">Attention Factory</span>
+            </a>
             <a
               href="https://mercythaddeus.xyz"
               target="_blank"

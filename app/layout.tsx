@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Romanesco } from "next/font/google";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 const romanesco = Romanesco({
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     "Tech Mentor",
     "Women in Tech"
   ],
-  authors: [{ name: "Mercy Thaddeus", url: "https://mercythaddeus.com" }],
+  authors: [{ name: "Mercy Thaddeus", url: "https://mercythaddeus.xyz" }],
   creator: "Mercy Thaddeus",
   publisher: "Mercy Thaddeus",
   formatDetection: {
@@ -80,20 +81,17 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://mercythaddeus.com"),
-  alternates: {
-    canonical: "/",
-  },
+  metadataBase: new URL("https://mercythaddeus.xyz"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mercythaddeus.com",
+    url: "https://mercythaddeus.xyz",
     title: "Mercy Thaddeus - Software Engineer & Frontend Engineer",
     description: "Software Engineer & Frontend Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences from scribble to unicorn.",
     siteName: "Mercy Thaddeus Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Mercy Thaddeus - Software Engineer & Frontend Engineer",
@@ -106,7 +104,7 @@ export const metadata: Metadata = {
     creator: "@global_techgirl",
     title: "Mercy Thaddeus - Software Engineer & Frontend Engineer",
     description: "Software Engineer & Frontend Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -118,11 +116,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
   },
 };
 
@@ -148,7 +141,7 @@ export default function RootLayout({
                 "@type": "Organization",
                 "name": "Hindsight VIP"
               },
-              "url": "https://mercythaddeus.com",
+              "url": "https://mercythaddeus.xyz",
               "sameAs": [
                 "https://github.com/mercythaddeus",
                 "https://linkedin.com/in/mercythaddeus",
@@ -211,6 +204,7 @@ export default function RootLayout({
       <body
         className={`${romanesco.variable} ${sfpro.variable} antialiased max-w-[1440px] mx-auto`}
       >
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

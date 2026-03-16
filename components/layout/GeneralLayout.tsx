@@ -94,9 +94,9 @@ const GeneralLayout = () => {
       </div>
 
       {/* Footer */}
-      <footer className="md:flex justify-center bottom-5 w-full px-5 md:px-0 text-[#D8D8D8] z-50 hidden">
+      <footer className="md:flex justify-center gap-5 bottom-5 w-full px-5 md:px-0 text-[#D8D8D8] z-50 hidden">
         <p>
-          Designed by <span className="font-bold text-[#676767]">Koha</span>,
+          Designed by <span className="font-bold text-[#676767]"><Link href="https://koha.wtf" target="_blank">Koha</Link></span>,
           Built by me
         </p>
 
