@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 export default function KitPage() {
   const stats = [
-    { label: "Following", value: "153,000+" },
+    { label: "Following", value: "156,000+" },
     { label: "Platforms", value: "Instagram, TikTok" },
     { label: "Niche", value: "AI Tools & Content Creation" },
     { label: "Audience", value: "Tech-savvy creators, AI enthusiasts" }
@@ -65,14 +65,14 @@ export default function KitPage() {
   ];
 
   const linkInBio = [
-    { duration: "7 days", price: "$300" },
-    { duration: "14 days", price: "$500" },
-    { duration: "30 days", price: "$800" }
+    { duration: "7 days", price: "$250" },
+    { duration: "14 days", price: "$450" },
+    { duration: "30 days", price: "$750" }
   ];
 
   const addOns = [
     { title: "Usage Rights (30 days)", price: "+$300" },
-    { title: "Usage Rights (90 days)", price: "+$800" },
+    { title: "Usage Rights (90 days)", price: "+$500–$600" },
     { title: "Exclusivity Agreement (30 days)", price: "+$500" },
     { title: "Additional platform cross-post", price: "+$400-600/platform" },
     { title: "Rush delivery (48-72 hours)", price: "+$500" }
