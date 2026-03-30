@@ -11,20 +11,21 @@ import { motion } from "framer-motion";
 
 export default function KitPage() {
   const stats = [
-    { label: "Following", value: "156,000+" },
-    { label: "Platforms", value: "Instagram, TikTok" },
+    { label: "Following", value: "160,000+" },
+    { label: "Platforms", value: "Instagram, TikTok, Youtube" },
     { label: "Niche", value: "AI Tools & Content Creation" },
-    { label: "Audience", value: "Tech-savvy creators, AI enthusiasts" }
+    { label: "Audience", value: "Tech-savvy creators, AI enthusiasts, GenAI Creators" }
   ];
 
   const packages = [
     {
       name: "Premium Package",
-      price: "$2,500",
+      price: "$3,299",
       bestFor: "Maximum reach & extended campaigns",
       includes: [
-        "1 Professional Video",
+        "1 Professional Video (Instagram Reel)",
         "Cross-post to TikTok",
+        "1 Youtube Dedicated video (longform. 3 Mins min)",
         "3 Story slides (24-hour feature)",
         "30-day link in bio (prime placement)",
         "Collaboration post feature",
@@ -34,7 +35,7 @@ export default function KitPage() {
     },
     {
       name: "Professional Package",
-      price: "$1,800",
+      price: "$2,199",
       bestFor: "Focused Instagram campaigns",
       includes: [
         "1 Professional Video (Instagram Reel)",
@@ -46,9 +47,9 @@ export default function KitPage() {
       ]
     },
     {
-      name: "Standard Package",
-      price: "$1,200",
-      bestFor: "Budget-conscious brands",
+      name: "Starter Package",
+      price: "$1,500",
+      bestFor: "Test campaigns & first collaborations",
       includes: [
         "1 Video (Instagram Reel OR TikTok)",
         "7-day link in bio",
@@ -58,8 +59,8 @@ export default function KitPage() {
   ];
 
   const contentServices = [
-    { title: "Instagram Reel/Video (standalone)", price: "$700" },
-    { title: "TikTok Video (standalone)", price: "$600" },
+    { title: "Instagram Reel/Video (standalone)", price: "$1200" },
+    { title: "TikTok Video (standalone)", price: "$800" },
     { title: "Carousel Post (5-10 slides)", price: "$600" },
     { title: "Story Feature (3-5 slides, 24hrs)", price: "$400" }
   ];
@@ -71,8 +72,8 @@ export default function KitPage() {
   ];
 
   const addOns = [
-    { title: "Usage Rights (30 days)", price: "+$300" },
-    { title: "Usage Rights (90 days)", price: "$600" },
+    { title: "Usage Rights for ads (30 days)", price: "+$300" },
+    { title: "Usage Rights for ads (90 days)", price: "+$600" },
     { title: "Exclusivity Agreement (30 days)", price: "+$500" },
     { title: "Additional platform cross-post", price: "+$400-600/platform" },
     { title: "Rush delivery (48-72 hours)", price: "+$500" }
