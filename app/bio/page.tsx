@@ -10,13 +10,13 @@ import { TokenETH, TokenSOL } from "@web3icons/react";
 const bioImages = [
   {
     id: 1,
-    src: "/bio/headshot-1.png",
+    src: "/bio/headshot-1.jpg",
     alt: "Mercy Thaddeus - Professional Headshot",
     label: "Headshot",
   },
   {
     id: 2,
-    src: "/bio/headshot-1.png",
+    src: "/bio/headshot-1.jpg",
     alt: "Mercy Thaddeus - Speaking at Conference",
     label: "Speaking",
   },
