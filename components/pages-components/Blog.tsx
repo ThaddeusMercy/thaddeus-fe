@@ -8,6 +8,14 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { BlogSchema } from "@/helpers";
 
+function normalizeBlogHref(link: string): string {
+  return link.trim().replace(/^@/, "");
+}
+
+function isExternalHref(href: string): boolean {
+  return /^https?:\/\//i.test(href);
+}
+
 const Blog = () => {
   const goBack = () => {
     window.history.back();
@@ -24,7 +32,7 @@ const Blog = () => {
       title: "Developer Relations is a bridge",
       des: "Here I broke down the role of a developer relations engineer and how to become one.",
       date_published: "12, September 2025",
-      link: "@https://mercy-thaddeus.hashnode.dev/devrel-is-a-bridge ",
+      link: "https://mercy-thaddeus.hashnode.dev/devrel-is-a-bridge",
     },
     {
       id: 1,
@@ -60,7 +68,7 @@ const Blog = () => {
       </button>
 
       <div className="space-y-8">
-        {blogs.map((blog, index) => (
+        {blogs.map((blog) => (
           //   <div
           //     key={index}
           //     className={`flex items-center justify-between ${
@@ -87,7 +95,7 @@ const Blog = () => {
           //   </div>
 
           <motion.div
-            key={index}
+            key={blog.id}
             className={`flex flex-col md:flex-row items-end md:items-center gap-3 justify-between ${
               activeBlog === blog.id ? "bg-secondary" : ""
             } px-5 py-2 rounded-xl`}
@@ -105,16 +113,26 @@ const Blog = () => {
               </p>
             </div>
 
-            {activeBlog === blog.id && (
-              <Link
-                href={blog.link}
-                className="w-10 h-10 rounded-full 
-                border border-border bg-white flex items-center justify-center cursor-pointer order-first md:order-last"
-                onClick={goBack}
-              >
-                <ArrowUpRight size={20} className="font-medium" />
-              </Link>
-            )}
+            {activeBlog === blog.id && (() => {
+              const href = normalizeBlogHref(blog.link);
+              const external = isExternalHref(href);
+              const className =
+                "w-10 h-10 rounded-full border border-border bg-white flex items-center justify-center cursor-pointer order-first md:order-last";
+              return external ? (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={className}
+                >
+                  <ArrowUpRight size={20} className="font-medium" />
+                </a>
+              ) : (
+                <Link href={href} className={className}>
+                  <ArrowUpRight size={20} className="font-medium" />
+                </Link>
+              );
+            })()}
           </motion.div>
         ))}
       </div>

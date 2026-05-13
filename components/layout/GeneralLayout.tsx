@@ -10,29 +10,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import HomeComponent from "../pages-components/Home";
 import Talks from "../pages-components/Talks";
 import Blog from "../pages-components/Blog";
-import Pay from "../pages-components/Pay";
+import Resources from "../pages-components/Resources";
+import WebinarRegistrationModal from "../WebinarRegistrationModal";
 
 import { Tabs } from "@/helpers";
 
 const GeneralLayout = () => {
   const searchParams = useSearchParams();
-  const tab = searchParams.get("tab") || "home";
+  const rawTab = searchParams.get("tab") || "home";
+  const tab = rawTab === "pay" ? "home" : rawTab;
 
   const tabs: Tabs[] = [
     {
       id: 0,
       label: `${tab === "talks" ? "home" : "talks"}`,
-      path: `${tab === "talks" ? "/" : "/?tab=talks"} `,
+      path: `${tab === "talks" ? "/" : "/?tab=talks"}`,
     },
     {
       id: 1,
-      label: `${tab === "blog" ? "Home" : "blog"}`,
-      path: `${tab === "blog" ? "/" : "/?tab=blog"} `,
+      label: `${tab === "blog" ? "home" : "blog"}`,
+      path: `${tab === "blog" ? "/" : "/?tab=blog"}`,
     },
     {
       id: 2,
-      label: `${tab === "pay" ? "home" : "pay"}`,
-      path: `${tab === "pay" ? "/" : "/?tab=pay"} `,
+      label: `${tab === "resources" ? "home" : "resources"}`,
+      path: `${tab === "resources" ? "/" : "/?tab=resources"}`,
     },
   ];
 
@@ -53,30 +55,35 @@ const GeneralLayout = () => {
 
   return (
     <div>
-      {/* Nav */}
-      <nav
-        className="py-2 px-5 bg-secondary border border-border rounded-xl
-       flex items-center justify-center gap-5 max-w-[250px] mx-auto fixed bottom-20 md:bottom-17 left-1/2 -translate-x-1/2 z-50 shadow-sm"
-      >
-        {tabs.map((tab, index) => (
-          <Link key={index} href={tab.path} className="font-medium lowercase">
-            {tab.label}
-          </Link>
-        ))}
+      {tab !== "resources" && (
+        <nav
+          className="py-2 px-4 sm:px-5 bg-secondary border border-border rounded-xl
+       flex flex-wrap items-center justify-center gap-x-4 gap-y-2 max-w-[min(100vw-2rem,380px)] mx-auto fixed bottom-20 md:bottom-17 left-1/2 -translate-x-1/2 z-50 shadow-sm"
+        >
+          {tabs.map((t, index) => (
+            <Link key={index} href={t.path} className="font-medium lowercase">
+              {t.label}
+            </Link>
+          ))}
 
-        <div className="h-4 w-[2px] bg-border"></div>
+          <div className="h-4 w-[2px] bg-border"></div>
 
-        <Image
-          src={`/play_icon.svg`}
-          width={15}
-          height={15}
-          alt="Play icon"
-          className="cursor-pointer"
-        />
-      </nav>
+          <Image
+            src={`/play_icon.svg`}
+            width={15}
+            height={15}
+            alt="Play icon"
+            className="cursor-pointer"
+          />
+        </nav>
+      )}
 
       {/* Main */}
-      <div className="w-full px-5 md:px-0 md:max-w-[600px] mx-auto space-y-14 relative pb-40">
+      <div
+        className={`w-full px-5 md:px-0 md:max-w-[600px] mx-auto space-y-14 relative ${
+          tab === "resources" ? "pb-24" : "pb-40"
+        }`}
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={tab}
@@ -88,7 +95,7 @@ const GeneralLayout = () => {
             {tab === "home" && <HomeComponent />}
             {tab === "talks" && <Talks />}
             {tab === "blog" && <Blog />}
-            {tab === "pay" && <Pay />}
+            {tab === "resources" && <Resources />}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -104,6 +111,8 @@ const GeneralLayout = () => {
 
         <p>© Mercy Thaddeus</p>
       </footer>
+
+      <WebinarRegistrationModal />
     </div>
   );
 };

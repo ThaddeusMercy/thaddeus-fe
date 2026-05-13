@@ -5,7 +5,8 @@ import { useSearchParams } from "next/navigation";
 
 const NameInfiniteScroll = () => {
   const searchParams = useSearchParams();
-  const tab = searchParams.get("tab") || "home";
+  const rawTab = searchParams.get("tab") || "home";
+  const tab = rawTab === "pay" ? "home" : rawTab;
   const containerRef = useRef<HTMLDivElement>(null);
   const [textWidth, setTextWidth] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
@@ -112,9 +113,9 @@ const NameInfiniteScroll = () => {
         </h1>
       )}
 
-      {tab === "pay" && (
+      {tab === "resources" && (
         <h1 className="font-bold text-secondary text-7xl md:text-9xl lg:text-[165px] 2xl:text-[220px] -ml-5">
-          Pay
+          Resources
         </h1>
       )}
     </div>

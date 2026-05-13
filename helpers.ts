@@ -22,6 +22,7 @@ export interface BlogSchema {
   title: string;
   des: string;
   date_published: string;
+  /** Absolute external URL or site-relative path (e.g. /blog/prompt-vault) */
   link: string;
 }
 
