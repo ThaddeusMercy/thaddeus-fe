@@ -1,6 +1,7 @@
 "use client";
 
 // Library import
+import { useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,11 +15,33 @@ import Resources from "../pages-components/Resources";
 import WebinarRegistrationModal from "../WebinarRegistrationModal";
 
 import { Tabs } from "@/helpers";
+import { trackEvent, trackSpaPageView } from "@/lib/analytics";
 
 const GeneralLayout = () => {
   const searchParams = useSearchParams();
   const rawTab = searchParams.get("tab") || "home";
   const tab = rawTab === "pay" ? "home" : rawTab;
+  const searchKey = searchParams.toString();
+  const skipSpaPageView = useRef(true);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    trackEvent("portfolio_shell_loaded", {
+      page_path: `${window.location.pathname}${window.location.search}`,
+    });
+  }, []);
+
+  useEffect(() => {
+    trackEvent("portfolio_tab_view", {
+      tab,
+      query: searchKey || "default",
+    });
+    if (skipSpaPageView.current) {
+      skipSpaPageView.current = false;
+      return;
+    }
+    trackSpaPageView();
+  }, [tab, searchKey]);
 
   const tabs: Tabs[] = [
     {
@@ -61,7 +84,17 @@ const GeneralLayout = () => {
        flex flex-wrap items-center justify-center gap-x-4 gap-y-2 max-w-[min(100vw-2rem,380px)] mx-auto fixed bottom-20 md:bottom-17 left-1/2 -translate-x-1/2 z-50 shadow-sm"
         >
           {tabs.map((t, index) => (
-            <Link key={index} href={t.path} className="font-medium lowercase">
+            <Link
+              key={index}
+              href={t.path}
+              className="font-medium lowercase"
+              onClick={() =>
+                trackEvent("shell_nav_click", {
+                  label: t.label,
+                  path: t.path,
+                })
+              }
+            >
               {t.label}
             </Link>
           ))}

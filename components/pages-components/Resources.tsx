@@ -13,6 +13,7 @@ import {
   WEBINAR_BANNER_SRC,
   WEBINAR_WAITLIST_URL,
 } from "@/lib/webinar";
+import { trackEvent } from "@/lib/analytics";
 
 function matchesQuery(entry: PromptVaultEntry, q: string): boolean {
   if (!q.trim()) return true;
@@ -56,6 +57,10 @@ const Resources = () => {
     try {
       await navigator.clipboard.writeText(current.prompt);
       setCopied(true);
+      trackEvent("resources_prompt_copy", {
+        prompt_id: current.id,
+        prompt_title: current.title,
+      });
       setTimeout(() => setCopied(false), 2000);
     } catch {
       console.error("Copy failed");
@@ -74,7 +79,10 @@ const Resources = () => {
           <button
             key={key}
             type="button"
-            onClick={() => setSubTab(key)}
+            onClick={() => {
+              setSubTab(key);
+              trackEvent("resources_subtab_click", { subtab: key });
+            }}
             className={`flex-1 min-w-[100px] rounded-lg px-3 py-2 text-center text-sm font-medium transition-colors ${
               subTab === key
                 ? "bg-white text-[#1a1a1a] shadow-sm"
@@ -105,6 +113,9 @@ const Resources = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 block overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-opacity hover:opacity-95"
+              onClick={() =>
+                trackEvent("resources_waitlist_click", { placement: "banner" })
+              }
             >
               <Image
                 src={WEBINAR_BANNER_SRC}
@@ -121,6 +132,11 @@ const Resources = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 inline-flex rounded-full bg-[#1a1a1a] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#333]"
+              onClick={() =>
+                trackEvent("resources_waitlist_click", {
+                  placement: "button",
+                })
+              }
             >
               nestuge.com/attnhq-waitlist →
             </a>
@@ -139,6 +155,11 @@ const Resources = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-2 hover:no-underline"
+                onClick={() =>
+                  trackEvent("resources_outbound_click", {
+                    destination: "instagram",
+                  })
+                }
               >
                 @mercythaddeus_
               </a>
@@ -157,6 +178,11 @@ const Resources = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 inline-flex rounded-full border border-border bg-white px-5 py-2.5 text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-border"
+              onClick={() =>
+                trackEvent("resources_outbound_click", {
+                  destination: "attention_factory",
+                })
+              }
             >
               attentionfactory.io →
             </a>
@@ -227,7 +253,13 @@ const Resources = () => {
                   <button
                     key={p.id}
                     type="button"
-                    onClick={() => setActive(i)}
+                    onClick={() => {
+                      setActive(i);
+                      trackEvent("resources_prompt_tab_click", {
+                        prompt_id: p.id,
+                        prompt_title: p.title,
+                      });
+                    }}
                     className={`shrink-0 rounded-full border px-3 py-2 text-left text-xs font-medium transition-colors sm:text-sm ${
                       active === i
                         ? "border-[#1a1a1a] bg-[#1a1a1a] text-white"

@@ -11,6 +11,7 @@ import {
   WEBINAR_WAITLIST_URL,
   WEBINAR_WHATSAPP_GROUP_URL,
 } from "@/lib/webinar";
+import { trackEvent } from "@/lib/analytics";
 
 const DELAY_MS = 5000;
 
@@ -22,14 +23,23 @@ export default function WebinarRegistrationModal() {
     return () => window.clearTimeout(id);
   }, []);
 
-  const close = () => setOpen(false);
+  useEffect(() => {
+    if (open) trackEvent("webinar_modal_open");
+  }, [open]);
+
+  const close = (reason: string) => {
+    if (open) trackEvent("webinar_modal_close", { reason });
+    setOpen(false);
+  };
 
   const goRegister = () => {
+    trackEvent("webinar_modal_waitlist_click");
     window.open(WEBINAR_WAITLIST_URL, "_blank", "noopener,noreferrer");
     setOpen(false);
   };
 
   const goWhatsAppGroup = () => {
+    trackEvent("webinar_modal_whatsapp_click");
     window.open(WEBINAR_WHATSAPP_GROUP_URL, "_blank", "noopener,noreferrer");
     setOpen(false);
   };
@@ -43,7 +53,7 @@ export default function WebinarRegistrationModal() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           role="presentation"
-          onClick={close}
+          onClick={() => close("backdrop")}
         >
           <motion.div
             role="dialog"
@@ -60,7 +70,7 @@ export default function WebinarRegistrationModal() {
               type="button"
               aria-label="Close"
               className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white text-[#1a1a1a] transition-colors hover:bg-secondary"
-              onClick={close}
+              onClick={() => close("close_button")}
             >
               <X className="h-5 w-5" weight="bold" />
             </button>
@@ -81,7 +91,10 @@ export default function WebinarRegistrationModal() {
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 block overflow-hidden rounded-xl border border-border shadow-sm transition-opacity hover:opacity-95"
-              onClick={close}
+              onClick={() => {
+                trackEvent("webinar_modal_banner_click");
+                close("banner_waitlist");
+              }}
             >
               <Image
                 src={WEBINAR_BANNER_SRC}
@@ -114,7 +127,7 @@ export default function WebinarRegistrationModal() {
             <button
               type="button"
               className="mt-2 w-full text-center text-xs text-[#999] underline-offset-2 hover:underline"
-              onClick={close}
+              onClick={() => close("not_now")}
             >
               Not now
             </button>
