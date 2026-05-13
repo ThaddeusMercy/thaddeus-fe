@@ -52,13 +52,12 @@ const sfpro = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mercy Thaddeus - Software Engineer & Frontend Engineer",
+    default: "Mercy Thaddeus - Software Engineer",
     template: "%s | Mercy Thaddeus"
   },
-  description: "Mercy Thaddeus (@global_techgirl) - Software Engineer & Frontend Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences from scribble to unicorn.",
+  description: "Mercy Thaddeus (@global_techgirl) - Software Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences from scribble to unicorn.",
   keywords: [
     "Mercy Thaddeus",
-    "Frontend Engineer",
     "Software Engineer",
     "Web3 Developer",
     "React Developer",
@@ -86,15 +85,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://mercythaddeus.xyz",
-    title: "Mercy Thaddeus - Software Engineer & Frontend Engineer",
-    description: "Software Engineer & Frontend Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences from scribble to unicorn.",
+    title: "Mercy Thaddeus - Software Engineer",
+    description: "Software Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences from scribble to unicorn.",
     siteName: "Mercy Thaddeus Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Mercy Thaddeus - Software Engineer & Frontend Engineer",
+        alt: "Mercy Thaddeus - Software Engineer",
       },
     ],
   },
@@ -102,8 +101,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@global_techgirl",
     creator: "@global_techgirl",
-    title: "Mercy Thaddeus - Software Engineer & Frontend Engineer",
-    description: "Software Engineer & Frontend Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences.",
+    title: "Mercy Thaddeus - Software Engineer",
+    description: "Software Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -135,8 +134,8 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Mercy Thaddeus",
               "alternateName": "global_techgirl",
-              "description": "Software Engineer & Frontend Engineer specializing in React, Next.js, blockchain development, and AI integration",
-              "jobTitle": ["Software Engineer", "Frontend Engineer"],
+              "description": "Software Engineer specializing in React, Next.js, blockchain development, and AI integration",
+              "jobTitle": ["Software Engineer"],
               "worksFor": {
                 "@type": "Organization",
                 "name": "Hindsight VIP"
@@ -171,22 +170,6 @@ export default function RootLayout({
                     "@type": "Place",
                     "name": "Remote"
                   },
-                  "skills": [
-                    "React",
-                    "Next.js",
-                    "TypeScript",
-                    "Blockchain Development",
-                    "Web3",
-                    "AI Integration"
-                  ]
-                },
-                {
-                  "@type": "Occupation",
-                  "name": "Frontend Engineer",
-                "occupationLocation": {
-                  "@type": "Place",
-                  "name": "Remote"
-                },
                   "skills": [
                     "React",
                     "Next.js",

@@ -4,13 +4,13 @@ const WorkExperience = () => {
   const experiences: Experience[] = [
     {
       company_name: "Hindsight VIP",
-      position: "Frontend Engineer",
+      position: "Software Engineer",
       duration: "November 2023 - Present",
       link: "hindsight.vip",
     },
     {
       company_name: "CastleHub",
-      position: "Frontend Engineer",
+      position: "Software Engineer",
       duration: "June 2024 - December 2024",
       link: "castlehub.io",
     },
