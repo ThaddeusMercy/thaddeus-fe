@@ -2,9 +2,10 @@ import { MetadataRoute } from 'next'
  
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Mercy Thaddeus - Software Engineer',
+    name: 'Mercy Thaddeus — Software Engineer & AI Educator',
     short_name: 'Mercy Thaddeus',
-    description: 'Software Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences from scribble to unicorn.',
+    description:
+      'Software engineer and AI educator — production systems, applied AI, workshops & talks. React, Next.js, web3, and technical education.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
@@ -26,7 +27,7 @@ export default function manifest(): MetadataRoute.Manifest {
         type: 'image/png',
       },
     ],
-    categories: ['technology', 'developer', 'portfolio', 'web3', 'blockchain'],
+    categories: ['technology', 'education', 'developer', 'portfolio', 'web3', 'artificial intelligence'],
     lang: 'en',
     dir: 'ltr',
     orientation: 'portrait-primary',

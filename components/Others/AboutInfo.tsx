@@ -4,6 +4,9 @@ import { TokenETH, TokenSOL } from "@web3icons/react";
 const AboutInfo = () => {
   return (
     <section className="space-y-10">
+      <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#999]">
+        Software engineer · AI educator
+      </p>
       {/* Image & Title(s) */}
       <div className="space-y-8">
         {/* Display Picture */}
@@ -15,7 +18,7 @@ const AboutInfo = () => {
             Software Engineer
           </span>
           <span className="bg-secondary py-3 px-4 rounded-3xl">
-            AI Creator
+            AI Educator
           </span>
           <span className="w-14 h-12 rounded-3xl bg-secondary flex items-center justify-center">
             <TokenETH variant="branded" size="25" />
@@ -33,7 +36,7 @@ const AboutInfo = () => {
               Software Engineer
             </span>
             <span className="bg-secondary py-3 px-4 rounded-3xl">
-              AI Creator
+              AI Educator
             </span>
             <span className="w-14 h-12 rounded-3xl bg-secondary flex items-center justify-center">
               <TokenETH variant="branded" size="30" />
@@ -55,15 +58,15 @@ const AboutInfo = () => {
       <div className="space-y-3 font-medium">
         <h1>Hey, I&apos;m Mercy! ✦</h1>
         <p>
-          Software Engineer at the intersection of AI, blockchain, and modern product thinking.
+          Software engineer and AI educator — I build production systems and help people ship with AI without sacrificing clarity or quality.
         </p>
         <p>
-          I ship products across blockchain and AI, crafting clean interfaces that simplify complexity. I teach builders how to turn ideas into prototypes and create content helping people apply new AI tools.
+          Day to day that means full-stack product work across AI-native features, web apps, and web3 — plus workshops, talks, and practical content so teams can adopt new models and tools with confidence.
           <br /><br />
           Outside of work, I run <span className="text-[#1a1a1a]">TechUp</span> — a nonprofit helping young people access tech opportunities.
         </p>
         <div className="flex gap-2 items-center">
-          <Link href="https://www.linkedin.com/in/mercythaddeus" className="hover:text-pink-500 transition-colors">Linkedln</Link>
+          <Link href="https://www.linkedin.com/in/mercythaddeus" className="hover:text-pink-500 transition-colors">LinkedIn</Link>
           <span>✦</span>
           <Link href="https://github.com/mercythaddeus" className="hover:text-pink-500 transition-colors">Github</Link>
           <span>✦</span>

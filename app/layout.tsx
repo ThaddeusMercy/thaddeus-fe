@@ -52,18 +52,22 @@ const sfpro = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mercy Thaddeus - Software Engineer",
+    default: "Mercy Thaddeus — Software Engineer & AI Educator",
     template: "%s | Mercy Thaddeus"
   },
-  description: "Mercy Thaddeus (@global_techgirl) - Software Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences from scribble to unicorn.",
+  description:
+    "Mercy Thaddeus (@global_techgirl) — software engineer and AI educator. Production systems, applied AI, workshops & talks; React, Next.js, and web3. Building and teaching from first principles.",
   keywords: [
     "Mercy Thaddeus",
     "Software Engineer",
+    "AI Educator",
+    "Applied AI",
+    "Developer Education",
     "Web3 Developer",
     "React Developer",
     "Next.js Developer",
     "Blockchain Developer",
-    "AI Integration",
+    "Technical Workshops",
     "global_techgirl",
     "Ethereum Developer",
     "Solana Developer",
@@ -85,15 +89,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://mercythaddeus.xyz",
-    title: "Mercy Thaddeus - Software Engineer",
-    description: "Software Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences from scribble to unicorn.",
+    title: "Mercy Thaddeus — Software Engineer & AI Educator",
+    description:
+      "Software engineer and AI educator — production systems, applied AI, workshops & talks. React, Next.js, web3, and technical education.",
     siteName: "Mercy Thaddeus Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Mercy Thaddeus - Software Engineer",
+        alt: "Mercy Thaddeus — Software Engineer & AI Educator",
       },
     ],
   },
@@ -101,8 +106,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@global_techgirl",
     creator: "@global_techgirl",
-    title: "Mercy Thaddeus - Software Engineer",
-    description: "Software Engineer specializing in React, Next.js, blockchain development, and AI integration. Building innovative software experiences.",
+    title: "Mercy Thaddeus — Software Engineer & AI Educator",
+    description:
+      "Software engineer and AI educator — systems, applied AI, workshops & talks. React, Next.js, web3.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -134,8 +140,9 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Mercy Thaddeus",
               "alternateName": "global_techgirl",
-              "description": "Software Engineer specializing in React, Next.js, blockchain development, and AI integration",
-              "jobTitle": ["Software Engineer"],
+              "description":
+                "Software engineer and AI educator — production systems, applied AI, workshops and technical content; React, Next.js, and web3.",
+              "jobTitle": ["Software Engineer", "AI Educator"],
               "worksFor": {
                 "@type": "Organization",
                 "name": "Hindsight VIP"
@@ -150,12 +157,13 @@ export default function RootLayout({
                 "React",
                 "Next.js",
                 "TypeScript",
+                "Applied AI",
+                "AI Education",
                 "Blockchain Development",
                 "Web3",
                 "Ethereum",
                 "Solana",
-                "AI Integration",
-                "Frontend Development",
+                "Developer Education",
                 "Software Engineering"
               ],
               "alumniOf": {
@@ -174,9 +182,23 @@ export default function RootLayout({
                     "React",
                     "Next.js",
                     "TypeScript",
+                    "Applied AI",
                     "Blockchain Development",
-                    "Web3",
-                    "AI Integration"
+                    "Web3"
+                  ]
+                },
+                {
+                  "@type": "Occupation",
+                  "name": "AI Educator",
+                  "occupationLocation": {
+                    "@type": "Place",
+                    "name": "Remote"
+                  },
+                  "skills": [
+                    "Technical workshops",
+                    "Applied AI literacy",
+                    "Developer education",
+                    "Technical writing"
                   ]
                 }
               ]

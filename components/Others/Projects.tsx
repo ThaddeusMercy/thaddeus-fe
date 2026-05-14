@@ -48,7 +48,7 @@ const Projects = () => {
         <h2 className="font-[family-name:var(--font-romanesco)] text-3xl">
           Projects
         </h2>
-        <p>things and projects i&apos;ve been a part of 🍕</p>
+        <p>shipping, teaching, and experiments I&apos;ve been part of 🍕</p>
       </div>
 
       {/* Content */}

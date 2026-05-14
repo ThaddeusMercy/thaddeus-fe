@@ -23,10 +23,15 @@ const WorkExperience = () => {
   ];
   return (
     <section className="flex items-start flex-col md:flex-row gap-5">
-      {/* Title */}
-      <h2 className="font-[family-name:var(--font-romanesco)] text-3xl md:w-1/2">
-        Work
-      </h2>
+      <div className="md:w-1/2">
+        <h2 className="font-[family-name:var(--font-romanesco)] text-3xl">
+          Work
+        </h2>
+        <p className="mt-2 max-w-sm text-sm leading-relaxed text-[#676767]">
+          Product and platform engineering — often where applied AI, full-stack
+          systems, and web3 meet.
+        </p>
+      </div>
 
       <div className="md:w-1/2 w-full space-y-5">
         {experiences.map((experience, index) => (
