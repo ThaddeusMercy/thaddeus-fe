@@ -61,21 +61,6 @@ const GeneralLayout = () => {
     },
   ];
 
-  function generateLocalTimeHTML() {
-    const now = new Date();
-    const formatter = new Intl.DateTimeFormat("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-      timeZoneName: "short",
-      hour12: false, // Use 24-hour format
-    });
-    const formattedTime = formatter.format(now);
-
-    return `${formattedTime}`;
-  }
-
-  const timeHTML = generateLocalTimeHTML();
-
   return (
     <div>
       {tab !== "resources" && (
@@ -133,15 +118,12 @@ const GeneralLayout = () => {
         </AnimatePresence>
       </div>
 
-      {/* Footer */}
+      {/* Footer — uncomment and wire local time when needed */}
       {/* <footer className="md:flex justify-center gap-5 bottom-5 w-full px-5 md:px-0 text-[#D8D8D8] z-50 hidden">
         <p>
           Designed by <span className="font-bold text-[#676767]"><Link href="https://koha.wtf" target="_blank">Koha</Link></span>,
           Built by me
         </p>
-
-        <p>{timeHTML}</p>
-
         <p>© Mercy Thaddeus</p>
       </footer> */}
 
