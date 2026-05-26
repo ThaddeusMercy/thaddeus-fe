@@ -1,13 +1,8 @@
 import { Experience } from "@/helpers";
+import { sectionHeadingClass } from "@/lib/typography";
 
 const WorkExperience = () => {
   const experiences: Experience[] = [
-    {
-      company_name: "Hindsight VIP",
-      position: "Software Engineer",
-      duration: "November 2023 - Present",
-      link: "hindsight.vip",
-    },
     {
       company_name: "CastleHub",
       position: "Software Engineer",
@@ -24,12 +19,10 @@ const WorkExperience = () => {
   return (
     <section className="flex items-start flex-col md:flex-row gap-5">
       <div className="md:w-1/2">
-        <h2 className="font-[family-name:var(--font-romanesco)] text-3xl">
-          Work
-        </h2>
+        <p className={sectionHeadingClass}>Work</p>
         <p className="mt-2 max-w-sm text-sm leading-relaxed text-[#676767]">
-          Product and platform engineering — often where applied AI, full-stack
-          systems, and web3 meet.
+          Full-stack product engineering — applied AI, web, and systems in
+          production.
         </p>
       </div>
 

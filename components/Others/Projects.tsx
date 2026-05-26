@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectSchema } from "@/helpers";
+import { sectionHeadingClass } from "@/lib/typography";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -45,9 +46,7 @@ const Projects = () => {
     <section className="space-y-5">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h2 className="font-[family-name:var(--font-romanesco)] text-3xl">
-          Projects
-        </h2>
+        <p className={sectionHeadingClass}>Projects</p>
         <p>shipping, teaching, and experiments I&apos;ve been part of 🍕</p>
       </div>
 

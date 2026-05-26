@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Romanesco } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
-
-const romanesco = Romanesco({
-  variable: "--font-romanesco",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 const sfpro = localFont({
   src: [
@@ -52,11 +46,11 @@ const sfpro = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mercy Thaddeus — Software Engineer & AI Educator",
+    default: "Mercy Thaddeus — Co-founder & CPO, Attention Factory · AI educator",
     template: "%s | Mercy Thaddeus"
   },
   description:
-    "Mercy Thaddeus (@global_techgirl) — software engineer and AI educator. Production systems, applied AI, workshops & talks; React, Next.js, and web3. Building and teaching from first principles.",
+    "Mercy Thaddeus (@global_techgirl) — software engineer, AI educator, and Chief Product Officer at Attention Factory. Corporate AI training, consulting, custom builds, and technical content.",
   keywords: [
     "Mercy Thaddeus",
     "Software Engineer",
@@ -67,7 +61,8 @@ export const metadata: Metadata = {
     "React Developer",
     "Next.js Developer",
     "Blockchain Developer",
-    "Technical Workshops",
+    "Attention Factory",
+    "Chief Product Officer",
     "global_techgirl",
     "Ethereum Developer",
     "Solana Developer",
@@ -89,16 +84,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://mercythaddeus.xyz",
-    title: "Mercy Thaddeus — Software Engineer & AI Educator",
+    title: "Mercy Thaddeus — Co-founder & CPO, Attention Factory · AI educator",
     description:
-      "Software engineer and AI educator — production systems, applied AI, workshops & talks. React, Next.js, web3, and technical education.",
+      "Software engineer and AI educator. Attention Factory: training, consulting, and AI product builds. Workshops, talks, and applied AI content.",
     siteName: "Mercy Thaddeus Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Mercy Thaddeus — Software Engineer & AI Educator",
+        alt: "Mercy Thaddeus — Co-founder & CPO, Attention Factory · AI educator",
       },
     ],
   },
@@ -106,9 +101,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@global_techgirl",
     creator: "@global_techgirl",
-    title: "Mercy Thaddeus — Software Engineer & AI Educator",
+    title: "Mercy Thaddeus — Co-founder & CPO, Attention Factory · AI educator",
     description:
-      "Software engineer and AI educator — systems, applied AI, workshops & talks. React, Next.js, web3.",
+      "Software engineer and AI educator. Training, consulting, custom AI builds, and technical content.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -141,11 +136,15 @@ export default function RootLayout({
               "name": "Mercy Thaddeus",
               "alternateName": "global_techgirl",
               "description":
-                "Software engineer and AI educator — production systems, applied AI, workshops and technical content; React, Next.js, and web3.",
-              "jobTitle": ["Software Engineer", "AI Educator"],
+                "Software engineer, AI educator, and Chief Product Officer at Attention Factory — corporate AI training, consulting, custom builds, and technical content.",
+              "jobTitle": [
+                "Chief Product Officer",
+                "Software Engineer",
+                "AI Educator"
+              ],
               "worksFor": {
                 "@type": "Organization",
-                "name": "Hindsight VIP"
+                "name": "Attention Factory"
               },
               "url": "https://mercythaddeus.xyz",
               "sameAs": [
@@ -207,7 +206,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${romanesco.variable} ${sfpro.variable} antialiased max-w-[1440px] mx-auto`}
+        className={`${GeistSans.className} ${sfpro.variable} antialiased max-w-[1370px] mx-auto`}
       >
         <GoogleAnalytics />
         {children}

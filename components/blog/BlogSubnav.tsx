@@ -9,8 +9,11 @@ const links: {
   isActive?: (pathname: string) => boolean;
 }[] = [
   { href: "/blog", label: "Overview", isActive: (p) => p === "/blog" },
-  { href: "/?tab=resources&sub=prompts", label: "Prompt vault" },
-  { href: "/?tab=resources&sub=links", label: "Links" },
+  {
+    href: "/guide",
+    label: "Guide",
+    isActive: (p) => p.startsWith("/guide"),
+  },
 ];
 
 export default function BlogSubnav() {

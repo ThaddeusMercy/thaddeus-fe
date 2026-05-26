@@ -13,6 +13,7 @@
     "@phosphor-icons/react": "^2.1.7",
     "@web3icons/react": "^4.0.10",
     "framer-motion": "^12.4.10",
+    "geist": "^1.7.0",
     "motion": "^12.4.10",
     "next": "15.2.8",
     "react": "^19.0.0",

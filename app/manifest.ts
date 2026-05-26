@@ -2,10 +2,10 @@ import { MetadataRoute } from 'next'
  
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Mercy Thaddeus — Software Engineer & AI Educator',
+    name: 'Mercy Thaddeus — AI educator · Attention Factory',
     short_name: 'Mercy Thaddeus',
     description:
-      'Software engineer and AI educator — production systems, applied AI, workshops & talks. React, Next.js, web3, and technical education.',
+      'Software engineer, AI educator, and CPO at Attention Factory — corporate AI training, consulting, custom builds, and technical content.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

@@ -20,7 +20,22 @@
 body {
   background: #fff;
   color: #676767;
-  font-family: var(--font-sfpro);
+  font-style: normal;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  blockquote,
+  cite,
+  em {
+    font-style: normal;
+    font-family: inherit;
+  }
 }
 
 /* font-[family-name:var(--font-geist-sans)] */

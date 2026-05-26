@@ -3,18 +3,18 @@
 // Library import
 import { useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Components
 import HomeComponent from "../pages-components/Home";
 import Talks from "../pages-components/Talks";
 import Blog from "../pages-components/Blog";
-import Resources from "../pages-components/Resources";
+import ProjectsPage from "../pages-components/ProjectsPage";
 import WebinarRegistrationModal from "../WebinarRegistrationModal";
 
-import { Tabs } from "@/helpers";
+import ShellBottomNav, {
+  type ShellNavTab,
+} from "@/components/layout/ShellBottomNav";
 import { trackEvent, trackSpaPageView } from "@/lib/analytics";
 
 const GeneralLayout = () => {
@@ -43,64 +43,21 @@ const GeneralLayout = () => {
     trackSpaPageView();
   }, [tab, searchKey]);
 
-  const tabs: Tabs[] = [
-    {
-      id: 0,
-      label: `${tab === "talks" ? "home" : "talks"}`,
-      path: `${tab === "talks" ? "/" : "/?tab=talks"}`,
-    },
-    {
-      id: 1,
-      label: `${tab === "blog" ? "home" : "blog"}`,
-      path: `${tab === "blog" ? "/" : "/?tab=blog"}`,
-    },
-    {
-      id: 2,
-      label: `${tab === "resources" ? "home" : "resources"}`,
-      path: `${tab === "resources" ? "/" : "/?tab=resources"}`,
-    },
-  ];
+  const shellTab: ShellNavTab =
+    tab === "talks"
+      ? "talks"
+      : tab === "blog"
+        ? "blog"
+        : tab === "projects"
+          ? "projects"
+          : "home";
 
   return (
     <div>
-      {tab !== "resources" && (
-        <nav
-          className="py-2 px-4 sm:px-5 bg-secondary border border-border rounded-xl
-       flex flex-wrap items-center justify-center gap-x-4 gap-y-2 max-w-[min(100vw-2rem,380px)] mx-auto fixed bottom-20 md:bottom-17 left-1/2 -translate-x-1/2 z-50 shadow-sm"
-        >
-          {tabs.map((t, index) => (
-            <Link
-              key={index}
-              href={t.path}
-              className="font-medium lowercase"
-              onClick={() =>
-                trackEvent("shell_nav_click", {
-                  label: t.label,
-                  path: t.path,
-                })
-              }
-            >
-              {t.label}
-            </Link>
-          ))}
+      <ShellBottomNav activeTab={shellTab} />
 
-          <div className="h-4 w-[2px] bg-border"></div>
-
-          <Image
-            src={`/play_icon.svg`}
-            width={15}
-            height={15}
-            alt="Play icon"
-            className="cursor-pointer"
-          />
-        </nav>
-      )}
-
-      {/* Main */}
       <div
-        className={`w-full px-5 md:px-0 md:max-w-[600px] mx-auto space-y-14 relative ${
-          tab === "resources" ? "pb-24" : "pb-40"
-        }`}
+        className="relative mx-auto w-full max-w-[600px] space-y-14 px-5 pb-40 md:px-0"
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -113,7 +70,7 @@ const GeneralLayout = () => {
             {tab === "home" && <HomeComponent />}
             {tab === "talks" && <Talks />}
             {tab === "blog" && <Blog />}
-            {tab === "resources" && <Resources />}
+            {tab === "projects" && <ProjectsPage />}
           </motion.div>
         </AnimatePresence>
       </div>

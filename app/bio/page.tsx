@@ -192,7 +192,7 @@ const BioPage = () => {
                 Software Engineer
               </span>
               <span className="bg-white py-2 px-4 rounded-full text-sm font-medium border border-border">
-                AI Creator
+                AI Educator
               </span>
               <span className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center">
                 <TokenETH variant="branded" size="20" />
@@ -204,7 +204,7 @@ const BioPage = () => {
                 <TokenSOL variant="branded" size="20" />
               </span>
               <span className="bg-white py-2 px-4 rounded-full text-sm font-medium border border-border">
-                TechUp Founder
+                CPO, Attention Factory
               </span>
             </div>
 
@@ -221,7 +221,8 @@ const BioPage = () => {
                   className="text-blue-600 hover:underline"
                 >
                   Attention Factory
-                </Link>, software Engineer working at the intersection of AI, blockchain,
+                </Link>
+                , software engineer and AI educator working at the intersection of AI, blockchain,
                 and modern product thinking.
               </p>
               <p>
@@ -232,14 +233,18 @@ const BioPage = () => {
               <p>
                 I teach builders how to turn technical ideas into working
                 prototypes and share my process with growing online communities.
-                I&apos;m also an AI creator making simple, useful content that
-                helps people understand and apply new tools.
+                I publish practical AI education so people can understand and apply new tools with confidence.
               </p>
               <p>
-                Outside of work, I run{" "}
-                <span className="font-medium text-[#1a1a1a]">TechUp</span>, a
-                nonprofit initiative helping young people access tech
-                opportunities and bridge the digital divide.
+                Through{" "}
+                <Link
+                  href="https://attentionfactory.io?ref=mercythaddeus"
+                  target="_blank"
+                  className="font-medium text-[#1a1a1a] underline underline-offset-2 hover:text-pink-500"
+                >
+                  Attention Factory
+                </Link>
+                , I run corporate AI training, consulting, and custom builds for teams who want to ship real AI—not just slide decks.
               </p>
             </div>
 

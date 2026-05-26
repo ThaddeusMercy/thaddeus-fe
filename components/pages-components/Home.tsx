@@ -1,18 +1,13 @@
 import AboutInfo from "../Others/AboutInfo";
-import WorkExperience from "../Others/WorkExperience";
-import Projects from "../Others/Projects";
+import HomeFooter from "../Others/HomeFooter";
+import WhatYouFindHere from "../Others/WhatYouFindHere";
 
 const HomeComponent = () => {
   return (
-    <div className="space-y-20">
-      {/* About */}
+    <div className="space-y-20 font-sans not-italic">
       <AboutInfo />
-
-      {/* Work */}
-      <WorkExperience />
-
-      {/* Projects */}
-      <Projects />
+      <WhatYouFindHere />
+      <HomeFooter />
     </div>
   );
 };

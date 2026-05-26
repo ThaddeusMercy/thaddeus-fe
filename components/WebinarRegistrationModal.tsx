@@ -96,11 +96,11 @@ export default function WebinarRegistrationModal() {
                   id="webinar-prompt-title"
                   className="pr-12 text-lg font-semibold leading-snug text-[#1a1a1a] md:text-xl"
                 >
-                  Have you registered for the webinar?
+                  Join the AI Accelerator Bootcamp?
                 </h2>
                 <p className="mt-2 text-sm text-[#676767]">
-                  Opportunities in the Age of AI — free session from Attention
-                  Factory (attn.).
+                  From zero to one — July 1st with Attention Factory (attn.).
+                  Mercy Thaddeus &amp; Joshua Omobola.
                 </p>
 
                 <a
@@ -116,8 +116,8 @@ export default function WebinarRegistrationModal() {
                   <Image
                     src={WEBINAR_BANNER_SRC}
                     alt={WEBINAR_BANNER_ALT}
-                    width={1200}
-                    height={800}
+                    width={1024}
+                    height={768}
                     className="h-auto w-full object-cover"
                     sizes="(max-width: 768px) 100vw, 576px"
                     unoptimized

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Long-form posts and engineering notes from Mercy Thaddeus. AI prompts live under Resources on the main site.",
+    "Long-form posts and AI resources from Mercy Thaddeus — Attention Factory.",
 };
 
 export default function BlogIndexPage() {
@@ -24,13 +24,13 @@ export default function BlogIndexPage() {
             className="font-medium text-[#1a1a1a] underline underline-offset-2 hover:no-underline"
           >
             blog tab
-          </Link>{" "}
-          on the homepage. AI prompts, search, and links are in{" "}
+          </Link>
+          . Guides, prompts, and links live on{" "}
           <Link
-            href="/?tab=resources&sub=prompts"
+            href="/guide"
             className="font-medium text-[#1a1a1a] underline underline-offset-2 hover:no-underline"
           >
-            resources
+            /guide
           </Link>
           .
         </p>
@@ -39,18 +39,34 @@ export default function BlogIndexPage() {
       <ul className="space-y-4">
         <li>
           <Link
-            href="/?tab=resources&sub=prompts"
+            href="/guide"
+            className="group block rounded-2xl border border-border bg-white p-6 transition-shadow hover:shadow-md"
+          >
+            <p className="text-xs uppercase tracking-wide text-[#999]">
+              Free library
+            </p>
+            <h2 className="mt-1 text-xl font-semibold text-[#1a1a1a] group-hover:underline">
+              Guides · Prompts · Links
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed">
+              AI playbooks, the prompt vault, webinar waitlist, and Attention
+              Factory — all in one place.
+            </p>
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/guide?sub=prompts"
             className="group block rounded-2xl border border-border bg-secondary p-6 transition-shadow hover:shadow-md"
           >
             <p className="text-xs uppercase tracking-wide text-[#999]">
-              On the main site
+              Prompt vault
             </p>
             <h2 className="mt-1 text-xl font-semibold text-[#1a1a1a] group-hover:underline">
-              Resources → Prompt vault
+              10 image & video prompts
             </h2>
             <p className="mt-2 text-sm leading-relaxed">
-              10 copy-paste prompts with search — open the resources tab from
-              home.
+              One post with all 10 copy-paste prompts, open from the guide hub.
             </p>
           </Link>
         </li>
