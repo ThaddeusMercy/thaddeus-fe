@@ -20,7 +20,7 @@
     "framer-motion": "^12.4.10",
     "geist": "^1.7.0",
     "motion": "^12.4.10",
-    "next": "15.2.8",
+    "next": "15.5.18",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -31,7 +31,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.2.1",
+    "eslint-config-next": "15.5.18",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.94.0"
