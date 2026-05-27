@@ -7,37 +7,17 @@ export type PromptVaultEntry = {
   howToUse: string;
 };
 
-export const PROMPT_VAULT_COLLECTION = {
-  slug: "10-ai-image-video-prompts",
-  title: "10 AI prompts to actually make your images and videos look good.",
-  excerpt:
-    "Stop typing \"make this image 4K.\" Ten copy-paste prompts for Nano Banana, GPT Image, Gemini, and Midjourney — open once, copy what you need.",
-  intro:
-    "Each prompt below is ready to paste into your image model. Upload your reference where the prompt asks for it. Copy one block at a time — no need to hunt through ten separate pages.",
-} as const;
+export type PromptVaultCollection = {
+  slug: string;
+  kicker?: string;
+  title: string;
+  excerpt: string;
+  intro: string;
+  footer?: string;
+  entries: PromptVaultEntry[];
+};
 
-export function isPromptVaultCollectionSlug(slug: string): boolean {
-  return slug === PROMPT_VAULT_COLLECTION.slug;
-}
-
-export function isPromptVaultPostSlug(slug: string): boolean {
-  return (
-    isPromptVaultCollectionSlug(slug) ||
-    PROMPT_VAULT_ENTRIES.some((e) => e.slug === slug)
-  );
-}
-
-export function getPromptBySlug(slug: string): PromptVaultEntry | undefined {
-  return PROMPT_VAULT_ENTRIES.find((e) => e.slug === slug);
-}
-
-export function promptExcerpt(entry: PromptVaultEntry, max = 140): string {
-  const text = entry.howToUse.trim();
-  if (text.length <= max) return text;
-  return `${text.slice(0, max).replace(/\s+\S*$/, "")}…`;
-}
-
-export const PROMPT_VAULT_ENTRIES: PromptVaultEntry[] = [
+export const IMAGE_PROMPT_ENTRIES: PromptVaultEntry[] = [
   {
     id: "01",
     tab: "01",
@@ -139,3 +119,155 @@ export const PROMPT_VAULT_ENTRIES: PromptVaultEntry[] = [
       "Drop any clear photo of yourself in and this turns it into a clean anime cover illustration. Skin tone, features, and outfit stay accurate.",
   },
 ];
+
+export const IMAGE_PROMPT_COLLECTION: PromptVaultCollection = {
+  slug: "10-ai-image-video-prompts",
+  kicker: "The Prompt Vault",
+  title: "10 AI prompts to actually make your images and videos look good.",
+  excerpt:
+    "Stop typing \"make this image 4K.\" Ten copy-paste prompts for Nano Banana, GPT Image, Gemini, and Midjourney — open once, copy what you need.",
+  intro:
+    "Each prompt below is ready to paste into your image model. Upload your reference where the prompt asks for it. Copy one block at a time — no need to hunt through ten separate pages.",
+  footer:
+    "Paste into Nano Banana, GPT Image, Gemini, or Midjourney — upload your reference where the prompt asks for it.",
+  entries: IMAGE_PROMPT_ENTRIES,
+};
+
+export const RESUME_PROMPT_COLLECTION: PromptVaultCollection = {
+  slug: "unrejectable-resume-claude",
+  kicker: "The Resume Prompt Playbook",
+  title: "Make your resume unrejectable with Claude",
+  excerpt:
+    "The exact 5-prompt chain to rewrite your resume, beat the bots, and land more interviews — run them in order in one chat.",
+  intro: `The Unrejectable Resume
+
+The exact 5-prompt chain to rewrite your resume, beat the bots, and land more interviews.
+
+I tested this chain on a real job description and watched a decent resume turn into one a recruiter could not ignore. The prompts do the heavy lifting. You just have to run them in order.
+
+WHAT YOU NEED
+• Your current resume.
+• One job description for a role you actually want.
+• Claude, ChatGPT, or Gemini open in a browser. The bonus step uses Claude Cowork.
+
+THE ONE RULE
+Run every prompt in the same chat. The AI builds on what it learned in the prompt before, so a fresh chat breaks the chain.`,
+  footer: `ONE LAST THING
+The prompts only work if you run them. Pick one job you actually want and run the full chain on it before you close this guide. That single pass will teach you more than reading it twice.
+
+I share AI workflows like this every day. If this one helped, you know where to find me.
+Instagram @mercythaddeus_ · mercythaddeus.xyz`,
+  entries: [
+    {
+      id: "01",
+      tab: "01",
+      slug: "resume-diagnose",
+      title: "Step 1: Diagnose your resume",
+      prompt:
+        "Act as a senior recruiter for this company. Compare my resume to the job description, rate my match out of 100, highlight any gaps, and list my top five missing keywords plus the five red flags a hiring manager would catch in seconds.",
+      howToUse:
+        "Paste your full resume and the full job description right before this prompt so the AI has both to compare.",
+    },
+    {
+      id: "02",
+      tab: "02",
+      slug: "resume-rewrite-experience",
+      title: "Step 2: Rewrite your experience",
+      prompt:
+        "Ask me up to three clarifying questions first, then rewrite my bullet points in the company's own language without inventing anything. Keep each bullet under 20 words, metric driven and high impact, and show me the before and after. Use the Google XYZ formula: accomplished X as measured by Y by doing Z.",
+      howToUse:
+        "Answer the clarifying questions honestly. That is where your real numbers come from, and made-up metrics fall apart in interviews.",
+    },
+    {
+      id: "03",
+      tab: "03",
+      slug: "resume-beat-ats",
+      title: "Step 3: Beat the bot (ATS)",
+      prompt:
+        "Now act as an applicant tracking system filter. Scan my updated resume, tell me which sections a bot would choke on or skip, then rewrite those parts so they actually hold attention.",
+      howToUse:
+        "Keep formatting simple in your final file. Single column, standard headings, no tables or text boxes, so the bot can read every line.",
+    },
+    {
+      id: "04",
+      tab: "04",
+      slug: "resume-pressure-test",
+      title: "Step 4: Pressure test it",
+      prompt:
+        "Act as a hiring manager skimming my resume for 10 seconds against the job description. Score it on keyword overlap, skills, outcomes, and role fit, give me a percentage, call out the missing high priority terms and the weak bullets, and tell me exactly what to change to clear 80%. Then tell me, would you interview me, and why.",
+      howToUse:
+        "If the score is under 80, run the fixes it suggests and ask it to score again. Repeat until you clear 80.",
+    },
+    {
+      id: "05",
+      tab: "05",
+      slug: "resume-cowork-apply",
+      title: "Bonus: Let AI apply to the jobs for you",
+      prompt:
+        "My resume is optimized now. Head to my LinkedIn and apply to the 10 roles I have the best shot at landing an interview for, and tailor every application to its job description.",
+      howToUse:
+        "Review every application before it goes out. Treat the AI as a fast first draft, not a final send button. Requires Claude Cowork.",
+    },
+  ],
+};
+
+export const PROMPT_VAULT_COLLECTIONS: PromptVaultCollection[] = [
+  IMAGE_PROMPT_COLLECTION,
+  RESUME_PROMPT_COLLECTION,
+];
+
+/** @deprecated Use IMAGE_PROMPT_COLLECTION or getCollectionBySlug */
+export const PROMPT_VAULT_COLLECTION = IMAGE_PROMPT_COLLECTION;
+
+/** @deprecated Use entries on a collection or getPromptBySlug */
+export const PROMPT_VAULT_ENTRIES = IMAGE_PROMPT_ENTRIES;
+
+export function getCollectionBySlug(
+  slug: string,
+): PromptVaultCollection | undefined {
+  return PROMPT_VAULT_COLLECTIONS.find((c) => c.slug === slug);
+}
+
+export function getCollectionForEntrySlug(
+  slug: string,
+): PromptVaultCollection | undefined {
+  return PROMPT_VAULT_COLLECTIONS.find((c) =>
+    c.entries.some((e) => e.slug === slug),
+  );
+}
+
+export function isPromptVaultCollectionSlug(slug: string): boolean {
+  return PROMPT_VAULT_COLLECTIONS.some((c) => c.slug === slug);
+}
+
+export function isPromptVaultPostSlug(slug: string): boolean {
+  return (
+    isPromptVaultCollectionSlug(slug) || getPromptBySlug(slug) !== undefined
+  );
+}
+
+export function getPromptBySlug(slug: string): PromptVaultEntry | undefined {
+  for (const collection of PROMPT_VAULT_COLLECTIONS) {
+    const entry = collection.entries.find((e) => e.slug === slug);
+    if (entry) return entry;
+  }
+  return undefined;
+}
+
+export function resolvePromptVaultPost(
+  postSlug: string,
+): { collection: PromptVaultCollection; highlightSlug?: string } | undefined {
+  const byCollection = getCollectionBySlug(postSlug);
+  if (byCollection) return { collection: byCollection };
+
+  const byEntry = getCollectionForEntrySlug(postSlug);
+  if (byEntry) return { collection: byEntry, highlightSlug: postSlug };
+
+  return undefined;
+}
+
+export function promptExcerpt(entry: PromptVaultEntry, max = 140): string {
+  const text = entry.howToUse.trim();
+  if (text.length <= max) return text;
+  return `${text.slice(0, max).replace(/\s+\S*$/, "")}…`;
+}

@@ -6,11 +6,7 @@ import { motion } from "framer-motion";
 
 import PromptVaultIndex from "@/components/blog/PromptVaultIndex";
 import PromptVaultCollectionView from "@/components/blog/PromptVaultCollectionView";
-import {
-  getPromptBySlug,
-  isPromptVaultPostSlug,
-  PROMPT_VAULT_COLLECTION,
-} from "@/components/blog/prompt-vault-data";
+import { resolvePromptVaultPost } from "@/components/blog/prompt-vault-data";
 import GuideLinks from "@/components/guides/GuideLinks";
 import GuidesIndex from "@/components/guides/GuidesIndex";
 import {
@@ -37,12 +33,10 @@ export default function GuideHub() {
   const sub = parseSub(searchParams.get("sub"));
   const postSlug = searchParams.get("post");
 
-  const highlightSlug = useMemo(() => {
-    if (!postSlug || postSlug === PROMPT_VAULT_COLLECTION.slug) return undefined;
-    return getPromptBySlug(postSlug)?.slug;
-  }, [postSlug]);
-
-  const showCollection = postSlug && isPromptVaultPostSlug(postSlug);
+  const resolvedPost = useMemo(
+    () => (postSlug ? resolvePromptVaultPost(postSlug) : undefined),
+    [postSlug],
+  );
 
   useEffect(() => {
     if (postSlug && sub !== "prompts") {
@@ -86,10 +80,11 @@ export default function GuideHub() {
 
       {sub === "prompts" && (
         <div className="mx-auto w-full max-w-2xl">
-          {showCollection ? (
+          {resolvedPost ? (
             <PromptVaultCollectionView
+              collection={resolvedPost.collection}
               backHref={GUIDE_PROMPTS_INDEX}
-              highlightSlug={highlightSlug}
+              highlightSlug={resolvedPost.highlightSlug}
               analyticsPlacement="guide_route"
             />
           ) : postSlug ? (

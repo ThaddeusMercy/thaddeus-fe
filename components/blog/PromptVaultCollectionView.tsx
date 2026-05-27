@@ -5,14 +5,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, Copy, Check } from "@phosphor-icons/react";
 
-import {
-  PROMPT_VAULT_COLLECTION,
-  PROMPT_VAULT_ENTRIES,
-  type PromptVaultEntry,
+import type {
+  PromptVaultCollection,
+  PromptVaultEntry,
 } from "@/components/blog/prompt-vault-data";
 import { trackEvent } from "@/lib/analytics";
 
 type PromptVaultCollectionViewProps = {
+  collection: PromptVaultCollection;
   backHref: string;
   backLabel?: string;
   analyticsPlacement?: "guide_route" | "blog_route";
@@ -84,7 +84,21 @@ function PromptBlock({
   );
 }
 
+function IntroParagraphs({ intro }: { intro: string }) {
+  const paragraphs = intro.split(/\n\n+/).filter(Boolean);
+  return (
+    <div className="space-y-4 leading-relaxed">
+      {paragraphs.map((paragraph, i) => (
+        <p key={i} className="whitespace-pre-line">
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  );
+}
+
 export default function PromptVaultCollectionView({
+  collection,
   backHref,
   backLabel = "All prompts",
   analyticsPlacement = "guide_route",
@@ -107,7 +121,7 @@ export default function PromptVaultCollectionView({
         className="inline-flex items-center gap-2 text-sm font-medium text-[#676767] transition-colors hover:text-[#1a1a1a]"
         onClick={() =>
           trackEvent("resources_prompt_back", {
-            prompt_id: PROMPT_VAULT_COLLECTION.slug,
+            prompt_id: collection.slug,
             placement: analyticsPlacement,
           })
         }
@@ -118,16 +132,16 @@ export default function PromptVaultCollectionView({
 
       <header className="space-y-4 border-b border-border pb-8">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#D8D8D8]">
-          The Prompt Vault
+          {collection.kicker ?? "The Prompt Vault"}
         </p>
         <h1 className="text-2xl font-bold leading-tight text-[#1a1a1a] md:text-3xl">
-          {PROMPT_VAULT_COLLECTION.title}
+          {collection.title}
         </h1>
         <p className="text-sm font-medium uppercase tracking-wide text-[#D8D8D8]">
           Mercy Thaddeus <span className="text-border">{"//"}</span> Attention
           Factory
         </p>
-        <p className="leading-relaxed">{PROMPT_VAULT_COLLECTION.intro}</p>
+        <IntroParagraphs intro={collection.intro} />
       </header>
 
       <nav className="rounded-2xl border border-border bg-secondary p-5 md:p-6">
@@ -135,7 +149,7 @@ export default function PromptVaultCollectionView({
           In this post
         </p>
         <ol className="mt-4 space-y-2">
-          {PROMPT_VAULT_ENTRIES.map((entry) => (
+          {collection.entries.map((entry) => (
             <li key={entry.slug}>
               <a
                 href={`#${entry.slug}`}
@@ -149,7 +163,7 @@ export default function PromptVaultCollectionView({
       </nav>
 
       <div className="space-y-10">
-        {PROMPT_VAULT_ENTRIES.map((entry) => (
+        {collection.entries.map((entry) => (
           <PromptBlock
             key={entry.slug}
             entry={entry}
@@ -158,10 +172,15 @@ export default function PromptVaultCollectionView({
         ))}
       </div>
 
-      <p className="border-t border-border pt-8 text-sm leading-relaxed text-[#999]">
-        Paste into Nano Banana, GPT Image, Gemini, or Midjourney — upload your
-        reference where the prompt asks for it.
-      </p>
+      {collection.footer ? (
+        <div className="space-y-4 border-t border-border pt-8 text-sm leading-relaxed text-[#999]">
+          {collection.footer.split(/\n\n+/).map((paragraph, i) => (
+            <p key={i} className="whitespace-pre-line">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      ) : null}
     </motion.article>
   );
 }

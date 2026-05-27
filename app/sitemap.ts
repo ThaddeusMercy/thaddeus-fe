@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-import { PROMPT_VAULT_COLLECTION } from "@/components/blog/prompt-vault-data";
+import { PROMPT_VAULT_COLLECTIONS } from "@/components/blog/prompt-vault-data";
 import { GUIDE_ENTRIES } from "@/components/guides/guides-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -45,12 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/guide?sub=prompts&post=${PROMPT_VAULT_COLLECTION.slug}`,
+    ...PROMPT_VAULT_COLLECTIONS.map((collection) => ({
+      url: `${baseUrl}/guide?sub=prompts&post=${collection.slug}`,
       lastModified: now,
-      changeFrequency: "weekly",
+      changeFrequency: "weekly" as const,
       priority: 0.9,
-    },
+    })),
     ...guidePosts,
   ];
 }

@@ -25,7 +25,7 @@ export const homeFindHere: {
     {
       title: "Prompt vault",
       description:
-        "One post, ten copy-paste prompts for image and video — open once, copy what you need.",
+        "Resume chain, image prompts, and more — open a playbook, copy what you need.",
       href: "/guide?sub=prompts",
     },
     {
