@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',
   experimental: {
     optimizePackageImports: ['@phosphor-icons/react', '@web3icons/react'],
   },
