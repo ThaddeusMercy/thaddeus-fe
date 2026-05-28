@@ -3,20 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "clean": "rm -rf .next .open-next",
+    "clean": "rm -rf .next",
     "prebuild": "node scripts/check-cf-assets.mjs",
     "dev": "next dev",
-    "build": "npx @opennextjs/cloudflare",
-    "next:build": "next build",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "cf-build": "opennextjs-cloudflare build",
-    "cf-deploy": "opennextjs-cloudflare build && npx wrangler deploy",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.19.11",
     "@phosphor-icons/react": "^2.1.7",
     "@web3icons/react": "^4.0.10",
     "framer-motion": "^12.4.10",
@@ -35,7 +29,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.18",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "wrangler": "^4.94.0"
+    "typescript": "^5"
   }
 }
