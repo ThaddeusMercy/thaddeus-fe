@@ -7,53 +7,42 @@ import { ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 
 import {
   GUIDE_ENTRIES,
-  GUIDE_TOOLS,
-  GUIDE_TOPICS,
+  getGuideFilters,
+  guideMatchesFilter,
   guideMatchesSearch,
-  guideMatchesTool,
-  guideMatchesTopic,
   type GuideEntry,
-  type GuideToolId,
-  type GuideTopicId,
 } from "@/components/guides/guides-data";
 
 type SortOrder = "newest" | "oldest";
 
-function FilterPills<T extends string>({
-  label,
+function FilterPills({
   options,
   value,
   onChange,
 }: {
-  label: string;
-  options: readonly { id: T; label: string }[];
-  value: T;
-  onChange: (id: T) => void;
+  options: readonly { id: string; label: string }[];
+  value: string;
+  onChange: (id: string) => void;
 }) {
   return (
-    <div className="space-y-2">
-      <p className="text-xs font-semibold uppercase tracking-wide text-[#999]">
-        {label}
-      </p>
-      <div className="flex flex-wrap gap-2">
-        {options.map((opt) => {
-          const active = value === opt.id;
-          return (
-            <button
-              key={opt.id}
-              type="button"
-              onClick={() => onChange(opt.id)}
-              className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors ${
-                active
-                  ? "bg-[#1a1a1a] text-white"
-                  : "bg-secondary text-[#676767] hover:bg-border"
-              }`}
-            >
-              {opt.label}
-            </button>
-          );
-        })}
-      </div>
+    <div className="flex flex-wrap gap-2">
+      {options.map((opt) => {
+        const active = value === opt.id;
+        return (
+          <button
+            key={opt.id}
+            type="button"
+            onClick={() => onChange(opt.id)}
+            className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors ${
+              active
+                ? "bg-[#1a1a1a] text-white"
+                : "bg-secondary text-[#676767] hover:bg-border"
+            }`}
+          >
+            {opt.label}
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -82,17 +71,14 @@ function GuideCard({ entry }: { entry: GuideEntry }) {
 }
 
 export default function GuidesIndex() {
-  const [tool, setTool] = useState<GuideToolId>("all");
-  const [topic, setTopic] = useState<GuideTopicId>("all");
+  const filters = useMemo(() => getGuideFilters(), []);
+  const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState<SortOrder>("newest");
 
   const filtered = useMemo(() => {
     let list = GUIDE_ENTRIES.filter(
-      (e) =>
-        guideMatchesTool(e, tool) &&
-        guideMatchesTopic(e, topic) &&
-        guideMatchesSearch(e, search),
+      (e) => guideMatchesFilter(e, filter) && guideMatchesSearch(e, search),
     );
     list = [...list].sort((a, b) => {
       const da = new Date(a.publishedAt).getTime();
@@ -100,7 +86,7 @@ export default function GuidesIndex() {
       return sort === "newest" ? db - da : da - db;
     });
     return list;
-  }, [tool, topic, search, sort]);
+  }, [filter, search, sort]);
 
   return (
     <motion.div
@@ -120,24 +106,13 @@ export default function GuidesIndex() {
           Factory
         </p>
         <p className="max-w-2xl leading-relaxed">
-          Setup playbooks, prompts, workflows, and career notes — the same
-          material I use in corporate trainings, free to read and steal.
+          Setup playbooks, prompts, workflows, and career notes, the same
+          material I use persoanlly and in corporate trainings, free to read and steal.
         </p>
       </header>
 
       <div className="space-y-6 rounded-2xl border border-border bg-secondary/60 p-5 md:p-6">
-        <FilterPills
-          label="By AI tool"
-          options={GUIDE_TOOLS}
-          value={tool}
-          onChange={setTool}
-        />
-        <FilterPills
-          label="By topic"
-          options={GUIDE_TOPICS}
-          value={topic}
-          onChange={setTopic}
-        />
+        <FilterPills options={filters} value={filter} onChange={setFilter} />
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="relative min-w-0 flex-1">

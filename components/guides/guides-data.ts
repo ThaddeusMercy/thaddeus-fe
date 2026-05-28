@@ -239,6 +239,45 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
   },
 ];
 
+export function getGuideFilters(): readonly { id: string; label: string }[] {
+  const usedTools = new Set<Exclude<GuideToolId, "all">>();
+  for (const entry of GUIDE_ENTRIES) {
+    for (const t of entry.tools) usedTools.add(t);
+  }
+  const usedTopics = new Set(GUIDE_ENTRIES.map((e) => e.topic));
+
+  const tools = GUIDE_TOOLS.filter(
+    (t): t is { id: Exclude<GuideToolId, "all">; label: string } =>
+      t.id !== "all" && usedTools.has(t.id),
+  );
+  const topics = GUIDE_TOPICS.filter(
+    (t): t is { id: Exclude<GuideTopicId, "all">; label: string } =>
+      t.id !== "all" && usedTopics.has(t.id),
+  );
+
+  return [
+    { id: "all", label: "All" },
+    ...tools.map((t) => ({ id: `tool:${t.id}`, label: t.label })),
+    ...topics.map((t) => ({ id: `topic:${t.id}`, label: t.label })),
+  ];
+}
+
+export function guideMatchesFilter(
+  entry: GuideEntry,
+  filterId: string,
+): boolean {
+  if (filterId === "all") return true;
+  if (filterId.startsWith("tool:")) {
+    const tool = filterId.slice(5) as Exclude<GuideToolId, "all">;
+    return entry.tools.includes(tool);
+  }
+  if (filterId.startsWith("topic:")) {
+    const topic = filterId.slice(6) as Exclude<GuideTopicId, "all">;
+    return entry.topic === topic;
+  }
+  return true;
+}
+
 export function getGuideBySlug(slug: string): GuideEntry | undefined {
   return GUIDE_ENTRIES.find((g) => g.slug === slug);
 }
