@@ -46,6 +46,98 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "claude-council-pressure-test-decisions",
+    title: "The Claude Council",
+    excerpt:
+      "How to pressure-test any major decision with five AI advisors, peer review, and a chairman synthesis.",
+    category: "WORKFLOW",
+    topic: "workflows",
+    tools: ["claude"],
+    publishedAt: "2026-05-28",
+    sections: [
+      {
+        heading: "The problem",
+        body: "A Stanford study published in Science (March 2026) found that AI models, including Claude, ChatGPT, Gemini, and DeepSeek, affirm users 49% more often than humans do. Even when users described deception or illegal conduct, the models endorsed the behavior 47% of the time.",
+      },
+      {
+        heading: "The fix",
+        body: "Andrej Karpathy (co-founder of OpenAI) built the LLM Council, a multi-stage deliberation system. This guide adapts the concept into a single Claude chat using five advisor personas, so you get multi-angle pressure testing without needing API keys or code.",
+      },
+      {
+        heading: "01 — The Five Advisors",
+        body: "Each advisor has a distinct thinking style that forces a different angle on your question. The diversity is the point. If all five agree, you probably have a strong decision. If they diverge, you have blind spots to address.",
+      },
+      {
+        heading: "The Contrarian — Downside Hunter",
+        body: "Looks for what will fail, what you're ignoring because you're excited, and where the risk is hiding. This advisor's job is to make you uncomfortable.",
+        prompt:
+          "You are The Contrarian. Your only job is to find what will fail. Look for hidden risks, ignored downsides, and assumptions the user is making because they want the idea to work. Be specific. Name the failure modes.",
+      },
+      {
+        heading: "The First Principles Thinker — Assumption Stripper",
+        body: "Throws out every assumption and rebuilds the problem from the ground up. Questions the framing of the question itself, not just the answer.",
+        prompt:
+          "You are The First Principles Thinker. Strip away every assumption in the user's question and rebuild the problem from zero. Question the framing itself. If the user is solving the wrong problem, say so. Reason from base truths, not conventions.",
+      },
+      {
+        heading: "The Expansionist — Upside Finder",
+        body: "Finds opportunities, adjacent possibilities, and upside the user is leaving on the table. Thinks bigger than the question as asked.",
+        prompt:
+          "You are The Expansionist. Your job is to find the upside the user is missing. Look for adjacent opportunities, bigger plays, and possibilities they haven't considered. Think beyond the question as asked. Show them what they're leaving on the table.",
+      },
+      {
+        heading: "The Outsider — Zero Context Evaluator",
+        body: "Knows nothing about your industry and doesn't use any insider assumptions. Evaluates the decision purely on logic, incentives, and common sense.",
+        prompt:
+          "You are The Outsider. You know nothing about the user's industry. Do not assume any domain knowledge. Evaluate this decision purely on logic, incentives, human behavior, and common sense. If something only makes sense with insider context, flag it.",
+      },
+      {
+        heading: "The Executor — Monday Morning Planner",
+        body: "Doesn't care about strategy, vision, or upside. Only cares about what actually happens next. Turns any decision into concrete steps with owners and deadlines.",
+        prompt:
+          "You are The Executor. You do not care about strategy, theory, or upside. Your only question is: what is the user actually doing Monday morning? Turn every insight into a concrete next step with a timeline. If a decision can't be acted on this week, it's not a decision yet.",
+      },
+      {
+        heading: "02 — The Three-Stage Process",
+        body: "This mirrors Karpathy's original LLM Council architecture, adapted for a single Claude conversation. The key innovation is the anonymized peer review in Stage 2, which prevents the advisors from conforming to each other.",
+      },
+      {
+        heading: "Stage 1 — Individual Responses",
+        body: "All five advisors answer your question independently. Each one sees only your original question, not the others' answers. This is where you get the raw diversity of perspective.",
+        prompt:
+          "I need to pressure-test a decision. You are going to act as five separate advisors, each with a completely different thinking style. Answer my question from each advisor's perspective independently. Do not let one advisor's answer influence another.\n\nMy question: [YOUR QUESTION HERE]\n\nThe five advisors:\n\n1. The Contrarian: Find what will fail. Look for hidden risks, ignored downsides, and assumptions I'm making because I want this to work. Be specific about the failure modes.\n\n2. The First Principles Thinker: Strip away every assumption and rebuild this problem from zero. Question my framing. If I'm solving the wrong problem, say so.\n\n3. The Expansionist: Find the upside I'm missing. Look for adjacent opportunities and bigger plays I haven't considered.\n\n4. The Outsider: You know nothing about my industry. Evaluate this purely on logic, incentives, and common sense. If something only makes sense with insider context, flag it.\n\n5. The Executor: You don't care about strategy. What am I actually doing Monday morning? Turn every insight into concrete next steps with timelines.\n\nGive each advisor's full response under their name. Be thorough.",
+      },
+      {
+        heading: "Stage 2 — Peer Review (Blind)",
+        body: "This is the step most people skip, and it's the most important one. Each advisor reviews the other four responses without knowing which advisor wrote which. This prevents conformity bias, which is the whole reason you're doing this.",
+        prompt:
+          "Now I need you to do a peer review of all five responses. Shuffle the advisor names so that each response is labeled only as Response A, Response B, C, D, and E. Do not reveal which advisor wrote which response.\n\nFor each response, answer:\n1. What is the strongest insight in this response?\n2. What is the biggest blind spot or weakness?\n3. What did this advisor miss that another one caught?\n\nAfter reviewing all five individually, answer one final question: What did ALL FIVE advisors miss? This is the most important question. The gap that none of them addressed is often the most critical factor in the decision.",
+      },
+      {
+        heading: "Stage 3 — Chairman Synthesis",
+        body: "The chairman reads everything (all five original responses, all peer reviews, and the collective blind spot analysis) and delivers one final recommendation with clear next steps. This is the answer you actually use.",
+        prompt:
+          "You are now the Chairman. You have read all five advisor responses and the full peer review. Your job is to synthesize everything into one final recommendation.\n\nInclude:\n1. The decision: What should I do, stated clearly in one sentence.\n2. The reasoning: Which advisor perspectives carried the most weight and why.\n3. The risk I need to watch: The single biggest risk from the Contrarian and peer review that I must actively manage.\n4. The upside I should chase: The single biggest opportunity from the Expansionist that I should not ignore.\n5. The first three moves: Concrete next steps for this week, taken from the Executor's analysis.\n\nBe direct. Do not hedge. Give me a clear call.",
+      },
+      {
+        heading: "03 — Tips for Getting the Best Results",
+        body: "1. Be specific with your question. \"Should I launch this product?\" is weak. \"Should I launch this AI writing tool for freelancers at $29/mo in Q3, given that I have $8k in runway and no audience yet?\" gives the advisors real constraints to work with.\n\n2. Don't skip Stage 2. The peer review is where the real value lives. Without it, you just have five separate opinions. With it, you have five opinions that have been stress-tested against each other.\n\n3. Pay attention to the collective blind spot. When you ask \"What did all five miss?\", Claude will often surface something none of the individual advisors thought to address. That gap is frequently the most important factor.\n\n4. Run it on decisions, not questions. This works best when you have a specific fork in the road: launch or wait, hire or outsource, pivot or double down. For pure information gathering, a regular Claude conversation is fine.\n\n5. Use the Chairman's output as a starting point. The council gives you structured thinking, not a replacement for your judgment. The value is in the angles it surfaces, not in outsourcing the decision itself.",
+      },
+      {
+        heading: "04 — Quick Reference",
+        body: "Stage 1 — Individual Responses\nWhat happens: Five advisors answer your question independently\nWhy it matters: Raw diversity of perspective\n\nStage 2 — Peer Review (Blind)\nWhat happens: Each response reviewed anonymously, collective blind spots identified\nWhy it matters: Prevents conformity bias, surfaces gaps\n\nStage 3 — Chairman Synthesis\nWhat happens: One final recommendation with reasoning and next steps\nWhy it matters: Actionable output you can use immediately",
+      },
+      {
+        heading: "When to Use the Claude Council",
+        body: "• You're about to make a business decision worth more than $5,000 or 3+ months of your time\n• You're evaluating whether to launch, pivot, hire, or invest\n• You've already made up your mind and want to check if you're missing something\n• You're choosing between two or more paths and can't see a clear winner\n• You're getting advice from Claude and realize it's just agreeing with you",
+      },
+      {
+        heading: "05 — Resources and Links",
+        body: "Karpathy's LLM Council (GitHub)\ngithub.com/karpathy/llm-council\n\nStanford Sycophancy Study\nnews.stanford.edu/stories/2026/03/ai-advice-sycophantic-models-research\n\nLLM Council on Hugging Face (try it free)\nhuggingface.co/spaces/burtenshaw/karpathy-llm-council\n\nCommunity Projects Inspired by LLM Council\ngithub.com/danielrosehill/LLM-Council-Projects",
+      },
+    ],
+  },
+  {
     slug: "remotion-claude-code-video-editing",
     title: "Remotion × Claude Code — Edit Videos Without a Timeline",
     excerpt:

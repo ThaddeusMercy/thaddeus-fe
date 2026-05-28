@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 
-import { sectionHeadingClass } from "@/lib/typography";
 import {
   GUIDE_ENTRIES,
   GUIDE_TOOLS,
@@ -82,11 +81,7 @@ function GuideCard({ entry }: { entry: GuideEntry }) {
   );
 }
 
-type GuidesIndexProps = {
-  showFooter?: boolean;
-};
-
-export default function GuidesIndex({ showFooter = true }: GuidesIndexProps) {
+export default function GuidesIndex() {
   const [tool, setTool] = useState<GuideToolId>("all");
   const [topic, setTopic] = useState<GuideTopicId>("all");
   const [search, setSearch] = useState("");
@@ -191,62 +186,6 @@ export default function GuidesIndex({ showFooter = true }: GuidesIndexProps) {
           ))}
         </ul>
       )}
-
-      {showFooter ? (
-        <footer className="space-y-6 border-t border-border pt-12">
-          <GuideCta
-            eyebrow="For your team"
-            title="Corporate AI training that sticks"
-            body="These guides are the playbook. Attention Factory runs multi-day masterclasses and custom enablement for marketing, creative, and ops teams."
-            href="https://attentionfactory.io?ref=mercythaddeus"
-            label="Visit Attention Factory →"
-          />
-          <GuideCta
-            eyebrow="Prompt vault"
-            title="10 image & video prompts that actually look good"
-            body="Same voice, copy-paste prompts for Nano Banana, GPT Image, Gemini, and Midjourney — all ten in one post."
-            href="/guide?sub=prompts"
-            label="Open prompt vault →"
-          />
-          <GuideCta
-            eyebrow="Work with me"
-            title="Implement AI into your business"
-            body="Limited consulting slots — training adjacency, audits, and implementation when you're past the pilot phase."
-            href="mailto:hello@attentionfactory.io"
-            label="Email hello@attentionfactory.io →"
-          />
-        </footer>
-      ) : null}
     </motion.div>
-  );
-}
-
-function GuideCta({
-  eyebrow,
-  title,
-  body,
-  href,
-  label,
-}: {
-  eyebrow: string;
-  title: string;
-  body: string;
-  href: string;
-  label: string;
-}) {
-  return (
-    <div className="rounded-2xl border border-border bg-white p-6 md:p-8">
-      <p className="text-xs font-semibold uppercase tracking-wide text-[#999]">
-        {eyebrow}
-      </p>
-      <p className={`mt-2 ${sectionHeadingClass}`}>{title}</p>
-      <p className="mt-3 max-w-2xl leading-relaxed">{body}</p>
-      <Link
-        href={href}
-        className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1a1a1a] hover:underline"
-      >
-        {label}
-      </Link>
-    </div>
   );
 }

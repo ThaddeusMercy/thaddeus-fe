@@ -100,22 +100,6 @@ export default function GuidePostView({ entry }: GuidePostViewProps) {
           </section>
         ))}
       </div>
-
-      <div className="rounded-2xl border border-border bg-secondary/40 p-6 md:p-8">
-        <p className="text-xs font-semibold uppercase tracking-wide text-[#999]">
-          Want this live in your org?
-        </p>
-        <p className="mt-2 leading-relaxed">
-          I run applied AI trainings and implementation through Attention
-          Factory — same playbooks, customized for your stack and team.
-        </p>
-        <Link
-          href="https://attentionfactory.io?ref=mercythaddeus"
-          className="mt-4 inline-flex text-sm font-semibold text-[#1a1a1a] hover:underline"
-        >
-          Book a training →
-        </Link>
-      </div>
     </motion.article>
   );
 }

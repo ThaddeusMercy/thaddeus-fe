@@ -74,7 +74,7 @@ export default function GuideHub() {
         ))}
       </motion.div>
 
-      {sub === "guides" && <GuidesIndex showFooter />}
+      {sub === "guides" && <GuidesIndex />}
 
       {sub === "links" && <GuideLinks />}
 
