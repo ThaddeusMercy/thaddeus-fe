@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Check, Copy } from "@phosphor-icons/react";
 
 import type { GuideEntry } from "@/components/guides/guides-data";
+import { linkifyText } from "@/lib/linkify";
 type GuidePostViewProps = {
   entry: GuideEntry;
 };
@@ -62,7 +63,7 @@ export default function GuidePostView({ entry }: GuidePostViewProps) {
             </h2>
             {section.body ? (
               <p className="leading-relaxed whitespace-pre-wrap">
-                {section.body}
+                {linkifyText(section.body)}
               </p>
             ) : null}
             {section.prompt ? (
