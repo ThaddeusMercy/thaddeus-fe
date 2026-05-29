@@ -259,6 +259,8 @@ export function getGuideFilters(): readonly { id: string; label: string }[] {
     }
   }
 
+  filters.push({ id: "toolkit", label: "Toolkit" });
+
   return filters;
 }
 

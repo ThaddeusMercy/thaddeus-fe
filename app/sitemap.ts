@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/guide?sub=tools`,
+      url: `${baseUrl}/guide?filter=toolkit`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.9,

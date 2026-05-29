@@ -1,13 +1,39 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowSquareOut } from "@phosphor-icons/react";
 
 import {
   TOOLKIT_ENTRIES,
   TOOLKIT_META,
+  type ToolkitEntry,
 } from "@/components/guides/toolkit-data";
 
-function ToolSection({ entry }: { entry: (typeof TOOLKIT_ENTRIES)[number] }) {
+function ToolLink({
+  entry,
+  className,
+  showIcon = false,
+}: {
+  entry: ToolkitEntry;
+  className?: string;
+  showIcon?: boolean;
+}) {
+  return (
+    <a
+      href={entry.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+    >
+      {entry.name}
+      {showIcon ? (
+        <ArrowSquareOut className="inline h-4 w-4 shrink-0 opacity-70" aria-hidden />
+      ) : null}
+    </a>
+  );
+}
+
+function ToolSection({ entry }: { entry: ToolkitEntry }) {
   return (
     <section
       id={`tool-${entry.id}`}
@@ -17,7 +43,11 @@ function ToolSection({ entry }: { entry: (typeof TOOLKIT_ENTRIES)[number] }) {
         <span className="mr-2 font-mono text-sm text-[#D8D8D8]">
           {entry.id}
         </span>
-        {entry.name}
+        <ToolLink
+          entry={entry}
+          showIcon
+          className="inline-flex items-center gap-1.5 hover:underline"
+        />
       </h2>
       <p className="mt-1 text-sm font-medium text-[#676767]">{entry.tagline}</p>
 
@@ -90,7 +120,9 @@ export default function ToolkitView() {
           {TOOLKIT_ENTRIES.map((entry) => (
             <li key={entry.id}>
               <a
-                href={`#tool-${entry.id}`}
+                href={entry.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex rounded-full border border-border bg-white px-3 py-1.5 text-sm font-medium text-[#676767] transition-colors hover:border-[#1a1a1a] hover:text-[#1a1a1a]"
               >
                 <span className="mr-1.5 font-mono text-xs text-[#D8D8D8]">
@@ -108,21 +140,6 @@ export default function ToolkitView() {
           <ToolSection key={entry.id} entry={entry} />
         ))}
       </div>
-
-      <footer className="space-y-4 border-t border-border pt-10">
-        <h2 className="text-lg font-semibold text-[#1a1a1a] md:text-xl">
-          {TOOLKIT_META.closing.heading}
-        </h2>
-        <p className="whitespace-pre-wrap leading-relaxed">
-          {TOOLKIT_META.closing.body}
-        </p>
-        <div className="space-y-1 pt-2 text-sm text-[#676767]">
-          <p className="font-medium text-[#1a1a1a]">{TOOLKIT_META.author}</p>
-          <p>{TOOLKIT_META.closing.signoff}</p>
-          <p>{TOOLKIT_META.role}</p>
-          <p>{TOOLKIT_META.closing.site}</p>
-        </div>
-      </footer>
     </motion.div>
   );
 }

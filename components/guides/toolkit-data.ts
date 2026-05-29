@@ -1,6 +1,7 @@
 export type ToolkitEntry = {
   id: string;
   name: string;
+  href: string;
   tagline: string;
   whatFor: string;
   whyMatters: string;
@@ -17,18 +18,13 @@ export const TOOLKIT_META = {
   role: "Co-founder, Attention Factory",
   toolCount: "13 tools",
   usage: "Used daily",
-  closing: {
-    heading: "That's the toolkit",
-    body: "That's my toolkit.\nYou don't need all 13. Pick 2 or 3 that fit how you work and start there.\n\nAI is moving fast. The people who win are the ones who actually use these tools, not the ones who just read about them.\n\nTry one today. That's all it takes to start.",
-    signoff: "Your AI big sister",
-    site: "mercythaddeus.xyz",
-  },
 } as const;
 
 export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "01",
     name: "Claude",
+    href: "https://claude.ai",
     tagline: "My AI co-pilot for everything",
     whatFor:
       "Claude is my main AI and I use it for almost everything. Business strategy, writing code, building products, analyzing data, drafting proposals, creating content, planning projects, debugging problems, researching markets, and thinking through hard decisions. If I'm working, Claude is open.",
@@ -44,6 +40,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "02",
     name: "Comet Browser",
+    href: "https://www.perplexity.ai/comet",
     tagline: "Browsing with AI built in",
     whatFor:
       "Comet is Perplexity's browser. I use it to browse the web with AI baked into every page. I can ask questions about any article or video I'm watching without leaving the page.",
@@ -59,6 +56,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "03",
     name: "SuperWhisper",
+    href: "https://superwhisper.com",
     tagline: "Voice to text",
     whatFor:
       "SuperWhisper turns my voice into text instantly. I use it to dictate ideas, draft content, write emails, and capture thoughts on the go. Talking is faster than typing.",
@@ -74,6 +72,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "04",
     name: "TranscriptX",
+    href: "https://transcriptx.com",
     tagline: "Video transcription",
     whatFor:
       "TranscriptX transcribes video and audio files fast. I use it to turn long videos, meetings, and voice notes into text I can actually work with.",
@@ -89,6 +88,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "05",
     name: "NotebookLM",
+    href: "https://notebooklm.google.com",
     tagline: "Learn from your own documents",
     whatFor:
       "NotebookLM lets you upload your own documents and have AI conversations about them. I use it to study reports, analyze long PDFs, and prep for meetings or trainings.",
@@ -104,6 +104,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "06",
     name: "Perplexity",
+    href: "https://www.perplexity.ai",
     tagline: "Research & answers",
     whatFor:
       "Perplexity is my search engine replacement. Whenever I need to research a topic, fact-check something, or find up-to-date information, I go here instead of Google.",
@@ -119,6 +120,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "07",
     name: "Gemini",
+    href: "https://gemini.google.com",
     tagline: "Multimodal AI & Google integration",
     whatFor:
       "Gemini is Google's AI and it shines when I need to work across text, images, video, and code in the same conversation. It also connects directly to Google's ecosystem, which makes it powerful for anything involving Search, Docs, or Gmail.",
@@ -134,6 +136,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "08",
     name: "HeyGen",
+    href: "https://www.heygen.com",
     tagline: "AI clone for creators",
     whatFor:
       "HeyGen lets me clone myself. As a content creator, there are times I can't show up on camera but still need to put out content. HeyGen creates a hyper-realistic AI avatar of me that looks and sounds like the real thing. I use it to keep content flowing even when I'm not available to film.",
@@ -149,6 +152,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "09",
     name: "Cursor",
+    href: "https://cursor.com",
     tagline: "Professional software development",
     whatFor:
       "Cursor is an AI-powered code editor built for software engineers. I use it as my daily development environment for building production apps, writing clean code, refactoring, and shipping features fast. It understands your codebase and helps you move through complex projects with speed.",
@@ -164,6 +168,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "10",
     name: "Higgsfield",
+    href: "https://higgsfield.ai",
     tagline: "AI video & image generation",
     whatFor:
       "Higgsfield is an AI aggregator that brings all the top generation models into one place. Instead of jumping between different apps, I use Higgsfield to access models like Nano Banana, Kling AI, and more from a single interface. I use it mainly for video and image generation.",
@@ -179,6 +184,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "11",
     name: "Gamma",
+    href: "https://gamma.app",
     tagline: "Decks & docs in minutes",
     whatFor:
       "Gamma is how I make presentations and documents without starting from a blank slide. I describe what I want, it generates a clean first draft, and I shape it from there. I use it for client decks, training slides, and one-pagers.",
@@ -194,6 +200,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "12",
     name: "ElevenLabs",
+    href: "https://elevenlabs.io",
     tagline: "Natural AI voice",
     whatFor:
       "ElevenLabs is what I use for voice. Narration, voiceovers, and audio for content when I'm not recording myself. The voices sound natural enough that people often can't tell.",
@@ -209,6 +216,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "13",
     name: "Lovable",
+    href: "https://lovable.dev",
     tagline: "Build & ship websites fast",
     whatFor:
       "Lovable lets me describe an app or website and get a working version back. I use it to spin up landing pages, prototypes, and small products quickly without setting up a full project from scratch.",

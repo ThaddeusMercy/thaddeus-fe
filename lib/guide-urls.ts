@@ -1,4 +1,4 @@
-export type GuideSubTab = "guides" | "prompts" | "tools" | "links";
+export type GuideSubTab = "guides" | "prompts" | "links";
 
 export function guideHubHref(
   sub: GuideSubTab = "guides",
@@ -11,7 +11,7 @@ export function guideHubHref(
 }
 
 export const GUIDE_PROMPTS_INDEX = guideHubHref("prompts");
-export const GUIDE_TOOLKIT_INDEX = guideHubHref("tools");
+export const GUIDE_TOOLKIT_INDEX = "/guide?filter=toolkit";
 
 export function resourcesTabToGuide(pathname: string, search: string): string | null {
   if (pathname !== "/") return null;
