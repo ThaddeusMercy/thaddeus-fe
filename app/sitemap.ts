@@ -45,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/guide?sub=tools`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
     ...PROMPT_VAULT_COLLECTIONS.map((collection) => ({
       url: `${baseUrl}/guide?sub=prompts&post=${collection.slug}`,
       lastModified: now,

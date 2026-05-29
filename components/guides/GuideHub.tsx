@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import PromptVaultIndex from "@/components/blog/PromptVaultIndex";
 import PromptVaultCollectionView from "@/components/blog/PromptVaultCollectionView";
 import { resolvePromptVaultPost } from "@/components/blog/prompt-vault-data";
+import ToolkitView from "@/components/guides/ToolkitView";
 import GuideLinks from "@/components/guides/GuideLinks";
 import GuidesIndex from "@/components/guides/GuidesIndex";
 import {
@@ -19,11 +20,12 @@ import { trackEvent } from "@/lib/analytics";
 const TABS: { id: GuideSubTab; label: string }[] = [
   { id: "guides", label: "Guides" },
   { id: "prompts", label: "Prompts" },
+  { id: "tools", label: "Toolkit" },
   { id: "links", label: "Links" },
 ];
 
 function parseSub(raw: string | null): GuideSubTab {
-  if (raw === "prompts" || raw === "links") return raw;
+  if (raw === "prompts" || raw === "tools" || raw === "links") return raw;
   return "guides";
 }
 
@@ -77,6 +79,8 @@ export default function GuideHub() {
       {sub === "guides" && <GuidesIndex />}
 
       {sub === "links" && <GuideLinks />}
+
+      {sub === "tools" && <ToolkitView />}
 
       {sub === "prompts" && (
         <div className="mx-auto w-full max-w-2xl">
