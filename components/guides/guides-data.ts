@@ -246,20 +246,20 @@ export function getGuideFilters(): readonly { id: string; label: string }[] {
   }
   const usedTopics = new Set(GUIDE_ENTRIES.map((e) => e.topic));
 
-  const tools = GUIDE_TOOLS.filter(
-    (t): t is { id: Exclude<GuideToolId, "all">; label: string } =>
-      t.id !== "all" && usedTools.has(t.id),
-  );
-  const topics = GUIDE_TOPICS.filter(
-    (t): t is { id: Exclude<GuideTopicId, "all">; label: string } =>
-      t.id !== "all" && usedTopics.has(t.id),
-  );
+  const filters: { id: string; label: string }[] = [{ id: "all", label: "All" }];
 
-  return [
-    { id: "all", label: "All" },
-    ...tools.map((t) => ({ id: `tool:${t.id}`, label: t.label })),
-    ...topics.map((t) => ({ id: `topic:${t.id}`, label: t.label })),
-  ];
+  for (const t of GUIDE_TOOLS) {
+    if (t.id !== "all" && usedTools.has(t.id)) {
+      filters.push({ id: `tool:${t.id}`, label: t.label });
+    }
+  }
+  for (const t of GUIDE_TOPICS) {
+    if (t.id !== "all" && usedTopics.has(t.id)) {
+      filters.push({ id: `topic:${t.id}`, label: t.label });
+    }
+  }
+
+  return filters;
 }
 
 export function guideMatchesFilter(
