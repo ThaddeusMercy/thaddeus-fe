@@ -46,6 +46,135 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "creative-studio-claude-6-skills",
+    title: "Build a Creative Studio in Claude with 6 Skills",
+    excerpt:
+      "SuperMemory, Remotion, Deep Research, Content Research Writer, ElevenLabs, and Competitive Ads Extractor — verified links, install commands, and an end-to-end production workflow.",
+    category: "SKILLS",
+    topic: "skills",
+    tools: ["claude"],
+    publishedAt: "2026-05-29",
+    sections: [
+      {
+        heading: "Executive summary",
+        body: "This guide collects the best available public links and setup instructions for six Claude-related skills: SuperMemory, Remotion, Deep Research, Content Research Writer, ElevenLabs, and Competitive Ads Extractor.\n\nPrepared by Manus AI · May 29, 2026\n\nThe links below are the closest verified public sources for each skill or integration. Some are official product repositories; others are community Claude Code skills. Where there are multiple options, this guide identifies the recommended link and explains why.\n\nImportant: Most of these tools are designed for Claude Code or compatible agentic coding assistants with Agent Skills support. Claude web chat and Claude Desktop may not install skills the same way. For Claude Code, skills generally live in ~/.claude/skills/; some plugins use the plugin marketplace.",
+      },
+      {
+        heading: "Quick link table",
+        body: "SuperMemory — github.com/supermemoryai/claude-supermemory — Claude Code plugin — Persistent memory across sessions\n\nRemotion — remotion.dev/docs/ai/skills — Official Agent Skills — Programmatic video and motion graphics\n\nDeep Research — github.com/Weizhena/Deep-Research-skills — Community skill — Multi-step research workflows and reports\n\nContent Research Writer — github.com/ComposioHQ/awesome-claude-skills (content-research-writer) — Community skill — Research, citations, outlining, and drafting\n\nElevenLabs — github.com/elevenlabs/skills — Official Agent Skills — TTS, STT, music, agents, and audio\n\nCompetitive Ads Extractor — buildwithclaude.com/skill/competitive-ads-extractor — Community skill — Extract and analyze competitor ads",
+      },
+      {
+        heading: "Before you start",
+        body: "You need Claude Code (or another compatible coding agent with Agent Skills), Node.js, and npx — Remotion, ElevenLabs, and several skill directories use npx skills add ...\n\nPlan for API keys where required:\n• SuperMemory — Supermemory Pro + SUPERMEMORY_CC_API_KEY\n• ElevenLabs — ELEVENLABS_API_KEY\n• Remotion is open source; rendering at scale or stock assets may add cost\n• Competitor ad extraction must be used ethically",
+      },
+      {
+        heading: "Recommended folder structure",
+        body: "~/.claude/skills/ — Installed Agent Skills\n\n~/creative-studio/videos/ — Remotion projects\n\n~/creative-studio/research/ — Deep research outputs\n\n~/creative-studio/content/ — Articles, newsletters, scripts\n\n~/creative-studio/audio/ — ElevenLabs voiceovers and music\n\n~/creative-studio/ads/ — Competitor ad research and pattern libraries",
+      },
+      {
+        heading: "1. SuperMemory — persistent memory",
+        body: "Best link: github.com/supermemoryai/claude-supermemory\n\nGives Claude persistent memory across sessions and projects. Injects relevant memories at session start and can capture tool usage for future context.",
+        prompt:
+          "/plugin marketplace add supermemoryai/claude-supermemory\n/plugin install claude-supermemory",
+      },
+      {
+        heading: "SuperMemory — API key (Zsh)",
+        body: "Create a key in the SuperMemory console, then add to your shell profile:",
+        prompt:
+          'echo \'export SUPERMEMORY_CC_API_KEY="sm_..."\' >> ~/.zshrc\nsource ~/.zshrc',
+      },
+      {
+        heading: "SuperMemory — starter prompt",
+        prompt:
+          "Use SuperMemory to remember my creative studio preferences, including my brand voice, preferred video style, content themes, and repeated workflow steps.",
+      },
+      {
+        heading: "2. Remotion — video and motion graphics",
+        body: "Best link: remotion.dev/docs/ai/skills\n\nOfficial Agent Skills for programmatic video, explainers, and motion graphics. Works with Claude Code, Codex, Cursor, and OpenCode.",
+        prompt: "npx skills add remotion-dev/skills",
+      },
+      {
+        heading: "Remotion — new project",
+        body: "Use Blank template, enable TailwindCSS, and say yes to Skills during setup. Keep the preview server running in one terminal; run Claude Code in a second.",
+        prompt:
+          "npx create-video@latest\n\ncd my-video\nnpm install\nnpm run dev",
+      },
+      {
+        heading: "Remotion — starter prompt",
+        prompt:
+          "Use the Remotion best-practices skill to create a 30-second vertical explainer video at 1080x1920, 30fps, explaining the benefits of our product. Use kinetic typography, animated icons, and a clean SaaS-style visual system.",
+      },
+      {
+        heading: "3. Deep Research — market and strategic research",
+        body: "Recommended: github.com/Weizhena/Deep-Research-skills\n\nStructured two-phase research — outline first, then deep investigation. Use cases: market research, competitor analysis, industry trends, due diligence.\n\nAlternative: github.com/199-biotechnologies/claude-deep-research-skill for formal reports, credibility scoring, and Markdown/HTML/PDF output.",
+        prompt:
+          "git clone https://github.com/Weizhena/deep-research-skills.git\ncd deep-research-skills\nmkdir -p ~/.claude/skills ~/.claude/agents\ncp -r skills/research-en/* ~/.claude/skills/\ncp agents/web-search-agent.md ~/.claude/agents/\ncp -r agents/web-search-modules ~/.claude/agents/\npip install pyyaml",
+      },
+      {
+        heading: "Deep Research — commands",
+        body: "/research — Generate research outline\n/research-add-items — Add more items\n/research-add-fields — Add field definitions\n/research-deep — Run deeper research per item\n/research-report — Create Markdown report",
+      },
+      {
+        heading: "Deep Research — starter prompt",
+        prompt:
+          "Use the research skill to analyze the market for AI video creation tools in 2026. Build an outline first, include competitors, pricing, positioning, customer segments, major trends, and risks, then run deep research and produce a report.",
+      },
+      {
+        heading: "4. Content Research Writer",
+        body: "Best link: github.com/ComposioHQ/awesome-claude-skills (content-research-writer/SKILL.md)\n\nCollaborative outlining, research assistance, hook improvement, section feedback, voice preservation, and citation management.",
+        prompt:
+          "mkdir -p ~/.claude/skills/content-research-writer\ncurl -L https://github.com/ComposioHQ/awesome-claude-skills/raw/refs/heads/master/content-research-writer/SKILL.md \\\n  -o ~/.claude/skills/content-research-writer/SKILL.md",
+      },
+      {
+        heading: "Content Research Writer — starter prompt",
+        prompt:
+          "Use the Content Research Writer skill. Help me create a research-backed article outline about [topic] for [audience]. Identify claims that need citations, suggest hooks, and create a section-by-section writing plan.",
+      },
+      {
+        heading: "5. ElevenLabs — voice, podcasts, and audio",
+        body: "Best link: github.com/elevenlabs/skills\n\nOfficial Agent Skills for text-to-speech, speech-to-text, music, sound effects, voice agents, and more.",
+        prompt: "npx skills add elevenlabs/skills",
+      },
+      {
+        heading: "ElevenLabs — API key",
+        prompt:
+          'export ELEVENLABS_API_KEY="your-api-key"\n\necho \'export ELEVENLABS_API_KEY="your-api-key"\' >> ~/.zshrc\nsource ~/.zshrc',
+      },
+      {
+        heading: "ElevenLabs — starter prompt",
+        prompt:
+          "Use the ElevenLabs text-to-speech skill. Turn this document into a polished two-host podcast script, then generate separate voiceover files for Host A and Host B using professional, conversational pacing.",
+      },
+      {
+        heading: "6. Competitive Ads Extractor",
+        body: "Best link: buildwithclaude.com/skill/competitive-ads-extractor\n\nExtract and analyze competitor ads from libraries like Facebook and LinkedIn — messaging, hooks, CTAs, and creative patterns.\n\nUse for research and inspiration, not copying. Respect IP and platform rules.",
+        prompt:
+          "npx skills add davepoon/buildwithclaude -s competitive-ads-extractor",
+      },
+      {
+        heading: "Competitive Ads Extractor — starter prompt",
+        prompt:
+          "Use the Competitive Ads Extractor skill. Research active ads from [Competitor A], [Competitor B], and [Competitor C]. Capture hooks, CTAs, creative themes, pain points, target audiences, and repeated messaging patterns. Summarize insights I can ethically use for original campaign ideas.",
+      },
+      {
+        heading: "End-to-end creative studio workflow",
+        body: "1. SuperMemory — brand voice, positioning, visual style, workflow memory\n2. Deep Research — market, competitors, trends, cited report\n3. Competitive Ads Extractor — live hooks, CTAs, themes, pattern library\n4. Content Research Writer — scripts, articles, emails, landing copy with citations\n5. Remotion — motion-graphics videos from approved scripts\n6. ElevenLabs — voiceovers, podcasts, transcripts, music, sound effects",
+      },
+      {
+        heading: "Master setup checklist",
+        body: "□ Install Claude Code (or compatible agent)\n□ Install Node.js and confirm npx works\n□ Create ~/creative-studio/ project folders\n□ Install SuperMemory + set SUPERMEMORY_CC_API_KEY\n□ Install Remotion skills + create a test video project\n□ Install Deep Research skill + run a small test report\n□ Install Content Research Writer + draft a sample outline\n□ Install ElevenLabs skills + set ELEVENLABS_API_KEY\n□ Install Competitive Ads Extractor + test one competitor search\n□ Ask SuperMemory to remember your brand voice and workflow",
+      },
+      {
+        heading: "Troubleshooting",
+        body: "Skill not triggering? Confirm it is in ~/.claude/skills/, restart Claude Code from your project directory, and name the skill explicitly in your prompt.\n\nAPI key issues? Run echo $SUPERMEMORY_CC_API_KEY or echo $ELEVENLABS_API_KEY in the same terminal session.\n\nnpx skills add failed? Update Node.js and retry from a clean terminal.\n\nAd libraries change often — if automation fails, paste URLs, screenshots, or exported CSV and ask Claude to analyze manually.",
+      },
+      {
+        heading: "Main links",
+        body: "SuperMemory: https://github.com/supermemoryai/claude-supermemory\n\nRemotion: https://www.remotion.dev/docs/ai/skills\n\nDeep Research: https://github.com/Weizhena/Deep-Research-skills\n\nContent Research Writer: https://github.com/ComposioHQ/awesome-claude-skills/blob/master/content-research-writer/SKILL.md\n\nElevenLabs: https://github.com/elevenlabs/skills\n\nCompetitive Ads Extractor: https://buildwithclaude.com/skill/competitive-ads-extractor",
+      },
+    ],
+  },
+  {
     slug: "claude-council-pressure-test-decisions",
     title: "The Claude Council",
     excerpt:
