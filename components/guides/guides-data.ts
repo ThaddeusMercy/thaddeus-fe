@@ -46,6 +46,54 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "understanding-claude-modes",
+    title: "Understanding Claude Modes",
+    excerpt:
+      "Chat, Cowork & Code — three tools, three jobs. What each one is actually for, and how they become a full system when you run them together.",
+    category: "SETUP",
+    topic: "setup",
+    tools: ["claude"],
+    publishedAt: "2026-05-30",
+    sections: [
+      {
+        heading: "Chat, Cowork & Code — the full Claude system",
+        body: "A field guide by Attention Factory\n\nThree tools, three jobs. Most people use one and stop there. This guide shows what each one is actually for, and what happens when you run them together.\n\n• Claude Chat — Think — brainstorming, drafts, thinking out loud\n• Claude Cowork — Organize — work across your files and apps\n• Claude Code — Build — describe it in plain English, get a working tool",
+      },
+      {
+        heading: "The one mental model to keep",
+        body: "If you remember nothing else: Chat to think, Cowork to organize, Code to build.\n\nAll three run on the same Claude underneath — equally smart. What changes is how much they can touch and how much they can do on their own.\n\nChat lives in a conversation. Cowork steps out of the chat and onto your computer, working with your real files and apps. Code goes one level deeper and builds new things from scratch.",
+      },
+      {
+        heading: "01 — Claude Chat (Think)",
+        body: "Anything you would hand to a sharp junior person to figure out.\n\nThis is the Claude most people already know. You open the app or website, type, and get answers back. Nothing happens to your computer and nothing gets built. The output lives inside the chat.\n\nWhere it lives: Web, mobile, and desktop app.\nWhat it touches: Just the conversation — what you paste or upload.\nHow it works: Back and forth. You ask, it answers, you steer.\nBest for: Thinking, drafting, learning, and quick analysis.\n\nWhat it is great at:\n• Brainstorming angles, names, hooks, and directions\n• Drafting copy, emails, scripts, outlines, and first versions\n• Explaining hard things simply, or teaching at your pace\n• Pressure-testing decisions out loud\n• Reading a document or image and pulling out what matters\n\nReal-life examples:\n• Creator: \"Give me 10 hook ideas for a reel on AI tools, then write the strongest one as a 45 second script.\"\n• Founder: \"Here is my rough pitch. Poke holes in it and tell me what an investor would push back on.\"\n• Learner: \"Explain how APIs work like I am completely new, then quiz me on it.\"\n\nWorth knowing: Chat cannot reach into your computer, send things for you, or build a working tool. When a task needs Claude to actually do something with your files or apps, you have outgrown Chat.",
+      },
+      {
+        heading: "02 — Claude Cowork (Organize)",
+        body: "An administrative assistant, except this one actually finishes the task.\n\nInstead of replying inside a chat box, Cowork steps onto your desktop and works directly with your real files, folders, and apps. You describe an outcome, it plans the steps, and it goes and does them while you steer. Claude Code for the rest of your work — same get-it-done engine, pointed at everyday knowledge work, no terminal required.\n\nThe difference from Chat: someone telling you how vs handing you the finished result.\n\nWhere it lives: Claude desktop app on your machine. Reachable from mobile too.\nWhat it touches: Local files and folders, connected apps (Google Drive, Gmail), browser via Chrome extension.\nHow it works: You give a task, it plans and runs across multiple steps.\nBest for: High-effort, repeatable work that eats time but is not technically hard.\n\nWhat it is great at:\n• Cleaning up chaos — renaming, sorting, deduplicating downloads and drafts\n• Turning scattered source files into one structured draft, report, or brief\n• Pulling data out of screenshots or documents into a spreadsheet\n• Multi-step jobs across files, browser, and connected apps\n• Tedious tasks that usually get skipped\n\nReal-life examples:\n• Creator: \"Go through this folder of receipt screenshots and turn them into one expense spreadsheet.\"\n• Founder: \"Read these five call notes and the proposal draft, then assemble a clean one-pager for the client.\"\n• Operator: \"Sort my downloads folder, rename everything sensibly, and tell me what is safe to delete.\"\n\nWorth knowing: Cowork asks permission before touching an app, you can see what it is doing, and stop it at any step. Big decisions stay with you.",
+      },
+      {
+        heading: "03 — Claude Code (Build)",
+        body: "A programmer on call — brief it in plain English.\n\nClaude Code writes software: websites, apps, automations, browser extensions, scripts. You do not need to know how to code. Describe what you want the way you would explain it to a new employee — Code plans, writes files, runs them, and fixes itself when something breaks.\n\nIf you can describe it clearly, Code can usually build it.\n\nWhere it lives: Command line for developers, plus desktop and mobile apps.\nWhat it touches: Your project files — reads, writes, runs code, connects to outside tools.\nHow it works: Describe a goal, it plans, builds across files, tests, and iterates.\nBest for: Building anything custom that does not exist yet, or fixing what does.\n\nWhat it is great at:\n• Building a real website, landing page, or small app from a description\n• Automations that do a repetitive job on a schedule\n• Custom tools you would otherwise pay a developer to build\n• Browser extensions and connecting services together\n• Debugging — paste an error and let it trace and fix the cause\n\nReal-life examples:\n• Creator: \"Build me a simple waitlist page where people enter their email, with clean branding.\"\n• Founder: \"I wanted an invoice tracker. Describe it once and Code builds a working version.\"\n• Operator: \"Build a script that renames and resizes every image in this folder.\"\n\nWorth knowing: Code is the most powerful of the three. Start small with one clear, contained task.",
+      },
+      {
+        heading: "04 — Which one do I reach for?",
+        body: "Ask yourself: do I need Claude to think, to do, or to build?\n\n• Ideas, a draft, or help thinking it through → Chat\n• Done across my files, emails, or browser → Cowork\n• A tool, site, app, or automation that does not exist yet → Code\n• Learning something or want it explained → Chat\n• Messy folder or scattered docs to pull together → Cowork\n• Something is broken and needs fixing → Code",
+      },
+      {
+        heading: "05 — Using all three together",
+        body: "Each tool is powerful on its own. They become a different beast when you chain them.\n\nExample: launching a paid workshop\n\n1. Chat (Think) — Shape the offer. What is it about, who is it for, what is the promise, what should it cost. Brainstorm title, draft sales copy, outline curriculum.\n\n2. Cowork (Organize) — Assemble everything. Build slide deck and participant pack, draft welcome emails, organize into a clean folder.\n\n3. Code (Build) — Ship the tools. Branded signup page that collects emails, automation that sends the welcome sequence.\n\nChat to think. Cowork to organize. Code to build. That is the full system.\n\nOne person running a launch that used to take a team — not because any single tool is magic, but because you move work between all three.",
+      },
+      {
+        heading: "06 — Your first move with each",
+        body: "Do not try to master all three at once. Pick the one that matches what is on your plate today.\n\nChat — start in five minutes:\n1. Open the Claude app or website.\n2. Bring a task you are stuck on right now.\n3. Ask for three different approaches, then build out the one you like.\n\nCowork — start with one messy thing:\n1. Open the desktop app and point Cowork at a single cluttered folder.\n2. Ask it to sort and rename everything sensibly.\n3. Watch how it plans, approve the steps, and let it finish.\n\nCode — build one tiny thing:\n1. Pick the smallest useful tool you wish you had.\n2. Describe it in plain English, like you would to a new hire.\n3. Let Code build it, run it, and fix anything that breaks.",
+      },
+      {
+        heading: "Links",
+        body: "https://mercythaddeus.xyz\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "creative-studio-claude-6-skills",
     title: "Build a Creative Studio in Claude with 6 Skills",
     excerpt:
