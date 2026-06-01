@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
+import AiJobMapGuide from "@/components/guides/ai-job-map/AiJobMapGuide";
+import { AI_JOB_MAP_SLUG } from "@/components/guides/ai-job-map/data";
 import {
   GUIDE_ENTRIES,
   getGuideBySlug,
@@ -30,6 +32,10 @@ export default async function GuidePostPage({ params }: PageProps) {
   const { slug } = await params;
   const entry = getGuideBySlug(slug);
   if (!entry) notFound();
+
+  if (entry.layout === "document" || slug === AI_JOB_MAP_SLUG) {
+    return <AiJobMapGuide />;
+  }
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-12 md:py-16">

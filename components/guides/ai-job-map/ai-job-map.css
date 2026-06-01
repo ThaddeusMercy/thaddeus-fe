@@ -1,0 +1,169 @@
+.ai-job-map {
+  --ajm-coral: #f26b3a;
+  --ajm-ink: #15130f;
+  --ajm-soft: #4a4438;
+  --ajm-paper: #faf6ee;
+  color: var(--ajm-ink);
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.ai-job-map .ajm-blk {
+  font-family: var(--font-archivo-black), "Archivo Black", sans-serif;
+}
+
+.ai-job-map-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 0 16px 48px;
+}
+
+.ai-job-map .ajm-page {
+  position: relative;
+  width: 100%;
+  max-width: 816px;
+  min-height: 1056px;
+  overflow: hidden;
+}
+
+.ai-job-map .ajm-paper {
+  background: var(--ajm-paper);
+}
+
+.ai-job-map .ajm-kraft {
+  background-color: #e7dac1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.16'/%3E%3C/svg%3E");
+}
+
+.ai-job-map .ajm-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 32px;
+}
+
+@media (min-width: 640px) {
+  .ai-job-map .ajm-wrap {
+    padding: 70px 72px;
+  }
+}
+
+.ai-job-map .ajm-toplbl {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ajm-soft);
+}
+
+.ai-job-map .ajm-hl {
+  display: inline-block;
+  background: var(--ajm-coral);
+  color: var(--ajm-ink);
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.ai-job-map .ajm-foot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 34px;
+  text-align: center;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ajm-soft);
+}
+
+.ai-job-map .ajm-squiggle {
+  margin: 8px 0 0 2px;
+  line-height: 0;
+}
+
+.ai-job-map .ajm-step {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+  align-items: baseline;
+}
+
+.ai-job-map .ajm-step-num {
+  color: var(--ajm-coral);
+  font-size: 22px;
+  min-width: 30px;
+}
+
+.ai-job-map .ajm-step-text {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ai-job-map .ajm-week {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 12px;
+  align-items: baseline;
+}
+
+.ai-job-map .ajm-week-label {
+  color: var(--ajm-coral);
+  font-size: 15px;
+  min-width: 34px;
+  letter-spacing: 0;
+}
+
+.ai-job-map .ajm-week-text {
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+.ai-job-map .ajm-field {
+  margin-bottom: 11px;
+}
+
+.ai-job-map .ajm-field-label {
+  font-weight: 800;
+  font-size: 14.5px;
+}
+
+.ai-job-map .ajm-field-value {
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: var(--ajm-soft);
+}
+
+.ai-job-map .ajm-spiral {
+  position: absolute;
+  right: -18px;
+  top: 150px;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .ai-job-map .ajm-spiral {
+    display: block;
+  }
+}
+
+.ai-job-map .ajm-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ajm-soft);
+  transition: color 0.15s;
+}
+
+.ai-job-map .ajm-back:hover {
+  color: var(--ajm-ink);
+}

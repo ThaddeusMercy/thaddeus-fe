@@ -10,7 +10,6 @@ import HomeComponent from "../pages-components/Home";
 import Talks from "../pages-components/Talks";
 import Blog from "../pages-components/Blog";
 import ProjectsPage from "../pages-components/ProjectsPage";
-import WebinarRegistrationModal from "../WebinarRegistrationModal";
 
 import ShellBottomNav, {
   type ShellNavTab,
@@ -83,8 +82,6 @@ const GeneralLayout = () => {
         </p>
         <p>© Mercy Thaddeus</p>
       </footer> */}
-
-      <WebinarRegistrationModal />
     </div>
   );
 };

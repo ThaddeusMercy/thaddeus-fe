@@ -42,9 +42,28 @@ export type GuideEntry = {
   tools: Exclude<GuideToolId, "all">[];
   publishedAt: string;
   sections: GuideSection[];
+  /** Full-bleed document layout instead of standard post view */
+  layout?: "document";
 };
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
+  {
+    slug: "the-ai-job-map",
+    title: "The AI Job Map",
+    excerpt:
+      "Your 30-day roadmap and portfolio templates for the 8 jobs AI is creating right now. Pick one role, build proof, get paid.",
+    category: "CAREER",
+    topic: "career",
+    tools: ["multi-tool"],
+    publishedAt: "2026-05-26",
+    layout: "document",
+    sections: [
+      {
+        heading: "The AI Job Map",
+        body: "Your 30-day roadmap and portfolio templates for the 8 jobs AI is creating right now.\n\nRoles: Claude Skills & Custom Project Builder, AI Operations Manager, AI Content Strategist, AI Customer Success, No-Code AI Builder, AI Agent & Automation Engineer, AI Solutions Architect, AI Workflow Designer.\n\nIncludes portfolio templates: Proof Case Study, Build-in-Public Post, Cold Pitch, 90-Day Doc.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus",
+      },
+    ],
+  },
   {
     slug: "understanding-claude-modes",
     title: "Understanding Claude Modes",

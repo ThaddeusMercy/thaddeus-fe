@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { GeistSans } from "geist/font/sans";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import WebinarRegistrationModal from "@/components/WebinarRegistrationModal";
 import "./globals.css";
 
 const sfpro = localFont({
@@ -210,6 +211,7 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         {children}
+        <WebinarRegistrationModal />
       </body>
     </html>
   );
