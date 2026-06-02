@@ -189,7 +189,7 @@ const BioPage = () => {
             {/* Tags */}
             <div className="flex flex-wrap gap-3">
               <span className="bg-white py-2 px-4 rounded-full text-sm font-medium border border-border">
-                Software Engineer
+                Co-founder & CPO
               </span>
               <span className="bg-white py-2 px-4 rounded-full text-sm font-medium border border-border">
                 AI Educator
@@ -204,7 +204,7 @@ const BioPage = () => {
                 <TokenSOL variant="branded" size="20" />
               </span>
               <span className="bg-white py-2 px-4 rounded-full text-sm font-medium border border-border">
-                CPO, Attention Factory
+                Attention Factory
               </span>
             </div>
 

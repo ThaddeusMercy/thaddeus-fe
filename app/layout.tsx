@@ -3,6 +3,14 @@ import localFont from "next/font/local";
 import { GeistSans } from "geist/font/sans";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import WebinarRegistrationModal from "@/components/WebinarRegistrationModal";
+import {
+  OG_IMAGE_PATH,
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_OG_DESCRIPTION,
+  SITE_TITLE,
+  SITE_URL,
+} from "@/lib/site-metadata";
 import "./globals.css";
 
 const sfpro = localFont({
@@ -47,32 +55,12 @@ const sfpro = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mercy Thaddeus — Co-founder & CPO, Attention Factory · AI educator",
-    template: "%s | Mercy Thaddeus"
+    default: SITE_TITLE,
+    template: "%s | Mercy Thaddeus",
   },
-  description:
-    "Mercy Thaddeus (@global_techgirl) — software engineer, AI educator, and Chief Product Officer at Attention Factory. Corporate AI training, consulting, custom builds, and technical content.",
-  keywords: [
-    "Mercy Thaddeus",
-    "Software Engineer",
-    "AI Educator",
-    "Applied AI",
-    "Developer Education",
-    "Web3 Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Blockchain Developer",
-    "Attention Factory",
-    "Chief Product Officer",
-    "global_techgirl",
-    "Ethereum Developer",
-    "Solana Developer",
-    "TypeScript Developer",
-    "Open Source Contributor",
-    "Tech Mentor",
-    "Women in Tech"
-  ],
-  authors: [{ name: "Mercy Thaddeus", url: "https://mercythaddeus.xyz" }],
+  description: SITE_DESCRIPTION,
+  keywords: [...SITE_KEYWORDS],
+  authors: [{ name: "Mercy Thaddeus", url: SITE_URL }],
   creator: "Mercy Thaddeus",
   publisher: "Mercy Thaddeus",
   formatDetection: {
@@ -80,21 +68,20 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://mercythaddeus.xyz"),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mercythaddeus.xyz",
-    title: "Mercy Thaddeus — Co-founder & CPO, Attention Factory · AI educator",
-    description:
-      "Software engineer and AI educator. Attention Factory: training, consulting, and AI product builds. Workshops, talks, and applied AI content.",
-    siteName: "Mercy Thaddeus Portfolio",
+    url: SITE_URL,
+    title: SITE_TITLE,
+    description: SITE_OG_DESCRIPTION,
+    siteName: "Mercy Thaddeus",
     images: [
       {
-        url: "/og-image.png",
+        url: OG_IMAGE_PATH,
         width: 1200,
         height: 630,
-        alt: "Mercy Thaddeus — Co-founder & CPO, Attention Factory · AI educator",
+        alt: SITE_TITLE,
       },
     ],
   },
@@ -102,10 +89,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@global_techgirl",
     creator: "@global_techgirl",
-    title: "Mercy Thaddeus — Co-founder & CPO, Attention Factory · AI educator",
-    description:
-      "Software engineer and AI educator. Training, consulting, custom AI builds, and technical content.",
-    images: ["/og-image.png"],
+    title: SITE_TITLE,
+    description: SITE_OG_DESCRIPTION,
+    images: [OG_IMAGE_PATH],
   },
   robots: {
     index: true,
@@ -137,71 +123,62 @@ export default function RootLayout({
               "name": "Mercy Thaddeus",
               "alternateName": "global_techgirl",
               "description":
-                "Software engineer, AI educator, and Chief Product Officer at Attention Factory — corporate AI training, consulting, custom builds, and technical content.",
+                "Co-founder and Chief Product Officer at Attention Factory. AI educator — corporate training, consulting, custom AI builds, and technical content.",
               "jobTitle": [
                 "Chief Product Officer",
-                "Software Engineer",
-                "AI Educator"
+                "Co-founder",
+                "AI Educator",
               ],
               "worksFor": {
                 "@type": "Organization",
-                "name": "Attention Factory"
+                "name": "Attention Factory",
+                "url": "https://attentionfactory.io",
               },
-              "url": "https://mercythaddeus.xyz",
+              "url": SITE_URL,
               "sameAs": [
                 "https://github.com/mercythaddeus",
                 "https://linkedin.com/in/mercythaddeus",
-                "https://x.com/global_techgirl"
+                "https://x.com/global_techgirl",
+                "https://www.instagram.com/mercythaddeus_",
               ],
               "knowsAbout": [
-                "React",
-                "Next.js",
-                "TypeScript",
                 "Applied AI",
                 "AI Education",
-                "Blockchain Development",
-                "Web3",
-                "Ethereum",
-                "Solana",
+                "Corporate AI Training",
+                "AI Product Strategy",
                 "Developer Education",
-                "Software Engineering"
+                "Technical Content",
               ],
-              "alumniOf": {
-                "@type": "EducationalOrganization",
-                "name": "Software Engineering"
-              },
               "hasOccupation": [
                 {
                   "@type": "Occupation",
-                  "name": "Software Engineer",
+                  "name": "Chief Product Officer",
                   "occupationLocation": {
                     "@type": "Place",
-                    "name": "Remote"
+                    "name": "Remote",
                   },
                   "skills": [
-                    "React",
-                    "Next.js",
-                    "TypeScript",
+                    "AI product strategy",
                     "Applied AI",
-                    "Blockchain Development",
-                    "Web3"
-                  ]
+                    "Team training",
+                    "Product leadership",
+                  ],
                 },
                 {
                   "@type": "Occupation",
                   "name": "AI Educator",
                   "occupationLocation": {
                     "@type": "Place",
-                    "name": "Remote"
+                    "name": "Remote",
                   },
                   "skills": [
                     "Technical workshops",
                     "Applied AI literacy",
                     "Developer education",
-                    "Technical writing"
-                  ]
-                }
-              ]
+                    "Technical writing",
+                  ],
+                },
+              ],
             })
           }}
         />
