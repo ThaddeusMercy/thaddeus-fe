@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 export const SITE_URL = "https://mercythaddeus.xyz";
 
 export const SITE_TITLE =
@@ -25,4 +27,43 @@ export const SITE_KEYWORDS = [
 ] as const;
 
 /** Bust Facebook / LinkedIn OG image cache after metadata changes */
-export const OG_IMAGE_PATH = "/opengraph-image?v=20260602b";
+export const OG_IMAGE_PATH = "/opengraph-image?v=20260602c";
+
+export function buildShareMetadata({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}): Metadata {
+  const url = `${SITE_URL}${path}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+      siteName: "Mercy Thaddeus",
+      images: [
+        {
+          url: OG_IMAGE_PATH,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE_PATH],
+    },
+  };
+}

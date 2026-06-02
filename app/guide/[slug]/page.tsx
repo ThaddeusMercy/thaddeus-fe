@@ -10,6 +10,7 @@ import {
   GUIDE_ENTRIES,
   getGuideBySlug,
 } from "@/components/guides/guides-data";
+import { buildShareMetadata } from "@/lib/site-metadata";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -24,10 +25,11 @@ export async function generateMetadata({
   const entry = getGuideBySlug(slug);
   if (!entry) return { title: "Guide not found" };
 
-  return {
+  return buildShareMetadata({
     title: entry.title,
     description: entry.excerpt,
-  };
+    path: `/guide/${slug}`,
+  });
 }
 
 export default async function GuidePostPage({ params }: PageProps) {
