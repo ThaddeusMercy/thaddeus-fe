@@ -25,4 +25,4 @@ export const SITE_KEYWORDS = [
 ] as const;
 
 /** Bust Facebook / LinkedIn OG image cache after metadata changes */
-export const OG_IMAGE_PATH = "/opengraph-image?v=20260602";
+export const OG_IMAGE_PATH = "/opengraph-image?v=20260602b";
