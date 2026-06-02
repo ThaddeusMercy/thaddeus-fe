@@ -7,7 +7,6 @@ import { ArrowLeft } from "@phosphor-icons/react";
 
 import {
   CLAUDE_CONFIG_JSON,
-  CONFIG_PATHS,
   FILE_TYPES,
   SIMPLE_PROMPT,
   SYSTEM_PROMPT,
