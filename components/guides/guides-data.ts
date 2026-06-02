@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "markitdown-mcp-claude-setup",
+    title: "Stop Wasting 70% of Your Tokens in Claude",
+    excerpt:
+      "A 5-minute setup that turns every PDF, Word doc, slide deck, spreadsheet, and YouTube link into clean Markdown the moment you upload it. Lower token usage, faster responses, sharper answers.",
+    category: "SETUP",
+    topic: "setup",
+    tools: ["claude", "multi-tool"],
+    publishedAt: "2026-06-01",
+    layout: "document",
+    sections: [
+      {
+        heading: "MarkItDown MCP setup",
+        body: "Stop wasting 70% of your tokens in Claude. Install markitdown-mcp, connect to Claude Desktop, convert PDFs Word docs slide decks spreadsheets and YouTube links to Markdown.\n\nhttps://github.com/microsoft/markitdown\n\nhttps://claude.ai/download\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "the-ai-job-map",
     title: "The AI Job Map",
     excerpt:

@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import GuidePostView from "@/components/guides/GuidePostView";
 import AiJobMapGuide from "@/components/guides/ai-job-map/AiJobMapGuide";
 import { AI_JOB_MAP_SLUG } from "@/components/guides/ai-job-map/data";
+import MarkItDownSetupGuide from "@/components/guides/markitdown-setup/MarkItDownSetupGuide";
+import { MARKITDOWN_SETUP_SLUG } from "@/components/guides/markitdown-setup/data";
 import {
   GUIDE_ENTRIES,
   getGuideBySlug,
@@ -33,8 +35,12 @@ export default async function GuidePostPage({ params }: PageProps) {
   const entry = getGuideBySlug(slug);
   if (!entry) notFound();
 
-  if (entry.layout === "document" || slug === AI_JOB_MAP_SLUG) {
+  if (slug === AI_JOB_MAP_SLUG) {
     return <AiJobMapGuide />;
+  }
+
+  if (slug === MARKITDOWN_SETUP_SLUG) {
+    return <MarkItDownSetupGuide />;
   }
 
   return (
