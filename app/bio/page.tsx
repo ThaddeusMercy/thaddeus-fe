@@ -189,7 +189,7 @@ const BioPage = () => {
             {/* Tags */}
             <div className="flex flex-wrap gap-3">
               <span className="bg-white py-2 px-4 rounded-full text-sm font-medium border border-border">
-                Co-founder & CPO
+                Co-founder
               </span>
               <span className="bg-white py-2 px-4 rounded-full text-sm font-medium border border-border">
                 AI Educator
@@ -222,7 +222,7 @@ const BioPage = () => {
                 >
                   Attention Factory
                 </Link>
-                , software engineer and AI educator working at the intersection of AI, blockchain,
+                , AI educator working at the intersection of AI, blockchain,
                 and modern product thinking.
               </p>
               <p>

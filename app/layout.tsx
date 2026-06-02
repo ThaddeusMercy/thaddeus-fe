@@ -123,12 +123,8 @@ export default function RootLayout({
               "name": "Mercy Thaddeus",
               "alternateName": "global_techgirl",
               "description":
-                "Co-founder and Chief Product Officer at Attention Factory. AI educator — corporate training, consulting, custom AI builds, and technical content.",
-              "jobTitle": [
-                "Chief Product Officer",
-                "Co-founder",
-                "AI Educator",
-              ],
+                "Co-founder of Attention Factory. AI educator — corporate training, consulting, custom AI builds, and technical content.",
+              "jobTitle": ["Co-founder", "AI Educator"],
               "worksFor": {
                 "@type": "Organization",
                 "name": "Attention Factory",
@@ -152,15 +148,15 @@ export default function RootLayout({
               "hasOccupation": [
                 {
                   "@type": "Occupation",
-                  "name": "Chief Product Officer",
+                  "name": "Co-founder",
                   "occupationLocation": {
                     "@type": "Place",
                     "name": "Remote",
                   },
                   "skills": [
-                    "AI product strategy",
                     "Applied AI",
                     "Team training",
+                    "AI product strategy",
                     "Product leadership",
                   ],
                 },

@@ -155,9 +155,9 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
     href: "https://cursor.com",
     tagline: "Professional software development",
     whatFor:
-      "Cursor is an AI-powered code editor built for software engineers. I use it as my daily development environment for building production apps, writing clean code, refactoring, and shipping features fast. It understands your codebase and helps you move through complex projects with speed.",
+      "Cursor is an AI-powered code editor built for people who ship product in code. I use it as my daily development environment for building production apps, writing clean code, refactoring, and shipping features fast. It understands your codebase and helps you move through complex projects with speed.",
     whyMatters:
-      "As a software engineer, Cursor has fundamentally changed how I work. It's not a toy for generating quick demos. It's a serious development tool that understands context across your entire codebase, suggests intelligent completions, and helps you write better, more maintainable code.",
+      "Cursor has fundamentally changed how I build. It's not a toy for generating quick demos. It's a serious development tool that understands context across your entire codebase, suggests intelligent completions, and helps you write better, more maintainable code.",
     howTo: [
       "Use it as your primary IDE and let it index your full codebase for context-aware suggestions",
       "Use Cmd+K to write, refactor, or explain code inline",
@@ -221,7 +221,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
     whatFor:
       "Lovable lets me describe an app or website and get a working version back. I use it to spin up landing pages, prototypes, and small products quickly without setting up a full project from scratch.",
     whyMatters:
-      "Not every idea deserves a week of setup. Lovable gets something real and clickable in front of me fast, so I can test whether an idea is worth building properly before I commit engineering time.",
+      "Not every idea deserves a week of setup. Lovable gets something real and clickable in front of me fast, so I can test whether an idea is worth building properly before I commit serious build time.",
     howTo: [
       "Describe the site or app you want in plain language",
       "Keep chatting with it until the layout and flow feel right",

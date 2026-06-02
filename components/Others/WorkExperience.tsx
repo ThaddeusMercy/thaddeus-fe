@@ -5,13 +5,13 @@ const WorkExperience = () => {
   const experiences: Experience[] = [
     {
       company_name: "CastleHub",
-      position: "Software Engineer",
+      position: "Product Development",
       duration: "June 2024 - December 2024",
       link: "castlehub.io",
     },
     {
       company_name: "ToolAI",
-      position: "Software Engineer",
+      position: "Product Development",
       duration: "March 2024 - September 2024",
       link: "toolai.ai",
     },
@@ -21,8 +21,7 @@ const WorkExperience = () => {
       <div className="md:w-1/2">
         <p className={sectionHeadingClass}>Work</p>
         <p className="mt-2 max-w-sm text-sm leading-relaxed text-[#676767]">
-          Full-stack product engineering — applied AI, web, and systems in
-          production.
+          Applied AI, web, and systems in production.
         </p>
       </div>
 

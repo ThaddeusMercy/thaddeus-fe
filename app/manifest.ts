@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Mercy Thaddeus — AI educator · Attention Factory',
     short_name: 'Mercy Thaddeus',
     description:
-      'Co-founder & CPO at Attention Factory. AI educator — corporate AI training, consulting, custom builds, and technical content.',
+      'Co-founder of Attention Factory. AI educator — corporate AI training, consulting, custom builds, and technical content.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

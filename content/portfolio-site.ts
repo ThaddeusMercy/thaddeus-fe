@@ -7,9 +7,9 @@
 export const ACCENT = "#1a1a1a";
 
 export const hero = {
-  eyebrow: "Full-stack engineer · AI educator · CPO",
+  eyebrow: "Co-founder · AI educator",
   headline: "I build. Train. Consult.",
-  lead: "Mercy Thaddeus — I build software end to end: APIs, web, data, and shipping in production. Co-founder & CPO at Attention Factory, where I also train teams on applied AI that survives contact with reality.",
+  lead: "Mercy Thaddeus — Co-founder of Attention Factory. I train teams on applied AI that survives contact with reality, and help operators ship workflows that stick.",
   bullets: [
     "Attention Factory: corporate AI training, consulting, and custom builds",
     "Content and workshops for operators who want workflows that stick — not hype",
@@ -64,7 +64,7 @@ export type ProjectCard = {
 export const selectedWork: ProjectCard[] = [
   {
     title: "Attention Factory",
-    role: "Co-founder · CPO",
+    role: "Co-founder",
     tagline: "AI education, training, and consulting for teams that need outcomes—not buzzwords.",
     highlights: [
       "Corporate programs, content systems, agents, voice, custom builds",
