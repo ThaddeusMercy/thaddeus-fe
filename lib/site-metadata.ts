@@ -27,7 +27,7 @@ export const SITE_KEYWORDS = [
 ] as const;
 
 /** Bust Facebook / LinkedIn OG image cache after metadata changes */
-export const OG_IMAGE_PATH = "/og-image.png?v=20260603";
+export const OG_IMAGE_PATH = "/og-image.png?v=20260603b";
 
 export function buildShareMetadata({
   title,
