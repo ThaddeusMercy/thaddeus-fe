@@ -1,0 +1,534 @@
+.anti-lying-prompts {
+  --alp-bg: #ffffff;
+  --alp-ink: #0a0a0a;
+  --alp-ink-soft: #52525b;
+  --alp-line: #e4e4e7;
+  --alp-green: #16a34a;
+  --alp-green-tint: #f0fdf4;
+  --alp-red: #dc2626;
+  --alp-red-tint: #fef2f2;
+  --alp-black: #0a0a0a;
+  --alp-radius: 16px;
+  color: var(--alp-ink);
+  background: var(--alp-bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(var(--alp-line) 1px, transparent 1px);
+  background-size: 26px 26px;
+  background-position: -13px -13px;
+  font-family: "Geist", system-ui, sans-serif;
+}
+
+.anti-lying-prompts .alp-mono {
+  font-family: var(--font-jetbrains), "Geist Mono", ui-monospace, monospace;
+}
+
+.anti-lying-prompts .alp-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.anti-lying-prompts .alp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--alp-ink-soft);
+  text-decoration: none;
+}
+
+.anti-lying-prompts .alp-back:hover {
+  color: var(--alp-ink);
+  text-decoration: underline;
+}
+
+.anti-lying-prompts header {
+  padding: 88px 0 56px;
+  position: relative;
+}
+
+.anti-lying-prompts .alp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--alp-ink-soft);
+  border: 1px solid var(--alp-line);
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: #fff;
+}
+
+.anti-lying-prompts .alp-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--alp-red);
+  display: inline-block;
+}
+
+.anti-lying-prompts h1 {
+  font-size: clamp(38px, 7vw, 68px);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: 26px 0 20px;
+}
+
+.anti-lying-prompts h1 .alp-hl {
+  background: linear-gradient(transparent 62%, #dcfce7 62%);
+  padding: 0 4px;
+}
+
+.anti-lying-prompts .alp-lede {
+  font-size: clamp(17px, 2.4vw, 20px);
+  color: var(--alp-ink-soft);
+  max-width: 620px;
+}
+
+.anti-lying-prompts .alp-lede strong {
+  color: var(--alp-ink);
+  font-weight: 600;
+}
+
+.anti-lying-prompts .alp-meter {
+  display: flex;
+  gap: 10px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.anti-lying-prompts .alp-chip {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--alp-line);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.anti-lying-prompts .alp-x {
+  color: var(--alp-red);
+  font-weight: 800;
+}
+
+.anti-lying-prompts .alp-seclabel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 64px 0 28px;
+}
+
+.anti-lying-prompts .alp-seclabel .alp-n {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--alp-ink-soft);
+}
+
+.anti-lying-prompts .alp-seclabel h2 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.anti-lying-prompts .alp-seclabel .alp-rule {
+  height: 1px;
+  background: var(--alp-line);
+  flex: 1;
+}
+
+.anti-lying-prompts .alp-card {
+  border: 1px solid var(--alp-line);
+  border-radius: var(--alp-radius);
+  background: #fff;
+  padding: 30px 30px 26px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.anti-lying-prompts .alp-card:hover {
+  border-color: #d4d4d8;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -28px rgba(0, 0, 0, 0.35);
+}
+
+.anti-lying-prompts .alp-card .alp-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--alp-ink-soft);
+  background: #fafafa;
+  border-left: 1px solid var(--alp-line);
+  border-bottom: 1px solid var(--alp-line);
+  border-bottom-left-radius: 12px;
+  padding: 8px 14px;
+}
+
+.anti-lying-prompts .alp-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.anti-lying-prompts .alp-problem {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--alp-red);
+  background: var(--alp-red-tint);
+  padding: 5px 11px;
+  border-radius: 8px;
+  margin: 8px 0 16px;
+}
+
+.anti-lying-prompts .alp-does {
+  font-size: 15px;
+  color: var(--alp-ink-soft);
+  margin-bottom: 18px;
+  max-width: 600px;
+}
+
+.anti-lying-prompts .alp-does b {
+  color: var(--alp-ink);
+  font-weight: 600;
+}
+
+.anti-lying-prompts .alp-promptbox {
+  position: relative;
+  background: #0a0a0a;
+  color: #fafafa;
+  border-radius: 12px;
+  padding: 20px 54px 20px 20px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.anti-lying-prompts .alp-quote {
+  color: var(--alp-green);
+  font-weight: 600;
+}
+
+.anti-lying-prompts .alp-copy {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+  background: #161616;
+  color: #a1a1aa;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+}
+
+.anti-lying-prompts .alp-copy:hover {
+  background: #222;
+  color: #fff;
+  border-color: #3a3a3a;
+}
+
+.anti-lying-prompts .alp-copy.alp-done {
+  background: var(--alp-green);
+  border-color: var(--alp-green);
+  color: #fff;
+}
+
+.anti-lying-prompts .alp-copy svg {
+  width: 16px;
+  height: 16px;
+}
+
+.anti-lying-prompts .alp-setup-intro {
+  font-size: 15px;
+  color: var(--alp-ink-soft);
+  max-width: 640px;
+  margin-bottom: 8px;
+}
+
+.anti-lying-prompts .alp-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 26px 0 24px;
+}
+
+.anti-lying-prompts .alp-tab {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 11px 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 1px solid var(--alp-line);
+  background: #fff;
+  color: var(--alp-ink-soft);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.anti-lying-prompts .alp-tab .alp-b {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d4d4d8;
+}
+
+.anti-lying-prompts .alp-tab.alp-active {
+  background: var(--alp-black);
+  color: #fff;
+  border-color: var(--alp-black);
+}
+
+.anti-lying-prompts .alp-tab.alp-active .alp-b {
+  background: var(--alp-green);
+}
+
+.anti-lying-prompts .alp-panel {
+  display: none;
+  animation: alp-fade 0.35s ease;
+}
+
+.anti-lying-prompts .alp-panel.alp-active {
+  display: block;
+}
+
+@keyframes alp-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.anti-lying-prompts .alp-route {
+  border: 1px solid var(--alp-line);
+  border-radius: var(--alp-radius);
+  background: #fff;
+  padding: 26px 28px;
+  margin-bottom: 18px;
+}
+
+.anti-lying-prompts .alp-route-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.anti-lying-prompts .alp-pill {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 100px;
+}
+
+.anti-lying-prompts .alp-pill.alp-all {
+  background: var(--alp-green-tint);
+  color: var(--alp-green);
+}
+
+.anti-lying-prompts .alp-pill.alp-proj {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.anti-lying-prompts .alp-route-head h4 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.anti-lying-prompts ol.alp-steps {
+  list-style: none;
+  counter-reset: alp-s;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.anti-lying-prompts ol.alp-steps li {
+  counter-increment: alp-s;
+  display: flex;
+  gap: 14px;
+  font-size: 15px;
+  color: #3f3f46;
+}
+
+.anti-lying-prompts ol.alp-steps li::before {
+  content: counter(alp-s);
+  flex: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 7px;
+  background: var(--alp-black);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anti-lying-prompts ol.alp-steps li b {
+  color: var(--alp-ink);
+  font-weight: 600;
+}
+
+.anti-lying-prompts .alp-path {
+  font-size: 13px;
+  background: #f4f4f5;
+  padding: 2px 7px;
+  border-radius: 6px;
+  color: #18181b;
+  white-space: nowrap;
+}
+
+.anti-lying-prompts .alp-note {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #fafafa;
+  border: 1px dashed var(--alp-line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 14px;
+  color: var(--alp-ink-soft);
+  margin-top: 8px;
+}
+
+.anti-lying-prompts .alp-note svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: var(--alp-green);
+  margin-top: 2px;
+}
+
+.anti-lying-prompts .alp-note b {
+  color: var(--alp-ink);
+  font-weight: 600;
+}
+
+.anti-lying-prompts .alp-tldr {
+  background: var(--alp-black);
+  color: #fff;
+  border-radius: 20px;
+  padding: 34px 32px;
+  margin: 30px 0 10px;
+}
+
+.anti-lying-prompts .alp-tldr h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.anti-lying-prompts .alp-tldr ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.anti-lying-prompts .alp-tldr li {
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+  color: #d4d4d8;
+  align-items: flex-start;
+}
+
+.anti-lying-prompts .alp-tldr li svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: var(--alp-green);
+  margin-top: 3px;
+}
+
+.anti-lying-prompts .alp-tldr li b {
+  color: #fff;
+  font-weight: 600;
+}
+
+.anti-lying-prompts footer {
+  padding: 48px 0 70px;
+  text-align: center;
+  border-top: 1px solid var(--alp-line);
+  margin-top: 64px;
+}
+
+.anti-lying-prompts footer .alp-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.anti-lying-prompts footer .alp-sub {
+  font-size: 13px;
+  color: var(--alp-ink-soft);
+  margin-top: 6px;
+}
+
+.anti-lying-prompts footer a {
+  color: var(--alp-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--alp-line);
+}
+
+@media (max-width: 560px) {
+  .anti-lying-prompts header {
+    padding: 60px 0 40px;
+  }
+
+  .anti-lying-prompts .alp-card {
+    padding: 24px 22px;
+  }
+
+  .anti-lying-prompts .alp-promptbox {
+    padding: 18px 18px 50px;
+  }
+
+  .anti-lying-prompts .alp-copy {
+    top: auto;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .anti-lying-prompts .alp-route {
+    padding: 22px 20px;
+  }
+
+  .anti-lying-prompts .alp-path {
+    white-space: normal;
+  }
+}

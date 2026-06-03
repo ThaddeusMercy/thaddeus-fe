@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "3-prompts-stop-ai-lying",
+    title: "The 3 Prompts That Stop AI From Lying To You",
+    excerpt:
+      "Three one-line fixes for hallucination, bias, and sycophancy — plus exactly where to paste them in Claude and ChatGPT so they run on every chat.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["claude", "chatgpt", "multi-tool"],
+    publishedAt: "2026-06-03",
+    layout: "document",
+    sections: [
+      {
+        heading: "The 3 Prompts That Stop AI From Lying To You",
+        body: "Fix hallucination, bias, and sycophancy with three prompts. Set once in Claude or ChatGPT settings or project instructions.\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "30-day-ai-roadmap",
     title: "The 30-Day AI Roadmap",
     excerpt:

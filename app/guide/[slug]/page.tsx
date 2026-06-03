@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
+import AntiLyingPromptsGuide from "@/components/guides/anti-lying-prompts/AntiLyingPromptsGuide";
+import { ANTI_LYING_PROMPTS_SLUG } from "@/components/guides/anti-lying-prompts/data";
 import AiRoadmapGuide from "@/components/guides/ai-roadmap/AiRoadmapGuide";
 import { AI_ROADMAP_SLUG } from "@/components/guides/ai-roadmap/data";
 import AiJobMapGuide from "@/components/guides/ai-job-map/AiJobMapGuide";
@@ -38,6 +40,10 @@ export default async function GuidePostPage({ params }: PageProps) {
   const { slug } = await params;
   const entry = getGuideBySlug(slug);
   if (!entry) notFound();
+
+  if (slug === ANTI_LYING_PROMPTS_SLUG) {
+    return <AntiLyingPromptsGuide />;
+  }
 
   if (slug === AI_ROADMAP_SLUG) {
     return <AiRoadmapGuide />;
