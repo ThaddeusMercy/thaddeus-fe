@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
+import AiRoadmapGuide from "@/components/guides/ai-roadmap/AiRoadmapGuide";
+import { AI_ROADMAP_SLUG } from "@/components/guides/ai-roadmap/data";
 import AiJobMapGuide from "@/components/guides/ai-job-map/AiJobMapGuide";
 import { AI_JOB_MAP_SLUG } from "@/components/guides/ai-job-map/data";
 import MarkItDownSetupGuide from "@/components/guides/markitdown-setup/MarkItDownSetupGuide";
@@ -36,6 +38,10 @@ export default async function GuidePostPage({ params }: PageProps) {
   const { slug } = await params;
   const entry = getGuideBySlug(slug);
   if (!entry) notFound();
+
+  if (slug === AI_ROADMAP_SLUG) {
+    return <AiRoadmapGuide />;
+  }
 
   if (slug === AI_JOB_MAP_SLUG) {
     return <AiJobMapGuide />;

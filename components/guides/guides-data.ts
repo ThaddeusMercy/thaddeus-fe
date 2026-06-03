@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "30-day-ai-roadmap",
+    title: "The 30-Day AI Roadmap",
+    excerpt:
+      "From zero to a portfolio of real AI projects. One focused task a day — the exact path bootcamp fellows followed to ship apps, sites, and agents in weeks.",
+    category: "CAREER",
+    topic: "career",
+    tools: ["multi-tool"],
+    publishedAt: "2026-06-03",
+    layout: "document",
+    sections: [
+      {
+        heading: "The 30-Day AI Roadmap",
+        body: "Five phases: Get fluent with AI, Create with AI, Build real software, Automate and build agents, Ship your portfolio.\n\nhttps://dub.sh/attn-bravo\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "markitdown-mcp-claude-setup",
     title: "Stop Wasting 70% of Your Tokens in Claude",
     excerpt:
