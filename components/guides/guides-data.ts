@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "heygen-video-translate",
+    title: "How to Make a Video of Yourself Speaking Any Language",
+    excerpt:
+      "Turn one video into 175+ languages with HeyGen — your own voice, synced lips, no reshoots. Free step-by-step tutorial.",
+    category: "SETUP",
+    topic: "creative",
+    tools: ["multi-tool"],
+    publishedAt: "2026-06-03",
+    layout: "document",
+    sections: [
+      {
+        heading: "HeyGen Video Translate",
+        body: "Free tutorial: translate your video into 175+ languages with voice clone and lip sync. 7 steps from signup to download.\n\nhttps://heygen.com\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "3-prompts-stop-ai-lying",
     title: "The 3 Prompts That Stop AI From Lying To You",
     excerpt:
