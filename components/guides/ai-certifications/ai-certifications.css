@@ -265,6 +265,33 @@
   background: rgba(221, 106, 62, 0.12);
   color: #b8501f;
 }
+.ai-cert-guide .ac-tag.bonus {
+  background: var(--ink);
+  color: var(--gold-bright);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.ai-cert-guide .ac-pill-plus {
+  margin-left: 4px;
+  color: var(--coral);
+  font-weight: 700;
+}
+.ai-cert-guide .ac-card-bonus {
+  background: linear-gradient(180deg, #fffdf7 0%, #fff8e3 100%);
+  border-color: rgba(184, 144, 46, 0.5);
+}
+.ai-cert-guide .ac-card-bonus::before {
+  opacity: 1;
+  background: linear-gradient(180deg, var(--coral), var(--gold));
+}
+.ai-cert-guide .ac-card-bonus .ac-idx {
+  -webkit-text-stroke: 0;
+  color: var(--coral);
+  font-size: 44px;
+}
+.ai-cert-guide .ac-card-bonus .ac-prov {
+  color: var(--olive);
+}
 .ai-cert-guide .ac-desc {
   font-size: 15px;
   color: var(--ink-soft);

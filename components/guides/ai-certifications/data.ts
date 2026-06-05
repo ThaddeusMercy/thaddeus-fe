@@ -27,40 +27,15 @@ export type CertCourse = {
   idx: string;
   provider: string;
   title: string;
-  tags: { label: string; variant?: "free" | "paidcert" }[];
+  tags: { label: string; variant?: "free" | "paidcert" | "bonus" }[];
   description: string;
   href: string;
+  bonus?: boolean;
 };
 
 export const COURSES: CertCourse[] = [
   {
     idx: "01",
-    provider: "Microsoft & LinkedIn",
-    title: "Career Essentials in Generative AI",
-    tags: [
-      { label: "~4 hours" },
-      { label: "Free certificate", variant: "free" },
-      { label: "Auto-adds to LinkedIn" },
-    ],
-    description:
-      "The fastest real win here. A short learning path covering how generative AI works, the main models, ethics, and Copilot. Pass the assessment and the certificate lands on your LinkedIn profile automatically.",
-    href: "https://www.linkedin.com/learning/paths/career-essentials-in-generative-ai-by-microsoft-and-linkedin",
-  },
-  {
-    idx: "02",
-    provider: "University of Helsinki",
-    title: "Elements of AI",
-    tags: [
-      { label: "Self-paced" },
-      { label: "Free certificate", variant: "free" },
-      { label: "University-issued" },
-    ],
-    description:
-      "A genuinely respected free course from the University of Helsinki. Start with the \"Introduction to AI\" track, which is the weekend-sized one, and earn a certificate issued by an actual university. No coding required.",
-    href: "https://www.elementsofai.com",
-  },
-  {
-    idx: "03",
     provider: "Google · Coursera",
     title: "Google AI Essentials",
     tags: [
@@ -69,21 +44,74 @@ export const COURSES: CertCourse[] = [
       { label: "Google brand" },
     ],
     description:
-      "The most recognised name on this list. Hands-on practice using AI to write, plan, and speed up everyday work. Free to take; the shareable Google certificate needs the paid certificate option or Coursera financial aid.",
-    href: "https://www.coursera.org/learn/google-ai-essentials",
+      "Google's flagship intro to working with AI: writing better prompts, using AI for everyday work, and the responsibility piece. Free to take; the shareable Google certificate needs the paid certificate option or Coursera financial aid.",
+    href: "https://www.coursera.org/specializations/ai-essentials-google",
+  },
+  {
+    idx: "02",
+    provider: "DeepLearning.AI · Andrew Ng",
+    title: "AI for Everyone",
+    tags: [
+      { label: "~10 hours" },
+      { label: "Free to audit · paid for cert", variant: "paidcert" },
+      { label: "Non-technical" },
+    ],
+    description:
+      "Andrew Ng's non-technical overview. Built for anyone — leaders, operators, builders — to understand what AI can and cannot do and how to actually apply it inside an organisation.",
+    href: "https://www.coursera.org/learn/ai-for-everyone",
+  },
+  {
+    idx: "03",
+    provider: "IBM · Coursera",
+    title: "Introduction to Artificial Intelligence (AI)",
+    tags: [
+      { label: "~11 hours" },
+      { label: "Free to audit · paid for cert", variant: "paidcert" },
+      { label: "IBM" },
+    ],
+    description:
+      "IBM's foundational course covering what AI is, common use cases, machine learning versus deep learning, and where generative models fit. A solid base before going deeper.",
+    href: "https://www.coursera.org/learn/introduction-to-ai",
   },
   {
     idx: "04",
-    provider: "Google · Coursera",
-    title: "Google Prompting Essentials",
+    provider: "Microsoft & LinkedIn",
+    title: "Career Essentials in Generative AI",
     tags: [
-      { label: "~9 hours" },
-      { label: "Free to learn · paid or aid for cert", variant: "paidcert" },
-      { label: "Most underrated skill" },
+      { label: "~4 hours" },
+      { label: "Free certificate", variant: "free" },
+      { label: "Auto-adds to LinkedIn" },
     ],
     description:
-      "Prompting is the skill that decides whether AI feels overhyped or saves you hours. Learn a simple 5-step framework for prompts that consistently deliver. Same free-to-learn, paid-or-aid-for-certificate model as above.",
-    href: "https://www.coursera.org/learn/google-prompting-essentials",
+      "The fastest real win. A short learning path covering how generative AI works, the main models, ethics, and Copilot. Pass the assessment and the certificate lands on your LinkedIn profile automatically.",
+    href: "https://www.linkedin.com/learning/paths/career-essentials-in-generative-ai-by-microsoft-and-linkedin",
+  },
+  {
+    idx: "05",
+    provider: "Anthropic Academy",
+    title: "AI Fluency: Framework & Foundations",
+    tags: [
+      { label: "Self-paced" },
+      { label: "Free", variant: "free" },
+      { label: "Anthropic" },
+    ],
+    description:
+      "Anthropic's own training. Start with \"AI Fluency: Framework & Foundations\" to learn how to actually think with Claude — from prompting to building structured workflows.",
+    href: "https://anthropic.skilljar.com",
+  },
+  {
+    idx: "★",
+    provider: "Attention Factory",
+    title: "AI Generalist Certification",
+    tags: [
+      { label: "Bonus", variant: "bonus" },
+      { label: "Live · hands-on" },
+      { label: "Job-ready" },
+    ],
+    description:
+      "Go from theory to actually building. Live, cohort-based, hands-on. Ship real AI projects, gain in-demand skills, and walk away job-ready with a portfolio and the connections to match.",
+    href: "https://dub.sh/attn-bravo",
+    bonus: true,
   },
 ];
 

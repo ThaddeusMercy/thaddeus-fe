@@ -51,7 +51,7 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     slug: "ai-certifications-weekend",
     title: "AI Certifications You Can Finish This Weekend",
     excerpt:
-      "Four free or low-cost AI certifications — from Microsoft, Google, and the University of Helsinki — you can actually finish in a weekend and add to LinkedIn.",
+      "Five free or low-cost AI certifications — from Google, DeepLearning.AI, IBM, Microsoft, and Anthropic — you can actually finish in a weekend and add to LinkedIn. Plus one bonus that goes beyond theory.",
     category: "CAREER",
     topic: "career",
     tools: ["multi-tool"],

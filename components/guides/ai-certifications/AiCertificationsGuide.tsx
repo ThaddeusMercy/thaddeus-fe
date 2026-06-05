@@ -58,7 +58,7 @@ export default function AiCertificationsGuide() {
           </p>
           <div className="ac-meta-row ac-reveal ac-d4">
             <span className="ac-pill">
-              <b>4</b> certifications
+              <b>5</b> certifications <span className="ac-pill-plus">+ 1 bonus</span>
             </span>
             <span className="ac-pill">Beginner friendly</span>
             <span className="ac-pill">Self-paced</span>
@@ -78,8 +78,8 @@ export default function AiCertificationsGuide() {
           <div className="ac-cards">
             {COURSES.map((course, i) => (
               <article
-                key={course.idx}
-                className={`ac-card ac-reveal ac-d${i + 1}`}
+                key={course.title}
+                className={`ac-card${course.bonus ? " ac-card-bonus" : ""} ac-reveal ac-d${Math.min(i + 1, 6)}`}
               >
                 <div className="ac-idx">{course.idx}</div>
                 <div className="ac-prov">{course.provider}</div>
