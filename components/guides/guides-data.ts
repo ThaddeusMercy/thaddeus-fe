@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "ai-certifications-weekend",
+    title: "AI Certifications You Can Finish This Weekend",
+    excerpt:
+      "Four free or low-cost AI certifications — from Microsoft, Google, and the University of Helsinki — you can actually finish in a weekend and add to LinkedIn.",
+    category: "CAREER",
+    topic: "career",
+    tools: ["multi-tool"],
+    publishedAt: "2026-06-05",
+    layout: "document",
+    sections: [
+      {
+        heading: "AI Certifications You Can Finish This Weekend",
+        body: "Four self-paced AI certifications: Microsoft & LinkedIn Career Essentials in Generative AI, Elements of AI (University of Helsinki), Google AI Essentials, and Google Prompting Essentials.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "heygen-video-translate",
     title: "How to Make a Video of Yourself Speaking Any Language",
     excerpt:

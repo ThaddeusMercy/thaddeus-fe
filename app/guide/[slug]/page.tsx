@@ -12,6 +12,8 @@ import AiJobMapGuide from "@/components/guides/ai-job-map/AiJobMapGuide";
 import { AI_JOB_MAP_SLUG } from "@/components/guides/ai-job-map/data";
 import MarkItDownSetupGuide from "@/components/guides/markitdown-setup/MarkItDownSetupGuide";
 import { MARKITDOWN_SETUP_SLUG } from "@/components/guides/markitdown-setup/data";
+import AiCertificationsGuide from "@/components/guides/ai-certifications/AiCertificationsGuide";
+import { AI_CERTIFICATIONS_SLUG } from "@/components/guides/ai-certifications/data";
 import {
   GUIDE_ENTRIES,
   getGuideBySlug,
@@ -61,6 +63,10 @@ export default async function GuidePostPage({ params }: PageProps) {
 
   if (slug === MARKITDOWN_SETUP_SLUG) {
     return <MarkItDownSetupGuide />;
+  }
+
+  if (slug === AI_CERTIFICATIONS_SLUG) {
+    return <AiCertificationsGuide />;
   }
 
   return (
