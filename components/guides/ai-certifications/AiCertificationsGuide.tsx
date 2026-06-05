@@ -44,7 +44,6 @@ export default function AiCertificationsGuide() {
         </div>
 
         <header className="ac-hero">
-          <span className="ac-kicker ac-reveal ac-d1">Free this weekend</span>
           <h1 className="ac-h1 ac-reveal ac-d2">
             AI certifications you can actually{" "}
             <em>finish this weekend</em>
