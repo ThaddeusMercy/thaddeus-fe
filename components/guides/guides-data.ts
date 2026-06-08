@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "thirty-claude-codes",
+    title: "Thirty Claude Codes",
+    excerpt:
+      "Thirty short codes you drop into any Claude prompt for 10x sharper answers — with a copy-ready example for each.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["claude"],
+    publishedAt: "2026-06-08",
+    layout: "document",
+    sections: [
+      {
+        heading: "Thirty Claude Codes",
+        body: "Thirty short phrases you add to any Claude prompt to pull 10x sharper answers. Each code comes with a copy-ready example. Use them for truth, sharper thinking, blind spots, learning, and shipping work.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "ai-certifications-weekend",
     title: "AI Certifications You Can Finish This Weekend",
     excerpt:

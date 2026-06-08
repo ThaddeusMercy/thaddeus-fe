@@ -14,6 +14,8 @@ import MarkItDownSetupGuide from "@/components/guides/markitdown-setup/MarkItDow
 import { MARKITDOWN_SETUP_SLUG } from "@/components/guides/markitdown-setup/data";
 import AiCertificationsGuide from "@/components/guides/ai-certifications/AiCertificationsGuide";
 import { AI_CERTIFICATIONS_SLUG } from "@/components/guides/ai-certifications/data";
+import ThirtyClaudeCodesGuide from "@/components/guides/thirty-claude-codes/ThirtyClaudeCodesGuide";
+import { THIRTY_CLAUDE_CODES_SLUG } from "@/components/guides/thirty-claude-codes/data";
 import {
   GUIDE_ENTRIES,
   getGuideBySlug,
@@ -67,6 +69,10 @@ export default async function GuidePostPage({ params }: PageProps) {
 
   if (slug === AI_CERTIFICATIONS_SLUG) {
     return <AiCertificationsGuide />;
+  }
+
+  if (slug === THIRTY_CLAUDE_CODES_SLUG) {
+    return <ThirtyClaudeCodesGuide />;
   }
 
   return (

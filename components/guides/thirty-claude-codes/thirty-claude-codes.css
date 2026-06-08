@@ -1,0 +1,300 @@
+.thirty-claude-codes {
+  --tcc-coral: #cb6b4a;
+  --tcc-bg: #ffffff;
+  --tcc-ink: #2a2925;
+  --tcc-ink-soft: #4a463f;
+  --tcc-muted: #5c574d;
+  --tcc-line: #e7e1d5;
+  --tcc-line-soft: #ece6da;
+  --tcc-card: #fbf8f2;
+  --tcc-chip: #faf6ec;
+
+  background: var(--tcc-bg);
+  color: var(--tcc-ink);
+  font-family: var(--font-newsreader), Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+}
+
+.thirty-claude-codes * {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* ---------- cover ---------- */
+.thirty-claude-codes .tcc-cover {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 96px clamp(28px, 6vw, 70px) 88px;
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(203, 107, 74, 0.1), transparent 60%),
+    var(--tcc-bg);
+}
+
+.thirty-claude-codes .tcc-kick {
+  font-family: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
+  letter-spacing: 0.32em;
+  font-size: 13px;
+  color: var(--tcc-coral);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.thirty-claude-codes .tcc-h1 {
+  font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(56px, 9vw, 96px);
+  line-height: 0.96;
+  letter-spacing: -2px;
+  margin-bottom: 26px;
+}
+.thirty-claude-codes .tcc-h1 em {
+  font-style: italic;
+  color: var(--tcc-coral);
+}
+
+.thirty-claude-codes .tcc-lede {
+  font-size: clamp(19px, 2.2vw, 25px);
+  line-height: 1.45;
+  max-width: 560px;
+  color: var(--tcc-ink-soft);
+  margin-bottom: 48px;
+}
+
+.thirty-claude-codes .tcc-howto {
+  margin-top: 0;
+  background: var(--tcc-card);
+  border: 1px solid var(--tcc-line);
+  border-radius: 18px;
+  padding: 28px 32px;
+  max-width: 620px;
+}
+.thirty-claude-codes .tcc-howto h3 {
+  font-family: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--tcc-coral);
+  margin-bottom: 12px;
+}
+.thirty-claude-codes .tcc-howto p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #3c382f;
+}
+.thirty-claude-codes .tcc-mini {
+  font-family: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
+  background: #f4efe6;
+  border: 1px solid var(--tcc-line);
+  border-radius: 8px;
+  padding: 3px 8px;
+  font-size: 14px;
+  color: var(--tcc-ink-soft);
+}
+
+.thirty-claude-codes .tcc-byline {
+  font-family: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #6a655b;
+  border-top: 1px solid #d9d3c7;
+  padding-top: 22px;
+  margin-top: 46px;
+}
+.thirty-claude-codes .tcc-byline b {
+  color: var(--tcc-ink);
+  font-weight: 700;
+}
+
+/* ---------- section ---------- */
+.thirty-claude-codes .tcc-section {
+  padding: 60px clamp(28px, 6vw, 56px);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.thirty-claude-codes .tcc-shead {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  border-bottom: 1px solid #dcd6ca;
+  padding-bottom: 26px;
+  margin-bottom: 36px;
+}
+.thirty-claude-codes .tcc-sid {
+  font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+  font-size: clamp(44px, 6vw, 64px);
+  font-weight: 500;
+  color: rgba(203, 107, 74, 0.3);
+  line-height: 0.8;
+}
+.thirty-claude-codes .tcc-shead h2 {
+  font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+.thirty-claude-codes .tcc-shead p {
+  font-size: 18px;
+  color: var(--tcc-muted);
+  max-width: 560px;
+}
+
+.thirty-claude-codes .tcc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+/* ---------- card ---------- */
+.thirty-claude-codes .tcc-card {
+  background: var(--tcc-card);
+  border: 1px solid var(--tcc-line);
+  border-radius: 16px;
+  padding: 26px 26px 22px;
+  position: relative;
+  break-inside: avoid;
+  box-shadow: 0 1px 3px rgba(40, 38, 33, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.thirty-claude-codes .tcc-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(203, 107, 74, 0.35);
+  box-shadow: 0 2px 6px rgba(40, 38, 33, 0.06),
+    0 16px 32px rgba(40, 38, 33, 0.06);
+}
+
+.thirty-claude-codes .tcc-cnum {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+  font-size: 30px;
+  color: rgba(42, 41, 37, 0.13);
+  font-weight: 600;
+}
+.thirty-claude-codes .tcc-cname {
+  font-family: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--tcc-coral);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.thirty-claude-codes .tcc-does {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #36322b;
+  margin-bottom: 18px;
+}
+
+.thirty-claude-codes .tcc-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--tcc-chip);
+  border: 1px solid var(--tcc-line);
+  border-radius: 11px;
+  padding: 11px 12px 11px 15px;
+  margin-bottom: 16px;
+}
+.thirty-claude-codes .tcc-chiptext {
+  font-family: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--tcc-ink-soft);
+}
+.thirty-claude-codes .tcc-snd {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--tcc-coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thirty-claude-codes .tcc-best {
+  font-family: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: #827c70;
+  display: flex;
+  align-items: center;
+}
+.thirty-claude-codes .tcc-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tcc-coral);
+  margin-right: 10px;
+  flex: 0 0 auto;
+}
+
+/* ---------- closing ---------- */
+.thirty-claude-codes .tcc-closing {
+  padding: 90px clamp(28px, 6vw, 56px) 120px;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.thirty-claude-codes .tcc-closing h2 {
+  font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(30px, 4vw, 42px);
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+}
+.thirty-claude-codes .tcc-closing p {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--tcc-ink-soft);
+  margin-bottom: 10px;
+}
+.thirty-claude-codes .tcc-sig {
+  font-family: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #6a655b;
+  margin-top: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 720px) {
+  .thirty-claude-codes .tcc-grid {
+    grid-template-columns: 1fr;
+  }
+  .thirty-claude-codes .tcc-cover {
+    padding: 72px 24px 64px;
+  }
+}
+
+/* ---------- print ---------- */
+@media print {
+  .thirty-claude-codes {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .thirty-claude-codes .tcc-cover {
+    break-after: page;
+    padding: 70px 56px;
+  }
+  .thirty-claude-codes .tcc-section {
+    break-before: page;
+    padding-top: 54px;
+  }
+  .thirty-claude-codes .tcc-closing {
+    break-before: page;
+  }
+}
