@@ -108,7 +108,7 @@ export default function ThirtyClaudeCodesGuide() {
             Every code is just a phrase you add to your prompt. Put it at the
             start or the end, then ask your real question. Example:{" "}
             <span className="tcc-mini">Truth mode.</span> followed by what you
-            actually want to know. That's the whole trick.
+            actually want to know. That&apos;s the whole trick.
           </p>
         </div>
         <div className="tcc-byline">
@@ -149,10 +149,10 @@ export default function ThirtyClaudeCodesGuide() {
       ))}
 
       <section className="tcc-closing">
-        <h2>That's all thirty.</h2>
+        <h2>That&apos;s all thirty.</h2>
         <p>
-          Start with three or four that fit what you're working on this week.
-          Once they're muscle memory, the rest will follow.
+          Start with three or four that fit what you&apos;re working on this
+          week. Once they&apos;re muscle memory, the rest will follow.
         </p>
         <p>
           Save this. Steal from it. Send it to the friend who still types
