@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
+import AiInfluencerGuide from "@/components/guides/ai-influencer/AiInfluencerGuide";
+import { AI_INFLUENCER_SLUG } from "@/components/guides/ai-influencer/data";
 import HeyGenTranslateGuide from "@/components/guides/heygen-translate/HeyGenTranslateGuide";
 import { HEYGEN_TRANSLATE_SLUG } from "@/components/guides/heygen-translate/data";
 import AntiLyingPromptsGuide from "@/components/guides/anti-lying-prompts/AntiLyingPromptsGuide";
@@ -46,6 +48,10 @@ export default async function GuidePostPage({ params }: PageProps) {
   const { slug } = await params;
   const entry = getGuideBySlug(slug);
   if (!entry) notFound();
+
+  if (slug === AI_INFLUENCER_SLUG) {
+    return <AiInfluencerGuide />;
+  }
 
   if (slug === HEYGEN_TRANSLATE_SLUG) {
     return <HeyGenTranslateGuide />;

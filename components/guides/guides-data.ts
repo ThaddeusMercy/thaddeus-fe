@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "build-your-ai-influencer",
+    title: "Build Your Own AI Influencer",
+    excerpt:
+      "The exact workflow and prompts to create a consistent AI character, place her in any scene, and bring her to life on video. 22 ready-to-paste scene prompts included.",
+    category: "PROMPTS",
+    topic: "creative",
+    tools: ["chatgpt", "gemini", "multi-tool"],
+    publishedAt: "2026-06-03",
+    layout: "document",
+    sections: [
+      {
+        heading: "Build Your Own AI Influencer",
+        body: "30 Days of AI Content Part 1. Foundation face, Flow/Nano Banana, scene placement, Veo 3 video, and 22 scene prompts.\n\nhttps://dub.sh/attn-bravo\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "thirty-claude-codes",
     title: "Thirty Claude Codes",
     excerpt:
