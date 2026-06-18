@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "ai-clone-method",
+    title: "The AI Clone Method",
+    excerpt:
+      "Shoot content without a camera — clone yourself in Nano Banana Pro, animate with Claude + Veo 3 JSON prompts, and scale to 3–5 posts a day.",
+    category: "WORKFLOWS",
+    topic: "creative",
+    tools: ["claude", "gemini", "multi-tool"],
+    publishedAt: "2026-05-26",
+    layout: "document",
+    sections: [
+      {
+        heading: "The AI Clone Method",
+        body: "Build a realistic version of yourself once, place it in any scene, animate with spoken dialogue and lip sync. Master clone prompt, 3 ready-to-use scenes, Claude Veo 3 JSON workflow, and scaling tips.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "build-your-ai-influencer",
     title: "Build Your Own AI Influencer",
     excerpt:
