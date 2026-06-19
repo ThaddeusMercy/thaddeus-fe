@@ -1,6 +1,6 @@
 export const AI_CERTIFICATIONS_SLUG = "ai-certifications-weekend";
 
-export const BOOTCAMP_URL = "https://dub.sh/attn-bravo";
+export const BOOTCAMP_URL = "https://attentionfactory.io/launch";
 
 export const BOOTCAMP_SPONSORS = [
   "HeyGen",
@@ -110,7 +110,7 @@ export const COURSES: CertCourse[] = [
     ],
     description:
       "Go from theory to actually building. Live, cohort-based, hands-on. Ship real AI projects, gain in-demand skills, and walk away job-ready with a portfolio and the connections to match.",
-    href: "https://dub.sh/attn-bravo",
+    href: "https://attentionfactory.io/launch",
     bonus: true,
   },
 ];

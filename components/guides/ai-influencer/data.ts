@@ -1,6 +1,6 @@
 export const AI_INFLUENCER_SLUG = "build-your-ai-influencer";
 
-export const BOOTCAMP_URL = "https://dub.sh/attn-bravo";
+export const BOOTCAMP_URL = "https://attentionfactory.io/launch";
 
 export const WORKFLOW_STEPS = [
   {

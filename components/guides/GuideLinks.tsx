@@ -69,7 +69,7 @@ const GuideLinks = () => {
             trackEvent("guide_waitlist_click", { placement: "button" })
           }
         >
-          nestuge.com/attnhq-bootcamp-bravo26 →
+          attentionfactory.io/launch →
         </a>
       </motion.div>
 

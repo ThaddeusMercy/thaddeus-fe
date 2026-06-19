@@ -1,6 +1,6 @@
 export const AI_ROADMAP_SLUG = "30-day-ai-roadmap";
 
-export const BOOTCAMP_URL = "https://dub.sh/attn-bravo";
+export const BOOTCAMP_URL = "https://attentionfactory.io/launch";
 
 export const RULES = [
   {

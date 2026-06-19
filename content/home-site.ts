@@ -39,7 +39,7 @@ export const homeFindHere: {
       title: "AI Accelerator Bootcamp",
       description:
         "From zero to one — July 1st. Waitlist + community for operators building with AI.",
-      href: "https://nestuge.com/attnhq-bootcamp-bravo26",
+      href: "https://attentionfactory.io/launch",
       external: true,
     },
   ],

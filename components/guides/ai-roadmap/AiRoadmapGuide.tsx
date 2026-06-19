@@ -119,7 +119,7 @@ export default function AiRoadmapGuide() {
           <p className="ar-url">
             Or go straight to{" "}
             <a href={BOOTCAMP_URL} target="_blank" rel="noopener noreferrer">
-              dub.sh/attn-bravo
+              attentionfactory.io/launch
             </a>
           </p>
           <p className="ar-cta-by">

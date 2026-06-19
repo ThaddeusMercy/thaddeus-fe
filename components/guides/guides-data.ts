@@ -77,7 +77,7 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     sections: [
       {
         heading: "Build Your Own AI Influencer",
-        body: "30 Days of AI Content Part 1. Foundation face, Flow/Nano Banana, scene placement, Veo 3 video, and 22 scene prompts.\n\nhttps://dub.sh/attn-bravo\n\nhttps://instagram.com/mercythaddeus_",
+        body: "30 Days of AI Content Part 1. Foundation face, Flow/Nano Banana, scene placement, Veo 3 video, and 22 scene prompts.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
       },
     ],
   },
@@ -162,7 +162,7 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     sections: [
       {
         heading: "The 30-Day AI Roadmap",
-        body: "Five phases: Get fluent with AI, Create with AI, Build real software, Automate and build agents, Ship your portfolio.\n\nhttps://dub.sh/attn-bravo\n\nhttps://instagram.com/mercythaddeus_",
+        body: "Five phases: Get fluent with AI, Create with AI, Build real software, Automate and build agents, Ship your portfolio.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
       },
     ],
   },

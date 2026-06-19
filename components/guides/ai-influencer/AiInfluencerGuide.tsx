@@ -263,7 +263,7 @@ export default function AiInfluencerGuide() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                dub.sh/attn-bravo
+                attentionfactory.io/launch
               </a>
             </div>
             <div>

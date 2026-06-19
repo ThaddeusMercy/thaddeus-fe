@@ -1,6 +1,6 @@
 /** AI Accelerator Bootcamp waitlist (Attention Factory / attn.) */
 export const WEBINAR_WAITLIST_URL =
-  "https://nestuge.com/attnhq-bootcamp-bravo26";
+  "https://attentionfactory.io/launch";
 
 /** [waitlist] The AI Community — WhatsApp group for registered attendees */
 export const WEBINAR_WHATSAPP_GROUP_URL =
