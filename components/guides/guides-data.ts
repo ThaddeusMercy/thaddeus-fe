@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "anime-storyboard-to-video",
+    title: "Anime Storyboard to Video",
+    excerpt:
+      "Turn a single idea into a full anime scene — lock character and location in ChatGPT, build a 16-panel storyboard, then animate it with Higgsfield Seedance.",
+    category: "WORKFLOWS",
+    topic: "creative",
+    tools: ["chatgpt", "multi-tool"],
+    publishedAt: "2026-06-18",
+    layout: "document",
+    sections: [
+      {
+        heading: "Anime Storyboard to Video",
+        body: "AI Content Series Part 5. Character sheet, location sheet, storyboard, and 15-second video with ChatGPT + Higgsfield Seedance.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "ai-clone-method",
     title: "The AI Clone Method",
     excerpt:

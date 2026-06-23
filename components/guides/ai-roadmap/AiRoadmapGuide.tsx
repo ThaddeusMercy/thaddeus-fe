@@ -4,7 +4,7 @@ import Link from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { ArrowLeft } from "@phosphor-icons/react";
 
-import { BOOTCAMP_URL, NEXT_BOX, PHASES, RULES } from "./data";
+import { NEXT_BOX, PHASES, RULES } from "./data";
 import "./ai-roadmap.css";
 
 export default function AiRoadmapGuide() {
@@ -97,37 +97,6 @@ export default function AiRoadmapGuide() {
           </div>
         </div>
       </main>
-
-      <section className="ar-cta">
-        <div className="ar-wrap">
-          <div className="ar-eyebrow">Want to do this in 7 days, not 30?</div>
-          <h2>Join the next cohort.</h2>
-          <p className="ar-lead">
-            The roadmap works on your own. The bootcamp works faster. Same path,
-            compressed, with live building, real feedback, and a room full of
-            people shipping at the same time. Everything you just read is what
-            the fellows did in one week.
-          </p>
-          <a
-            className="ar-btn"
-            href={BOOTCAMP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Join the next cohort &nbsp;&rarr;
-          </a>
-          <p className="ar-url">
-            Or go straight to{" "}
-            <a href={BOOTCAMP_URL} target="_blank" rel="noopener noreferrer">
-              attentionfactory.io/launch
-            </a>
-          </p>
-          <p className="ar-cta-by">
-            Mercy Thaddeus &nbsp;·&nbsp; <span>@mercythaddeus_</span>{" "}
-            &nbsp;·&nbsp; attentionfactory.io
-          </p>
-        </div>
-      </section>
     </div>
   );
 }

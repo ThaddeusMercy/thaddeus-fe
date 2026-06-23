@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 
+import BootcampCta from "@/components/guides/BootcampCta";
 import ToolkitView from "@/components/guides/ToolkitView";
 import {
   GUIDE_ENTRIES,
@@ -166,6 +167,8 @@ export default function GuidesIndex() {
           </p>
         </header>
       ) : null}
+
+      {!isToolkit ? <BootcampCta variant="section" /> : null}
 
       <div className="space-y-6 rounded-2xl border border-border bg-secondary/60 p-5 md:p-6">
         <FilterPills

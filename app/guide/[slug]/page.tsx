@@ -2,6 +2,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
+import GuideShell from "@/components/guides/GuideShell";
+import AnimeStoryboardGuide from "@/components/guides/anime-storyboard/AnimeStoryboardGuide";
+import { ANIME_STORYBOARD_SLUG } from "@/components/guides/anime-storyboard/data";
 import AiCloneMethodGuide from "@/components/guides/ai-clone-method/AiCloneMethodGuide";
 import { AI_CLONE_METHOD_SLUG } from "@/components/guides/ai-clone-method/data";
 import AiInfluencerGuide from "@/components/guides/ai-influencer/AiInfluencerGuide";
@@ -51,45 +54,35 @@ export default async function GuidePostPage({ params }: PageProps) {
   const entry = getGuideBySlug(slug);
   if (!entry) notFound();
 
-  if (slug === AI_CLONE_METHOD_SLUG) {
-    return <AiCloneMethodGuide />;
+  let content: React.ReactNode;
+
+  if (slug === ANIME_STORYBOARD_SLUG) {
+    content = <AnimeStoryboardGuide />;
+  } else if (slug === AI_CLONE_METHOD_SLUG) {
+    content = <AiCloneMethodGuide />;
+  } else if (slug === AI_INFLUENCER_SLUG) {
+    content = <AiInfluencerGuide />;
+  } else if (slug === HEYGEN_TRANSLATE_SLUG) {
+    content = <HeyGenTranslateGuide />;
+  } else if (slug === ANTI_LYING_PROMPTS_SLUG) {
+    content = <AntiLyingPromptsGuide />;
+  } else if (slug === AI_ROADMAP_SLUG) {
+    content = <AiRoadmapGuide />;
+  } else if (slug === AI_JOB_MAP_SLUG) {
+    content = <AiJobMapGuide />;
+  } else if (slug === MARKITDOWN_SETUP_SLUG) {
+    content = <MarkItDownSetupGuide />;
+  } else if (slug === AI_CERTIFICATIONS_SLUG) {
+    content = <AiCertificationsGuide />;
+  } else if (slug === THIRTY_CLAUDE_CODES_SLUG) {
+    content = <ThirtyClaudeCodesGuide />;
+  } else {
+    content = (
+      <div className="mx-auto max-w-2xl px-4 py-12 md:py-16">
+        <GuidePostView entry={entry} />
+      </div>
+    );
   }
 
-  if (slug === AI_INFLUENCER_SLUG) {
-    return <AiInfluencerGuide />;
-  }
-
-  if (slug === HEYGEN_TRANSLATE_SLUG) {
-    return <HeyGenTranslateGuide />;
-  }
-
-  if (slug === ANTI_LYING_PROMPTS_SLUG) {
-    return <AntiLyingPromptsGuide />;
-  }
-
-  if (slug === AI_ROADMAP_SLUG) {
-    return <AiRoadmapGuide />;
-  }
-
-  if (slug === AI_JOB_MAP_SLUG) {
-    return <AiJobMapGuide />;
-  }
-
-  if (slug === MARKITDOWN_SETUP_SLUG) {
-    return <MarkItDownSetupGuide />;
-  }
-
-  if (slug === AI_CERTIFICATIONS_SLUG) {
-    return <AiCertificationsGuide />;
-  }
-
-  if (slug === THIRTY_CLAUDE_CODES_SLUG) {
-    return <ThirtyClaudeCodesGuide />;
-  }
-
-  return (
-    <div className="mx-auto max-w-2xl px-4 py-12 md:py-16">
-      <GuidePostView entry={entry} />
-    </div>
-  );
+  return <GuideShell>{content}</GuideShell>;
 }

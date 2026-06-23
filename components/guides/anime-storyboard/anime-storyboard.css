@@ -1,0 +1,327 @@
+.ai-storyboard {
+  --asb-bg: #ffffff;
+  --asb-panel: #ffffff;
+  --asb-soft: #f6f4f2;
+  --asb-line: #e7e3df;
+  --asb-accent: #b3132e;
+  --asb-ink: #1a1618;
+  --asb-body: #46403f;
+  --asb-muted: #8b8480;
+  --asb-radius: 12px;
+
+  background: transparent;
+  color: var(--asb-body);
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ai-storyboard .asb-display {
+  font-family: var(--font-shippori), "Shippori Mincho", serif;
+}
+
+.ai-storyboard .asb-mono {
+  font-family: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
+}
+
+.ai-storyboard .asb-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 24px 24px;
+}
+
+.ai-storyboard .asb-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--asb-accent);
+  text-decoration: none;
+}
+
+.ai-storyboard .asb-back:hover {
+  text-decoration: underline;
+}
+
+.ai-storyboard header {
+  padding: 48px 0 36px;
+}
+
+.ai-storyboard .asb-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--asb-accent);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ai-storyboard .asb-eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--asb-accent);
+}
+
+.ai-storyboard h1 {
+  font-weight: 800;
+  font-size: clamp(36px, 6.5vw, 62px);
+  line-height: 1.04;
+  margin: 0 0 20px;
+  letter-spacing: -0.01em;
+  color: var(--asb-ink);
+}
+
+.ai-storyboard h1 .asb-accent-text {
+  font-style: italic;
+}
+
+.ai-storyboard .asb-lede {
+  font-size: 18px;
+  color: var(--asb-muted);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.ai-storyboard .asb-flow {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 44px 0 8px;
+  border: 1px solid var(--asb-line);
+  border-radius: var(--asb-radius);
+  overflow: hidden;
+}
+
+.ai-storyboard .asb-flow-step {
+  flex: 1 1 0;
+  min-width: 130px;
+  padding: 18px;
+  position: relative;
+  border-right: 1px solid var(--asb-line);
+}
+
+.ai-storyboard .asb-flow-step:last-child {
+  border-right: none;
+}
+
+.ai-storyboard .asb-flow-step .asb-n {
+  font-size: 11px;
+  color: var(--asb-muted);
+  letter-spacing: 0.2em;
+}
+
+.ai-storyboard .asb-flow-step .asb-t {
+  font-weight: 700;
+  font-size: 17px;
+  margin-top: 5px;
+  color: var(--asb-ink);
+}
+
+.ai-storyboard .asb-note {
+  margin: 38px 0 10px;
+  padding: 20px 22px;
+  border-left: 2px solid var(--asb-accent);
+  background: var(--asb-soft);
+  border-radius: 0 10px 10px 0;
+  color: var(--asb-body);
+  font-size: 15px;
+}
+
+.ai-storyboard .asb-note b {
+  color: var(--asb-ink);
+  font-weight: 600;
+}
+
+.ai-storyboard .asb-steps {
+  margin: 54px 0 30px;
+}
+
+.ai-storyboard .asb-step {
+  margin: 0 0 26px;
+  border: 1px solid var(--asb-line);
+  border-radius: var(--asb-radius);
+  background: var(--asb-panel);
+  overflow: hidden;
+}
+
+.ai-storyboard .asb-step-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 24px 26px 4px;
+}
+
+.ai-storyboard .asb-step-num {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--asb-accent);
+  flex: none;
+  min-width: 38px;
+}
+
+.ai-storyboard .asb-step-title {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  color: var(--asb-ink);
+}
+
+.ai-storyboard .asb-step-do {
+  padding: 2px 26px 18px 80px;
+  color: var(--asb-muted);
+  font-size: 15px;
+}
+
+.ai-storyboard .asb-step-do .asb-tool {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--asb-body);
+  border: 1px solid var(--asb-line);
+  border-radius: 999px;
+  padding: 3px 11px;
+  margin-bottom: 10px;
+}
+
+.ai-storyboard .asb-step-do b {
+  color: var(--asb-ink);
+}
+
+.ai-storyboard .asb-prompt {
+  margin: 0 26px 26px;
+}
+
+.ai-storyboard .asb-prompt-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--asb-soft);
+  border: 1px solid var(--asb-line);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  padding: 9px 14px;
+}
+
+.ai-storyboard .asb-prompt-bar .asb-label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--asb-muted);
+}
+
+.ai-storyboard .asb-copy-btn {
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid var(--asb-ink);
+  background: var(--asb-ink);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 7px;
+  letter-spacing: 0.04em;
+  transition: opacity 0.18s ease, transform 0.08s ease, background 0.18s ease;
+  white-space: nowrap;
+}
+
+.ai-storyboard .asb-copy-btn:hover {
+  opacity: 0.85;
+}
+
+.ai-storyboard .asb-copy-btn:active {
+  transform: translateY(1px);
+}
+
+.ai-storyboard .asb-copy-btn.asb-done {
+  background: #1f6b3a;
+  border-color: #1f6b3a;
+}
+
+.ai-storyboard .asb-prompt pre {
+  margin: 0;
+  background: #fbfaf9;
+  border: 1px solid var(--asb-line);
+  border-radius: 0 0 10px 10px;
+  padding: 20px 22px;
+  overflow-x: auto;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #2c2829;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.ai-storyboard .asb-swap {
+  color: var(--asb-accent);
+  font-style: italic;
+}
+
+.ai-storyboard .asb-outro {
+  margin: 58px 0 0;
+  padding: 34px 30px;
+  text-align: center;
+  border: 1px solid var(--asb-line);
+  border-radius: var(--asb-radius);
+  background: var(--asb-soft);
+}
+
+.ai-storyboard .asb-outro h3 {
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0 0 10px;
+  color: var(--asb-ink);
+}
+
+.ai-storyboard .asb-outro p {
+  color: var(--asb-muted);
+  margin: 0 auto;
+  max-width: 48ch;
+  font-size: 15px;
+}
+
+.ai-storyboard footer {
+  padding: 42px 0 24px;
+  text-align: center;
+  color: var(--asb-muted);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+.ai-storyboard footer .asb-accent-text {
+  color: var(--asb-accent);
+}
+
+@media (max-width: 620px) {
+  .ai-storyboard header {
+    padding: 32px 0 24px;
+  }
+
+  .ai-storyboard .asb-flow-step {
+    flex: 1 1 45%;
+    border-right: none;
+    border-bottom: 1px solid var(--asb-line);
+  }
+
+  .ai-storyboard .asb-step-do {
+    padding-left: 26px;
+  }
+
+  .ai-storyboard .asb-step-head {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ai-storyboard .asb-wrap {
+    padding: 0 18px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-storyboard .asb-copy-btn {
+    transition: none;
+  }
+}

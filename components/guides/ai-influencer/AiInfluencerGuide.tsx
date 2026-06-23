@@ -6,7 +6,7 @@ import { Fraunces, Inter } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
 import { ArrowLeft } from "@phosphor-icons/react";
 
-import { BOOTCAMP_URL, PRO_TIPS, WORKFLOW_STEPS } from "./data";
+import { PRO_TIPS, WORKFLOW_STEPS } from "./data";
 import {
   PROMPT_FOUNDATION_FACE,
   PROMPT_SCENE,
@@ -242,43 +242,6 @@ export default function AiInfluencerGuide() {
             ))}
           </ul>
         </section>
-
-        <div className="ai-cta">
-          <div className="ai-badge">This was Part 1 of 30</div>
-          <h2 className="ai-serif">
-            Ready to turn this into <em>income?</em>
-          </h2>
-          <p className="ai-lead">
-            Consistent AI characters are how creators are quietly building
-            faceless pages that land brand deals and sell products. Inside the AI
-            Accelerator Bootcamp I show you the full system, the part that turns
-            a fun skill into a real revenue stream.
-          </p>
-          <div className="ai-ctarow">
-            <div>
-              <div className="ai-t">Register</div>
-              <a
-                className="ai-v ai-serif"
-                href={BOOTCAMP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                attentionfactory.io/launch
-              </a>
-            </div>
-            <div>
-              <div className="ai-t">Follow the daily drops</div>
-              <a
-                className="ai-v ai-serif"
-                href="https://instagram.com/mercythaddeus_"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @mercythaddeus_
-              </a>
-            </div>
-          </div>
-        </div>
 
         <footer>
           30 Days of AI Content &middot; Part 1 &middot; by Mercy Thaddeus
