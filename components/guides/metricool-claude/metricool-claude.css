@@ -1,7 +1,7 @@
 .mc-guide {
   --mc-ink: #241b13;
   --mc-soft: #6c5d4f;
-  --mc-paper: #fbf6ee;
+  --mc-paper: #ffffff;
   --mc-card: #ffffff;
   --mc-line: #e7dccb;
   --mc-accent: #e0552b;
@@ -10,20 +10,12 @@
   max-width: 680px;
   margin: 24px auto;
   padding: clamp(20px, 5vw, 44px);
-  background: radial-gradient(
-      120% 80% at 100% 0%,
-      #fdeede 0%,
-      rgba(253, 238, 222, 0) 55%
-    ),
-    var(--mc-paper);
+  background: var(--mc-paper);
   color: var(--mc-ink);
   font-family: var(--font-spline), "Spline Sans", ui-sans-serif, system-ui,
     sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  border: 1px solid var(--mc-line);
-  border-radius: 22px;
-  box-shadow: 0 24px 60px -32px rgba(80, 50, 20, 0.35);
 }
 
 .mc-guide .mc-serif {

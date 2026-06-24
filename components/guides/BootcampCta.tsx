@@ -45,18 +45,20 @@ export default function BootcampCta({
       >
         <div className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-12">
           <h2 className="text-xl font-bold leading-tight text-[#1a1a1a] md:text-2xl">
-            Learn to actually build with AI
+            Not sure where to start?
           </h2>
-          <div className="mt-3">
-            <BootcampCtaCopy />
-          </div>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#52493f] md:text-lg">
+            I did a free masterclass on going from zero to one with AI, the
+            mindset, the tools, and the practical use cases to actually get
+            moving. Watch it right here.
+          </p>
           <Link
             href={BOOTCAMP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 inline-flex rounded-full bg-[#1a1a1a] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#333]"
           >
-            See what&apos;s inside
+            Watch the masterclass
           </Link>
         </div>
       </section>
