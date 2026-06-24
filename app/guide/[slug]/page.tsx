@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
 import GuideShell from "@/components/guides/GuideShell";
+import MetricoolClaudeGuide from "@/components/guides/metricool-claude/MetricoolClaudeGuide";
+import { METRICOOL_CLAUDE_SLUG } from "@/components/guides/metricool-claude/data";
 import AnimeStoryboardGuide from "@/components/guides/anime-storyboard/AnimeStoryboardGuide";
 import { ANIME_STORYBOARD_SLUG } from "@/components/guides/anime-storyboard/data";
 import AiCloneMethodGuide from "@/components/guides/ai-clone-method/AiCloneMethodGuide";
@@ -56,7 +58,9 @@ export default async function GuidePostPage({ params }: PageProps) {
 
   let content: React.ReactNode;
 
-  if (slug === ANIME_STORYBOARD_SLUG) {
+  if (slug === METRICOOL_CLAUDE_SLUG) {
+    content = <MetricoolClaudeGuide />;
+  } else if (slug === ANIME_STORYBOARD_SLUG) {
     content = <AnimeStoryboardGuide />;
   } else if (slug === AI_CLONE_METHOD_SLUG) {
     content = <AiCloneMethodGuide />;

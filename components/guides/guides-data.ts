@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "connect-claude-to-socials",
+    title: "Connect Claude to All Your Socials",
+    excerpt:
+      "Wire Claude into Metricool with one MCP connector — then schedule posts, read analytics, find your best times, and study competitors, all from one chat.",
+    category: "SETUP",
+    topic: "workflows",
+    tools: ["claude", "multi-tool"],
+    publishedAt: "2026-06-24",
+    layout: "document",
+    sections: [
+      {
+        heading: "Connect Claude to all your socials",
+        body: "AI Content Series Part 6. Connect Metricool to Claude via MCP, then schedule posts, pull analytics, find best posting times, and study competitors from one chat.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "anime-storyboard-to-video",
     title: "Anime Storyboard to Video",
     excerpt:

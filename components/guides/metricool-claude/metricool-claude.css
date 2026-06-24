@@ -1,0 +1,330 @@
+.mc-guide {
+  --mc-ink: #241b13;
+  --mc-soft: #6c5d4f;
+  --mc-paper: #fbf6ee;
+  --mc-card: #ffffff;
+  --mc-line: #e7dccb;
+  --mc-accent: #e0552b;
+  --mc-accent-soft: #fbe7dd;
+
+  max-width: 680px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px);
+  background: radial-gradient(
+      120% 80% at 100% 0%,
+      #fdeede 0%,
+      rgba(253, 238, 222, 0) 55%
+    ),
+    var(--mc-paper);
+  color: var(--mc-ink);
+  font-family: var(--font-spline), "Spline Sans", ui-sans-serif, system-ui,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  border: 1px solid var(--mc-line);
+  border-radius: 22px;
+  box-shadow: 0 24px 60px -32px rgba(80, 50, 20, 0.35);
+}
+
+.mc-guide .mc-serif {
+  font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+}
+
+.mc-guide .mc-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mc-accent);
+  text-decoration: none;
+}
+
+.mc-guide .mc-back:hover {
+  text-decoration: underline;
+}
+
+.mc-guide .mc-kicker {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mc-accent);
+  background: var(--mc-accent-soft);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.mc-guide .mc-head h1 {
+  font-weight: 600;
+  font-size: clamp(28px, 6vw, 40px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 18px 0 10px;
+  color: var(--mc-ink);
+}
+
+.mc-guide .mc-sub {
+  font-size: clamp(16px, 2.4vw, 18px);
+  color: var(--mc-soft);
+  margin: 0;
+  max-width: 46ch;
+}
+
+.mc-guide .mc-section {
+  margin-top: 38px;
+  padding-top: 32px;
+  border-top: 1px solid var(--mc-line);
+}
+
+.mc-guide .mc-tag {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mc-accent);
+  margin-bottom: 20px;
+}
+
+.mc-guide .mc-lead {
+  margin: 0 0 18px;
+  color: var(--mc-soft);
+}
+
+.mc-guide .mc-steps {
+  counter-reset: mc;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mc-guide .mc-steps li {
+  position: relative;
+  padding: 0 0 22px 56px;
+  margin-bottom: 22px;
+  border-bottom: 1px dashed var(--mc-line);
+}
+
+.mc-guide .mc-steps li:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.mc-guide .mc-steps li::before {
+  counter-increment: mc;
+  content: counter(mc);
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-fraunces), "Fraunces", serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #fff;
+  background: var(--mc-accent);
+  border-radius: 12px;
+  box-shadow: 0 8px 18px -8px rgba(224, 85, 43, 0.7);
+}
+
+.mc-guide .mc-steps h3 {
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0 0 4px;
+  color: var(--mc-ink);
+}
+
+.mc-guide .mc-steps p {
+  margin: 0;
+  color: var(--mc-soft);
+}
+
+.mc-guide strong {
+  color: var(--mc-ink);
+  font-weight: 600;
+}
+
+.mc-guide .mc-prompts {
+  display: grid;
+  gap: 12px;
+}
+
+.mc-guide .mc-card {
+  position: relative;
+  background: var(--mc-card);
+  border: 1px solid var(--mc-line);
+  border-left: 3px solid var(--mc-accent);
+  border-radius: 14px;
+  padding: 16px 18px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.mc-guide .mc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -20px rgba(80, 50, 20, 0.45);
+}
+
+.mc-guide .mc-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 7px;
+}
+
+.mc-guide .mc-card-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--mc-accent);
+}
+
+.mc-guide .mc-copy {
+  flex-shrink: 0;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--mc-soft);
+  background: transparent;
+  border: 1px solid var(--mc-line);
+  border-radius: 8px;
+  padding: 5px 11px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.mc-guide .mc-copy:hover {
+  color: var(--mc-accent);
+  border-color: var(--mc-accent);
+}
+
+.mc-guide .mc-copy.mc-done {
+  color: #1f6b3a;
+  border-color: #1f6b3a;
+}
+
+.mc-guide .mc-card p {
+  margin: 0;
+  color: var(--mc-ink);
+}
+
+.mc-guide .mc-card em {
+  font-style: italic;
+  color: var(--mc-soft);
+}
+
+.mc-guide .mc-tips {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.mc-guide .mc-tips li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--mc-soft);
+}
+
+.mc-guide .mc-tips li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--mc-accent);
+}
+
+.mc-guide .mc-foot {
+  margin-top: 38px;
+  padding: 24px;
+  background: var(--mc-accent-soft);
+  border-radius: 16px;
+}
+
+.mc-guide .mc-foot p {
+  margin: 0;
+}
+
+.mc-guide .mc-foot .mc-help {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--mc-soft);
+}
+
+.mc-guide .mc-community {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  background: var(--mc-card);
+  border: 1px solid var(--mc-line);
+  border-radius: 16px;
+}
+
+.mc-guide .mc-community-copy {
+  flex: 1 1 220px;
+}
+
+.mc-guide .mc-community-copy strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.mc-guide .mc-community-copy span {
+  font-size: 14px;
+  color: var(--mc-soft);
+}
+
+.mc-guide .mc-community-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  background: var(--mc-accent);
+  border-radius: 999px;
+  padding: 11px 20px;
+  text-decoration: none;
+  transition: opacity 0.16s ease;
+}
+
+.mc-guide .mc-community-btn:hover {
+  opacity: 0.88;
+}
+
+@media (max-width: 480px) {
+  .mc-guide .mc-steps li {
+    padding-left: 48px;
+  }
+
+  .mc-guide .mc-steps li::before {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mc-guide .mc-card,
+  .mc-guide .mc-copy,
+  .mc-guide .mc-community-btn {
+    transition: none;
+  }
+}
