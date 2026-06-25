@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
 import GuideShell from "@/components/guides/GuideShell";
+import CanvaClaudeGuide from "@/components/guides/canva-claude/CanvaClaudeGuide";
+import { CANVA_CLAUDE_SLUG } from "@/components/guides/canva-claude/data";
 import ClaudeTagGuide from "@/components/guides/claude-tag/ClaudeTagGuide";
 import { CLAUDE_TAG_SLUG } from "@/components/guides/claude-tag/data";
 import MetricoolClaudeGuide from "@/components/guides/metricool-claude/MetricoolClaudeGuide";
@@ -60,7 +62,9 @@ export default async function GuidePostPage({ params }: PageProps) {
 
   let content: React.ReactNode;
 
-  if (slug === CLAUDE_TAG_SLUG) {
+  if (slug === CANVA_CLAUDE_SLUG) {
+    content = <CanvaClaudeGuide />;
+  } else if (slug === CLAUDE_TAG_SLUG) {
     content = <ClaudeTagGuide />;
   } else if (slug === METRICOOL_CLAUDE_SLUG) {
     content = <MetricoolClaudeGuide />;

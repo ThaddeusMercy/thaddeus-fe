@@ -1,0 +1,277 @@
+.cv-guide {
+  --font-fraunces: "Fraunces";
+  --font-spline: "Spline Sans";
+  --cv-ink: #1a1a1a;
+  --cv-soft: #676767;
+  --cv-paper: #ffffff;
+  --cv-card: #ffffff;
+  --cv-line: #e4e4e7;
+  --cv-accent: #1a1a1a;
+  --cv-accent-soft: #f4f4f5;
+
+  max-width: 680px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px);
+  background: var(--cv-paper);
+  color: var(--cv-ink);
+  font-family: var(--font-spline), "Spline Sans", ui-sans-serif, system-ui,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cv-guide .cv-serif {
+  font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+}
+
+.cv-guide .cv-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cv-accent);
+  text-decoration: none;
+}
+
+.cv-guide .cv-back:hover {
+  text-decoration: underline;
+}
+
+.cv-guide .cv-kicker {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cv-accent);
+  background: var(--cv-accent-soft);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.cv-guide .cv-head h1 {
+  font-weight: 600;
+  font-size: clamp(28px, 6vw, 40px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 18px 0 10px;
+  color: var(--cv-ink);
+}
+
+.cv-guide .cv-sub {
+  font-size: clamp(16px, 2.4vw, 18px);
+  color: var(--cv-soft);
+  margin: 0;
+  max-width: 46ch;
+}
+
+.cv-guide .cv-section {
+  margin-top: 38px;
+  padding-top: 32px;
+  border-top: 1px solid var(--cv-line);
+}
+
+.cv-guide .cv-tag {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cv-accent);
+  margin-bottom: 8px;
+}
+
+.cv-guide .cv-lead {
+  margin: 0 0 18px;
+  color: var(--cv-soft);
+}
+
+.cv-guide .cv-steps {
+  counter-reset: cv;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-guide .cv-steps li {
+  position: relative;
+  padding: 0 0 22px 56px;
+  margin-bottom: 22px;
+  border-bottom: 1px dashed var(--cv-line);
+}
+
+.cv-guide .cv-steps li:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.cv-guide .cv-steps li::before {
+  counter-increment: cv;
+  content: counter(cv);
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-fraunces), "Fraunces", serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #fff;
+  background: var(--cv-accent);
+  border-radius: 12px;
+  box-shadow: 0 8px 18px -8px rgba(26, 26, 26, 0.5);
+}
+
+.cv-guide .cv-steps h3 {
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0 0 4px;
+  color: var(--cv-ink);
+}
+
+.cv-guide .cv-steps p {
+  margin: 0;
+  color: var(--cv-soft);
+}
+
+.cv-guide strong {
+  color: var(--cv-ink);
+  font-weight: 600;
+}
+
+.cv-guide .cv-prompts {
+  display: grid;
+  gap: 12px;
+}
+
+.cv-guide .cv-card {
+  position: relative;
+  background: var(--cv-card);
+  border: 1px solid var(--cv-line);
+  border-left: 3px solid var(--cv-accent);
+  border-radius: 14px;
+  padding: 16px 18px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.cv-guide .cv-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -20px rgba(26, 26, 26, 0.35);
+}
+
+.cv-guide .cv-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 7px;
+}
+
+.cv-guide .cv-card-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cv-accent);
+}
+
+.cv-guide .cv-copy {
+  flex-shrink: 0;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--cv-soft);
+  background: transparent;
+  border: 1px solid var(--cv-line);
+  border-radius: 8px;
+  padding: 5px 11px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.cv-guide .cv-copy:hover {
+  color: var(--cv-accent);
+  border-color: var(--cv-accent);
+}
+
+.cv-guide .cv-copy.cv-done {
+  color: #1f6b3a;
+  border-color: #1f6b3a;
+}
+
+.cv-guide .cv-card p {
+  margin: 0;
+  color: var(--cv-ink);
+}
+
+.cv-guide .cv-card em {
+  font-style: italic;
+  color: var(--cv-soft);
+}
+
+.cv-guide .cv-tips {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.cv-guide .cv-tips li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--cv-soft);
+}
+
+.cv-guide .cv-tips li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--cv-accent);
+}
+
+.cv-guide .cv-foot {
+  margin-top: 38px;
+  padding: 24px;
+  background: var(--cv-accent-soft);
+  border-radius: 16px;
+}
+
+.cv-guide .cv-foot p {
+  margin: 0;
+}
+
+.cv-guide .cv-foot .cv-help {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--cv-soft);
+}
+
+@media (max-width: 480px) {
+  .cv-guide .cv-steps li {
+    padding-left: 48px;
+  }
+
+  .cv-guide .cv-steps li::before {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-guide .cv-card,
+  .cv-guide .cv-copy {
+    transition: none;
+  }
+}

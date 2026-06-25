@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "design-with-claude-canva",
+    title: "Make Designs by Just Chatting With Claude",
+    excerpt:
+      "Connect Canva to Claude once, then describe what you want — carousels, flyers, banners and posters built in your brand style, no template hunting.",
+    category: "WORKFLOWS",
+    topic: "creative",
+    tools: ["claude", "canva"],
+    publishedAt: "2026-06-25",
+    layout: "document",
+    sections: [
+      {
+        heading: "Make designs by just chatting with Claude",
+        body: "AI Series Part 7. Connect Canva to Claude via Connectors, then describe a design and it builds carousels, flyers, banners and posters in your brand style. Three copy-ready prompts included.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "claude-tag-playbook",
     title: "The Claude Tag Playbook",
     excerpt:

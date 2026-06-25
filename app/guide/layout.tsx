@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Suspense } from "react";
 
 import GuidesSubnav from "@/components/guides/GuidesSubnav";
@@ -18,12 +17,6 @@ export default function GuideLayout({
     <div className="min-h-screen bg-white pb-28 text-[#676767] md:pb-32">
       <header className="sticky top-0 z-40 border-b border-border bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
-          <Link
-            href="/"
-            className="text-sm font-medium text-[#1a1a1a] hover:underline"
-          >
-            ← Home
-          </Link>
           <Suspense fallback={null}>
             <GuidesSubnav />
           </Suspense>
