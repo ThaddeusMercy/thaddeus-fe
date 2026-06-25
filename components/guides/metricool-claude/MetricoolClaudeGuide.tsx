@@ -4,14 +4,9 @@ import { Fragment, useCallback, useState } from "react";
 import Link from "next/link";
 import { Fraunces } from "next/font/google";
 import { Spline_Sans } from "next/font/google";
-import { ArrowLeft, WhatsappLogo } from "@phosphor-icons/react";
+import { ArrowLeft } from "@phosphor-icons/react";
 
-import {
-  PROMPT_CARDS,
-  SETUP_STEPS,
-  TIPS,
-  WHATSAPP_CHANNEL_URL,
-} from "./data";
+import { PROMPT_CARDS, SETUP_STEPS, TIPS } from "./data";
 import "./metricool-claude.css";
 
 const fraunces = Fraunces({
@@ -134,25 +129,6 @@ export default function MetricoolClaudeGuide() {
           Stuck on a step? Just reply and I&apos;ll help you sort it out.
         </p>
       </footer>
-
-      <div className="mc-community">
-        <div className="mc-community-copy">
-          <strong>Join the community</strong>
-          <span>
-            Follow the Learn AI with Mercy &amp; Koha channel on WhatsApp for
-            the daily drops.
-          </span>
-        </div>
-        <a
-          href={WHATSAPP_CHANNEL_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mc-community-btn"
-        >
-          <WhatsappLogo className="h-5 w-5" weight="fill" aria-hidden />
-          Join on WhatsApp
-        </a>
-      </div>
     </div>
   );
 }

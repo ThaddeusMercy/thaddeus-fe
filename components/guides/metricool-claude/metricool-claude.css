@@ -1,11 +1,11 @@
 .mc-guide {
-  --mc-ink: #241b13;
-  --mc-soft: #6c5d4f;
+  --mc-ink: #1a1a1a;
+  --mc-soft: #676767;
   --mc-paper: #ffffff;
   --mc-card: #ffffff;
-  --mc-line: #e7dccb;
-  --mc-accent: #e0552b;
-  --mc-accent-soft: #fbe7dd;
+  --mc-line: #e4e4e7;
+  --mc-accent: #1a1a1a;
+  --mc-accent-soft: #f4f4f5;
 
   max-width: 680px;
   margin: 24px auto;
@@ -121,7 +121,7 @@
   color: #fff;
   background: var(--mc-accent);
   border-radius: 12px;
-  box-shadow: 0 8px 18px -8px rgba(224, 85, 43, 0.7);
+  box-shadow: 0 8px 18px -8px rgba(26, 26, 26, 0.5);
 }
 
 .mc-guide .mc-steps h3 {
@@ -158,7 +158,7 @@
 
 .mc-guide .mc-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 30px -20px rgba(80, 50, 20, 0.45);
+  box-shadow: 0 16px 30px -20px rgba(26, 26, 26, 0.35);
 }
 
 .mc-guide .mc-card-top {

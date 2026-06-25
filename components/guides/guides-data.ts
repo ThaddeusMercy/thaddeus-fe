@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "claude-tag-playbook",
+    title: "The Claude Tag Playbook",
+    excerpt:
+      "Anthropic turned Claude into a shared teammate that lives in Slack. How Claude Tag works, how to set it up, and how to make your team actually use it.",
+    category: "NEWS",
+    topic: "ai-agents",
+    tools: ["claude"],
+    publishedAt: "2026-06-25",
+    layout: "document",
+    sections: [
+      {
+        heading: "The Claude Tag Playbook",
+        body: "How to put Claude inside your team. What Claude Tag is, why it's different from a Slack bot, the four-step admin setup, team playbooks, governance, and the migration deadline.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "connect-claude-to-socials",
     title: "Connect Claude to All Your Socials",
     excerpt:

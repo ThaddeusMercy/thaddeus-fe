@@ -1,4 +1,5 @@
 import BootcampCta from "@/components/guides/BootcampCta";
+import GuideWhatsAppCta from "@/components/guides/GuideWhatsAppCta";
 
 export default function GuideShell({
   children,
@@ -8,6 +9,7 @@ export default function GuideShell({
       <BootcampCta variant="section" />
       {children}
       <BootcampCta variant="footer" />
+      <GuideWhatsAppCta />
     </>
   );
 }

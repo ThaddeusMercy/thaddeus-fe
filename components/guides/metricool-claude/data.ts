@@ -1,8 +1,5 @@
 export const METRICOOL_CLAUDE_SLUG = "connect-claude-to-socials";
 
-export const WHATSAPP_CHANNEL_URL =
-  "https://whatsapp.com/channel/0029Vb7JkR40AgW6388TnH2g";
-
 export const SETUP_STEPS = [
   {
     title: "Create a Metricool account",
