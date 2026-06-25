@@ -1,4 +1,6 @@
 .heygen-translate {
+  --font-fraunces: "Fraunces";
+  --font-hanken: "Hanken Grotesk";
   --hg-surface: #ffffff;
   --hg-muted-surface: #fafafa;
   --hg-ink: #1c1812;

@@ -1,4 +1,6 @@
 .markitdown-guide {
+  --font-inter: "Inter";
+  --font-jetbrains: "JetBrains Mono";
   --md-bg: #ffffff;
   --md-bg-soft: #fafafa;
   --md-bg-tint: #fff5f4;

@@ -1,29 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import { ArrowLeft } from "@phosphor-icons/react";
 
 import { HEYGEN_TRANSLATE_SLUG, STATS, TIPS } from "./data";
 import "./heygen-translate.css";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  weight: ["400", "500", "600", "700", "900"],
-});
-
-const hanken = Hanken_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-hanken",
-  weight: ["400", "500", "600", "700"],
-});
-
 export default function HeyGenTranslateGuide() {
   return (
-    <div
-      className={`heygen-translate ${fraunces.variable} ${hanken.variable}`}
-    >
+    <div className="heygen-translate">
       <div className="hg-wrap">
         <Link href="/guide" className="hg-back">
           <ArrowLeft className="h-4 w-4" aria-hidden />

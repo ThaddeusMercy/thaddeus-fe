@@ -1,4 +1,7 @@
 .ai-storyboard {
+  --font-shippori: "Shippori Mincho";
+  --font-inter: "Inter";
+  --font-jetbrains: "JetBrains Mono";
   --asb-bg: #ffffff;
   --asb-panel: #ffffff;
   --asb-soft: #f6f4f2;

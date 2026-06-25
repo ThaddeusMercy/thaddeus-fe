@@ -2,8 +2,6 @@
 
 import { useCallback, useState } from "react";
 import Link from "next/link";
-import { Inter, Shippori_Mincho } from "next/font/google";
-import { JetBrains_Mono } from "next/font/google";
 import { ArrowLeft } from "@phosphor-icons/react";
 
 import { FLOW_STEPS, STEPS } from "./data";
@@ -13,24 +11,6 @@ import {
   type StoryboardPromptKey,
 } from "./prompts";
 import "./anime-storyboard.css";
-
-const shippori = Shippori_Mincho({
-  subsets: ["latin"],
-  variable: "--font-shippori",
-  weight: ["500", "600", "700", "800"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["400", "500", "600"],
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  weight: ["400", "500"],
-});
 
 function PromptBlock({
   label,
@@ -92,7 +72,7 @@ function PromptBlock({
 export default function AnimeStoryboardGuide() {
   return (
     <div
-      className={`ai-storyboard ${shippori.variable} ${inter.variable} ${jetbrains.variable}`}
+      className="ai-storyboard"
     >
       <div className="asb-wrap">
         <Link href="/guide" className="asb-back asb-mono">

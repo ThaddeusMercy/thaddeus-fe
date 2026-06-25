@@ -1,20 +1,7 @@
 import Link from "next/link";
-import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 
 import { BOOTCAMP_URL, COURSES, TIPS } from "./data";
 import "./ai-certifications.css";
-
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin"],
-  weight: ["400", "600", "800"],
-  variable: "--font-bricolage",
-});
-
-const hanken = Hanken_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-hanken",
-});
 
 function renderInline(text: string) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
@@ -28,9 +15,7 @@ function renderInline(text: string) {
 
 export default function AiCertificationsGuide() {
   return (
-    <div
-      className={`ai-cert-guide ${bricolage.variable} ${hanken.variable}`}
-    >
+    <div className="ai-cert-guide">
       <div className="ac-wrap">
         <Link href="/guide" className="ac-back">
           ← All guides

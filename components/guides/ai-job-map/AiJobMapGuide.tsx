@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Archivo_Black, Inter } from "next/font/google";
 import { ArrowLeft } from "@phosphor-icons/react";
 
 import {
@@ -11,18 +10,6 @@ import {
   AI_JOB_MAP_UNIVERSAL_STEPS,
 } from "./data";
 import "./ai-job-map.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-inter",
-});
-
-const archivoBlack = Archivo_Black({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-archivo-black",
-});
 
 function Squiggle({ width = 360 }: { width?: number }) {
   return (
@@ -170,7 +157,7 @@ function TemplateBlock({
 export default function AiJobMapGuide() {
   return (
     <div
-      className={`ai-job-map ${inter.variable} ${archivoBlack.variable}`}
+      className="ai-job-map"
     >
       <div className="mx-auto max-w-[816px] px-4 pt-8">
         <Link href="/guide" className="ajm-back">

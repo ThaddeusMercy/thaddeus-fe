@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Fraunces, Inter } from "next/font/google";
-import { JetBrains_Mono } from "next/font/google";
 import { ArrowLeft } from "@phosphor-icons/react";
 
 import {
@@ -15,27 +13,9 @@ import {
 } from "./data";
 import "./claude-tag.css";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["400", "500", "600"],
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  weight: ["400", "500"],
-});
-
 export default function ClaudeTagGuide() {
   return (
-    <div className={`claude-tag ${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}>
+    <div className="claude-tag">
       <header className="ct-top">
         <div className="ct-top-inner">
           <div className="ct-brand ct-mono">

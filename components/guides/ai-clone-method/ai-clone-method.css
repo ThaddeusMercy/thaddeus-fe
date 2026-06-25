@@ -1,4 +1,7 @@
 .ai-clone-method {
+  --font-bricolage: "Bricolage Grotesque";
+  --font-inter: "Inter";
+  --font-jetbrains: "JetBrains Mono";
   --acm-bg: #ffffff;
   --acm-surface: #fafafa;
   --acm-surface2: #f4f4f5;

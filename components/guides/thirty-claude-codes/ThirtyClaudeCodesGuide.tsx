@@ -1,29 +1,6 @@
-import { Fraunces, Newsreader, Space_Mono } from "next/font/google";
-
 import { SECTIONS } from "./data";
 
 import "./thirty-claude-codes.css";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-fraunces",
-  display: "swap",
-});
-
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-newsreader",
-  display: "swap",
-});
-
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
-  display: "swap",
-});
 
 function AttnIconLarge() {
   return (
@@ -84,9 +61,7 @@ function ArrowUpIcon() {
 
 export default function ThirtyClaudeCodesGuide() {
   return (
-    <div
-      className={`thirty-claude-codes ${fraunces.variable} ${newsreader.variable} ${spaceMono.variable}`}
-    >
+    <div className="thirty-claude-codes">
       <header className="tcc-cover">
         <div className="tcc-kick">
           <AttnIconLarge />

@@ -1,4 +1,7 @@
 .claude-tag {
+  --font-fraunces: "Fraunces";
+  --font-inter: "Inter";
+  --font-jetbrains: "JetBrains Mono";
   --ct-ink: #0a0a0a;
   --ct-ink-2: #3d3d3d;
   --ct-ink-3: #767676;

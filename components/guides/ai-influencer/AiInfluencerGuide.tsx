@@ -2,8 +2,6 @@
 
 import { useCallback, useState } from "react";
 import Link from "next/link";
-import { Fraunces, Inter } from "next/font/google";
-import { JetBrains_Mono } from "next/font/google";
 import { ArrowLeft } from "@phosphor-icons/react";
 
 import { PRO_TIPS, WORKFLOW_STEPS } from "./data";
@@ -14,24 +12,6 @@ import {
 } from "./prompts-main";
 import { SCENE_GROUPS } from "./scene-prompts";
 import "./ai-influencer.css";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  weight: ["400", "500", "600", "700", "900"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["400", "500", "600"],
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  weight: ["400", "500"],
-});
 
 function PromptBlock({
   label,
@@ -97,7 +77,7 @@ export default function AiInfluencerGuide() {
 
   return (
     <div
-      className={`ai-influencer ${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}
+      className="ai-influencer"
     >
       <div className="ai-wrap">
         <Link href="/guide" className="ai-back">

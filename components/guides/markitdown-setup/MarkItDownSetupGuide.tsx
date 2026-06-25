@@ -2,7 +2,6 @@
 
 import { useCallback, useState } from "react";
 import Link from "next/link";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import { ArrowLeft } from "@phosphor-icons/react";
 
 import {
@@ -13,18 +12,6 @@ import {
   TOC_ITEMS,
 } from "./data";
 import "./markitdown-setup.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-inter",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-jetbrains",
-});
 
 function CopyPre({
   copyText,
@@ -63,9 +50,7 @@ function CopyPre({
 
 export default function MarkItDownSetupGuide() {
   return (
-    <div
-      className={`markitdown-guide ${inter.variable} ${jetbrains.variable}`}
-    >
+    <div className="markitdown-guide">
       <div className="md-wrap">
         <Link href="/guide" className="md-back">
           <ArrowLeft className="h-4 w-4" aria-hidden />

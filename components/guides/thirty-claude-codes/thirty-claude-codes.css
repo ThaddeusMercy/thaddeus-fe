@@ -1,4 +1,7 @@
 .thirty-claude-codes {
+  --font-fraunces: "Fraunces";
+  --font-newsreader: "Newsreader";
+  --font-space-mono: "Space Mono";
   --tcc-coral: #cb6b4a;
   --tcc-bg: #ffffff;
   --tcc-ink: #2a2925;

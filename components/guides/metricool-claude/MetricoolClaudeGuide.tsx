@@ -2,24 +2,10 @@
 
 import { Fragment, useCallback, useState } from "react";
 import Link from "next/link";
-import { Fraunces } from "next/font/google";
-import { Spline_Sans } from "next/font/google";
 import { ArrowLeft } from "@phosphor-icons/react";
 
 import { PROMPT_CARDS, SETUP_STEPS, TIPS } from "./data";
 import "./metricool-claude.css";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  weight: ["500", "600", "700"],
-});
-
-const spline = Spline_Sans({
-  subsets: ["latin"],
-  variable: "--font-spline",
-  weight: ["400", "500", "600"],
-});
 
 function highlightBrackets(text: string) {
   return text.split(/(\[[^\]]+\])/g).map((part, i) =>
@@ -68,7 +54,7 @@ function PromptCard({ label, text }: { label: string; text: string }) {
 
 export default function MetricoolClaudeGuide() {
   return (
-    <div className={`mc-guide ${fraunces.variable} ${spline.variable}`}>
+    <div className="mc-guide">
       <Link href="/guide" className="mc-back">
         <ArrowLeft className="h-4 w-4" aria-hidden />
         All guides

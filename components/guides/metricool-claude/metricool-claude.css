@@ -1,4 +1,6 @@
 .mc-guide {
+  --font-fraunces: "Fraunces";
+  --font-spline: "Spline Sans";
   --mc-ink: #1a1a1a;
   --mc-soft: #676767;
   --mc-paper: #ffffff;

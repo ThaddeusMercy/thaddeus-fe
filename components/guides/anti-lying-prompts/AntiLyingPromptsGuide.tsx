@@ -3,7 +3,6 @@
 import { useCallback, useState } from "react";
 import Link from "next/link";
 import { GeistSans } from "geist/font/sans";
-import { JetBrains_Mono } from "next/font/google";
 import { ArrowLeft } from "@phosphor-icons/react";
 
 import {
@@ -14,12 +13,6 @@ import {
   type SetupStep,
 } from "./data";
 import "./anti-lying-prompts.css";
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-jetbrains",
-});
 
 function CopyIcon() {
   return (
@@ -141,7 +134,7 @@ export default function AntiLyingPromptsGuide() {
 
   return (
     <div
-      className={`anti-lying-prompts ${GeistSans.className} ${jetbrains.variable}`}
+      className={`anti-lying-prompts ${GeistSans.className}`}
     >
       <div className="alp-wrap">
         <Link href="/guide" className="alp-back">

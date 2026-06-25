@@ -1,4 +1,7 @@
 .ai-influencer {
+  --font-fraunces: "Fraunces";
+  --font-inter: "Inter";
+  --font-jetbrains: "JetBrains Mono";
   --ai-ink: #211c17;
   --ai-ink-soft: #52493f;
   --ai-accent: #bf6b2f;

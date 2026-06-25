@@ -2,8 +2,6 @@
 
 import { useCallback, useState } from "react";
 import Link from "next/link";
-import { Bricolage_Grotesque, Inter } from "next/font/google";
-import { JetBrains_Mono } from "next/font/google";
 import { ArrowLeft } from "@phosphor-icons/react";
 
 import { GLANCE_CARDS, NEED_CHIPS, SCALE_TIPS } from "./data";
@@ -14,24 +12,6 @@ import {
   SCENE_PROMPTS,
 } from "./prompts";
 import "./ai-clone-method.css";
-
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin"],
-  variable: "--font-bricolage",
-  weight: ["500", "600", "700", "800"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["400", "500", "600"],
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  weight: ["400", "500"],
-});
 
 const ACCENT_VAR: Record<string, string> = {
   amber: "var(--acm-amber)",
@@ -93,7 +73,7 @@ function PromptCard({
 export default function AiCloneMethodGuide() {
   return (
     <div
-      className={`ai-clone-method ${bricolage.variable} ${inter.variable} ${jetbrains.variable}`}
+      className="ai-clone-method"
     >
       <div className="acm-wrap">
         <Link href="/guide" className="acm-back acm-mono">

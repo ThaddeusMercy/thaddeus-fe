@@ -1,4 +1,6 @@
 .ai-job-map {
+  --font-inter: "Inter";
+  --font-archivo-black: "Archivo Black";
   --ajm-coral: #f26b3a;
   --ajm-ink: #15130f;
   --ajm-soft: #4a4438;
