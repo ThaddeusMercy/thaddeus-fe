@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "six-claude-content-skills",
+    title: "6 Claude Skills You Can Steal",
+    excerpt:
+      "The six skills that run my content — Trend Finder, Script Writer, Carousel Builder, Caption Engine, Newsletter Engine, and Analyzer. Copy, paste, fill the brackets, go.",
+    category: "SKILLS",
+    topic: "skills",
+    tools: ["claude"],
+    publishedAt: "2026-06-26",
+    layout: "document",
+    sections: [
+      {
+        heading: "6 Claude Skills You Can Steal",
+        body: "The actual skills that run my content. Six copy-ready instruction sets: Trend Finder, Script Writer, Carousel Builder, Caption Engine, Newsletter Engine, and Analyzer. Paste into Claude or save in a Project, fill in the brackets, and go.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "design-with-claude-canva",
     title: "Make Designs by Just Chatting With Claude",
     excerpt:

@@ -1,0 +1,292 @@
+.cs-guide {
+  --font-archivo: "Archivo";
+  --font-dm: "DM Sans";
+  --font-mono: "JetBrains Mono";
+
+  --cs-ink: #1a1a1a;
+  --cs-body: #46423a;
+  --cs-muted: #8a8475;
+  --cs-accent: #1a1a1a;
+  --cs-line: #e4e4e7;
+  --cs-panel: #fafafa;
+  --cs-code: #1b1a16;
+  --cs-codetx: #ede9df;
+  --cs-paper: #ffffff;
+
+  max-width: 720px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px);
+  background: var(--cs-paper);
+  color: var(--cs-body);
+  font-family: var(--font-dm), "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cs-guide .cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cs-ink);
+  text-decoration: none;
+}
+
+.cs-guide .cs-back:hover {
+  text-decoration: underline;
+}
+
+.cs-guide .cs-eyebrow {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+}
+
+.cs-guide .cs-hero {
+  padding: 8px 0 36px;
+  border-bottom: 1px solid var(--cs-line);
+}
+
+.cs-guide .cs-hero h1 {
+  font-family: var(--font-archivo), "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: clamp(36px, 6.5vw, 60px);
+  line-height: 1;
+  letter-spacing: -1.4px;
+  color: var(--cs-ink);
+  text-transform: uppercase;
+  margin: 16px 0 0;
+}
+
+.cs-guide .cs-hero .cs-accent {
+  color: var(--cs-accent);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 6px;
+}
+
+.cs-guide .cs-hero .cs-sub {
+  font-size: clamp(17px, 2.3vw, 21px);
+  color: var(--cs-body);
+  max-width: 620px;
+  margin-top: 22px;
+}
+
+.cs-guide .cs-how {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--cs-line);
+}
+
+.cs-guide .cs-how h2 {
+  font-family: var(--font-archivo), "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--cs-ink);
+  letter-spacing: -0.4px;
+  margin-bottom: 18px;
+}
+
+.cs-guide .cs-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cs-guide .cs-step {
+  background: var(--cs-panel);
+  border: 1px solid var(--cs-line);
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+
+.cs-guide .cs-step .cs-n {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+}
+
+.cs-guide .cs-step h3 {
+  font-family: var(--font-archivo), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--cs-ink);
+  margin: 8px 0 6px;
+}
+
+.cs-guide .cs-step p {
+  font-size: 15px;
+  color: var(--cs-body);
+  margin: 0;
+}
+
+.cs-guide .cs-skills {
+  padding: 40px 0 0;
+}
+
+.cs-guide .cs-lead {
+  font-family: var(--font-archivo), "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: var(--cs-ink);
+  letter-spacing: -0.4px;
+  margin-bottom: 4px;
+}
+
+.cs-guide .cs-leadsub {
+  color: var(--cs-muted);
+  font-size: 16px;
+  margin: 0;
+}
+
+.cs-guide .cs-skill {
+  padding: 36px 0;
+  border-top: 1px solid var(--cs-line);
+}
+
+.cs-guide .cs-skill:first-of-type {
+  border-top: 0;
+  padding-top: 28px;
+}
+
+.cs-guide .cs-shead {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cs-guide .cs-snum {
+  font-family: var(--font-archivo), "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--cs-muted);
+  letter-spacing: -0.5px;
+}
+
+.cs-guide .cs-sname {
+  font-family: var(--font-archivo), "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  color: var(--cs-ink);
+  letter-spacing: -0.5px;
+}
+
+.cs-guide .cs-swhat {
+  color: var(--cs-body);
+  font-size: 17px;
+  margin: 12px 0 18px;
+  max-width: 640px;
+}
+
+.cs-guide .cs-block {
+  position: relative;
+  background: var(--cs-code);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #2a2822;
+}
+
+.cs-guide .cs-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #2a2822;
+}
+
+.cs-guide .cs-fnm {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 13px;
+  color: #9a9486;
+  letter-spacing: 0.04em;
+}
+
+.cs-guide .cs-copy {
+  font-family: var(--font-dm), "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--cs-code);
+  background: #ede9df;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.cs-guide .cs-copy:hover {
+  background: #fff;
+}
+
+.cs-guide .cs-copy:active {
+  transform: scale(0.97);
+}
+
+.cs-guide .cs-copy.cs-done {
+  background: #1f6b3a;
+  color: #fff;
+}
+
+.cs-guide pre {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.62;
+  color: var(--cs-codetx);
+  padding: 20px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0;
+}
+
+.cs-guide pre .cs-b {
+  color: #f0b27a;
+  font-weight: 600;
+}
+
+.cs-guide .cs-foot {
+  margin-top: 40px;
+  padding: 24px;
+  background: var(--cs-panel);
+  border: 1px solid var(--cs-line);
+  border-radius: 16px;
+}
+
+.cs-guide .cs-foot p {
+  margin: 0;
+  color: var(--cs-body);
+}
+
+.cs-guide .cs-foot .cs-help {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--cs-muted);
+}
+
+@media (max-width: 660px) {
+  .cs-guide .cs-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-guide pre {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-guide .cs-copy {
+    transition: none;
+  }
+}
