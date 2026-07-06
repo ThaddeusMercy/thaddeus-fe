@@ -1,4 +1,4 @@
-/** AI Accelerator Bootcamp waitlist (Attention Factory / attn.) */
+/** Free AI Webinar (Attention Factory) */
 export const WEBINAR_WAITLIST_URL =
   "https://attentionfactory.io/launch";
 
@@ -10,7 +10,7 @@ export const WHATSAPP_CHANNEL_URL =
 export const WEBINAR_WHATSAPP_GROUP_URL =
   "https://chat.whatsapp.com/C5UZrgILM6a6xpeok3uuV1?mode=gi_t";
 
-export const WEBINAR_BANNER_SRC = "/talks/ai-accelerator-bootcamp-banner.jpg";
+export const WEBINAR_BANNER_SRC = "/talks/free-ai-webinar.png";
 
 export const WEBINAR_BANNER_ALT =
-  "AI Accelerator Bootcamp — from zero to one. Mercy Thaddeus and Joshua Omobola (Attention Factory / attn.), July 1st.";
+  "How to Earn from AI Opportunities — free webinar by Mercy Thaddeus and Joshua Omobola (Attention Factory).";

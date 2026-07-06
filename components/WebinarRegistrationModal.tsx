@@ -9,17 +9,13 @@ import {
   WEBINAR_BANNER_ALT,
   WEBINAR_BANNER_SRC,
   WEBINAR_WAITLIST_URL,
-  WEBINAR_WHATSAPP_GROUP_URL,
 } from "@/lib/webinar";
 import { trackEvent } from "@/lib/analytics";
 
 const DELAY_MS = 5000;
 
-type ModalStep = "webinar" | "community";
-
 export default function WebinarRegistrationModal() {
   const [open, setOpen] = useState(false);
-  const [step, setStep] = useState<ModalStep>("webinar");
 
   useEffect(() => {
     const id = window.setTimeout(() => setOpen(true), DELAY_MS);
@@ -27,31 +23,17 @@ export default function WebinarRegistrationModal() {
   }, []);
 
   useEffect(() => {
-    if (open) {
-      setStep("webinar");
-      trackEvent("webinar_modal_open");
-    }
+    if (open) trackEvent("webinar_modal_open");
   }, [open]);
 
   const close = (reason: string) => {
-    if (open) trackEvent("webinar_modal_close", { reason, step });
+    if (open) trackEvent("webinar_modal_close", { reason });
     setOpen(false);
   };
 
-  const goRegister = () => {
-    trackEvent("webinar_modal_waitlist_click");
+  const watchWebinar = () => {
+    trackEvent("webinar_modal_watch_click");
     window.open(WEBINAR_WAITLIST_URL, "_blank", "noopener,noreferrer");
-    setOpen(false);
-  };
-
-  const showCommunityStep = () => {
-    trackEvent("webinar_modal_community_step_open");
-    setStep("community");
-  };
-
-  const openWhatsAppGroup = () => {
-    trackEvent("webinar_modal_whatsapp_click");
-    window.open(WEBINAR_WHATSAPP_GROUP_URL, "_blank", "noopener,noreferrer");
     setOpen(false);
   };
 
@@ -69,11 +51,7 @@ export default function WebinarRegistrationModal() {
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-labelledby={
-              step === "webinar"
-                ? "webinar-prompt-title"
-                : "community-modal-title"
-            }
+            aria-labelledby="webinar-prompt-title"
             initial={{ scale: 0.96, opacity: 0, y: 12 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.96, opacity: 0, y: 12 }}
@@ -90,99 +68,55 @@ export default function WebinarRegistrationModal() {
               <X className="h-5 w-5" weight="bold" />
             </button>
 
-            {step === "webinar" ? (
-              <>
-                <h2
-                  id="webinar-prompt-title"
-                  className="pr-12 text-lg font-semibold leading-snug text-[#1a1a1a] md:text-xl"
-                >
-                  Join the AI Accelerator Bootcamp?
-                </h2>
-                <p className="mt-2 text-sm text-[#676767]">
-                  From zero to one — July 1st with Attention Factory (attn.).
-                  Mercy Thaddeus &amp; Joshua Omobola.
-                </p>
+            <h2
+              id="webinar-prompt-title"
+              className="pr-12 text-lg font-semibold leading-snug text-[#1a1a1a] md:text-xl"
+            >
+              Want to learn AI but not sure where to start?
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#676767]">
+              Watch my Free AI Webinar where you get practical steps to learning
+              AI and harnessing its opportunities.
+            </p>
 
-                <a
-                  href={WEBINAR_WAITLIST_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 block overflow-hidden rounded-xl border border-border shadow-sm transition-opacity hover:opacity-95"
-                  onClick={() => {
-                    trackEvent("webinar_modal_banner_click");
-                    close("banner_waitlist");
-                  }}
-                >
-                  <Image
-                    src={WEBINAR_BANNER_SRC}
-                    alt={WEBINAR_BANNER_ALT}
-                    width={1024}
-                    height={768}
-                    className="h-auto w-full object-cover"
-                    sizes="(max-width: 768px) 100vw, 576px"
-                    unoptimized
-                    priority
-                  />
-                </a>
+            <a
+              href={WEBINAR_WAITLIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 block overflow-hidden rounded-xl border border-border shadow-sm transition-opacity hover:opacity-95"
+              onClick={() => {
+                trackEvent("webinar_modal_banner_click");
+                close("banner_watch");
+              }}
+            >
+              <Image
+                src={WEBINAR_BANNER_SRC}
+                alt={WEBINAR_BANNER_ALT}
+                width={1280}
+                height={720}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 768px) 100vw, 576px"
+                unoptimized
+                priority
+              />
+            </a>
 
-                <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-                  <button
-                    type="button"
-                    className="flex-1 rounded-full bg-[#1a1a1a] px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#333]"
-                    onClick={goRegister}
-                  >
-                    Register on waitlist
-                  </button>
-                  <button
-                    type="button"
-                    className="flex-1 rounded-full border border-border bg-secondary px-4 py-3 text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-border"
-                    onClick={showCommunityStep}
-                  >
-                    Yes, I&apos;m already registered
-                  </button>
-                </div>
-                <button
-                  type="button"
-                  className="mt-2 w-full text-center text-xs text-[#999] underline-offset-2 hover:underline"
-                  onClick={() => close("not_now")}
-                >
-                  Not now
-                </button>
-              </>
-            ) : (
-              <>
-                <h2
-                  id="community-modal-title"
-                  className="pr-12 text-lg font-semibold leading-snug text-[#1a1a1a] md:text-xl"
-                >
-                  Join the community
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-[#676767]">
-                  You&apos;re on the list — come hang in the WhatsApp group
-                  &quot;The AI Community&quot; for updates, drops, and people
-                  actually building with AI (Attention Factory / attn.).
-                </p>
-                <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-                  <button
-                    type="button"
-                    className="flex-1 rounded-full bg-[#1a1a1a] px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#333]"
-                    onClick={openWhatsAppGroup}
-                  >
-                    Open WhatsApp group
-                  </button>
-                  <button
-                    type="button"
-                    className="flex-1 rounded-full border border-border bg-secondary px-4 py-3 text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-border"
-                    onClick={() => {
-                      trackEvent("webinar_modal_community_step_back");
-                      setStep("webinar");
-                    }}
-                  >
-                    Back
-                  </button>
-                </div>
-              </>
-            )}
+            <div className="mt-5">
+              <button
+                type="button"
+                className="w-full rounded-full bg-[#1a1a1a] px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#333]"
+                onClick={watchWebinar}
+              >
+                Watch the free webinar
+              </button>
+            </div>
+            <button
+              type="button"
+              className="mt-2 w-full text-center text-xs text-[#999] underline-offset-2 hover:underline"
+              onClick={() => close("not_now")}
+            >
+              Not now
+            </button>
           </motion.div>
         </motion.div>
       )}

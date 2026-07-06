@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "claude-goal-command",
+    title: "The /Goal Command",
+    excerpt:
+      "The prompt pattern that makes Claude keep working until the job is actually done — success conditions, self-checks, guardrails, and three copy-ready templates.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["claude"],
+    publishedAt: "2026-07-06",
+    layout: "document",
+    sections: [
+      {
+        heading: "The /Goal Command",
+        body: "A field guide to the prompt pattern that turns Claude from one-shot replies into a loop: act, check, repeat until done. Covers anatomy, Claude chat vs Claude Code, generic and ready-made templates, when to use it, and failure modes.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "six-claude-content-skills",
     title: "6 Claude Skills You Can Steal",
     excerpt:
