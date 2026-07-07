@@ -1,0 +1,589 @@
+.cc5-guide {
+  --font-bricolage: "Bricolage Grotesque";
+  --font-inter: "Inter";
+  --font-mono: "JetBrains Mono";
+
+  --cc5-ink: #1a1a1a;
+  --cc5-soft: #676767;
+  --cc5-faint: #8a8475;
+  --cc5-paper: #ffffff;
+  --cc5-card: #fafafa;
+  --cc5-line: #e4e4e7;
+  --cc5-maxw: 760px;
+
+  max-width: var(--cc5-maxw);
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px);
+  background: var(--cc5-paper);
+  color: var(--cc5-soft);
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cc5-guide .cc5-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cc5-ink);
+  text-decoration: none;
+}
+
+.cc5-guide .cc5-back:hover {
+  text-decoration: underline;
+}
+
+.cc5-guide .cc5-hero {
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--cc5-line);
+}
+
+.cc5-guide .cc5-eyebrow {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cc5-faint);
+}
+
+.cc5-guide .cc5-hero h1 {
+  font-family: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 6.5vw, 52px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--cc5-ink);
+  margin: 18px 0 0;
+}
+
+.cc5-guide .cc5-em {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--cc5-line);
+}
+
+.cc5-guide .cc5-lede {
+  font-size: clamp(16px, 2.2vw, 19px);
+  color: var(--cc5-soft);
+  max-width: 58ch;
+  margin: 20px 0 0;
+}
+
+.cc5-guide .cc5-lede strong {
+  color: var(--cc5-ink);
+  font-weight: 600;
+}
+
+.cc5-guide .cc5-patchbay {
+  margin-top: 32px;
+  border: 1px solid var(--cc5-line);
+  border-radius: 16px;
+  background: var(--cc5-card);
+  padding: 18px 16px 16px;
+}
+
+.cc5-guide .cc5-patchbay-label {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cc5-faint);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 14px;
+}
+
+.cc5-guide .cc5-ports {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.cc5-guide .cc5-port {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 6px;
+  border: 1px solid var(--cc5-line);
+  border-radius: 12px;
+  background: var(--cc5-paper);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cc5-guide .cc5-port:hover {
+  border-color: var(--cc5-ink);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.cc5-guide .cc5-port-num {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--cc5-faint);
+}
+
+.cc5-guide .cc5-port-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cc5-ink);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.cc5-guide .cc5-band {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--cc5-line);
+  background: var(--cc5-paper);
+}
+
+.cc5-guide .cc5-connectors-sec {
+  padding: 40px 0;
+}
+
+.cc5-guide .cc5-sec-tag {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cc5-faint);
+  margin: 0 0 12px;
+}
+
+.cc5-guide .cc5-sec-tag--light {
+  color: #a8a8a8;
+}
+
+.cc5-guide .cc5-band h2,
+.cc5-guide .cc5-connectors-sec h2 {
+  font-family: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 4vw, 32px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--cc5-ink);
+  margin: 0 0 12px;
+}
+
+.cc5-guide .cc5-sec-intro {
+  color: var(--cc5-soft);
+  max-width: 58ch;
+  font-size: 16px;
+  margin: 0 0 28px;
+}
+
+.cc5-guide .cc5-sec-intro strong {
+  color: var(--cc5-ink);
+  font-weight: 600;
+}
+
+.cc5-guide .cc5-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--cc5-line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.cc5-guide .cc5-steps li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 0;
+  background: var(--cc5-paper);
+  border-top: 1px solid var(--cc5-line);
+}
+
+.cc5-guide .cc5-steps li:first-child {
+  border-top: none;
+}
+
+.cc5-guide .cc5-step-num {
+  font-family: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--cc5-ink);
+  background: var(--cc5-card);
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--cc5-line);
+}
+
+.cc5-guide .cc5-steps li > div {
+  padding: 16px 20px;
+}
+
+.cc5-guide .cc5-steps h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cc5-ink);
+  margin: 0 0 4px;
+}
+
+.cc5-guide .cc5-steps p {
+  font-size: 14px;
+  color: var(--cc5-soft);
+  margin: 0;
+}
+
+.cc5-guide .cc5-connectors {
+  display: grid;
+  gap: 24px;
+}
+
+.cc5-guide .cc5-card {
+  border: 1px solid var(--cc5-line);
+  border-radius: 16px;
+  background: var(--cc5-paper);
+  overflow: hidden;
+  scroll-margin-top: 88px;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.cc5-guide .cc5-card:hover {
+  border-color: #d4d4d8;
+  box-shadow: 0 16px 40px -28px rgba(26, 26, 26, 0.35);
+}
+
+.cc5-guide .cc5-card-head {
+  display: flex;
+  gap: 18px;
+  padding: 22px 22px 18px;
+  border-bottom: 1px solid var(--cc5-line);
+  align-items: flex-start;
+}
+
+.cc5-guide .cc5-card-num {
+  font-family: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1;
+  color: var(--cc5-line);
+  letter-spacing: -0.03em;
+  flex-shrink: 0;
+}
+
+.cc5-guide .cc5-card-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.cc5-guide .cc5-badge {
+  display: inline-block;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--cc5-card);
+  border: 1px solid var(--cc5-line);
+  color: var(--cc5-soft);
+  margin-bottom: 8px;
+}
+
+.cc5-guide .cc5-kicker {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cc5-faint);
+  margin: 0 0 4px;
+}
+
+.cc5-guide .cc5-card-title h3 {
+  font-family: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--cc5-ink);
+  margin: 0;
+}
+
+.cc5-guide .cc5-tagline {
+  font-size: 15px;
+  color: var(--cc5-soft);
+  margin: 8px 0 0;
+  max-width: 52ch;
+}
+
+.cc5-guide .cc5-card-body {
+  padding: 20px 22px 22px;
+  display: grid;
+  gap: 22px;
+}
+
+.cc5-guide .cc5-block-label {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cc5-faint);
+  margin: 0 0 10px;
+}
+
+.cc5-guide .cc5-url {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--cc5-card);
+  border: 1px solid var(--cc5-line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--cc5-ink);
+  word-break: break-all;
+  margin: 0 0 12px;
+}
+
+.cc5-guide .cc5-url-scheme {
+  color: var(--cc5-faint);
+}
+
+.cc5-guide .cc5-url-note {
+  font-size: 14px;
+  color: var(--cc5-soft);
+  margin: 0 0 12px;
+}
+
+.cc5-guide .cc5-mini {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: cc5mini;
+  display: grid;
+  gap: 10px;
+}
+
+.cc5-guide .cc5-mini li {
+  counter-increment: cc5mini;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--cc5-soft);
+  align-items: baseline;
+}
+
+.cc5-guide .cc5-mini li::before {
+  content: counter(cc5mini);
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cc5-ink);
+  background: var(--cc5-card);
+  border: 1px solid var(--cc5-line);
+  border-radius: 6px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+}
+
+.cc5-guide .cc5-prompts {
+  display: grid;
+  gap: 8px;
+}
+
+.cc5-guide .cc5-prompt {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: var(--cc5-card);
+  border: 1px solid var(--cc5-line);
+  border-left: 3px solid var(--cc5-ink);
+  border-radius: 10px;
+  padding: 12px 12px 12px 14px;
+}
+
+.cc5-guide .cc5-prompt-text {
+  font-size: 14px;
+  color: var(--cc5-ink);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.cc5-guide .cc5-prompt-text::before {
+  content: "› ";
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 700;
+  color: var(--cc5-faint);
+}
+
+.cc5-guide .cc5-copy {
+  flex-shrink: 0;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cc5-soft);
+  background: var(--cc5-paper);
+  border: 1px solid var(--cc5-line);
+  border-radius: 6px;
+  padding: 4px 9px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cc5-guide .cc5-copy:hover {
+  color: var(--cc5-ink);
+  border-color: var(--cc5-ink);
+}
+
+.cc5-guide .cc5-copy.cc5-copied {
+  color: #1f6b3a;
+  border-color: #1f6b3a;
+}
+
+.cc5-guide .cc5-tip {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--cc5-card);
+  border: 1px solid var(--cc5-line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--cc5-soft);
+}
+
+.cc5-guide .cc5-tip-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--cc5-faint);
+}
+
+.cc5-guide .cc5-tip strong {
+  color: var(--cc5-ink);
+  font-weight: 600;
+}
+
+.cc5-guide .cc5-closer-wrap {
+  padding: 8px 0 0;
+}
+
+.cc5-guide .cc5-closer {
+  background: var(--cc5-ink);
+  color: #ecebe4;
+  border-radius: 16px;
+  padding: clamp(28px, 4vw, 40px);
+}
+
+.cc5-guide .cc5-closer h2 {
+  font-family: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 3.5vw, 30px);
+  color: #fff;
+  margin: 0 0 12px;
+  max-width: 28ch;
+}
+
+.cc5-guide .cc5-closer > p {
+  color: #b8b8b8;
+  font-size: 15px;
+  max-width: 52ch;
+  margin: 0 0 22px;
+}
+
+.cc5-guide .cc5-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cc5-guide .cc5-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cc5-guide .cc5-link:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+  text-decoration: none;
+}
+
+.cc5-guide .cc5-link--primary {
+  background: #fff;
+  color: var(--cc5-ink);
+  border-color: #fff;
+}
+
+.cc5-guide .cc5-link--primary:hover {
+  background: #f4f4f5;
+}
+
+.cc5-guide .cc5-foot {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--cc5-line);
+}
+
+.cc5-guide .cc5-brand {
+  font-family: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--cc5-ink);
+  margin: 0 0 4px;
+}
+
+.cc5-guide .cc5-foot-sub {
+  font-size: 13px;
+  color: var(--cc5-faint);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .cc5-guide .cc5-ports {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cc5-guide .cc5-port:last-child {
+    grid-column: span 2;
+  }
+
+  .cc5-guide .cc5-card-head {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cc5-guide .cc5-prompt {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cc5-guide .cc5-copy {
+    align-self: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc5-guide .cc5-port,
+  .cc5-guide .cc5-card,
+  .cc5-guide .cc5-copy,
+  .cc5-guide .cc5-link {
+    transition: none;
+  }
+}

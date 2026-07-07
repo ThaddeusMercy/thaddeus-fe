@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
 import GuideShell from "@/components/guides/GuideShell";
+import ClaudeConnectorsGuide from "@/components/guides/claude-connectors/ClaudeConnectorsGuide";
+import { CLAUDE_CONNECTORS_SLUG } from "@/components/guides/claude-connectors/data";
 import GoalCommandGuide from "@/components/guides/goal-command/GoalCommandGuide";
 import { GOAL_COMMAND_SLUG } from "@/components/guides/goal-command/data";
 import CanvaClaudeGuide from "@/components/guides/canva-claude/CanvaClaudeGuide";
@@ -66,7 +68,9 @@ export default async function GuidePostPage({ params }: PageProps) {
 
   let content: React.ReactNode;
 
-  if (slug === GOAL_COMMAND_SLUG) {
+  if (slug === CLAUDE_CONNECTORS_SLUG) {
+    content = <ClaudeConnectorsGuide />;
+  } else if (slug === GOAL_COMMAND_SLUG) {
     content = <GoalCommandGuide />;
   } else if (slug === CLAUDE_SKILLS_SLUG) {
     content = <ClaudeSkillsGuide />;

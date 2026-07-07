@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "five-claude-connectors",
+    title: "5 Claude Connectors That Put You Ahead of 99%",
+    excerpt:
+      "Full setup for Gmail, Higgsfield, TranscriptX, Meta Ads, and Canva — connect paths, MCP URLs, copy-ready prompts, and the one thing most people miss on each.",
+    category: "SETUP",
+    topic: "setup",
+    tools: ["claude", "canva", "multi-tool"],
+    publishedAt: "2026-07-07",
+    layout: "document",
+    sections: [
+      {
+        heading: "5 Claude Connectors That Put You Ahead of 99%",
+        body: "Without connectors you're running Claude at 10% capacity. Field guide for wiring Gmail, Higgsfield, TranscriptX, Meta Ads, and Canva — primer steps, URLs, prompts, and pro tips.\n\nhttps://transcriptx.xyz\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "claude-goal-command",
     title: "The /Goal Command",
     excerpt:
