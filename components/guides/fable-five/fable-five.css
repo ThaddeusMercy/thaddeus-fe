@@ -1,0 +1,291 @@
+.fb5-guide {
+  --font-bricolage: "Bricolage Grotesque";
+  --font-mono: "JetBrains Mono";
+
+  --fb5-ink: #1a1a1a;
+  --fb5-soft: #676767;
+  --fb5-muted: #8a8475;
+  --fb5-paper: #ffffff;
+  --fb5-card: #fafafa;
+  --fb5-line: #e4e4e7;
+  --fb5-line-strong: #d4d4d8;
+
+  max-width: 720px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px);
+  background: var(--fb5-paper);
+  color: var(--fb5-soft);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fb5-guide .fb5-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fb5-ink);
+  text-decoration: none;
+}
+
+.fb5-guide .fb5-back:hover {
+  text-decoration: underline;
+}
+
+.fb5-guide .fb5-eyebrow {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fb5-muted);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.fb5-guide .fb5-hero h1 {
+  font-family: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 6.5vw, 48px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--fb5-ink);
+  margin: 0 0 18px;
+}
+
+.fb5-guide .fb5-thin {
+  font-weight: 400;
+  color: var(--fb5-muted);
+}
+
+.fb5-guide .fb5-lede {
+  font-size: clamp(17px, 2.2vw, 19px);
+  color: var(--fb5-soft);
+  max-width: 58ch;
+  margin: 0;
+}
+
+.fb5-guide .fb5-lede strong {
+  color: var(--fb5-ink);
+  font-weight: 600;
+}
+
+.fb5-guide .fb5-clock {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 24px 0 0;
+  padding: 9px 15px;
+  background: var(--fb5-card);
+  border: 1px solid var(--fb5-line);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fb5-ink);
+}
+
+.fb5-guide .fb5-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--fb5-ink);
+  flex-shrink: 0;
+}
+
+.fb5-guide .fb5-how {
+  margin-top: 36px;
+  padding: 22px 24px;
+  background: var(--fb5-card);
+  border: 1px solid var(--fb5-line);
+  border-radius: 16px;
+}
+
+.fb5-guide .fb5-how h2 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fb5-muted);
+  margin: 0 0 14px;
+}
+
+.fb5-guide .fb5-how ol {
+  list-style: none;
+  counter-reset: fb5how;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.fb5-guide .fb5-how li {
+  counter-increment: fb5how;
+  position: relative;
+  padding-left: 30px;
+  font-size: 15px;
+  color: var(--fb5-soft);
+}
+
+.fb5-guide .fb5-how li::before {
+  content: counter(fb5how);
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  background: var(--fb5-ink);
+  color: #fff;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.fb5-guide .fb5-rule {
+  height: 1px;
+  background: var(--fb5-line);
+  margin: 44px 0;
+}
+
+.fb5-guide .fb5-prompts {
+  display: grid;
+  gap: 44px;
+}
+
+.fb5-guide .fb5-p-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.fb5-guide .fb5-p-num {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fb5-muted);
+  flex-shrink: 0;
+}
+
+.fb5-guide .fb5-p-title {
+  font-family: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  font-weight: 600;
+  font-size: clamp(20px, 3vw, 24px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--fb5-ink);
+  margin: 0;
+}
+
+.fb5-guide .fb5-p-sub {
+  color: var(--fb5-muted);
+  font-size: 15px;
+  margin: 0 0 16px 36px;
+}
+
+.fb5-guide .fb5-box {
+  position: relative;
+  margin-left: 36px;
+  background: var(--fb5-card);
+  border: 1px solid var(--fb5-line-strong);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.fb5-guide .fb5-copy {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 1;
+  background: var(--fb5-ink);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 13px;
+  border-radius: 9px;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.fb5-guide .fb5-copy:hover {
+  background: #333;
+}
+
+.fb5-guide .fb5-copy:active {
+  transform: scale(0.96);
+}
+
+.fb5-guide .fb5-copy.fb5-done {
+  background: #1f6b3a;
+}
+
+.fb5-guide .fb5-box-body {
+  margin: 0;
+  padding: 22px 24px 24px;
+  padding-top: 52px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 14px;
+  line-height: 1.72;
+  color: var(--fb5-soft);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.fb5-guide .fb5-box-body .fb5-fill {
+  color: var(--fb5-ink);
+  background: var(--fb5-line);
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.fb5-guide .fb5-foot {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--fb5-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.fb5-guide .fb5-brand {
+  font-family: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--fb5-ink);
+  margin: 0;
+}
+
+.fb5-guide .fb5-foot-note {
+  font-size: 14px;
+  color: var(--fb5-muted);
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .fb5-guide .fb5-p-sub,
+  .fb5-guide .fb5-box {
+    margin-left: 0;
+  }
+
+  .fb5-guide .fb5-box-body {
+    font-size: 13px;
+    padding: 20px 18px 22px;
+    padding-top: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fb5-guide .fb5-copy {
+    transition: none;
+  }
+}

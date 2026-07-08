@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "fable-five-prompts",
+    title: "The 3 Prompts I'd Run Before Fable 5 Goes",
+    excerpt:
+      "Three one-shot Fable 5 prompts aligned with Anthropic's long-run scaffolding: audit your setup, security review, and build a months-long asset before July 12.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["claude"],
+    publishedAt: "2026-07-08",
+    layout: "document",
+    sections: [
+      {
+        heading: "The 3 Prompts I'd Run Before Fable 5 Goes",
+        body: "Three copy-ready prompts for Fable 5: audit and upgrade every skill, MCP, and workflow; run a full security audit; build a big project or plan you can run for months on cheaper models after July 12.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "five-claude-connectors",
     title: "5 Claude Connectors That Put You Ahead of 99%",
     excerpt:
