@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "chatgpt-upgrade-playbook",
+    title: "The ChatGPT Upgrade You Can Actually Use",
+    excerpt:
+      "GPT-5.6 Sol, Terra, and Luna — plus ChatGPT Work and Sites. Model routing, copy-ready agent tasks, Sites prompts, and a 30-minute setup.",
+    category: "SETUP",
+    topic: "setup",
+    tools: ["chatgpt", "multi-tool"],
+    publishedAt: "2026-07-14",
+    layout: "document",
+    sections: [
+      {
+        heading: "The ChatGPT Upgrade You Can Actually Use",
+        body: "Field guide to GPT-5.6 tiers, ChatGPT Work agent tasks, Sites publishing, and the 30-minute setup — with exact prompts to run today.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "fable-five-prompts",
     title: "The 3 Prompts I'd Run Before Fable 5 Goes",
     excerpt:

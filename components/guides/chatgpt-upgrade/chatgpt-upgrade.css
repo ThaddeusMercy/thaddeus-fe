@@ -1,0 +1,391 @@
+.cgu-guide {
+  --font-serif: "Instrument Serif";
+  --font-sans: "IBM Plex Sans";
+  --font-mono: "IBM Plex Mono";
+
+  --cgu-ink: #1a1a1a;
+  --cgu-soft: #3d3d3d;
+  --cgu-muted: #767676;
+  --cgu-paper: #ffffff;
+  --cgu-card: #fafafa;
+  --cgu-line: #e4e4e7;
+  --cgu-line-strong: #d4d4d8;
+  --cgu-sol: #c4842a;
+  --cgu-terra: #3e7c59;
+  --cgu-luna: #6b62a8;
+
+  max-width: 760px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px);
+  background: var(--cgu-paper);
+  color: var(--cgu-soft);
+  font-family: var(--font-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cgu-guide .cgu-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cgu-ink);
+  text-decoration: none;
+}
+
+.cgu-guide .cgu-back:hover {
+  text-decoration: underline;
+}
+
+.cgu-guide .cgu-hero {
+  padding-bottom: 40px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--cgu-line);
+}
+
+.cgu-guide .cgu-eyebrow {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cgu-muted);
+  margin: 0 0 18px;
+}
+
+.cgu-guide .cgu-hero h1 {
+  font-family: var(--font-serif), "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(36px, 6.5vw, 56px);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  color: var(--cgu-ink);
+  margin: 0 0 18px;
+}
+
+.cgu-guide .cgu-hero h1 em {
+  font-style: italic;
+  color: var(--cgu-muted);
+}
+
+.cgu-guide .cgu-lede {
+  font-size: 18px;
+  color: var(--cgu-soft);
+  margin: 0 0 20px;
+  max-width: 58ch;
+}
+
+.cgu-guide .cgu-byline {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--cgu-muted);
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--cgu-line);
+}
+
+.cgu-guide .cgu-section {
+  padding: 44px 0;
+  border-bottom: 1px solid var(--cgu-line);
+}
+
+.cgu-guide .cgu-section-last {
+  border-bottom: none;
+}
+
+.cgu-guide .cgu-sec-label {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cgu-muted);
+  margin: 0 0 12px;
+}
+
+.cgu-guide h2 {
+  font-family: var(--font-serif), "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.14;
+  color: var(--cgu-ink);
+  margin: 0 0 16px;
+}
+
+.cgu-guide .cgu-h3 {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--cgu-ink);
+  margin: 28px 0 10px;
+}
+
+.cgu-guide p {
+  margin: 0 0 16px;
+}
+
+.cgu-guide .cgu-lead {
+  font-size: 19px;
+  color: var(--cgu-soft);
+}
+
+.cgu-guide strong {
+  font-weight: 600;
+  color: var(--cgu-ink);
+}
+
+.cgu-guide a {
+  color: var(--cgu-ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cgu-guide a:hover {
+  color: var(--cgu-soft);
+}
+
+.cgu-guide .cgu-callout {
+  background: var(--cgu-card);
+  border: 1px solid var(--cgu-line);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 24px 0;
+}
+
+.cgu-guide .cgu-callout-t {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cgu-muted);
+  margin: 0 0 8px;
+}
+
+.cgu-guide .cgu-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.cgu-guide .cgu-tiers {
+  display: grid;
+  gap: 14px;
+  margin: 24px 0 8px;
+}
+
+.cgu-guide .cgu-tier {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: var(--cgu-card);
+  border: 1px solid var(--cgu-line);
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+
+.cgu-guide .cgu-orb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.cgu-guide .cgu-orb-sol {
+  background: radial-gradient(circle at 32% 30%, #f0d4a0, var(--cgu-sol) 70%);
+  box-shadow: 0 0 0 5px rgba(196, 132, 42, 0.12);
+}
+
+.cgu-guide .cgu-orb-terra {
+  background: radial-gradient(circle at 32% 30%, #8fc4a4, var(--cgu-terra) 70%);
+  box-shadow: 0 0 0 5px rgba(62, 124, 89, 0.1);
+}
+
+.cgu-guide .cgu-orb-luna {
+  background: radial-gradient(circle at 32% 30%, #c8c0e8, var(--cgu-luna) 70%);
+  box-shadow: 0 0 0 5px rgba(107, 98, 168, 0.1);
+}
+
+.cgu-guide .cgu-tier-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--cgu-ink);
+  margin: 0 0 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cgu-guide .cgu-tier-role {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cgu-muted);
+  font-weight: 400;
+}
+
+.cgu-guide .cgu-tier p {
+  margin: 0;
+  font-size: 15.5px;
+}
+
+.cgu-guide .cgu-table-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.cgu-guide .cgu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.cgu-guide .cgu-table th,
+.cgu-guide .cgu-table td {
+  text-align: left;
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--cgu-line);
+  vertical-align: top;
+}
+
+.cgu-guide .cgu-table th {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cgu-muted);
+  font-weight: 500;
+}
+
+.cgu-guide .cgu-list,
+.cgu-guide .cgu-setup {
+  margin: 0 0 18px 20px;
+}
+
+.cgu-guide .cgu-list li,
+.cgu-guide .cgu-setup li {
+  margin-bottom: 9px;
+}
+
+.cgu-guide .cgu-prompt {
+  background: var(--cgu-card);
+  border: 1px solid var(--cgu-line-strong);
+  border-left: 3px solid var(--cgu-ink);
+  border-radius: 12px;
+  margin: 14px 0 22px;
+  overflow: hidden;
+}
+
+.cgu-guide .cgu-prompt-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--cgu-line);
+  background: var(--cgu-paper);
+}
+
+.cgu-guide .cgu-prompt-tag {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cgu-muted);
+}
+
+.cgu-guide .cgu-copy {
+  flex-shrink: 0;
+  background: var(--cgu-ink);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 12px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.cgu-guide .cgu-copy:hover {
+  background: #333;
+}
+
+.cgu-guide .cgu-copy.cgu-copied {
+  background: #1f6b3a;
+}
+
+.cgu-guide .cgu-prompt-body {
+  margin: 0;
+  padding: 18px 20px;
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13.5px;
+  line-height: 1.66;
+  color: var(--cgu-soft);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.cgu-guide .cgu-checklist {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+}
+
+.cgu-guide .cgu-checklist li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 10px;
+}
+
+.cgu-guide .cgu-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid var(--cgu-ink);
+  border-radius: 3px;
+}
+
+.cgu-guide .cgu-foot {
+  margin-top: 16px;
+  padding: 40px 0 8px;
+  border-top: 1px solid var(--cgu-line);
+}
+
+.cgu-guide .cgu-foot h2 {
+  margin-bottom: 12px;
+}
+
+.cgu-guide .cgu-links {
+  margin-bottom: 0;
+}
+
+.cgu-guide .cgu-sig {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--cgu-muted);
+  margin: 24px 0 0;
+}
+
+@media (max-width: 560px) {
+  .cgu-guide .cgu-tier {
+    grid-template-columns: 1fr;
+  }
+
+  .cgu-guide .cgu-orb {
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cgu-guide .cgu-copy {
+    transition: none;
+  }
+}

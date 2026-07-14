@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
 import GuideShell from "@/components/guides/GuideShell";
+import ChatGptUpgradeGuide from "@/components/guides/chatgpt-upgrade/ChatGptUpgradeGuide";
+import { CHATGPT_UPGRADE_SLUG } from "@/components/guides/chatgpt-upgrade/data";
 import FableFiveGuide from "@/components/guides/fable-five/FableFiveGuide";
 import { FABLE_FIVE_SLUG } from "@/components/guides/fable-five/data";
 import ClaudeConnectorsGuide from "@/components/guides/claude-connectors/ClaudeConnectorsGuide";
@@ -70,7 +72,9 @@ export default async function GuidePostPage({ params }: PageProps) {
 
   let content: React.ReactNode;
 
-  if (slug === FABLE_FIVE_SLUG) {
+  if (slug === CHATGPT_UPGRADE_SLUG) {
+    content = <ChatGptUpgradeGuide />;
+  } else if (slug === FABLE_FIVE_SLUG) {
     content = <FableFiveGuide />;
   } else if (slug === CLAUDE_CONNECTORS_SLUG) {
     content = <ClaudeConnectorsGuide />;
