@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "vet-ai-skills",
+    title: "Vet Any AI Skill Before You Install It",
+    excerpt:
+      "A 30-second security check for marketplace skills: three questions, a copy-ready review prompt that treats skills as untrusted data, and a tailor-and-save prompt for versions that passed.",
+    category: "SETUP",
+    topic: "skills",
+    tools: ["claude"],
+    publishedAt: "2026-07-15",
+    layout: "document",
+    sections: [
+      {
+        heading: "Vet Any AI Skill Before You Install It",
+        body: "Field guide to reviewing AI skills before install — paste into a plain chat, run the security-review prompt, then tailor only if it comes back clean. Includes the redirect/swap attack pattern and two copy-ready prompts.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-upgrade-playbook",
     title: "The ChatGPT Upgrade You Can Actually Use",
     excerpt:

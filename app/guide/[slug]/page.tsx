@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
 import GuideShell from "@/components/guides/GuideShell";
+import VetAiSkillsGuide from "@/components/guides/vet-ai-skills/VetAiSkillsGuide";
+import { VET_AI_SKILLS_SLUG } from "@/components/guides/vet-ai-skills/data";
 import ChatGptUpgradeGuide from "@/components/guides/chatgpt-upgrade/ChatGptUpgradeGuide";
 import { CHATGPT_UPGRADE_SLUG } from "@/components/guides/chatgpt-upgrade/data";
 import FableFiveGuide from "@/components/guides/fable-five/FableFiveGuide";
@@ -72,7 +74,9 @@ export default async function GuidePostPage({ params }: PageProps) {
 
   let content: React.ReactNode;
 
-  if (slug === CHATGPT_UPGRADE_SLUG) {
+  if (slug === VET_AI_SKILLS_SLUG) {
+    content = <VetAiSkillsGuide />;
+  } else if (slug === CHATGPT_UPGRADE_SLUG) {
     content = <ChatGptUpgradeGuide />;
   } else if (slug === FABLE_FIVE_SLUG) {
     content = <FableFiveGuide />;
