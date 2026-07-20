@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "100-chatgpt-secret-codes",
+    title: "100 ChatGPT Secret Codes",
+    excerpt:
+      "One hundred short phrases you drop into any ChatGPT prompt for sharper answers — truth, thinking, writing, ops, research, Canvas, Work, and Sol/Terra/Luna routing.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["chatgpt"],
+    publishedAt: "2026-07-20",
+    layout: "document",
+    sections: [
+      {
+        heading: "100 ChatGPT Secret Codes",
+        body: "The ChatGPT twin of Thirty Claude Codes — 100 short codes with copy-ready examples across truth, thinking, blind spots, learning, writing, ops, research, building, content, and agent power moves.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "vet-ai-skills",
     title: "Vet Any AI Skill Before You Install It",
     excerpt:
