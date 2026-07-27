@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "transcriptx-claude-setup",
+    title: "TranscriptX Inside Claude — Setup Guide",
+    excerpt:
+      "Add TranscriptX as a Claude custom connector in about a minute — Connectors UI + Desktop JSON config, six tools, copy-ready watch/transcribe prompts, and troubleshooting.",
+    category: "SETUP",
+    topic: "setup",
+    tools: ["claude"],
+    publishedAt: "2026-07-27",
+    layout: "document",
+    sections: [
+      {
+        heading: "TranscriptX Inside Claude — Setup Guide",
+        body: "Get any video's transcript directly inside Claude. Custom connector setup for Desktop and claude.ai, MCP URL with token, JSON config, tools, and prompts.\n\nhttps://transcriptx.xyz\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "100-chatgpt-secret-codes",
     title: "100 ChatGPT Secret Codes",
     excerpt:
