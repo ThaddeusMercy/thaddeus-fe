@@ -1,0 +1,376 @@
+.evc-guide {
+  --font-serif: "Instrument Serif";
+  --font-sans: "IBM Plex Sans";
+  --font-mono: "IBM Plex Mono";
+
+  --evc-ink: #1a1a1a;
+  --evc-soft: #4a4a4a;
+  --evc-faint: #8a8a8a;
+  --evc-paper: #ffffff;
+  --evc-rule: #e4e4e7;
+  --evc-code: #f5f5f5;
+  --evc-note: #fafafa;
+
+  max-width: 760px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 40px);
+  background: var(--evc-paper);
+  color: var(--evc-soft);
+  font-family: var(--font-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.evc-guide .evc-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--evc-ink);
+  text-decoration: none;
+}
+
+.evc-guide .evc-back:hover {
+  text-decoration: underline;
+}
+
+.evc-guide .evc-mast {
+  border-bottom: 2px solid var(--evc-ink);
+  padding-bottom: 22px;
+  margin-bottom: 0;
+}
+
+.evc-guide .evc-kicker {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--evc-faint);
+  margin: 0 0 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.evc-guide .evc-mast h1 {
+  font-family: var(--font-serif), "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(36px, 7vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  margin: 0 0 16px;
+  color: var(--evc-ink);
+}
+
+.evc-guide .evc-mast h1 em {
+  font-style: italic;
+  color: var(--evc-faint);
+}
+
+.evc-guide .evc-standfirst {
+  font-size: 18px;
+  color: var(--evc-soft);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.evc-guide .evc-meta {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--evc-rule);
+  border-bottom: 1px solid var(--evc-rule);
+  margin: 40px 0 48px;
+  flex-wrap: wrap;
+}
+
+.evc-guide .evc-meta > div {
+  flex: 1 1 150px;
+  padding: 16px 20px 16px 0;
+  border-right: 1px solid var(--evc-rule);
+  margin: 0;
+}
+
+.evc-guide .evc-meta > div:last-child {
+  border-right: none;
+}
+
+.evc-guide .evc-meta dt {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--evc-faint);
+  margin: 0 0 5px;
+}
+
+.evc-guide .evc-meta dd {
+  margin: 0;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--evc-ink);
+}
+
+.evc-guide .evc-section {
+  margin: 0 0 56px;
+}
+
+.evc-guide .evc-section h2 {
+  font-family: var(--font-serif), "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 34px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--evc-rule);
+  color: var(--evc-ink);
+}
+
+.evc-guide .evc-section h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--evc-ink);
+}
+
+.evc-guide p {
+  margin: 0 0 16px;
+}
+
+.evc-guide .evc-plain {
+  padding-left: 20px;
+  margin: 0 0 16px;
+}
+
+.evc-guide .evc-plain li {
+  margin-bottom: 8px;
+}
+
+.evc-guide .evc-check {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.evc-guide .evc-check li {
+  padding: 11px 0 11px 34px;
+  border-bottom: 1px solid var(--evc-rule);
+  position: relative;
+  font-size: 16px;
+}
+
+.evc-guide .evc-check li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 17px;
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid var(--evc-ink);
+}
+
+.evc-guide .evc-check li:last-child {
+  border-bottom: none;
+}
+
+.evc-guide .evc-inline {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 14px;
+  background: var(--evc-code);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--evc-ink);
+}
+
+.evc-guide .evc-note {
+  background: var(--evc-note);
+  border: 1px solid var(--evc-rule);
+  border-left: 3px solid var(--evc-ink);
+  padding: 18px 22px;
+  margin: 22px 0;
+  font-size: 15.5px;
+}
+
+.evc-guide .evc-note strong {
+  font-weight: 700;
+  color: var(--evc-ink);
+}
+
+.evc-guide .evc-note > :last-child {
+  margin-bottom: 0;
+}
+
+.evc-guide .evc-step {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 0 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--evc-rule);
+}
+
+.evc-guide .evc-step:last-of-type {
+  border-bottom: none;
+}
+
+.evc-guide .evc-num {
+  font-family: var(--font-serif), "Instrument Serif", Georgia, serif;
+  font-size: 48px;
+  line-height: 0.85;
+  color: var(--evc-ink);
+  padding-top: 2px;
+}
+
+.evc-guide .evc-step-body h3 {
+  font-size: 20px;
+}
+
+.evc-guide .evc-step-body > :last-child {
+  margin-bottom: 0;
+}
+
+.evc-guide .evc-code {
+  position: relative;
+  background: var(--evc-code);
+  border: 1px solid var(--evc-rule);
+  border-left: 3px solid var(--evc-ink);
+  margin: 16px 0 18px;
+}
+
+.evc-guide .evc-code pre {
+  margin: 0;
+  padding: 18px 56px 18px 20px;
+  overflow-x: auto;
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--evc-ink);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.evc-guide .evc-copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border: 1px solid var(--evc-rule);
+  background: var(--evc-paper);
+  color: var(--evc-soft);
+  cursor: pointer;
+}
+
+.evc-guide .evc-copy:hover {
+  background: var(--evc-ink);
+  color: #fff;
+  border-color: var(--evc-ink);
+}
+
+.evc-guide .evc-copy.evc-done {
+  background: #1f6b3a;
+  color: #fff;
+  border-color: #1f6b3a;
+}
+
+.evc-guide .evc-prompt {
+  background: var(--evc-paper);
+  border: 1px solid var(--evc-rule);
+  border-top: 3px solid var(--evc-ink);
+  padding: 22px 24px;
+  margin: 0 0 16px;
+  position: relative;
+}
+
+.evc-guide .evc-prompt-label {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--evc-faint);
+  margin: 0 0 10px;
+}
+
+.evc-guide .evc-prompt p {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--evc-ink);
+  margin: 0;
+  padding-right: 52px;
+}
+
+.evc-guide .evc-fix {
+  border-top: 1px solid var(--evc-ink);
+  margin: 0 0 16px;
+}
+
+.evc-guide .evc-row {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 0 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--evc-rule);
+}
+
+.evc-guide .evc-row > div:first-child {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--evc-ink);
+}
+
+.evc-guide .evc-row > div:last-child {
+  color: var(--evc-soft);
+  font-size: 15px;
+}
+
+.evc-guide .evc-closer {
+  border-top: 2px solid var(--evc-ink);
+  margin-top: 40px;
+  padding: 34px 0 16px;
+}
+
+.evc-guide .evc-sig {
+  font-family: var(--font-serif), "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--evc-ink);
+  margin: 0 0 10px;
+}
+
+.evc-guide .evc-closer p {
+  color: var(--evc-soft);
+  font-size: 15.5px;
+}
+
+@media (max-width: 640px) {
+  .evc-guide .evc-step {
+    grid-template-columns: 44px 1fr;
+    gap: 0 16px;
+  }
+
+  .evc-guide .evc-num {
+    font-size: 36px;
+  }
+
+  .evc-guide .evc-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .evc-guide .evc-meta > div {
+    flex: 1 1 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--evc-rule);
+  }
+
+  .evc-guide .evc-meta > div:last-child {
+    border-bottom: none;
+  }
+}

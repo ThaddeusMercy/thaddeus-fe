@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
 import GuideShell from "@/components/guides/GuideShell";
+import EditVideosClaudeGuide from "@/components/guides/edit-videos-claude/EditVideosClaudeGuide";
+import { EDIT_VIDEOS_CLAUDE_SLUG } from "@/components/guides/edit-videos-claude/data";
 import TranscriptxClaudeGuide from "@/components/guides/transcriptx-claude/TranscriptxClaudeGuide";
 import { TRANSCRIPTX_CLAUDE_SLUG } from "@/components/guides/transcriptx-claude/data";
 import ChatGptSecretCodesGuide from "@/components/guides/chatgpt-secret-codes/ChatGptSecretCodesGuide";
@@ -78,7 +80,9 @@ export default async function GuidePostPage({ params }: PageProps) {
 
   let content: React.ReactNode;
 
-  if (slug === TRANSCRIPTX_CLAUDE_SLUG) {
+  if (slug === EDIT_VIDEOS_CLAUDE_SLUG) {
+    content = <EditVideosClaudeGuide />;
+  } else if (slug === TRANSCRIPTX_CLAUDE_SLUG) {
     content = <TranscriptxClaudeGuide />;
   } else if (slug === CHATGPT_SECRET_CODES_SLUG) {
     content = <ChatGptSecretCodesGuide />;

@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "edit-videos-with-claude",
+    title: "Edit Your Videos with Claude: the Remotion Setup Guide",
+    excerpt:
+      "Full Remotion + Claude Code setup in ~20 minutes — install prompts, silence cuts, captions, motion graphics, revisions, and what to do when it breaks.",
+    category: "SETUP",
+    topic: "setup",
+    tools: ["claude"],
+    publishedAt: "2026-07-28",
+    layout: "document",
+    sections: [
+      {
+        heading: "Edit Your Videos with Claude: the Remotion Setup Guide",
+        body: "Remotion setup for Claude Code with copy-ready install prompts, edit prompts, troubleshooting, and pricing notes.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "transcriptx-claude-setup",
     title: "TranscriptX Inside Claude — Setup Guide",
     excerpt:
