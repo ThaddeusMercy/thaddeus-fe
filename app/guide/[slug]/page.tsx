@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 
 import GuidePostView from "@/components/guides/GuidePostView";
 import GuideShell from "@/components/guides/GuideShell";
+import HumanizeSetupGuide from "@/components/guides/humanize-setup/HumanizeSetupGuide";
+import { HUMANIZE_SETUP_SLUG } from "@/components/guides/humanize-setup/data";
 import EditVideosClaudeGuide from "@/components/guides/edit-videos-claude/EditVideosClaudeGuide";
 import { EDIT_VIDEOS_CLAUDE_SLUG } from "@/components/guides/edit-videos-claude/data";
 import TranscriptxClaudeGuide from "@/components/guides/transcriptx-claude/TranscriptxClaudeGuide";
@@ -80,7 +82,9 @@ export default async function GuidePostPage({ params }: PageProps) {
 
   let content: React.ReactNode;
 
-  if (slug === EDIT_VIDEOS_CLAUDE_SLUG) {
+  if (slug === HUMANIZE_SETUP_SLUG) {
+    content = <HumanizeSetupGuide />;
+  } else if (slug === EDIT_VIDEOS_CLAUDE_SLUG) {
     content = <EditVideosClaudeGuide />;
   } else if (slug === TRANSCRIPTX_CLAUDE_SLUG) {
     content = <TranscriptxClaudeGuide />;

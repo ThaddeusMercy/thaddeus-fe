@@ -1,0 +1,273 @@
+.hz-guide {
+  --font-sans: "Inter";
+  --font-display: "Archivo";
+  --font-mono: "JetBrains Mono";
+
+  --hz-ink: #1a1a1a;
+  --hz-body: #3d3d3d;
+  --hz-muted: #767676;
+  --hz-rule: #e4e4e7;
+  --hz-panel: #fafafa;
+  --hz-paper: #ffffff;
+  --hz-mark: #f0f0f0;
+
+  max-width: 720px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 40px) clamp(18px, 4vw, 28px) 64px;
+  background: var(--hz-paper);
+  color: var(--hz-body);
+  font-family: var(--font-sans), "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hz-guide .hz-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--hz-ink);
+  text-decoration: none;
+}
+
+.hz-guide .hz-back:hover {
+  text-decoration: underline;
+}
+
+.hz-guide .hz-top {
+  padding: 8px 0 36px;
+  border-bottom: 1px solid var(--hz-rule);
+  margin-bottom: 40px;
+}
+
+.hz-guide .hz-eyebrow {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hz-muted);
+  margin: 0 0 18px;
+}
+
+.hz-guide .hz-top h1 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 6vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--hz-ink);
+  margin: 0 0 18px;
+}
+
+.hz-guide .hz-stand {
+  font-size: 18px;
+  color: var(--hz-muted);
+  margin: 0;
+  max-width: 38em;
+}
+
+.hz-guide .hz-section h2 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 3.5vw, 26px);
+  letter-spacing: -0.015em;
+  color: var(--hz-ink);
+  margin: 48px 0 14px;
+  line-height: 1.2;
+}
+
+.hz-guide .hz-section h3 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--hz-ink);
+  margin: 36px 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.hz-guide p {
+  margin: 0 0 16px;
+}
+
+.hz-guide a {
+  color: var(--hz-ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hz-guide a:hover {
+  color: var(--hz-muted);
+}
+
+.hz-guide mark {
+  background: var(--hz-mark);
+  padding: 1px 4px;
+  color: var(--hz-ink);
+}
+
+.hz-guide strong {
+  font-weight: 600;
+  color: var(--hz-ink);
+}
+
+.hz-guide .hz-steps {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  counter-reset: hzstep;
+}
+
+.hz-guide .hz-steps > li {
+  counter-increment: hzstep;
+  position: relative;
+  padding: 0 0 28px 52px;
+  border-left: 1px solid var(--hz-rule);
+  margin-left: 15px;
+}
+
+.hz-guide .hz-steps > li:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.hz-guide .hz-steps > li::before {
+  content: counter(hzstep);
+  position: absolute;
+  left: -15px;
+  top: -2px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--hz-paper);
+  border: 1px solid var(--hz-ink);
+  color: var(--hz-ink);
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hz-guide .hz-steps h4 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--hz-ink);
+  margin: 2px 0 6px;
+}
+
+.hz-guide .hz-steps p {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.hz-guide .hz-block {
+  background: var(--hz-panel);
+  border: 1px solid var(--hz-rule);
+  border-radius: 10px;
+  margin: 22px 0 26px;
+  overflow: hidden;
+}
+
+.hz-guide .hz-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--hz-rule);
+  background: var(--hz-paper);
+}
+
+.hz-guide .hz-block-label {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--hz-muted);
+}
+
+.hz-guide .hz-copy {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--hz-ink);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.hz-guide .hz-copy:hover {
+  background: #333;
+}
+
+.hz-guide .hz-copy.hz-done {
+  background: #1f6b3a;
+}
+
+.hz-guide .hz-block pre {
+  margin: 0;
+  padding: 18px 16px;
+  overflow-x: auto;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13.5px;
+  line-height: 1.62;
+  color: var(--hz-ink);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.hz-guide .hz-fill {
+  background: var(--hz-mark);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.hz-guide .hz-note {
+  border-left: 3px solid var(--hz-ink);
+  padding: 2px 0 2px 18px;
+  margin: 26px 0;
+  color: var(--hz-muted);
+  font-size: 16px;
+}
+
+.hz-guide .hz-note p:last-child {
+  margin-bottom: 0;
+}
+
+.hz-guide .hz-plain {
+  margin: 0 0 18px;
+  padding-left: 20px;
+}
+
+.hz-guide .hz-plain li {
+  margin-bottom: 10px;
+}
+
+.hz-guide .hz-foot {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hz-rule);
+  font-size: 15px;
+  color: var(--hz-muted);
+}
+
+.hz-guide .hz-foot p {
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .hz-guide {
+    font-size: 16px;
+  }
+
+  .hz-guide .hz-steps > li {
+    padding-left: 44px;
+  }
+}

@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "humanize-setup",
+    title: "Make Your AI Stop Writing Like an AI",
+    excerpt:
+      "Set up the Humanize skill from Wikipedia's Signs of AI writing — Claude skill upload, DIY build prompt, and a ChatGPT/Gemini custom-instructions version.",
+    category: "SETUP",
+    topic: "skills",
+    tools: ["claude", "chatgpt", "gemini", "multi-tool"],
+    publishedAt: "2026-07-29",
+    layout: "document",
+    sections: [
+      {
+        heading: "Make Your AI Stop Writing Like an AI",
+        body: "Humanize setup guide: Claude skill steps, DIY Wikipedia-to-skill prompt, custom instructions for ChatGPT and Gemini, and a four-point check.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "edit-videos-with-claude",
     title: "Edit Your Videos with Claude: the Remotion Setup Guide",
     excerpt:
