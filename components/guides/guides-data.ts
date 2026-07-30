@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "ai-influencer-three-files",
+    title: "The Three File System for Building an AI Influencer",
+    excerpt:
+      "persona.md, brain.md, and offers.md — the full system, prompts, tools stack, and growth plan for an AI influencer that stays consistent.",
+    category: "SETUP",
+    topic: "ai-agents",
+    tools: ["claude", "multi-tool"],
+    publishedAt: "2026-07-30",
+    layout: "document",
+    sections: [
+      {
+        heading: "The Three File System for Building an AI Influencer",
+        body: "Three files an agent reads before it writes: persona, brain, offers. Includes setup interview, downloadable templates, tools, and growth.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
+  {
     slug: "humanize-setup",
     title: "Make Your AI Stop Writing Like an AI",
     excerpt:

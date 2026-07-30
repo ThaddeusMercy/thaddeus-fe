@@ -1,0 +1,497 @@
+.aif-guide {
+  --font-display: "Archivo";
+  --font-sans: "IBM Plex Sans";
+  --font-mono: "IBM Plex Mono";
+
+  --aif-ink: #1a1a1a;
+  --aif-muted: #767676;
+  --aif-line: #e4e4e7;
+  --aif-paper: #ffffff;
+  --aif-card: #fafafa;
+  --aif-mark: #ececec;
+  --aif-stamp: #8b3a32;
+
+  max-width: 1080px;
+  margin: 24px auto;
+  padding: 0 clamp(16px, 4vw, 28px) 64px;
+  background: var(--aif-paper);
+  color: var(--aif-ink);
+  font-family: var(--font-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.aif-guide .aif-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--aif-ink);
+  text-decoration: none;
+}
+
+.aif-guide .aif-back:hover {
+  text-decoration: underline;
+}
+
+.aif-guide .aif-mast {
+  padding: 8px 0 28px;
+  border-bottom: 1px solid var(--aif-line);
+}
+
+.aif-guide .aif-eyebrow {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--aif-muted);
+  margin: 0 0 22px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.aif-guide .aif-eyebrow b {
+  font-weight: 600;
+  color: var(--aif-ink);
+}
+
+.aif-guide .aif-eyebrow span {
+  color: var(--aif-line);
+}
+
+.aif-guide .aif-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: end;
+}
+
+.aif-guide .aif-hero h1 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: clamp(34px, 7vw, 64px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  max-width: 14ch;
+  color: var(--aif-ink);
+}
+
+.aif-guide .aif-lede {
+  font-size: clamp(16px, 2.2vw, 19px);
+  max-width: 56ch;
+  color: #3d3d3d;
+  margin: 0 0 26px;
+}
+
+.aif-guide .aif-lede b {
+  font-weight: 600;
+  color: var(--aif-ink);
+}
+
+.aif-guide .aif-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.aif-guide .aif-btn {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  background: var(--aif-ink);
+  color: #fff;
+  border: 1px solid var(--aif-ink);
+  padding: 11px 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.aif-guide .aif-btn:hover {
+  background: #333;
+}
+
+.aif-guide .aif-btn.aif-ghost {
+  background: transparent;
+  color: var(--aif-ink);
+}
+
+.aif-guide .aif-btn.aif-ghost:hover {
+  background: var(--aif-ink);
+  color: #fff;
+}
+
+.aif-guide .aif-subject {
+  background: var(--aif-card);
+  border: 1px solid var(--aif-ink);
+  box-shadow: 4px 4px 0 rgba(26, 26, 26, 0.85);
+  padding: 20px 20px 16px;
+  position: relative;
+}
+
+.aif-guide .aif-subject h2 {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  color: var(--aif-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.aif-guide .aif-row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px dotted var(--aif-line);
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px;
+}
+
+.aif-guide .aif-row:last-of-type {
+  border-bottom: 0;
+}
+
+.aif-guide .aif-k {
+  width: 72px;
+  flex: none;
+  color: var(--aif-muted);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.aif-guide .aif-blank {
+  display: block;
+  height: 14px;
+  width: 100%;
+  max-width: 120px;
+  background: var(--aif-mark);
+}
+
+.aif-guide .aif-redact {
+  display: inline-block;
+  background: var(--aif-ink);
+  color: transparent;
+  padding: 1px 10px;
+  cursor: pointer;
+  border: 0;
+  font: inherit;
+}
+
+.aif-guide .aif-redact.aif-on {
+  background: transparent;
+  color: var(--aif-ink);
+  text-decoration: underline;
+}
+
+.aif-guide .aif-stamp {
+  position: absolute;
+  right: 12px;
+  bottom: -14px;
+  transform: rotate(-7deg);
+  border: 2px solid var(--aif-stamp);
+  color: var(--aif-stamp);
+  background: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+.aif-guide .aif-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--aif-paper);
+  border-bottom: 1px solid var(--aif-line);
+  margin: 0 -4px;
+}
+
+.aif-guide .aif-tabs-inner {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.aif-guide .aif-tabs-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.aif-guide .aif-tab {
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  padding: 16px 18px 13px;
+  color: var(--aif-muted);
+  white-space: nowrap;
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.aif-guide .aif-tab .aif-n {
+  font-size: 10px;
+  color: #c4c4c4;
+  display: block;
+  letter-spacing: 0.12em;
+  margin-bottom: 3px;
+}
+
+.aif-guide .aif-tab[aria-selected="true"] {
+  color: var(--aif-ink);
+  border-bottom-color: var(--aif-ink);
+}
+
+.aif-guide .aif-tab[aria-selected="true"] .aif-n {
+  color: var(--aif-ink);
+}
+
+.aif-guide .aif-doc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 28px 0 14px;
+}
+
+.aif-guide .aif-fname {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.aif-guide .aif-meta {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--aif-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.aif-guide .aif-doc-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.aif-guide .aif-doc {
+  background: var(--aif-card);
+  border: 1px solid var(--aif-line);
+  padding: clamp(22px, 4vw, 48px);
+}
+
+.aif-guide .aif-doc h1 {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin: 0 0 6px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--aif-ink);
+}
+
+.aif-guide .aif-doc h2 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.15;
+  margin: 40px 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.aif-guide .aif-doc h3 {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 28px 0 8px;
+  padding-left: 11px;
+  border-left: 3px solid var(--aif-ink);
+}
+
+.aif-guide .aif-doc h4 {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 22px 0 6px;
+}
+
+.aif-guide .aif-doc p {
+  margin: 0 0 14px;
+  max-width: 70ch;
+  color: #3d3d3d;
+}
+
+.aif-guide .aif-doc em {
+  color: var(--aif-muted);
+}
+
+.aif-guide .aif-doc strong {
+  font-weight: 600;
+  color: var(--aif-ink);
+}
+
+.aif-guide .aif-doc hr {
+  border: 0;
+  border-top: 1px solid var(--aif-line);
+  margin: 36px 0;
+}
+
+.aif-guide .aif-doc ul,
+.aif-guide .aif-doc ol {
+  margin: 0 0 16px;
+  padding-left: 20px;
+  max-width: 70ch;
+}
+
+.aif-guide .aif-doc li {
+  margin-bottom: 5px;
+  color: #3d3d3d;
+}
+
+.aif-guide .aif-doc code {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.88em;
+  background: var(--aif-mark);
+  padding: 1px 5px;
+}
+
+.aif-guide .aif-doc table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 0 18px;
+  font-size: 14px;
+  display: block;
+  overflow-x: auto;
+}
+
+.aif-guide .aif-doc th {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+  padding: 9px 12px;
+  background: var(--aif-ink);
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.aif-guide .aif-doc td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--aif-line);
+  vertical-align: top;
+}
+
+.aif-guide .aif-doc tr:nth-child(even) td {
+  background: #f5f5f5;
+}
+
+.aif-guide .aif-block {
+  position: relative;
+  margin: 0 0 20px;
+}
+
+.aif-guide .aif-block pre {
+  margin: 0;
+  background: #151515;
+  color: #e8e8e2;
+  padding: 20px;
+  padding-top: 44px;
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.aif-guide .aif-block .aif-copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e8e8e2;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 5px 10px;
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.aif-guide .aif-block .aif-copy:hover {
+  background: #fff;
+  color: #151515;
+}
+
+.aif-guide .aif-foot {
+  border-top: 1px solid var(--aif-line);
+  margin-top: 40px;
+  padding: 36px 0 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.aif-guide .aif-foot p {
+  margin: 0 0 8px;
+  max-width: 52ch;
+  font-size: 15px;
+  color: #3d3d3d;
+}
+
+.aif-guide .aif-files {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px;
+  margin: 0;
+}
+
+.aif-guide .aif-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  background: var(--aif-ink);
+  color: #fff;
+  padding: 11px 20px;
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 50;
+}
+
+@media (max-width: 860px) {
+  .aif-guide .aif-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aif-guide * {
+    transition: none !important;
+  }
+}
