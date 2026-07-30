@@ -1,56 +1,9 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import type { ComponentType } from "react";
 
 import GuidePostView from "@/components/guides/GuidePostView";
 import GuideShell from "@/components/guides/GuideShell";
-import AiInfluencerThreeFilesGuide from "@/components/guides/ai-influencer-three-files/AiInfluencerThreeFilesGuide";
-import { AI_INFLUENCER_THREE_FILES_SLUG } from "@/components/guides/ai-influencer-three-files/data";
-import HumanizeSetupGuide from "@/components/guides/humanize-setup/HumanizeSetupGuide";
-import { HUMANIZE_SETUP_SLUG } from "@/components/guides/humanize-setup/data";
-import EditVideosClaudeGuide from "@/components/guides/edit-videos-claude/EditVideosClaudeGuide";
-import { EDIT_VIDEOS_CLAUDE_SLUG } from "@/components/guides/edit-videos-claude/data";
-import TranscriptxClaudeGuide from "@/components/guides/transcriptx-claude/TranscriptxClaudeGuide";
-import { TRANSCRIPTX_CLAUDE_SLUG } from "@/components/guides/transcriptx-claude/data";
-import ChatGptSecretCodesGuide from "@/components/guides/chatgpt-secret-codes/ChatGptSecretCodesGuide";
-import { CHATGPT_SECRET_CODES_SLUG } from "@/components/guides/chatgpt-secret-codes/data";
-import VetAiSkillsGuide from "@/components/guides/vet-ai-skills/VetAiSkillsGuide";
-import { VET_AI_SKILLS_SLUG } from "@/components/guides/vet-ai-skills/data";
-import ChatGptUpgradeGuide from "@/components/guides/chatgpt-upgrade/ChatGptUpgradeGuide";
-import { CHATGPT_UPGRADE_SLUG } from "@/components/guides/chatgpt-upgrade/data";
-import FableFiveGuide from "@/components/guides/fable-five/FableFiveGuide";
-import { FABLE_FIVE_SLUG } from "@/components/guides/fable-five/data";
-import ClaudeConnectorsGuide from "@/components/guides/claude-connectors/ClaudeConnectorsGuide";
-import { CLAUDE_CONNECTORS_SLUG } from "@/components/guides/claude-connectors/data";
-import GoalCommandGuide from "@/components/guides/goal-command/GoalCommandGuide";
-import { GOAL_COMMAND_SLUG } from "@/components/guides/goal-command/data";
-import CanvaClaudeGuide from "@/components/guides/canva-claude/CanvaClaudeGuide";
-import { CANVA_CLAUDE_SLUG } from "@/components/guides/canva-claude/data";
-import ClaudeSkillsGuide from "@/components/guides/claude-skills/ClaudeSkillsGuide";
-import { CLAUDE_SKILLS_SLUG } from "@/components/guides/claude-skills/data";
-import ClaudeTagGuide from "@/components/guides/claude-tag/ClaudeTagGuide";
-import { CLAUDE_TAG_SLUG } from "@/components/guides/claude-tag/data";
-import MetricoolClaudeGuide from "@/components/guides/metricool-claude/MetricoolClaudeGuide";
-import { METRICOOL_CLAUDE_SLUG } from "@/components/guides/metricool-claude/data";
-import AnimeStoryboardGuide from "@/components/guides/anime-storyboard/AnimeStoryboardGuide";
-import { ANIME_STORYBOARD_SLUG } from "@/components/guides/anime-storyboard/data";
-import AiCloneMethodGuide from "@/components/guides/ai-clone-method/AiCloneMethodGuide";
-import { AI_CLONE_METHOD_SLUG } from "@/components/guides/ai-clone-method/data";
-import AiInfluencerGuide from "@/components/guides/ai-influencer/AiInfluencerGuide";
-import { AI_INFLUENCER_SLUG } from "@/components/guides/ai-influencer/data";
-import HeyGenTranslateGuide from "@/components/guides/heygen-translate/HeyGenTranslateGuide";
-import { HEYGEN_TRANSLATE_SLUG } from "@/components/guides/heygen-translate/data";
-import AntiLyingPromptsGuide from "@/components/guides/anti-lying-prompts/AntiLyingPromptsGuide";
-import { ANTI_LYING_PROMPTS_SLUG } from "@/components/guides/anti-lying-prompts/data";
-import AiRoadmapGuide from "@/components/guides/ai-roadmap/AiRoadmapGuide";
-import { AI_ROADMAP_SLUG } from "@/components/guides/ai-roadmap/data";
-import AiJobMapGuide from "@/components/guides/ai-job-map/AiJobMapGuide";
-import { AI_JOB_MAP_SLUG } from "@/components/guides/ai-job-map/data";
-import MarkItDownSetupGuide from "@/components/guides/markitdown-setup/MarkItDownSetupGuide";
-import { MARKITDOWN_SETUP_SLUG } from "@/components/guides/markitdown-setup/data";
-import AiCertificationsGuide from "@/components/guides/ai-certifications/AiCertificationsGuide";
-import { AI_CERTIFICATIONS_SLUG } from "@/components/guides/ai-certifications/data";
-import ThirtyClaudeCodesGuide from "@/components/guides/thirty-claude-codes/ThirtyClaudeCodesGuide";
-import { THIRTY_CLAUDE_CODES_SLUG } from "@/components/guides/thirty-claude-codes/data";
 import {
   GUIDE_ENTRIES,
   getGuideBySlug,
@@ -58,6 +11,61 @@ import {
 import { buildShareMetadata } from "@/lib/site-metadata";
 
 type PageProps = { params: Promise<{ slug: string }> };
+
+/** Lazy map — keeps Cloudflare/OpenNext worker under size limits. */
+const GUIDE_LOADERS: Record<
+  string,
+  () => Promise<{ default: ComponentType }>
+> = {
+  "ai-influencer-three-files": () =>
+    import("@/components/guides/ai-influencer-three-files/AiInfluencerThreeFilesGuide"),
+  "humanize-setup": () =>
+    import("@/components/guides/humanize-setup/HumanizeSetupGuide"),
+  "edit-videos-with-claude": () =>
+    import("@/components/guides/edit-videos-claude/EditVideosClaudeGuide"),
+  "transcriptx-claude-setup": () =>
+    import("@/components/guides/transcriptx-claude/TranscriptxClaudeGuide"),
+  "100-chatgpt-secret-codes": () =>
+    import("@/components/guides/chatgpt-secret-codes/ChatGptSecretCodesGuide"),
+  "vet-ai-skills": () =>
+    import("@/components/guides/vet-ai-skills/VetAiSkillsGuide"),
+  "chatgpt-upgrade-playbook": () =>
+    import("@/components/guides/chatgpt-upgrade/ChatGptUpgradeGuide"),
+  "fable-five-prompts": () =>
+    import("@/components/guides/fable-five/FableFiveGuide"),
+  "five-claude-connectors": () =>
+    import("@/components/guides/claude-connectors/ClaudeConnectorsGuide"),
+  "claude-goal-command": () =>
+    import("@/components/guides/goal-command/GoalCommandGuide"),
+  "six-claude-content-skills": () =>
+    import("@/components/guides/claude-skills/ClaudeSkillsGuide"),
+  "design-with-claude-canva": () =>
+    import("@/components/guides/canva-claude/CanvaClaudeGuide"),
+  "claude-tag-playbook": () =>
+    import("@/components/guides/claude-tag/ClaudeTagGuide"),
+  "connect-claude-to-socials": () =>
+    import("@/components/guides/metricool-claude/MetricoolClaudeGuide"),
+  "anime-storyboard-to-video": () =>
+    import("@/components/guides/anime-storyboard/AnimeStoryboardGuide"),
+  "ai-clone-method": () =>
+    import("@/components/guides/ai-clone-method/AiCloneMethodGuide"),
+  "build-your-ai-influencer": () =>
+    import("@/components/guides/ai-influencer/AiInfluencerGuide"),
+  "heygen-video-translate": () =>
+    import("@/components/guides/heygen-translate/HeyGenTranslateGuide"),
+  "3-prompts-stop-ai-lying": () =>
+    import("@/components/guides/anti-lying-prompts/AntiLyingPromptsGuide"),
+  "30-day-ai-roadmap": () =>
+    import("@/components/guides/ai-roadmap/AiRoadmapGuide"),
+  "the-ai-job-map": () =>
+    import("@/components/guides/ai-job-map/AiJobMapGuide"),
+  "markitdown-mcp-claude-setup": () =>
+    import("@/components/guides/markitdown-setup/MarkItDownSetupGuide"),
+  "ai-certifications-weekend": () =>
+    import("@/components/guides/ai-certifications/AiCertificationsGuide"),
+  "thirty-claude-codes": () =>
+    import("@/components/guides/thirty-claude-codes/ThirtyClaudeCodesGuide"),
+};
 
 export function generateStaticParams() {
   return GUIDE_ENTRIES.map((entry) => ({ slug: entry.slug }));
@@ -82,56 +90,13 @@ export default async function GuidePostPage({ params }: PageProps) {
   const entry = getGuideBySlug(slug);
   if (!entry) notFound();
 
+  const loader = GUIDE_LOADERS[slug];
   let content: React.ReactNode;
 
-  if (slug === AI_INFLUENCER_THREE_FILES_SLUG) {
-    content = <AiInfluencerThreeFilesGuide />;
-  } else if (slug === HUMANIZE_SETUP_SLUG) {
-    content = <HumanizeSetupGuide />;
-  } else if (slug === EDIT_VIDEOS_CLAUDE_SLUG) {
-    content = <EditVideosClaudeGuide />;
-  } else if (slug === TRANSCRIPTX_CLAUDE_SLUG) {
-    content = <TranscriptxClaudeGuide />;
-  } else if (slug === CHATGPT_SECRET_CODES_SLUG) {
-    content = <ChatGptSecretCodesGuide />;
-  } else if (slug === VET_AI_SKILLS_SLUG) {
-    content = <VetAiSkillsGuide />;
-  } else if (slug === CHATGPT_UPGRADE_SLUG) {
-    content = <ChatGptUpgradeGuide />;
-  } else if (slug === FABLE_FIVE_SLUG) {
-    content = <FableFiveGuide />;
-  } else if (slug === CLAUDE_CONNECTORS_SLUG) {
-    content = <ClaudeConnectorsGuide />;
-  } else if (slug === GOAL_COMMAND_SLUG) {
-    content = <GoalCommandGuide />;
-  } else if (slug === CLAUDE_SKILLS_SLUG) {
-    content = <ClaudeSkillsGuide />;
-  } else if (slug === CANVA_CLAUDE_SLUG) {
-    content = <CanvaClaudeGuide />;
-  } else if (slug === CLAUDE_TAG_SLUG) {
-    content = <ClaudeTagGuide />;
-  } else if (slug === METRICOOL_CLAUDE_SLUG) {
-    content = <MetricoolClaudeGuide />;
-  } else if (slug === ANIME_STORYBOARD_SLUG) {
-    content = <AnimeStoryboardGuide />;
-  } else if (slug === AI_CLONE_METHOD_SLUG) {
-    content = <AiCloneMethodGuide />;
-  } else if (slug === AI_INFLUENCER_SLUG) {
-    content = <AiInfluencerGuide />;
-  } else if (slug === HEYGEN_TRANSLATE_SLUG) {
-    content = <HeyGenTranslateGuide />;
-  } else if (slug === ANTI_LYING_PROMPTS_SLUG) {
-    content = <AntiLyingPromptsGuide />;
-  } else if (slug === AI_ROADMAP_SLUG) {
-    content = <AiRoadmapGuide />;
-  } else if (slug === AI_JOB_MAP_SLUG) {
-    content = <AiJobMapGuide />;
-  } else if (slug === MARKITDOWN_SETUP_SLUG) {
-    content = <MarkItDownSetupGuide />;
-  } else if (slug === AI_CERTIFICATIONS_SLUG) {
-    content = <AiCertificationsGuide />;
-  } else if (slug === THIRTY_CLAUDE_CODES_SLUG) {
-    content = <ThirtyClaudeCodesGuide />;
+  if (loader) {
+    const mod = await loader();
+    const Guide = mod.default;
+    content = <Guide />;
   } else {
     content = (
       <div className="mx-auto max-w-2xl px-4 py-12 md:py-16">

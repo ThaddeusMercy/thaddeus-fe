@@ -1,10 +1,10 @@
 "use client";
 
-import { useCallback, useMemo, useState, type MouseEvent } from "react";
+import { useCallback, useEffect, useMemo, useState, type MouseEvent } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "@phosphor-icons/react";
 
-import { DOCS, TABS, type DocKey } from "./data";
+import { TABS, docUrl, type DocKey } from "./data";
 import "./ai-influencer-three-files.css";
 
 function esc(s: string) {
@@ -150,14 +150,45 @@ function downloadFile(name: string, text: string) {
   setTimeout(() => URL.revokeObjectURL(url), 1200);
 }
 
+
 export default function AiInfluencerThreeFilesGuide() {
   const [current, setCurrent] = useState<DocKey>("setup");
   const [toast, setToast] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
+  const [cache, setCache] = useState<Partial<Record<DocKey, string>>>({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const md = DOCS[current];
+  useEffect(() => {
+    let cancelled = false;
+    const key = current;
+    setError(null);
+    setLoading(true);
+
+    fetch(docUrl(key))
+      .then((r) => {
+        if (!r.ok) throw new Error(`Failed to load ${key}.md`);
+        return r.text();
+      })
+      .then((text) => {
+        if (cancelled) return;
+        setCache((prev) => ({ ...prev, [key]: text }));
+        setLoading(false);
+      })
+      .catch((e: Error) => {
+        if (cancelled) return;
+        setError(e.message || "Failed to load");
+        setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [current]);
+
+  const md = cache[current] ?? "";
   const tab = TABS.find((t) => t.key === current)!;
-  const html = useMemo(() => renderMarkdown(md), [md]);
+  const html = useMemo(() => (md ? renderMarkdown(md) : ""), [md]);
 
   const flash = useCallback((msg: string) => {
     setToast(msg);
@@ -177,21 +208,31 @@ export default function AiInfluencerThreeFilesGuide() {
   );
 
   const copyDoc = useCallback(async () => {
+    if (!md) return;
     await writeClipboard(md);
     flash("Copied");
   }, [md, flash]);
 
   const dlDoc = useCallback(() => {
+    if (!md) return;
     downloadFile(`${current}.md`, md);
     flash("Downloaded");
   }, [current, md, flash]);
 
-  const dlAll = useCallback(() => {
-    (["persona", "brain", "offers"] as const).forEach((k, idx) => {
-      setTimeout(() => downloadFile(`${k}.md`, DOCS[k]), idx * 350);
-    });
+  const dlAll = useCallback(async () => {
+    const keys = ["persona", "brain", "offers"] as const;
+    for (let idx = 0; idx < keys.length; idx++) {
+      const k = keys[idx];
+      let text = cache[k];
+      if (!text) {
+        const r = await fetch(docUrl(k));
+        text = await r.text();
+        setCache((prev) => ({ ...prev, [k]: text }));
+      }
+      setTimeout(() => downloadFile(`${k}.md`, text!), idx * 350);
+    }
     flash("Downloading 3 files");
-  }, [flash]);
+  }, [cache, flash]);
 
   return (
     <div className="aif-guide">
@@ -309,28 +350,50 @@ export default function AiInfluencerThreeFilesGuide() {
         <div>
           <div className="aif-fname">{tab.label}</div>
           <div className="aif-meta">
-            {tab.isFile
-              ? `${md.split("\n").length} lines / ${Math.max(1, Math.round(md.length / 1024))} kb`
-              : "read this part, it is not a file"}
+            {loading
+              ? "loading…"
+              : tab.isFile
+                ? `${md.split("\n").length} lines / ${Math.max(1, Math.round(md.length / 1024))} kb`
+                : "read this part, it is not a file"}
           </div>
         </div>
         <div className="aif-doc-actions">
-          <button type="button" className="aif-btn aif-ghost" onClick={copyDoc}>
+          <button
+            type="button"
+            className="aif-btn aif-ghost"
+            onClick={copyDoc}
+            disabled={!md}
+          >
             {tab.isFile ? "Copy as markdown" : "Copy this section"}
           </button>
           {tab.isFile ? (
-            <button type="button" className="aif-btn" onClick={dlDoc}>
+            <button
+              type="button"
+              className="aif-btn"
+              onClick={dlDoc}
+              disabled={!md}
+            >
               Download .md
             </button>
           ) : null}
         </div>
       </div>
 
-      <article
-        className="aif-doc"
-        onClick={onDocClick}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      {error ? (
+        <p className="aif-meta" style={{ padding: "24px 0" }}>
+          {error}
+        </p>
+      ) : loading && !md ? (
+        <p className="aif-meta" style={{ padding: "24px 0" }}>
+          Loading…
+        </p>
+      ) : (
+        <article
+          className="aif-doc"
+          onClick={onDocClick}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      )}
 
       <footer className="aif-foot">
         <div>
