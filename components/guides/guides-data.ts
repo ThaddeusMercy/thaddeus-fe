@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "5-ai-tools-worth-your-money",
+    title: "5 AI Tools That Are Actually Worth Your Money",
+    excerpt:
+      "How I use Claude Max, ChatGPT Pro, Higgsfield, Apify and OpenRouter, what they cost, and who should skip them.",
+    category: "SETUP",
+    topic: "setup",
+    tools: ["claude", "chatgpt", "multi-tool"],
+    publishedAt: "2026-08-03",
+    layout: "document",
+    sections: [
+      {
+        heading: "5 AI Tools That Are Actually Worth Your Money",
+        body: "How I use Claude Max, ChatGPT Pro, Higgsfield, Apify and OpenRouter, what they cost, and who should skip them.",
+      },
+    ],
+  },
+  {
     slug: "ai-influencer-three-files",
     title: "The Three File System for Building an AI Influencer",
     excerpt:

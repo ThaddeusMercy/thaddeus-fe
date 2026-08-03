@@ -1,0 +1,288 @@
+/* 5 AI tools that are actually worth your money */
+.fat-guide {
+  --paper: #EBEEF0;
+  --card: #F8F9FA;
+  --ink: #0E141B;
+  --muted: #5A6672;
+  --rule: #C2CBD2;
+  --rule-soft: #DCE2E6;
+  --accent: #3A2FD1;
+
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --body: "Newsreader", Georgia, serif;
+  --mono: "Azeret Mono", ui-monospace, monospace;
+
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 24px 24px 80px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 19px;
+  line-height: 1.62;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fat-guide * { box-sizing: border-box; }
+
+.fat-guide p { margin: 0 0 18px; }
+.fat-guide p:last-child { margin-bottom: 0; }
+
+.fat-guide .fat-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.fat-guide .fat-back:hover { color: var(--accent); }
+
+.fat-guide .fat-cover { padding: 24px 0 0; }
+
+.fat-guide .fat-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+.fat-guide .fat-cover h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(40px, 8.5vw, 74px);
+  line-height: 0.96;
+  letter-spacing: -0.028em;
+  margin: 24px 0 0;
+  max-width: 13ch;
+  color: var(--ink);
+}
+
+.fat-guide .fat-cover-sub {
+  margin: 24px 0 0;
+  font-size: 21px;
+  max-width: 54ch;
+  color: #232D36;
+}
+
+.fat-guide .fat-cover-meta {
+  margin-top: 34px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 2;
+}
+
+.fat-guide .fat-cover-meta .fat-name { font-weight: 700; }
+.fat-guide .fat-cover-meta .fat-dim { color: var(--muted); }
+
+.fat-guide .fat-page {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 2px solid var(--ink);
+}
+
+.fat-guide .fat-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.fat-guide .fat-page h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(30px, 6vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 10px 0 0;
+  color: var(--ink);
+}
+
+.fat-guide .fat-deck {
+  margin: 12px 0 26px;
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 50ch;
+}
+
+.fat-guide h3 {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 32px 0 12px;
+  color: var(--accent);
+}
+
+.fat-guide .fat-pull {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(21px, 3.6vw, 27px);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin: 0 0 24px;
+  max-width: 24ch;
+  color: var(--ink);
+}
+
+.fat-guide .fat-prices {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 6px 20px;
+  margin: 0 0 18px;
+}
+
+.fat-guide .fat-prices div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule-soft);
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+.fat-guide .fat-prices div:last-child { border-bottom: 0; }
+
+.fat-guide .fat-prices .fat-lbl {
+  font-family: var(--body);
+  font-size: 18px;
+}
+
+.fat-guide .fat-fine {
+  font-size: 16.5px;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.fat-guide .fat-table-scroll {
+  overflow-x: auto;
+  margin: 0 0 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fat-guide table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+}
+
+.fat-guide th {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1.5px solid var(--ink);
+  color: var(--muted);
+  vertical-align: bottom;
+}
+
+.fat-guide td {
+  padding: 16px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 17px;
+  vertical-align: top;
+}
+
+.fat-guide tr:last-child td { border-bottom: 0; }
+
+.fat-guide td:first-child {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.fat-guide td:last-child {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.fat-guide .fat-take {
+  background: var(--card);
+  border-left: 3px solid var(--accent);
+  padding: 18px 20px;
+  margin: 26px 0 0;
+}
+
+.fat-guide .fat-take h3 { margin: 0 0 8px; }
+.fat-guide .fat-take p { font-size: 18px; }
+
+.fat-guide .fat-block {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.fat-guide .fat-block h4 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.fat-guide .fat-block p { font-size: 18px; }
+
+.fat-guide .fat-question {
+  margin: 34px 0 0;
+  padding: 26px 24px;
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+  background: var(--card);
+}
+
+.fat-guide .fat-question p { font-size: 19px; }
+
+.fat-guide .fat-question .fat-q {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(20px, 3.4vw, 26px);
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  margin: 0 0 14px;
+  color: var(--ink);
+}
+
+.fat-guide .fat-handle {
+  margin-top: 40px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  .fat-guide {
+    font-size: 18px;
+    padding: 18px 18px 64px;
+  }
+  .fat-guide .fat-deck { font-size: 18.5px; }
+  .fat-guide .fat-prices { padding: 4px 16px; }
+  .fat-guide .fat-prices div {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .fat-guide .fat-prices .fat-lbl { font-size: 17px; }
+}
