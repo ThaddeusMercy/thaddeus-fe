@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "3-prompts-better-ai-results",
+    title: "3 Prompts That Get You Better AI Results",
+    excerpt:
+      "A practical guide to getting better context, stronger evidence, and a better second draft from ChatGPT or Claude.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["chatgpt", "claude", "multi-tool"],
+    publishedAt: "2026-08-04",
+    layout: "document",
+    sections: [
+      {
+        heading: "3 Prompts That Get You Better AI Results",
+        body: "Ask questions first, research and fact-check, then grade-critique-revise — plus a master prompt that combines all three.",
+      },
+    ],
+  },
+  {
     slug: "5-ai-tools-worth-your-money",
     title: "5 AI Tools That Are Actually Worth Your Money",
     excerpt:
