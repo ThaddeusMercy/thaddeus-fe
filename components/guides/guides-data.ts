@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "how-to-set-up-claude",
+    title: "How to Set Up Claude",
+    excerpt:
+      "A thirty minute setup that changes how Claude works for you. Custom instructions, projects, connectors, scheduled tasks and skills.",
+    category: "SETUP",
+    topic: "setup",
+    tools: ["claude"],
+    publishedAt: "2026-08-05",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to Set Up Claude",
+        body: "The five things to do first: custom instructions, projects, connectors, scheduled tasks, and one reusable skill.",
+      },
+    ],
+  },
+  {
     slug: "3-prompts-better-ai-results",
     title: "3 Prompts That Get You Better AI Results",
     excerpt:
