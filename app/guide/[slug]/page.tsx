@@ -17,6 +17,8 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "five-ai-employees": () =>
+    import("@/components/guides/five-ai-employees/FiveAiEmployeesGuide"),
   "how-to-set-up-claude": () =>
     import("@/components/guides/claude-setup/ClaudeSetupGuide"),
   "3-prompts-better-ai-results": () =>

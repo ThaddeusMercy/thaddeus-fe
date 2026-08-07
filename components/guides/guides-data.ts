@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "five-ai-employees",
+    title: "Five AI Employees",
+    excerpt:
+      "The five Claude Skills packs I would install to staff a business: marketing, finance, social media, legal, design. Free, with install commands and onboarding prompts.",
+    category: "SETUP",
+    topic: "skills",
+    tools: ["claude"],
+    publishedAt: "2026-08-07",
+    layout: "document",
+    sections: [
+      {
+        heading: "Five AI Employees",
+        body: "Marketer, accountant, content lead, counsel, and designer — install commands, first tasks, and the onboarding prompt that makes them yours.",
+      },
+    ],
+  },
+  {
     slug: "how-to-set-up-claude",
     title: "How to Set Up Claude",
     excerpt:

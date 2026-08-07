@@ -1,0 +1,351 @@
+/* Five AI employees — white, Attention Factory style */
+.fae-guide {
+  --font-sans: "Inter";
+  --font-display: "Archivo";
+  --font-mono: "JetBrains Mono";
+
+  --ink: #1a1a1a;
+  --body: #3d3d3d;
+  --muted: #767676;
+  --rule: #e4e4e7;
+  --panel: #fafafa;
+  --paper: #ffffff;
+  --soft: #f5f5f5;
+
+  max-width: 740px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px) clamp(18px, 4vw, 32px) 72px;
+  background: var(--paper);
+  color: var(--body);
+  font-family: var(--font-sans), "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fae-guide * { box-sizing: border-box; }
+.fae-guide p { margin: 0 0 16px; max-width: 44em; }
+.fae-guide a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.fae-guide a:hover { color: var(--muted); }
+.fae-guide code {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.84em;
+  background: var(--soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+
+.fae-guide .fae-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+.fae-guide .fae-back:hover { text-decoration: underline; }
+
+.fae-guide .fae-hero {
+  padding-bottom: 36px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.fae-guide .fae-eyebrow {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.fae-guide .fae-hero h1 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: clamp(34px, 6.5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 0 18px;
+  max-width: 12ch;
+}
+
+.fae-guide .fae-lede {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0 0 24px;
+  max-width: 42em;
+}
+
+.fae-guide .fae-roster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+
+.fae-guide .fae-roster a {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 100px;
+  padding: 8px 14px;
+  background: var(--paper);
+}
+.fae-guide .fae-roster a:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+.fae-guide .fae-section {
+  padding: 44px 0 8px;
+  border-top: 1px solid var(--rule);
+  margin-top: 36px;
+}
+.fae-guide .fae-section:first-of-type {
+  border-top: none;
+  margin-top: 24px;
+  padding-top: 28px;
+}
+
+.fae-guide .fae-section h2 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 4vw, 30px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 14px;
+  line-height: 1.15;
+}
+
+.fae-guide h3 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink);
+  margin: 28px 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.fae-guide .fae-warn {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--ink);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 24px 0 0;
+  background: var(--panel);
+}
+.fae-guide .fae-warn p:last-child { margin-bottom: 0; }
+.fae-guide .fae-warn-tag {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.fae-guide .fae-hire {
+  margin-top: 40px;
+  padding-top: 36px;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 16px;
+}
+
+.fae-guide .fae-badge {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.fae-guide .fae-num {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.fae-guide .fae-role {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 36px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.fae-guide .fae-stat {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.fae-guide .fae-handles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0 0 20px;
+}
+.fae-guide .fae-handles span {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  background: var(--soft);
+  border-radius: 100px;
+  padding: 6px 12px;
+  color: var(--body);
+}
+
+.fae-guide .fae-src {
+  display: inline-block;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  margin: 0 0 20px;
+  word-break: break-all;
+}
+
+.fae-guide .fae-code {
+  background: var(--ink);
+  color: #e8ecff;
+  border-radius: 10px;
+  margin: 0 0 18px;
+  overflow: hidden;
+}
+.fae-guide .fae-code-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px 10px 16px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(232, 236, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.fae-guide .fae-code pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #e8ecff;
+}
+.fae-guide .fae-copy {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #e8ecff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+.fae-guide .fae-copy:hover { background: rgba(255, 255, 255, 0.14); }
+.fae-guide .fae-copy.fae-done {
+  background: #fff;
+  color: var(--ink);
+  border-color: #fff;
+}
+
+.fae-guide .fae-fill {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.fae-guide .fae-feed {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  max-width: 44em;
+}
+.fae-guide .fae-feed li {
+  position: relative;
+  padding: 10px 0 10px 22px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 15.5px;
+}
+.fae-guide .fae-feed li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 18px;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.fae-guide .fae-week {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+.fae-guide .fae-week li {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+.fae-guide .fae-week li:last-child { border-bottom: 1px solid var(--rule); }
+.fae-guide .fae-day {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-top: 3px;
+  color: var(--ink);
+  font-weight: 700;
+}
+.fae-guide .fae-week p { margin: 0; }
+
+.fae-guide .fae-sig {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  .fae-guide { font-size: 16.5px; padding: 18px 18px 56px; }
+  .fae-guide .fae-week li { grid-template-columns: 1fr; gap: 4px; }
+  .fae-guide .fae-stat { text-align: left; }
+}
