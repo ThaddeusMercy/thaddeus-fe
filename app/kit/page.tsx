@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 export default function KitPage() {
   const stats = [
-    { label: "Following", value: "160,000+" },
+    { label: "Following", value: "191,000+" },
     { label: "Platforms", value: "Instagram, TikTok, Youtube" },
     { label: "Niche", value: "AI Tools & Content Creation" },
     { label: "Audience", value: "Tech-savvy creators, AI enthusiasts, GenAI Creators" }
