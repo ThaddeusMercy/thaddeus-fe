@@ -17,6 +17,8 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "agent-reach": () =>
+    import("@/components/guides/agent-reach/AgentReachGuide"),
   "five-ai-employees": () =>
     import("@/components/guides/five-ai-employees/FiveAiEmployeesGuide"),
   "how-to-set-up-claude": () =>

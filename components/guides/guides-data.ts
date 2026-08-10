@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "agent-reach",
+    title: "Agent Reach Setup Guide for Claude Code and AI Agents",
+    excerpt:
+      "Learn how to install Agent Reach, check your connections, and use websites, YouTube, GitHub, RSS, and supported social platforms with your AI agent.",
+    category: "SETUP",
+    topic: "setup",
+    tools: ["claude", "multi-tool"],
+    publishedAt: "2026-08-10",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to give your AI agent access to more of the web with Agent Reach",
+        body: "Install Agent Reach safely, run doctor, start with easy sources, add social platforms when needed, and use copy-ready prompts for pages, YouTube, GitHub, and discussions.",
+      },
+    ],
+  },
+  {
     slug: "five-ai-employees",
     title: "Five AI Employees",
     excerpt:
