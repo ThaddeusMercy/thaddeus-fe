@@ -73,7 +73,8 @@ export default function KitPage() {
 
   const addOns = [
     { title: "Usage Rights for ads (30 days)", price: "+$300" },
-    { title: "Usage Rights for ads (90 days)", price: "+$600" },
+    { title: "Usage Rights for ads (60 days)", price: "+$500" },
+    { title: "Usage Rights for ads (90 days)", price: "+$650" },
     { title: "Exclusivity Agreement (30 days)", price: "+$500" },
     { title: "Additional platform cross-post", price: "+$400-600/platform" },
     { title: "Rush delivery (48-72 hours)", price: "+$500" }
