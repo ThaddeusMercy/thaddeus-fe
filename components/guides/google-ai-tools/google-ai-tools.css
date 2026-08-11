@@ -1,0 +1,253 @@
+/* 15 Google AI tools — white */
+.gat-guide {
+  --font-sans: "Inter";
+  --font-display: "Archivo";
+  --font-mono: "JetBrains Mono";
+
+  --ink: #1a1a1a;
+  --body: #3d3d3d;
+  --muted: #767676;
+  --rule: #e4e4e7;
+  --panel: #fafafa;
+  --paper: #ffffff;
+  --soft: #f5f5f5;
+
+  max-width: 740px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px) clamp(18px, 4vw, 32px) 72px;
+  background: var(--paper);
+  color: var(--body);
+  font-family: var(--font-sans), "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.gat-guide * { box-sizing: border-box; }
+.gat-guide p { margin: 0 0 16px; max-width: 44em; }
+.gat-guide a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.gat-guide a:hover { color: var(--muted); }
+
+.gat-guide .gat-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+.gat-guide .gat-back:hover { text-decoration: underline; }
+
+.gat-guide .gat-hero {
+  padding-bottom: 36px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+.gat-guide .gat-eyebrow {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+.gat-guide .gat-hero h1 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 6vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 18px;
+  max-width: 16ch;
+}
+.gat-guide .gat-lede {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0 0 14px;
+  max-width: 42em;
+}
+.gat-guide .gat-meta {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.gat-guide .gat-section {
+  padding: 44px 0 8px;
+  border-top: 1px solid var(--rule);
+  margin-top: 36px;
+}
+.gat-guide .gat-section:first-of-type {
+  border-top: none;
+  margin-top: 24px;
+  padding-top: 28px;
+}
+.gat-guide .gat-section h2 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 3.8vw, 28px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 14px;
+  line-height: 1.15;
+}
+.gat-guide h3 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink);
+  margin: 28px 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.gat-guide .gat-check {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 20px;
+}
+.gat-guide .gat-check li {
+  position: relative;
+  padding: 10px 0 10px 22px;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+  font-size: 15.5px;
+}
+.gat-guide .gat-check li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 18px;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.gat-guide .gat-note {
+  border-left: 3px solid var(--ink);
+  background: var(--panel);
+  padding: 16px 18px;
+  margin: 20px 0 0;
+  font-size: 15.5px;
+  border-radius: 0 8px 8px 0;
+}
+.gat-guide .gat-note p:last-child { margin-bottom: 0; }
+
+.gat-guide .gat-tool {
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 16px;
+}
+.gat-guide .gat-tool:first-of-type {
+  margin-top: 12px;
+}
+.gat-guide .gat-num {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+.gat-guide .gat-tool h2 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 4vw, 30px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 14px;
+  line-height: 1.1;
+}
+
+.gat-guide .gat-useful {
+  margin: 8px 0 4px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.gat-guide .gat-links {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.gat-guide .gat-links li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+  font-size: 15px;
+}
+.gat-guide .gat-links li:first-child { border-top: 1px solid var(--rule); }
+.gat-guide .gat-links a { word-break: break-all; }
+
+.gat-guide .gat-access {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  font-size: 15.5px;
+}
+.gat-guide .gat-access p { margin: 0; }
+
+.gat-guide .gat-group {
+  margin: 0 0 18px;
+  padding: 18px 18px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--panel);
+}
+.gat-guide .gat-group h3 { margin-top: 0; }
+
+.gat-guide .gat-test {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 20px;
+}
+.gat-guide .gat-test li {
+  display: grid;
+  gap: 4px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.gat-guide .gat-test li:first-child { border-top: 1px solid var(--rule); }
+.gat-guide .gat-test .gat-need { color: var(--body); }
+.gat-guide .gat-test .gat-toolname {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.gat-guide .gat-faq {
+  margin: 0 0 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.gat-guide .gat-faq:last-of-type { border-bottom: 0; }
+.gat-guide .gat-faq h3 { margin: 0 0 8px; font-size: 16px; }
+.gat-guide .gat-faq p { margin: 0; }
+
+.gat-guide .gat-sig {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  .gat-guide { font-size: 16.5px; padding: 18px 18px 56px; }
+}

@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "google-ai-tools",
+    title: "15 Google AI Tools for Marketing, Design, Coding, and More",
+    excerpt:
+      "Explore 15 Google AI tools with direct links, simple use cases, and clear notes on free access, limits, waitlists, and closed products.",
+    category: "SETUP",
+    topic: "workflows",
+    tools: ["gemini", "multi-tool"],
+    publishedAt: "2026-08-10",
+    layout: "document",
+    sections: [
+      {
+        heading: "15 Google AI tools for marketing, design, learning, coding, and more",
+        body: "Pomelli, Opal, Stitch, Antigravity, Learn Your Way, Gemini Notebook, Mixboard, Disco, Jules, Firebase Studio, Flow Music, Gemini CLI, Code Wiki, Gemini Code Assist, and Google AI Studio — with current access notes.",
+      },
+    ],
+  },
+  {
     slug: "agent-reach",
     title: "Agent Reach Setup Guide for Claude Code and AI Agents",
     excerpt:
