@@ -65,6 +65,23 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     ],
   },
   {
+    slug: "claude-marketing-skills",
+    title: "49 Free Claude Marketing Skills and How to Install Them",
+    excerpt:
+      "Get 49 free marketing skills for Claude, the full setup steps, and prompts for content, copywriting, SEO, email, ads, and more.",
+    category: "SETUP",
+    topic: "skills",
+    tools: ["claude"],
+    publishedAt: "2026-08-10",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to install 49 free marketing skills inside Claude",
+        body: "Install one skill in regular Claude or the full Corey Haines marketing library in Claude Code, with the 49-skill list and copy-ready prompts.",
+      },
+    ],
+  },
+  {
     slug: "agent-reach",
     title: "Agent Reach Setup Guide for Claude Code and AI Agents",
     excerpt:

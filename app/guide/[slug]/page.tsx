@@ -19,6 +19,10 @@ const GUIDE_LOADERS: Record<
 > = {
   "google-ai-tools": () =>
     import("@/components/guides/google-ai-tools/GoogleAiToolsGuide"),
+  "claude-marketing-skills": () =>
+    import(
+      "@/components/guides/claude-marketing-skills/ClaudeMarketingSkillsGuide"
+    ),
   "agent-reach": () =>
     import("@/components/guides/agent-reach/AgentReachGuide"),
   "five-ai-employees": () =>
