@@ -23,6 +23,8 @@ const GUIDE_LOADERS: Record<
     import(
       "@/components/guides/claude-marketing-skills/ClaudeMarketingSkillsGuide"
     ),
+  "omniroute": () =>
+    import("@/components/guides/omniroute/OmniRouteGuide"),
   "agent-reach": () =>
     import("@/components/guides/agent-reach/AgentReachGuide"),
   "five-ai-employees": () =>

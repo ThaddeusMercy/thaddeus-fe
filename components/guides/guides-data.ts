@@ -82,6 +82,23 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     ],
   },
   {
+    slug: "omniroute",
+    title: "How to Set Up OmniRoute for Claude Code",
+    excerpt:
+      "Learn how to install OmniRoute, connect AI providers, use automatic switching, and run Claude Code through one local AI gateway.",
+    category: "SETUP",
+    topic: "setup",
+    tools: ["claude", "multi-tool"],
+    publishedAt: "2026-08-10",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to use OmniRoute with Claude Code",
+        body: "Install OmniRoute, connect providers, create a local key, launch Claude Code through the gateway, and understand automatic switching and compression.",
+      },
+    ],
+  },
+  {
     slug: "agent-reach",
     title: "Agent Reach Setup Guide for Claude Code and AI Agents",
     excerpt:
