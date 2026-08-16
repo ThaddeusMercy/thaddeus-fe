@@ -6,7 +6,7 @@
     "clean": "rm -rf .next .open-next",
     "prebuild": "node scripts/check-cf-assets.mjs",
     "dev": "next dev",
-    "build": "next build",
+    "build": "opennextjs-cloudflare build",
     "start": "next start",
     "lint": "next lint",
     "cf-build": "opennextjs-cloudflare build",
