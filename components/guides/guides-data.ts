@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "chatgpt-indeed-job-search",
+    title: "Run your job search with ChatGPT and the Indeed plugin",
+    excerpt:
+      "Connect ChatGPT to Indeed, find current job matches, tailor your resume honestly, draft recruiter outreach, and track your applications with copyable prompts.",
+    category: "WORKFLOWS",
+    topic: "career",
+    tools: ["chatgpt"],
+    publishedAt: "2026-08-16",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to run your job search with ChatGPT and the Indeed plugin",
+        body: "Find current matches, tailor your resume honestly, draft recruiter outreach, and track applications without letting AI invent experience or apply for you.",
+      },
+    ],
+  },
+  {
     slug: "google-ai-tools",
     title: "15 Google AI Tools for Marketing, Design, Coding, and More",
     excerpt:

@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "chatgpt-indeed-job-search": () =>
+    import(
+      "@/components/guides/chatgpt-indeed-job-search/ChatGptIndeedGuide"
+    ),
   "google-ai-tools": () =>
     import("@/components/guides/google-ai-tools/GoogleAiToolsGuide"),
   "claude-marketing-skills": () =>

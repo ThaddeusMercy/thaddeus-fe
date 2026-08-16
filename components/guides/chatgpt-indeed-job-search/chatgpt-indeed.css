@@ -1,0 +1,370 @@
+/* ChatGPT + Indeed job search — white */
+.cij-guide {
+  --font-sans: "Inter";
+  --font-display: "Archivo";
+  --font-mono: "JetBrains Mono";
+
+  --ink: #1a1a1a;
+  --body: #3d3d3d;
+  --muted: #767676;
+  --rule: #e4e4e7;
+  --panel: #fafafa;
+  --paper: #ffffff;
+  --soft: #f5f5f5;
+
+  max-width: 740px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px) clamp(18px, 4vw, 32px) 72px;
+  background: var(--paper);
+  color: var(--body);
+  font-family: var(--font-sans), "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cij-guide * { box-sizing: border-box; }
+.cij-guide p { margin: 0 0 16px; max-width: 44em; }
+.cij-guide a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cij-guide a:hover { color: var(--muted); }
+.cij-guide code {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.84em;
+  background: var(--soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+.cij-guide ul, .cij-guide ol {
+  margin: 0 0 20px;
+  padding-left: 1.2em;
+  max-width: 44em;
+}
+.cij-guide li { margin: 0 0 8px; }
+
+.cij-guide .cij-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+.cij-guide .cij-back:hover { text-decoration: underline; }
+
+.cij-guide .cij-hero {
+  padding-bottom: 36px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cij-guide .cij-eyebrow {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.cij-guide .cij-hero h1 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 6vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 18px;
+  max-width: 16ch;
+}
+
+.cij-guide .cij-lede {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0;
+  max-width: 42em;
+}
+
+.cij-guide .cij-section {
+  padding: 44px 0 8px;
+  border-top: 1px solid var(--rule);
+  margin-top: 36px;
+}
+.cij-guide .cij-section:first-of-type {
+  border-top: none;
+  margin-top: 24px;
+  padding-top: 28px;
+}
+
+.cij-guide .cij-section h2 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 3.8vw, 28px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 14px;
+  line-height: 1.15;
+}
+
+.cij-guide h3 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink);
+  margin: 28px 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.cij-guide h4 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.cij-guide .cij-links {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.cij-guide .cij-links li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+  font-size: 15.5px;
+}
+.cij-guide .cij-links li:first-child { border-top: 1px solid var(--rule); }
+.cij-guide .cij-links a { word-break: break-all; }
+
+.cij-guide .cij-check {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 20px;
+}
+.cij-guide .cij-check li {
+  position: relative;
+  padding: 10px 0 10px 22px;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+  font-size: 15.5px;
+}
+.cij-guide .cij-check li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 18px;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.cij-guide .cij-note {
+  border-left: 3px solid var(--ink);
+  background: var(--panel);
+  padding: 16px 18px;
+  margin: 20px 0 0;
+  font-size: 15.5px;
+  border-radius: 0 8px 8px 0;
+}
+.cij-guide .cij-note p:last-child { margin-bottom: 0; }
+
+.cij-guide .cij-cols {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0 8px;
+}
+@media (min-width: 640px) {
+  .cij-guide .cij-cols-2 { grid-template-columns: 1fr 1fr; }
+}
+.cij-guide .cij-box {
+  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--panel);
+}
+.cij-guide .cij-box ul {
+  margin: 0;
+  padding-left: 1.15em;
+}
+.cij-guide .cij-box li {
+  margin: 0 0 6px;
+  font-size: 15.5px;
+}
+.cij-guide .cij-box li:last-child { margin-bottom: 0; }
+
+.cij-guide .cij-steps {
+  list-style: none;
+  margin: 12px 0 20px;
+  padding: 0;
+  counter-reset: cijstep;
+}
+.cij-guide .cij-steps > li {
+  counter-increment: cijstep;
+  position: relative;
+  padding: 0 0 18px 48px;
+  border-left: 1px solid var(--rule);
+  margin-left: 14px;
+  font-size: 15.5px;
+}
+.cij-guide .cij-steps > li:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+.cij-guide .cij-steps > li::before {
+  content: counter(cijstep);
+  position: absolute;
+  left: -14px;
+  top: -1px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cij-guide .cij-example {
+  margin: 24px 0;
+  padding: 20px 20px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--panel);
+}
+.cij-guide .cij-example > p:first-child {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+.cij-guide .cij-pair { margin: 0 0 16px; }
+.cij-guide .cij-k {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.cij-guide .cij-pair pre {
+  margin: 0;
+  padding: 12px 14px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+.cij-guide .cij-block {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  margin: 18px 0 22px;
+  overflow: hidden;
+}
+.cij-guide .cij-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+.cij-guide .cij-block-label {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cij-guide .cij-copy {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--ink);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.cij-guide .cij-copy:hover { background: #333; }
+.cij-guide .cij-copy.cij-done { background: #1f6b3a; }
+.cij-guide .cij-block pre {
+  margin: 0;
+  padding: 16px 18px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--ink);
+  background: var(--soft);
+}
+.cij-guide .cij-fill {
+  background: #ececec;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.cij-guide .cij-problem {
+  margin: 0 0 22px;
+  padding: 18px 18px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--panel);
+}
+.cij-guide .cij-problem h3 { margin-top: 0; }
+.cij-guide .cij-problem p:last-child { margin-bottom: 8px; }
+
+.cij-guide .cij-faq {
+  margin: 0 0 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.cij-guide .cij-faq:last-of-type { border-bottom: 0; }
+.cij-guide .cij-faq h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.cij-guide .cij-faq p { margin: 0; }
+
+.cij-guide .cij-checked {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.cij-guide .cij-sig {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  .cij-guide { font-size: 16.5px; padding: 18px 18px 56px; }
+}
