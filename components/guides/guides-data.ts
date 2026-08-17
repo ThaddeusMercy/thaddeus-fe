@@ -136,7 +136,7 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     slug: "five-ai-employees",
     title: "Five AI Employees",
     excerpt:
-      "The five Claude Skills packs I would install to staff a business: marketing, finance, social media, legal, design. Free, with install commands and onboarding prompts.",
+      "The Claude Skills packs I would install to staff a business: marketing, finance, social media, legal, design, and official document skills for Word, PDF, PowerPoint, and Excel.",
     category: "SETUP",
     topic: "skills",
     tools: ["claude"],
@@ -145,7 +145,7 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     sections: [
       {
         heading: "Five AI Employees",
-        body: "Marketer, accountant, content lead, counsel, and designer — install commands, first tasks, and the onboarding prompt that makes them yours.",
+        body: "Marketer, accountant, content lead, counsel, designer, and documents — install commands, first tasks, and the onboarding prompt that makes them yours.",
       },
     ],
   },

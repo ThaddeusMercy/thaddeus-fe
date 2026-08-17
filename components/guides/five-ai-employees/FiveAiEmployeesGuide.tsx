@@ -9,6 +9,8 @@ import {
   DESIGN_ANTHROPIC,
   DESIGN_TASTE,
   DESIGN_UIUX,
+  DOCUMENTS_PLUGIN,
+  DOCUMENTS_TASK,
   FINANCE_PLUGIN,
   FINANCE_TASK,
   LEGAL_PLUGIN,
@@ -84,8 +86,8 @@ export default function FiveAiEmployeesGuide() {
         <h1>Five AI employees</h1>
         <p className="fae-lede">
           The exact Claude Skills I would install to staff a business.
-          Marketing, finance, social media, legal, design. All free, all public,
-          and here is what to hand each one on day one.
+          Marketing, finance, social media, legal, design, and documents. All
+          free, all public, and here is what to hand each one on day one.
         </p>
         <nav className="fae-roster" aria-label="Employee roster">
           {ROSTER.map((item) => (
@@ -113,9 +115,10 @@ export default function FiveAiEmployeesGuide() {
           company they have never heard of.
         </p>
         <p>
-          Five roles below. Two of them Anthropic built and maintains. The other
-          three come from people who do that work for a living and published
-          their packs for free.
+          Five roles below, plus the official documents skills that turn a chat
+          into a real Word doc, PDF, deck, or spreadsheet. Two of the roles
+          Anthropic built and maintains. The other three come from people who do
+          that work for a living and published their packs for free.
         </p>
 
         <div className="fae-warn">
@@ -547,6 +550,86 @@ export default function FiveAiEmployeesGuide() {
         </p>
       </article>
 
+      <article className="fae-hire" id="documents">
+        <div className="fae-badge">
+          <div>
+            <p className="fae-num">Employee 06</p>
+            <h2 className="fae-role">The documents lead</h2>
+          </div>
+          <div className="fae-stat">
+            4 skills
+            <br />
+            Anthropic
+            <br />
+            Official
+          </div>
+        </div>
+
+        <p>
+          These are four official Anthropic skills that let your AI create and
+          edit real files, not just text in a chat. You ask for a report and you
+          get an actual Word doc. You ask for a deck and you get a PowerPoint you
+          can open and present.
+        </p>
+        <div className="fae-handles">
+          <span>Word documents</span>
+          <span>PDFs</span>
+          <span>PowerPoint</span>
+          <span>Excel</span>
+        </div>
+        <p>
+          Same public skills repo the designer already uses. On Claude.ai you
+          often do not install anything. Ask for a Word doc, a PowerPoint, or an
+          Excel file and Claude can generate the download when the skills are
+          available on your plan. On Claude Code, add the marketplace once and
+          install the document pack. On ChatGPT or another agent, copy the{" "}
+          <code>docx</code>, <code>pdf</code>, <code>pptx</code>, or{" "}
+          <code>xlsx</code> folder into your project skills directory and let
+          the agent read each <code>SKILL.md</code>.
+        </p>
+
+        <a
+          className="fae-src"
+          href="https://github.com/anthropics/skills"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          github.com/anthropics/skills
+        </a>
+        <a
+          className="fae-src"
+          href="https://github.com/ComposioHQ/awesome-claude-skills/blob/master/document-skills/pdf/SKILL.md?plain=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          PDF skill reference · Composio mirror
+        </a>
+
+        <CodeBlock
+          label="Claude Code: add marketplace, install documents"
+          text={DOCUMENTS_PLUGIN}
+        />
+
+        <h3>Their first task</h3>
+        <CodeBlock label="Quick test" text={DOCUMENTS_TASK} />
+        <p>
+          If you get a downloadable <code>.docx</code> back, it is working. From
+          there ask for PDFs, decks, and spreadsheets the same way.
+        </p>
+
+        <h3>What it needs from you</h3>
+        <ul className="fae-feed">
+          <li>The real numbers, names, and claims you are willing to put on paper</li>
+          <li>Your brand fonts and colours when the file needs to look like you</li>
+          <li>Any template you already use for proposals, reports, or decks</li>
+          <li>A clear format: Word, PDF, PowerPoint, or Excel</li>
+        </ul>
+        <p>
+          Review every file before you send it. These skills produce real
+          documents. They do not replace your judgement on what leaves your name.
+        </p>
+      </article>
+
       <section className="fae-section">
         <h2>No terminal? Install from the app.</h2>
         <p>
@@ -607,9 +690,9 @@ export default function FiveAiEmployeesGuide() {
           ))}
         </ul>
         <p>
-          Five days, five roles, nothing paid for. The only real cost is the hour
-          you spend describing your business well enough for any of them to be
-          useful.
+          Five days, five roles plus documents, nothing paid for. The only real
+          cost is the hour you spend describing your business well enough for any
+          of them to be useful.
         </p>
         <p className="fae-sig">MERCY THADDEUS &nbsp;|&nbsp; mercythaddeus.xyz</p>
       </section>

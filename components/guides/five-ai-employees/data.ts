@@ -6,6 +6,7 @@ export const ROSTER = [
   { id: "content", label: "03 Content lead" },
   { id: "counsel", label: "04 Counsel" },
   { id: "designer", label: "05 Designer" },
+  { id: "documents", label: "06 Documents" },
 ] as const;
 
 export const MARKETER_PLUGIN = `/plugin marketplace add coreyhaines31/marketingskills
@@ -49,6 +50,13 @@ export const DESIGN_UIUX = `/plugin marketplace add nextlevelbuilder/ui-ux-pro-m
 
 export const DESIGN_TASTE = `npx skills add https://github.com/Leonxlnx/taste-skill`;
 
+export const DOCUMENTS_PLUGIN = `/plugin marketplace add anthropics/skills
+/plugin install document-skills@anthropic-agent-skills`;
+
+export const DOCUMENTS_TASK = `Create a one page proposal for a client as a Word document.
+Use my offer, price, and customer from business-context.md.
+Keep the claims honest. Give me a downloadable .docx.`;
+
 export const ONBOARD_PROMPT = `Onboard this skill to my business.
 
 Work on a copy. Leave the original alone.
@@ -91,11 +99,11 @@ Our best work so far:`;
 export const WEEK = [
   {
     day: "Day 1",
-    body: "Add the Anthropic marketplace and install finance and legal. Two commands, seventeen skills, both official.",
+    body: "Add the Anthropic marketplace and install finance, legal, and the document skills. Official packs first.",
   },
   {
     day: "Day 2",
-    body: "Write your business-context.md. This is the day that makes the other four days work.",
+    body: "Write your business-context.md. This is the day that makes the other days work.",
   },
   {
     day: "Day 3",
@@ -107,6 +115,6 @@ export const WEEK = [
   },
   {
     day: "Day 5",
-    body: "Copy one skill into your own folder and onboard it with the prompt above. Pick copywriting. A borrowed voice shows up there faster than anywhere else.",
+    body: "Test documents with a one-page Word proposal, then copy one skill into your own folder and onboard it. Pick copywriting if you want to hear a borrowed voice fast.",
   },
 ] as const;
