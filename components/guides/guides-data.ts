@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "claude-higgsfield-ads",
+    title: "Create UGC ad batches with Claude and Higgsfield MCP",
+    excerpt:
+      "Connect Claude to Higgsfield MCP and use a copyable creative director prompt to plan, create, and review a large batch of UGC ad variations.",
+    category: "WORKFLOWS",
+    topic: "creative",
+    tools: ["claude", "multi-tool"],
+    publishedAt: "2026-08-17",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to create a batch of UGC ads with Claude and Higgsfield MCP",
+        body: "Connect Higgsfield MCP, prepare product files, run the creative director prompt, test five ads, then scale with a review checklist.",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-indeed-job-search",
     title: "Run your job search with ChatGPT and the Indeed plugin",
     excerpt:
