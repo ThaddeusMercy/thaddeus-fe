@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "7-chatgpt-prompt-modes": () =>
+    import(
+      "@/components/guides/chatgpt-prompt-modes/ChatGptPromptModesGuide"
+    ),
   "claude-higgsfield-ads": () =>
     import(
       "@/components/guides/claude-higgsfield-ads/ClaudeHiggsfieldAdsGuide"

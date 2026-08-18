@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "7-chatgpt-prompt-modes",
+    title: "7 ChatGPT prompt modes for better answers",
+    excerpt:
+      "Copy-and-paste ChatGPT modes for Red Team, Socratic, Creative Director, CEO, First Principles, Devil's Advocate, and Management Consultant approaches.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["chatgpt"],
+    publishedAt: "2026-08-18",
+    layout: "document",
+    sections: [
+      {
+        heading: "7 ChatGPT prompt modes for better answers",
+        body: "Reusable prompt instructions that tell ChatGPT how to approach the task — not only what to complete.",
+      },
+    ],
+  },
+  {
     slug: "claude-higgsfield-ads",
     title: "Create UGC ad batches with Claude and Higgsfield MCP",
     excerpt:
