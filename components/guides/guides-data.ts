@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "ai-design-skills",
+    title: "5 free AI design skills for cleaner interfaces",
+    excerpt:
+      "Get five free AI design skills for Claude and Claude Code, with source links, installation steps, and prompts for creating or improving an interface.",
+    category: "SETUP",
+    topic: "skills",
+    tools: ["claude"],
+    publishedAt: "2026-08-18",
+    layout: "document",
+    sections: [
+      {
+        heading: "Five free AI design skills for cleaner interfaces",
+        body: "Frontend Design, Impeccable, Emil's Skills, Taste, and UI/UX Pro Max — with install steps and copyable prompts.",
+      },
+    ],
+  },
+  {
     slug: "7-chatgpt-prompt-modes",
     title: "7 ChatGPT prompt modes for better answers",
     excerpt:
