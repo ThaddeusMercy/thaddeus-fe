@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "six-ai-agents-2026",
+    title: "How to build 6 useful AI agents in 2026",
+    excerpt:
+      "Build six no-code AI agents for sales, research, content, finance, customer support, and personal productivity using copy-and-paste prompts.",
+    category: "WORKFLOWS",
+    topic: "ai-agents",
+    tools: ["multi-tool"],
+    publishedAt: "2026-08-19",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to build 6 useful AI agents in 2026",
+        body: "Sales, research, social media, finance, customer support, and personal productivity agents with Base44 Superagent prompts.",
+      },
+    ],
+  },
+  {
     slug: "ai-design-skills",
     title: "5 free AI design skills for cleaner interfaces",
     excerpt:

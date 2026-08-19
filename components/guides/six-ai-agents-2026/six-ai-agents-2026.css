@@ -1,0 +1,445 @@
+/* 6 useful AI agents 2026 — white */
+.saa-guide {
+  --font-sans: "Inter";
+  --font-display: "Archivo";
+  --font-mono: "JetBrains Mono";
+
+  --ink: #1a1a1a;
+  --body: #3d3d3d;
+  --muted: #767676;
+  --rule: #e4e4e7;
+  --panel: #fafafa;
+  --paper: #ffffff;
+  --soft: #f5f5f5;
+
+  max-width: 740px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px) clamp(18px, 4vw, 32px) 72px;
+  background: var(--paper);
+  color: var(--body);
+  font-family: var(--font-sans), "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.saa-guide * { box-sizing: border-box; }
+.saa-guide p { margin: 0 0 16px; max-width: 44em; }
+.saa-guide a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.saa-guide a:hover { color: var(--muted); }
+.saa-guide code {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.84em;
+  background: var(--soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+.saa-guide ul, .saa-guide ol {
+  margin: 0 0 20px;
+  padding-left: 1.2em;
+  max-width: 44em;
+}
+.saa-guide li { margin: 0 0 8px; }
+
+.saa-guide .saa-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+.saa-guide .saa-back:hover { text-decoration: underline; }
+
+.saa-guide .saa-hero {
+  padding-bottom: 36px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.saa-guide .saa-eyebrow {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.saa-guide .saa-hero h1 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 6vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 18px;
+  max-width: 16ch;
+}
+
+.saa-guide .saa-lede {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0;
+  max-width: 42em;
+}
+
+.saa-guide .saa-section {
+  padding: 44px 0 8px;
+  border-top: 1px solid var(--rule);
+  margin-top: 36px;
+}
+.saa-guide .saa-section:first-of-type {
+  border-top: none;
+  margin-top: 24px;
+  padding-top: 28px;
+}
+
+.saa-guide .saa-section h2 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 3.8vw, 28px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 14px;
+  line-height: 1.15;
+}
+
+.saa-guide h3 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink);
+  margin: 28px 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.saa-guide h4 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.saa-guide .saa-links {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.saa-guide .saa-links li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+  font-size: 15.5px;
+}
+.saa-guide .saa-links li:first-child { border-top: 1px solid var(--rule); }
+.saa-guide .saa-links a { word-break: break-all; }
+
+.saa-guide .saa-check {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 20px;
+}
+.saa-guide .saa-check li {
+  position: relative;
+  padding: 10px 0 10px 22px;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+  font-size: 15.5px;
+}
+.saa-guide .saa-check li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 18px;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.saa-guide .saa-note {
+  border-left: 3px solid var(--ink);
+  background: var(--panel);
+  padding: 16px 18px;
+  margin: 20px 0 0;
+  font-size: 15.5px;
+  border-radius: 0 8px 8px 0;
+}
+.saa-guide .saa-note p:last-child { margin-bottom: 0; }
+
+.saa-guide .saa-num {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.saa-guide .saa-deck {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0 0 20px;
+  max-width: 40em;
+}
+
+.saa-guide .saa-map {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0 0;
+}
+
+.saa-guide a.saa-map-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 16px 18px;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.saa-guide a.saa-map-item:hover {
+  border-color: var(--ink);
+  color: inherit;
+}
+
+.saa-guide .saa-map-n {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.saa-guide .saa-map-item strong {
+  display: block;
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.saa-guide .saa-map-item span {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.saa-guide .saa-cols {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0 8px;
+}
+@media (min-width: 640px) {
+  .saa-guide .saa-cols-2 { grid-template-columns: 1fr 1fr; }
+}
+.saa-guide .saa-box {
+  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--panel);
+}
+.saa-guide .saa-box ul {
+  margin: 0;
+  padding-left: 1.15em;
+}
+.saa-guide .saa-box li {
+  margin: 0 0 6px;
+  font-size: 15.5px;
+}
+.saa-guide .saa-box li:last-child { margin-bottom: 0; }
+
+.saa-guide .saa-steps {
+  list-style: none;
+  margin: 12px 0 20px;
+  padding: 0;
+  counter-reset: cijstep;
+}
+.saa-guide .saa-steps > li {
+  counter-increment: cijstep;
+  position: relative;
+  padding: 0 0 18px 48px;
+  border-left: 1px solid var(--rule);
+  margin-left: 14px;
+  font-size: 15.5px;
+}
+.saa-guide .saa-steps > li:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+.saa-guide .saa-steps > li::before {
+  content: counter(cijstep);
+  position: absolute;
+  left: -14px;
+  top: -1px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saa-guide .saa-example {
+  margin: 24px 0;
+  padding: 20px 20px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--panel);
+}
+.saa-guide .saa-example > p:first-child {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+.saa-guide .saa-example pre {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+.saa-guide .saa-pair { margin: 0 0 16px; }
+.saa-guide .saa-k {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.saa-guide .saa-pair pre {
+  margin: 0;
+  padding: 12px 14px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+.saa-guide .saa-block {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  margin: 18px 0 22px;
+  overflow: hidden;
+}
+.saa-guide .saa-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+.saa-guide .saa-block-label {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.saa-guide .saa-copy {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--ink);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.saa-guide .saa-copy:hover { background: #333; }
+.saa-guide .saa-copy.saa-done { background: #1f6b3a; }
+.saa-guide .saa-block pre {
+  margin: 0;
+  padding: 16px 18px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--ink);
+  background: var(--soft);
+}
+.saa-guide .saa-fill {
+  background: #ececec;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.saa-guide .saa-problem {
+  margin: 0 0 22px;
+  padding: 18px 18px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--panel);
+}
+.saa-guide .saa-problem h3 { margin-top: 0; }
+.saa-guide .saa-problem p:last-child { margin-bottom: 8px; }
+
+.saa-guide .saa-faq {
+  margin: 0 0 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.saa-guide .saa-faq:last-of-type { border-bottom: 0; }
+.saa-guide .saa-faq h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.saa-guide .saa-faq p { margin: 0; }
+
+.saa-guide .saa-checked {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.saa-guide .saa-sig {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  .saa-guide { font-size: 16.5px; padding: 18px 18px 56px; }
+}
