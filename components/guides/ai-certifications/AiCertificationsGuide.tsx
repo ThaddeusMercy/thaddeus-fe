@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { BOOTCAMP_URL, COURSES, TIPS } from "./data";
+import { COURSES, TIPS } from "./data";
 import "./ai-certifications.css";
 
 function renderInline(text: string) {
@@ -100,32 +100,6 @@ export default function AiCertificationsGuide() {
               ))}
             </ol>
           </div>
-        </section>
-
-        <section className="ac-flyer-wrap ac-reveal">
-          <a
-            className="ac-flyer-link"
-            data-edit="bootcamp-link"
-            href={BOOTCAMP_URL}
-            target="_blank"
-            rel="noopener"
-            aria-label="Apply for the AI Accelerator Bootcamp"
-          >
-            <img
-              src="/bootcamp-flyer.jpg"
-              alt="AI Accelerator Bootcamp — from zero to one. July 1st. Hosted by Mercy Thaddeus and Joshua Omobola."
-              className="ac-flyer-img"
-            />
-          </a>
-          <a
-            className="ac-flyer-cta"
-            data-edit="bootcamp-link"
-            href={BOOTCAMP_URL}
-            target="_blank"
-            rel="noopener"
-          >
-            Apply for the Bootcamp <span>→</span>
-          </a>
         </section>
 
         <footer className="ac-footer">

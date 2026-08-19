@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { GeistSans } from "geist/font/sans";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import WebinarRegistrationModal from "@/components/WebinarRegistrationModal";
 import {
   OG_IMAGE_PATH,
   SITE_DESCRIPTION,
@@ -184,7 +183,6 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         {children}
-        <WebinarRegistrationModal />
       </body>
     </html>
   );

@@ -1,13 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
-import {
-  WEBINAR_BANNER_ALT,
-  WEBINAR_BANNER_SRC,
-  WEBINAR_WAITLIST_URL,
-} from "@/lib/webinar";
 import { trackEvent } from "@/lib/analytics";
 
 const GuideLinks = () => {
@@ -22,11 +16,11 @@ const GuideLinks = () => {
           Links
         </p>
         <h1 className="text-2xl font-bold leading-tight text-[#1a1a1a] md:text-3xl">
-          Bootcamp, community & Attention Factory
+          Community &amp; Attention Factory
         </h1>
         <p className="leading-relaxed">
-          Curated links from the old resources tab — register, follow, or go
-          deeper with the team.
+          Curated links from the old resources tab — follow or go deeper with
+          the team.
         </p>
       </header>
 
@@ -34,56 +28,13 @@ const GuideLinks = () => {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h2 className="text-lg font-semibold text-[#1a1a1a]">
-          AI Accelerator Bootcamp
-        </h2>
-        <p className="mt-2 text-sm leading-relaxed">
-          From zero to one — July 1st. Register on the waitlist; tap the banner
-          to sign up.
-        </p>
-        <a
-          href={WEBINAR_WAITLIST_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 block overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-opacity hover:opacity-95"
-          onClick={() =>
-            trackEvent("guide_waitlist_click", { placement: "banner" })
-          }
-        >
-          <Image
-            src={WEBINAR_BANNER_SRC}
-            alt={WEBINAR_BANNER_ALT}
-            width={1024}
-            height={768}
-            className="h-auto w-full object-cover"
-            sizes="(max-width: 768px) 100vw, 720px"
-            unoptimized
-          />
-        </a>
-        <a
-          href={WEBINAR_WAITLIST_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 inline-flex rounded-full bg-[#1a1a1a] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#333]"
-          onClick={() =>
-            trackEvent("guide_waitlist_click", { placement: "button" })
-          }
-        >
-          attentionfactory.io/launch →
-        </a>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
         <h2 className="text-lg font-semibold text-[#1a1a1a]">Want more?</h2>
         <p className="mt-3 leading-relaxed">
-          The bootcamp covers the AI stack we actually use — image, video,
-          automation, and agents — with Mercy Thaddeus and Joshua Omobola.
+          I post workflows, tool breakdowns, and free guides for using AI at
+          work.
         </p>
         <p className="mt-4 text-sm font-medium text-[#1a1a1a]">
-          Follow for the link →{" "}
+          Follow for updates →{" "}
           <a
             href="https://instagram.com/mercythaddeus_"
             target="_blank"

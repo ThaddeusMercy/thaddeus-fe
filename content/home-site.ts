@@ -35,13 +35,6 @@ export const homeFindHere: {
       href: "https://attentionfactory.io?ref=mercythaddeus",
       external: true,
     },
-    {
-      title: "AI Accelerator Bootcamp",
-      description:
-        "From zero to one — July 1st. Waitlist + community for operators building with AI.",
-      href: "https://attentionfactory.io/launch",
-      external: true,
-    },
   ],
 };
 
