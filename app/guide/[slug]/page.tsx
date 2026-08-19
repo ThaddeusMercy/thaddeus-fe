@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "remove-claude-watermarks": () =>
+    import(
+      "@/components/guides/remove-claude-watermarks/RemoveClaudeWatermarksGuide"
+    ),
   "six-ai-agents-2026": () =>
     import("@/components/guides/six-ai-agents-2026/SixAiAgents2026Guide"),
   "ai-design-skills": () =>

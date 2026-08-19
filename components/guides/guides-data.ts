@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "remove-claude-watermarks",
+    title: "How to remove Claude watermarks for free",
+    excerpt:
+      "Install the free Watermarks Remover Claude skill and use /remove-ai-marks to rewrite the invisible watermark patterns it detects in your text.",
+    category: "SETUP",
+    topic: "skills",
+    tools: ["claude"],
+    publishedAt: "2026-08-19",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to remove Claude watermarks for free",
+        body: "Install Watermarks Remover, upload the skill to Claude, and run /remove-ai-marks on your text.",
+      },
+    ],
+  },
+  {
     slug: "six-ai-agents-2026",
     title: "How to build 6 useful AI agents in 2026",
     excerpt:
