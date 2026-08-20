@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "clone-yourself-with-heygen": () =>
+    import(
+      "@/components/guides/clone-yourself-heygen/CloneYourselfHeygenGuide"
+    ),
   "remove-claude-watermarks": () =>
     import(
       "@/components/guides/remove-claude-watermarks/RemoveClaudeWatermarksGuide"

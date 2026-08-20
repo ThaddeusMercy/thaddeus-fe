@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "clone-yourself-with-heygen",
+    title: "Clone yourself with HeyGen and create videos without filming",
+    excerpt:
+      "A step by step guide to creating a HeyGen Digital Twin, changing its look and setting, and turning scripts or audio into realistic videos.",
+    category: "SETUP",
+    topic: "creative",
+    tools: ["multi-tool"],
+    publishedAt: "2026-08-20",
+    layout: "document",
+    sections: [
+      {
+        heading: "Clone yourself with HeyGen and create videos without filming",
+        body: "Create a Digital Twin with Avatar V, design Looks, and turn scripts or audio into videos without filming every time.",
+      },
+    ],
+  },
+  {
     slug: "remove-claude-watermarks",
     title: "How to remove Claude watermarks for free",
     excerpt:
