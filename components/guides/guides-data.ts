@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "cinematic-ai-ads",
+    title: "How to create a cinematic AI ad with Claude and Higgsfield",
+    excerpt:
+      "Connect Higgsfield to Claude, plan your shots, create consistent visuals, animate each scene, and edit a cinematic product ad.",
+    category: "SETUP",
+    topic: "creative",
+    tools: ["claude", "multi-tool"],
+    publishedAt: "2026-08-21",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to create a cinematic AI ad with Claude and Higgsfield",
+        body: "Seven-step process for cinematic product ads, plus free Weekends of AI registration.",
+      },
+    ],
+  },
+  {
     slug: "clone-yourself-with-heygen",
     title: "Clone yourself with HeyGen and create videos without filming",
     excerpt:
