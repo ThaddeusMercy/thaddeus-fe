@@ -81,7 +81,7 @@
   letter-spacing: -0.025em;
   color: var(--ink);
   margin: 0 0 18px;
-  max-width: 16ch;
+  max-width: min(100%, 36ch);
 }
 
 .cai-guide .cai-lede {
