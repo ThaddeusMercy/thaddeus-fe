@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "realistic-ai-videos",
+    title: "How to create realistic AI videos in three steps",
+    excerpt:
+      "Learn how to create consistent characters, direct realistic AI video shots, and turn your generations into finished films.",
+    category: "SETUP",
+    topic: "creative",
+    tools: ["chatgpt", "multi-tool"],
+    publishedAt: "2026-08-24",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to create realistic AI videos in three steps",
+        body: "Character style sheets, Seedance shot direction, editing, and the three-day AI Film Challenge.",
+      },
+    ],
+  },
+  {
     slug: "cinematic-ai-ads",
     title: "How to create a cinematic AI ad with Claude and Higgsfield",
     excerpt:

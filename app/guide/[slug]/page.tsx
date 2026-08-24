@@ -17,6 +17,8 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "realistic-ai-videos": () =>
+    import("@/components/guides/realistic-ai-videos/RealisticAiVideosGuide"),
   "cinematic-ai-ads": () =>
     import("@/components/guides/cinematic-ai-ads/CinematicAiAdsGuide"),
   "clone-yourself-with-heygen": () =>
