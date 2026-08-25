@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "chatgpt-google-flow-ad": () =>
+    import(
+      "@/components/guides/chatgpt-google-flow-ad/ChatGptGoogleFlowAdGuide"
+    ),
   "realistic-ai-videos": () =>
     import("@/components/guides/realistic-ai-videos/RealisticAiVideosGuide"),
   "cinematic-ai-ads": () =>

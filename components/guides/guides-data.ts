@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "chatgpt-google-flow-ad",
+    title: "Create an AI product ad for free with ChatGPT + Google Flow",
+    excerpt:
+      "Turn one product photo into an AI ad: ChatGPT storyboard, animation prompt, then Google Flow video.",
+    category: "SETUP",
+    topic: "creative",
+    tools: ["chatgpt", "gemini"],
+    publishedAt: "2026-08-25",
+    layout: "document",
+    sections: [
+      {
+        heading: "Create an AI product ad for free with ChatGPT + Google Flow",
+        body: "Product image to ChatGPT storyboard to Google Flow video, in four steps.",
+      },
+    ],
+  },
+  {
     slug: "realistic-ai-videos",
     title: "How to create realistic AI videos in three steps",
     excerpt:
