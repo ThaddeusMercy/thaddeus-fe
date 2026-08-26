@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "chatgpt-image-shortcuts",
+    title: "50 more ChatGPT image shortcuts",
+    excerpt:
+      "Turn one image into posters, diagrams, product shots, cinematic scenes, visual breakdowns and completely different art directions.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["chatgpt"],
+    publishedAt: "2026-08-26",
+    layout: "document",
+    sections: [
+      {
+        heading: "50 more ChatGPT image shortcuts",
+        body: "Fifty slash shortcuts for ChatGPT Images, plus combo examples.",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-google-flow-ad",
     title: "Create an AI product ad for free with ChatGPT + Google Flow",
     excerpt:

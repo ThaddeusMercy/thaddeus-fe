@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "chatgpt-image-shortcuts": () =>
+    import(
+      "@/components/guides/chatgpt-image-shortcuts/ChatGptImageShortcutsGuide"
+    ),
   "chatgpt-google-flow-ad": () =>
     import(
       "@/components/guides/chatgpt-google-flow-ad/ChatGptGoogleFlowAdGuide"
