@@ -17,6 +17,8 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "ai-second-brain": () =>
+    import("@/components/guides/ai-second-brain/AiSecondBrainGuide"),
   "chatgpt-image-shortcuts": () =>
     import(
       "@/components/guides/chatgpt-image-shortcuts/ChatGptImageShortcutsGuide"

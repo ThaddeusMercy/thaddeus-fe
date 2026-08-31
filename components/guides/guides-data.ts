@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "ai-second-brain",
+    title: "Build an AI second brain with Claude Code and Obsidian",
+    excerpt:
+      "Set up an AI second brain with Claude Code and Obsidian using a simple folder structure and copyable prompts for adding and using your information.",
+    category: "SETUP",
+    topic: "workflows",
+    tools: ["claude", "notion"],
+    publishedAt: "2026-08-31",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to build an AI second brain with Claude Code and Obsidian",
+        body: "Vault setup, folder structure, and copyable prompts for ingest, query, content, meetings, and weekly maintenance.",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-image-shortcuts",
     title: "50 more ChatGPT image shortcuts",
     excerpt:
