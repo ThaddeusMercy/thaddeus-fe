@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "fifty-ai-tools",
+    title: "50+ AI tools for almost anything",
+    excerpt:
+      "Twelve curated categories of AI tools for images, video, content, animation, posting, motion graphics, apps, automation, sales, resumes, learning, slides, and audio.",
+    category: "SETUP",
+    topic: "workflows",
+    tools: ["multi-tool"],
+    publishedAt: "2026-09-01",
+    layout: "document",
+    sections: [
+      {
+        heading: "50+ AI tools for almost anything",
+        body: "Start with your problem, then pick one or two tools from the right section — images, content, animation, posting, motion, apps, automation, sales, resumes, learning, slides, and audio.",
+      },
+    ],
+  },
+  {
     slug: "ai-second-brain",
     title: "Build an AI second brain with Claude Code and Obsidian",
     excerpt:
