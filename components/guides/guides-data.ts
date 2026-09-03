@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "chatgpt-study-codes",
+    title: "50 Secret ChatGPT Codes That Make Studying Easier",
+    excerpt:
+      "Copy 50 secret ChatGPT study codes for explanations, notes, visual learning, quizzes, exam practice, revision plans, active recall, and more.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["chatgpt"],
+    publishedAt: "2026-09-03",
+    layout: "document",
+    sections: [
+      {
+        heading: "50 secret ChatGPT codes for studying",
+        body: "Fifty slash commands for understanding topics, organizing notes, visual learning, practice tests, and revision planning.",
+      },
+    ],
+  },
+  {
     slug: "fifty-ai-tools",
     title: "50+ AI tools for almost anything",
     excerpt:
