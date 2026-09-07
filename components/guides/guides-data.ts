@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "chatgpt-viral-image-prompts",
+    title: "89 viral image prompts for ChatGPT",
+    excerpt:
+      "89 slash commands for ChatGPT image generation, sorted by what they do. Product shots, ads, camera angles, lighting, styles and effects. Copy and paste.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["chatgpt"],
+    publishedAt: "2026-09-07",
+    layout: "document",
+    sections: [
+      {
+        heading: "89 viral image prompts for ChatGPT",
+        body: "Eighty-nine copyable slash commands for product shots, ads, camera, lighting, aesthetics, worlds, genres and effects.",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-study-codes",
     title: "50 Secret ChatGPT Codes That Make Studying Easier",
     excerpt:
