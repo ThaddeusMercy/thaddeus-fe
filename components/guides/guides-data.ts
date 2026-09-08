@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "gpt-6-astra",
+    title: "GPT-6 Astra: my builds, prompts and step-by-step guide",
+    excerpt:
+      "Explore my 3D websites, Jerusalem walkthrough, shooting game and AI clone video. Get the prompts, setup steps, Vercel demos and a prompt to find your own use cases.",
+    category: "GUIDE",
+    topic: "workflows",
+    tools: ["chatgpt", "multi-tool"],
+    publishedAt: "2026-09-08",
+    layout: "document",
+    sections: [
+      {
+        heading: "Build with GPT-6 Astra",
+        body: "Specs, access, live demos, original prompts, follow-up instructions, a content dashboard prompt and a personalized build planner.",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-viral-image-prompts",
     title: "89 viral image prompts for ChatGPT",
     excerpt:

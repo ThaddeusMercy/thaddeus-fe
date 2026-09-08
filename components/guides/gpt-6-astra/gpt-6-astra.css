@@ -1,0 +1,21 @@
+.astra-guide { overflow-wrap: anywhere; }
+.astra-guide section[id] { scroll-margin-top: 32px; }
+.astra-guide .astra-demo-list { display: grid; gap: 10px; margin: 24px 0 16px; }
+.astra-guide a.astra-demo-link { display: flex; align-items: center; justify-content: space-between; gap: 18px; border: 1px solid var(--rule); border-radius: 8px; padding: 15px 18px; margin: 10px 0; font-weight: 600; font-size: 16px; line-height: 1.4; text-decoration: none; background: var(--panel); }
+.astra-guide .astra-demo-list .astra-demo-link { margin: 0; }
+.astra-guide a.astra-demo-link:hover { border-color: var(--ink); color: var(--ink); background: var(--soft); }
+.astra-guide a:focus-visible, .astra-guide button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.astra-guide .astra-small, .astra-guide .astra-status { font-size: 14px; color: #666; }
+.astra-guide .astra-contents { margin-top: 36px; padding: 24px; background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; }
+.astra-guide .astra-contents h2 { font-size: 20px; }
+.astra-guide .astra-contents ol { margin: 0; columns: 2; column-gap: 32px; font-size: 14px; }
+.astra-guide .astra-contents li { break-inside: avoid; padding-left: 2px; }
+.astra-guide .astra-table-wrap { margin: 24px 0 18px; }
+.astra-guide table { border-collapse: collapse; width: 100%; font-size: 15px; }
+.astra-guide caption { text-align: left; font-size: 12px; color: #666; padding-bottom: 12px; }
+.astra-guide th, .astra-guide td { padding: 14px 12px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+.astra-guide th { color: var(--ink); font-weight: 600; width: 43%; }
+.astra-guide tr:first-child { border-top: 1px solid var(--rule); }
+.astra-guide .asb-copy { min-height: 36px; flex-shrink: 0; }
+.astra-guide .asb-block-label { min-width: 0; }
+@media (max-width: 560px) { .astra-guide .astra-contents ol { columns: 1; } .astra-guide .astra-contents { padding: 20px; } .astra-guide th, .astra-guide td { padding: 12px 6px; font-size: 13px; } }
