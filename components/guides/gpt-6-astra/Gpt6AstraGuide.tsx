@@ -13,7 +13,7 @@ const sections = [
   ["access", "How to access Astra"], ["workflow", "How to use these prompts"],
   ["range-rover", "3D Range Rover website"], ["brain", "3D brain explorer"],
   ["jerusalem", "Ancient Jerusalem walkthrough"], ["game", "3D shooting game"],
-  ["video", "AI clone video"], ["dashboard", "Content dashboard prompt"],
+  ["video", "AI clone video prompt"], ["dashboard", "Content dashboard prompt"],
   ["content", "Content ideas & video script"], ["your-work", "Find your own use cases"],
   ["publish", "Test and publish your build"], ["troubleshooting", "Fix common problems"],
 ];
@@ -52,7 +52,7 @@ export default function Gpt6AstraGuide() {
     <header className="asb-hero">
       <p className="asb-eyebrow">GPT-6 Astra · Builds, prompts & practical steps</p>
       <h1>I spent 48 hours building with GPT-6 Astra. Here’s what to try.</h1>
-      <p className="asb-lede">3D websites, a walkable city, a playable game, an AI clone video and content workflows. These are the prompts, the demos and the steps to build something useful for your own work.</p>
+      <p className="asb-lede">3D websites, a walkable city and a playable game, plus prompts for AI clone videos and content workflows. Explore the demos and follow the steps to build something useful for your own work.</p>
       <p className="asb-meta">By Mercy Thaddeus · Updated 8 September 2026</p>
     </header>
 
@@ -65,9 +65,8 @@ export default function Gpt6AstraGuide() {
         <DemoLink href={demos.city}>Walk through ancient Jerusalem</DemoLink>
         <DemoLink href={demos.immersive}>Open Jerusalem’s immersive view</DemoLink>
         <DemoLink href={demos.game}>Play Jerusalem: Target Run</DemoLink>
-        <DemoLink href={demos.video}>Watch my AI clone video</DemoLink>
       </div>
-      <p className="astra-small">The content dashboard is included as a prompt only.</p>
+      <p className="astra-small">The AI clone video and content dashboard are included as prompts only.</p>
       <nav className="astra-contents" aria-label="Inside this guide"><h2>Inside this guide</h2><ol>{sections.map(([id, label]) => <li key={id}><a href={`#${id}`}>{label}</a></li>)}</ol></nav>
     </section>
 
@@ -186,21 +185,9 @@ export default function Gpt6AstraGuide() {
     </section>
 
     <section className="asb-section" id="video">
-      <p className="asb-num">BUILD 05</p><h2>An AI video using my clone</h2>
-      <p>This workflow combines a script, my reference appearance, my cloned voice and a video tool. Astra can help coordinate the steps, but the video renderer and voice workflow are separate tools with their own access and costs.</p>
-      <DemoLink href={demos.video}>Watch the finished clone video</DemoLink>
-      <p>The shared version uses a cream blazer, shoulder-length waves and a warm studio background, with the original script and cloned voice. It has no captions or extra text.</p>
+      <p className="asb-num">PROMPT ONLY</p><h2>AI clone video prompt</h2>
+      <p>Use this prompt with your own reference appearance, voice and a connected video tool.</p>
       <CopyBlock label="AI clone video prompt" text={prompts.video} />
-      <h3>What to prepare</h3><ul><li>Your own approved face reference or existing clone.</li><li>A clean voice sample or a voice clone you have permission to use.</li><li>The exact words you want spoken.</li><li>A connected video tool that supports the requested workflow.</li><li>A description of the outfit, hair, background and output format.</li></ul>
-      <ol className="asb-steps">
-        <li><strong>Attach the actual references.</strong>Replace “my existing clone/reference” with the files or saved identity you want to use. A fresh task will not necessarily have access to a clone from another app.</li>
-        <li><strong>Generate and listen to the speech.</strong>Check the script, pronunciation and timing before rendering the final clip.</li>
-        <li><strong>Generate a short first version.</strong>Check the face, mouth movement, gestures and background. Watch the whole clip, not just its thumbnail.</li>
-        <li><strong>Restyle if needed.</strong>For this version I used Higgsfield to change the outfit, hair and setting, then kept the original speech track.</li>
-        <li><strong>Export and watch again.</strong>Check lip sync, audio, visual consistency and the absence of unwanted text in the final MP4.</li>
-      </ol>
-      <CopyBlock label="Restyle an existing clone video" text={'Restyle the attached video while preserving my facial identity, exact speech and original voice track. Change the outfit to [OUTFIT], the hair to [HAIRSTYLE], and the background to [SETTING]. Keep the look consistent across every frame. Preserve natural movement and realistic lip sync. No captions, logos or extra text. Export a finished MP4 and check the full clip before returning it.'} />
-      <p>For a separate walkthrough of preparing a clone, see <Link href="/guide/clone-yourself-with-heygen">my clone setup guide</Link>. The prompt alone does not create an existing identity or grant a tool access to it.</p>
     </section>
 
     <section className="asb-section" id="dashboard">
@@ -260,7 +247,6 @@ export default function Gpt6AstraGuide() {
         ["The scroll animation jumps or will not reset", "Describe the exact scroll position and affected part. Ask for one shared progress value, stored assembled positions, and a reset check after repeated forward and reverse scrolling."],
         ["The preview works but the live route fails", "Ask the agent to open the failing route directly and inspect the hosting output and route configuration. Include the complete URL and what you see."],
         ["The dashboard looks finished but does not generate anything", "Ask which stages use real services and which use sample data. Request a test that starts with a new topic and produces saved, editable outputs through every stage."],
-        ["The clone does not look or sound like me", "Check that the correct reference and voice track were used. Review a short segment before a longer render, and give precise feedback about the face, timing, pronunciation or styling."],
         ["The agent stops with a question or an error", "Read what it needs: a missing file, access to a service, a design decision or a failed command. Provide that specific input, then ask it to continue from the working project."],
       ].map(([title, text]) => <div className="asb-problem" key={title}><h3>{title}</h3><p>{text}</p></div>)}
       <CopyBlock label="Fix a specific problem" text={'In [PAGE OR FEATURE], when I [EXACT ACTION], [ACTUAL RESULT] happens. I expected [EXPECTED RESULT]. Inspect the current implementation, reproduce the issue, fix the cause and test the same action again. Preserve the parts that already work. Here is my screenshot or error: [ATTACHMENT OR ERROR].'} />

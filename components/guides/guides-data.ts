@@ -51,7 +51,7 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     slug: "gpt-6-astra",
     title: "GPT-6 Astra: my builds, prompts and step-by-step guide",
     excerpt:
-      "Explore my 3D websites, Jerusalem walkthrough, shooting game and AI clone video. Get the prompts, setup steps, Vercel demos and a prompt to find your own use cases.",
+      "Explore my 3D websites, Jerusalem walkthrough and shooting game. Get the Vercel demos, setup steps, AI clone video and content dashboard prompts, and a prompt to find your own use cases.",
     category: "GUIDE",
     topic: "workflows",
     tools: ["chatgpt", "multi-tool"],
