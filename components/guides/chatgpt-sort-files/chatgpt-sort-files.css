@@ -1,0 +1,22 @@
+.sort-guide { overflow-wrap: anywhere; }
+.sort-guide section[id] { scroll-margin-top: 80px; }
+.sort-guide .sort-small { font-size: 14px; color: #666; }
+.sort-guide .sort-download { margin-top: 22px; font-size: 15px; font-weight: 600; }
+.sort-guide .asb-steps strong.sort-inline { display: inline; }
+.sort-guide .asb-map-item .asb-map-n { font-size: 18px; color: var(--ink); }
+.sort-guide .asb-copy { min-height: 44px; flex-shrink: 0; }
+.sort-guide .asb-block-label { min-width: 0; }
+.sort-guide .sort-reply {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 16px;
+}
+.sort-guide a:focus-visible,
+.sort-guide button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+@media (max-width: 400px) {
+  .sort-guide .asb-block-head { align-items: flex-start; flex-wrap: wrap; }
+}

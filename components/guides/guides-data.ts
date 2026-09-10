@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "chatgpt-sort-files",
+    title: "Use ChatGPT to sort your PC files and clean up storage",
+    excerpt:
+      "The two prompts from my SORT demo: organize your Desktop or Downloads without deleting files, then review large files and confirmed duplicates before approving a cleanup.",
+    category: "GUIDE",
+    topic: "workflows",
+    tools: ["chatgpt"],
+    publishedAt: "2026-09-10",
+    layout: "document",
+    sections: [
+      {
+        heading: "Sort files and review storage with ChatGPT Work",
+        body: "Local folder setup, two copyable prompts, a cleanup plan and specific approval before moving files to Trash or Recycle Bin.",
+      },
+    ],
+  },
+  {
     slug: "gpt-6-astra",
     title: "GPT-6 Astra: my builds, prompts and step-by-step guide",
     excerpt:

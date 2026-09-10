@@ -17,6 +17,8 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "chatgpt-sort-files": () =>
+    import("@/components/guides/chatgpt-sort-files/ChatGptSortFilesGuide"),
   "gpt-6-astra": () =>
     import("@/components/guides/gpt-6-astra/Gpt6AstraGuide"),
   "chatgpt-viral-image-prompts": () =>

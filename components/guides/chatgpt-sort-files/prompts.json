@@ -1,0 +1,4 @@
+{
+  "organize": "Organize every loose file in the selected folder into a clear, practical structure, like a tidy, organized person would. Create folders based on what you find.\n\nPreserve existing folders, filenames and contents. Put uncertain files in Needs Review. Do not delete or overwrite anything. Save a move log and verify that all files are accounted for.",
+  "storage": "Audit this folder’s storage. List the largest files and verify exact duplicates by content hash.\n\nCreate a numbered cleanup plan with exact paths, file sizes and potential savings. Do not change or delete anything. Wait for my approval of specific items before moving only those items to Trash."
+}

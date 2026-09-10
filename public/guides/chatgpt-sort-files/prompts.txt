@@ -1,0 +1,21 @@
+USE CHATGPT TO SORT YOUR PC FILES AND CLEAN UP STORAGE
+By Mercy Thaddeus
+https://mercythaddeus.xyz/guide/chatgpt-sort-files
+
+These are the exact two prompts shown in the animated demo.
+Open the desktop app, select Work, keep Work locally selected and attach the folder you want to work on. Start with one small folder.
+
+1. SORT YOUR FILES
+
+Organize every loose file in the selected folder into a clear, practical structure, like a tidy, organized person would. Create folders based on what you find.
+
+Preserve existing folders, filenames and contents. Put uncertain files in Needs Review. Do not delete or overwrite anything. Save a move log and verify that all files are accounted for.
+
+2. REVIEW STORAGE
+
+Audit this folder’s storage. List the largest files and verify exact duplicates by content hash.
+
+Create a numbered cleanup plan with exact paths, file sizes and potential savings. Do not change or delete anything. Wait for my approval of specific items before moving only those items to Trash.
+
+AFTER REVIEWING THE PLAN
+Approve specific item numbers or exact paths. Keep at least one copy of every confirmed duplicate. Ask for recoverable removal only. Do not permanently delete files or empty Trash automatically. Files in Trash or Recycle Bin can still use storage until it is emptied.
