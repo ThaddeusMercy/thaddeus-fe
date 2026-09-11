@@ -17,6 +17,8 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "edit-videos-chatgpt-claude": () =>
+    import("@/components/guides/edit-videos-chatgpt-claude/EditVideosChatGptClaudeGuide"),
   "chatgpt-sort-files": () =>
     import("@/components/guides/chatgpt-sort-files/ChatGptSortFilesGuide"),
   "gpt-6-astra": () =>

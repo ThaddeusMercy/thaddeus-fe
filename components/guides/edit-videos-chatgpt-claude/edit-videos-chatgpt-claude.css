@@ -1,0 +1,18 @@
+.video-edit-guide { overflow-wrap: anywhere; }
+.video-edit-guide [id] { scroll-margin-top: 90px; }
+.video-edit-guide .asb-copy { min-height: 44px; flex-shrink: 0; }
+.video-edit-guide .asb-block-label { min-width: 0; }
+.video-edit-guide .video-edit-download { margin-top: 22px; font-size: 15px; font-weight: 600; }
+.video-edit-guide .video-edit-example {
+  margin: 16px 0;
+  padding: 16px 18px;
+  border-left: 2px solid var(--rule);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 16px;
+}
+.video-edit-guide a:focus-visible,
+.video-edit-guide button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+@media (max-width: 400px) {
+  .video-edit-guide .asb-block-head { flex-wrap: wrap; }
+}

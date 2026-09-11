@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "edit-videos-chatgpt-claude",
+    title: "How to edit your videos with ChatGPT and Claude",
+    excerpt:
+      "My ChatGPT and Claude video editing workflows: set up Remotion, use my exact editing prompt, review the edit and export your finished video.",
+    category: "GUIDE",
+    topic: "creative",
+    tools: ["chatgpt", "claude"],
+    publishedAt: "2026-09-11",
+    layout: "document",
+    sections: [
+      {
+        heading: "Edit with ChatGPT, Claude and Remotion",
+        body: "Step-by-step setup, the full copyable video editing prompt, preview and export instructions, and a comparison using the same footage and instructions.",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-sort-files",
     title: "Use ChatGPT to sort your PC files and clean up storage",
     excerpt:

@@ -1,0 +1,864 @@
+{
+  "title": "How to edit your videos with ChatGPT and Claude",
+  "intro": [
+    {
+      "type": "paragraph",
+      "text": "AI can now do much more than generate a caption or suggest where to make a cut.",
+      "items": [],
+      "id": "",
+      "href": "",
+      "label": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "You can give it your raw footage, explain how you want the video edited, and have it help with cuts, captions, motion graphics, B-roll, sound effects, audio cleanup and even visual moments that match what you are saying.",
+      "items": [],
+      "id": "",
+      "href": "",
+      "label": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "In this guide, I'll show you two ways I use it:",
+      "items": [],
+      "id": "",
+      "href": "",
+      "label": ""
+    },
+    {
+      "type": "ordered",
+      "text": "",
+      "items": [
+        "Editing with ChatGPT and GPT-6 Astra",
+        "Editing with Claude and Remotion"
+      ],
+      "id": "",
+      "href": "",
+      "label": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "I'll also give you the exact prompt you can use for your own videos.",
+      "items": [],
+      "id": "",
+      "href": "",
+      "label": ""
+    }
+  ],
+  "sections": [
+    {
+      "title": "Before you start",
+      "id": "before-you-start",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "There is one thing you need to understand.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "GPT-6 Astra and Claude are doing the thinking, but they still need a video editing or rendering tool to actually produce the finished video.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "One of the easiest ways to do this is Remotion.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Remotion lets AI coding agents create and edit videos using code. Instead of manually building every animation on a timeline, you can describe what you want and let the AI create it.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "For ChatGPT, you can use Remotion through Codex.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "For Claude, you can use Remotion through Claude Code.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        }
+      ]
+    },
+    {
+      "title": "Option 1: Edit with ChatGPT and GPT-6 Astra",
+      "id": "chatgpt",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For this workflow, use the ChatGPT desktop app and open Codex.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Select GPT-6 Astra if it is available on your account.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "heading",
+          "text": "Step 1: Create a folder for your edit",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Put everything you want ChatGPT to use inside one folder.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "For example:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "unordered",
+          "text": "",
+          "items": [
+            "Your raw talking head video",
+            "Logo",
+            "Brand assets",
+            "Fonts",
+            "Images",
+            "Screenshots",
+            "Any B-roll you already have"
+          ],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Then open that folder as your project inside Codex.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "heading",
+          "text": "Step 2: Add Remotion",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Remotion has official Agent Skills that work with Codex.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Install them with:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "prompt",
+          "text": "npx skills add remotion-dev/skills",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": "Install Remotion skills"
+        },
+        {
+          "type": "paragraph",
+          "text": "Once installed, Codex can use Remotion to work with video, audio, captions, animations and rendering.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "You can also ask Codex to install it for you.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Use:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "prompt",
+          "text": "Install the official Remotion Agent Skills from remotion-dev/skills and set up this folder so we can edit my video with Remotion.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": "Setup prompt"
+        },
+        {
+          "type": "heading",
+          "text": "Step 3: Give it your raw video",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Now reference the raw video inside your project and give Astra your editing instructions.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "I recommend telling it to inspect the entire video before touching anything.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Use this prompt:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "prompt",
+          "text": "Watch the entire video first before making any edits.\n\nUnderstand what I am saying, the meaning of each section, where I am emphasizing something and where a visual would help explain my point.\n\nThen edit the video into a polished short form video that feels ready to publish.\n\nClean up the footage and remove unnecessary pauses, mistakes or dead space.\n\nKeep the pacing fast and natural without making the speech feel rushed.\n\nRemove background noise and clean up my voice audio.\n\nImprove the color, lighting and contrast while keeping my skin tone natural.\n\nAdd relevant B-roll when it helps explain what I am talking about.\n\nAdd motion graphics and animations that visually explain what I am saying.\n\nAdd subtle sound effects to transitions, text, motion graphics and important moments.\n\nAdd captions throughout the video and time them accurately to my speech.\n\nUse zooms, punch-ins, text animation, graphics and other editing techniques where they improve the video.\n\nMost importantly, understand the context of what I am saying and turn it into visuals instead of simply putting captions over the video.\n\nFor example, when I say:\n\n\"Five reasons you should fire your video editor\"\n\nCreate a visual moment around that sentence.\n\nShow \"5 reasons\" clearly and visually communicate the idea of firing a video editor using typography, motion, graphics, interface elements or another treatment that fits the video.\n\nApply this thinking throughout the video.\n\nWhenever something can be explained visually, create an appropriate animation, graphic, B-roll moment or text treatment.\n\nDo not change what I am saying.\n\nDo not make the video overly busy.\n\nThe visuals should support what I am saying, not distract from it.\n\nFirst watch and understand the full video.\n\nThen plan the edit.\n\nThen complete the edit.",
+          "items": [],
+          "id": "editing-prompt",
+          "href": "",
+          "label": "Video editing prompt"
+        },
+        {
+          "type": "heading",
+          "text": "Step 4: Preview the edit",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Don't immediately export the first version.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Ask Astra to open the Remotion preview so you can watch it.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "You can say:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "prompt",
+          "text": "Open the video in Remotion Studio so I can review the full edit before we render it.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": "Preview prompt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Then watch the video and tell it what you want changed.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "You don't need to explain how to make the change.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "You can simply say things like:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "quote",
+          "text": "The animation at 00:18 feels too busy. Make it simpler.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "quote",
+          "text": "The graphic when I mention GPT-6 should stay on screen longer.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "quote",
+          "text": "Remove that B-roll and replace it with something that better explains what I'm saying.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "quote",
+          "text": "Make the captions smaller.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "quote",
+          "text": "That section feels slow. Tighten it.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Instead of going back into the timeline and changing everything yourself, you can simply describe the change.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "heading",
+          "text": "Step 5: Render the finished video",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Once you're happy with the edit, ask:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "prompt",
+          "text": "Render the final video as an MP4 in the highest appropriate quality and save it inside an exports folder.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": "Export prompt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Then review the exported video before publishing it.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        }
+      ]
+    },
+    {
+      "title": "Another way to edit with GPT-6 Astra",
+      "id": "davinci-resolve",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Remotion isn't the only option.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Because Astra can operate software through Codex, people are also connecting it to traditional video editors such as DaVinci Resolve.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "In that workflow, you:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "ordered",
+          "text": "",
+          "items": [
+            "Open your footage inside DaVinci Resolve.",
+            "Connect Codex to a compatible MCP or editing integration.",
+            "Ask Astra to inspect the timeline.",
+            "Tell it to cut pauses, remove retakes and clean the footage.",
+            "Ask it to add graphics, B-roll or other edits.",
+            "Review what it changed inside your normal editor."
+          ],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "This is useful if you already edit with DaVinci and want AI working inside your existing timeline.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "For beginners, I would start with the Remotion workflow because the whole edit can be controlled through prompts.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        }
+      ]
+    },
+    {
+      "title": "Option 2: Edit with Claude and Remotion",
+      "id": "claude",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "I've been using Claude with Remotion for video work for a while.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "The idea is similar.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Claude understands what you want, while Remotion handles the actual video, animation, captions and rendering.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "heading",
+          "text": "Step 1: Open Claude Code",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Open Claude Code on your computer and point it to the folder containing your video and assets.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "heading",
+          "text": "Step 2: Install the Remotion skills",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "You can install the official Remotion Agent Skills with:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "prompt",
+          "text": "npx skills add remotion-dev/skills",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": "Install Remotion skills"
+        },
+        {
+          "type": "paragraph",
+          "text": "Once installed, Claude can use Remotion skills for things such as:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "unordered",
+          "text": "",
+          "items": [
+            "Creating videos",
+            "Motion graphics",
+            "Captions",
+            "Audio",
+            "Video assets",
+            "Timing",
+            "Previewing your edit",
+            "Rendering the final video"
+          ],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "I already have a complete setup guide for this, so rather than repeat the installation here:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "link",
+          "text": "Read my complete Remotion with Claude Code setup guide →",
+          "items": [],
+          "id": "",
+          "href": "/guide/edit-videos-with-claude",
+          "label": ""
+        },
+        {
+          "type": "heading",
+          "text": "Step 3: Give Claude your footage",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Reference the video from your project folder and use the same editing prompt from the ChatGPT section.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "For my test, this is important because I want both AIs to receive:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "The same raw footage.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "The same assets.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "The same instructions.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "That makes it much easier to compare what each model actually does differently.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "heading",
+          "text": "Step 4: Review and change the edit",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Once Claude creates the first version, open the Remotion preview.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Watch the full video.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Then continue prompting Claude with the changes you want.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "For example:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "quote",
+          "text": "At 00:12, remove the current animation and create something simpler.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "quote",
+          "text": "Make the first five seconds faster.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "quote",
+          "text": "The B-roll here doesn't match what I'm saying. Replace it.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "quote",
+          "text": "Make the words I'm emphasizing visually stronger.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "You can keep doing this until you're happy with the edit.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Then ask Claude to render the final MP4.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        }
+      ]
+    },
+    {
+      "title": "The part that matters most",
+      "id": "better-instructions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Don't just ask:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "quote",
+          "text": "Edit my video.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "The better your instructions are, the better the result will be.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Tell the AI:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "unordered",
+          "text": "",
+          "items": [
+            "What style of video you want",
+            "How fast the pacing should be",
+            "What your captions should look like",
+            "When you want B-roll",
+            "What should become an animation",
+            "What shouldn't be changed",
+            "Your fonts and brand colors",
+            "Examples of edits you like"
+          ],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Most importantly, tell it to understand the video before editing it.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "You don't want random motion graphics.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "You want the visuals to make what you are saying easier to understand.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        }
+      ]
+    },
+    {
+      "title": "ChatGPT vs Claude: which is better?",
+      "id": "comparison",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For my test, I gave GPT-6 Astra and Claude Fable 5.1 the same raw footage and the same editing instructions.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "I asked both of them to:",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "unordered",
+          "text": "",
+          "items": [
+            "Clean up the footage",
+            "Add B-roll",
+            "Add motion graphics",
+            "Remove background noise",
+            "Add sound effects",
+            "Add captions",
+            "Understand the context of what I was saying",
+            "Turn parts of my speech into visuals"
+          ],
+          "id": "",
+          "href": "",
+          "label": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "The interesting part isn't just whether they can edit a video. It's how differently each AI interprets the exact same instructions.",
+          "items": [],
+          "id": "",
+          "href": "",
+          "label": ""
+        }
+      ]
+    }
+  ]
+}
