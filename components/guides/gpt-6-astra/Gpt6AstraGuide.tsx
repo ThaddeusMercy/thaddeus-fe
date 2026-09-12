@@ -48,6 +48,21 @@ function DemoLink({ href, children }: { href: string; children: React.ReactNode 
   return <a className="astra-demo-link" href={href} target="_blank" rel="noopener noreferrer">{children}<span aria-hidden>↗</span></a>;
 }
 
+function WalkthroughVideos({ section, headingLevel = 3 }: { section: string; headingLevel?: 3 | 4 }) {
+  const Heading = headingLevel === 4 ? "h4" : "h3";
+  return videos.items.filter((video) => video.section === section).map((video) => <figure className="astra-video-card" id={`${video.id}-video`} key={video.id}>
+    <figcaption>
+      <div className="astra-video-heading"><Heading>{video.title}</Heading><span>{video.duration}</span></div>
+      <p>{video.description}</p>
+    </figcaption>
+    <video controls playsInline preload="none" poster={video.poster} aria-label={video.title} width={video.width} height={video.height} style={{ aspectRatio: `${video.width} / ${video.height}` }}>
+      <source src={video.src} type="video/mp4" />
+      Your browser does not support this video. <a href={video.src}>Open the MP4</a>.
+    </video>
+    <a className="astra-video-open" href={video.src} target="_blank" rel="noopener noreferrer">Open {video.title} in a new tab</a>
+  </figure>);
+}
+
 export default function Gpt6AstraGuide() {
   return <article className="asb-guide astra-guide">
     <Link href="/guide" className="asb-back"><ArrowLeft className="h-4 w-4" aria-hidden />All guides</Link>
@@ -64,11 +79,12 @@ export default function Gpt6AstraGuide() {
       <div className="astra-demo-list">
         <DemoLink href={demos.car}>Explore the Range Rover</DemoLink>
         <DemoLink href={demos.brain}>Explore the 3D brain</DemoLink>
-        <DemoLink href={videos.page}>Watch the anatomy walkthroughs</DemoLink>
+        <DemoLink href={videos.page}>Watch all five walkthroughs</DemoLink>
         <DemoLink href={demos.city}>Walk through ancient Jerusalem</DemoLink>
         <DemoLink href={demos.immersive}>Open Jerusalem’s immersive view</DemoLink>
         <DemoLink href={demos.game}>Play Jerusalem: Target Run</DemoLink>
       </div>
+      <p className="astra-small">Watch on this page: <a href="#range-rover-video">Range Rover website</a> · <a href="#anatomy-videos">Anatomy models</a> · <a href="#jerusalem-walkthrough-video">Jerusalem fly-through</a> · <a href="#jerusalem-game-video">Target Run gameplay</a>.</p>
       <p className="astra-small">The AI clone video and content dashboard are included as prompts only.</p>
       <nav className="astra-contents" aria-label="Inside this guide"><h2>Inside this guide</h2><ol>{sections.map(([id, label]) => <li key={id}><a href={`#${id}`}>{label}</a></li>)}</ol></nav>
     </section>
@@ -125,6 +141,7 @@ export default function Gpt6AstraGuide() {
       <p className="asb-num">BUILD 01</p><h2>A 3D Range Rover that comes apart as you scroll</h2>
       <p>I wanted to see whether a simple idea could become a polished 3D experience: a car in the center, its major parts separating as you scroll, and everything coming back together when you reverse direction.</p>
       <DemoLink href={demos.car}>Open the Range Rover website</DemoLink>
+      <WalkthroughVideos section="range-rover" />
       <h3>The original prompt</h3><CopyBlock label="Range Rover build prompt" text={prompts.car} />
       <h3>How to build your version</h3>
       <ol className="asb-steps">
@@ -146,17 +163,7 @@ export default function Gpt6AstraGuide() {
       <div className="astra-videos" id="anatomy-videos">
         <h3>Watch the builds in action</h3>
         <p>Two short walkthroughs of the Brain Atlas and Female Anatomy models. Press play to watch, or use the player controls to turn on sound and open full screen.</p>
-        {videos.items.map((video) => <figure className="astra-video-card" key={video.id}>
-          <figcaption>
-            <div className="astra-video-heading"><h4>{video.title}</h4><span>{video.duration}</span></div>
-            <p>{video.description}</p>
-          </figcaption>
-          <video controls playsInline preload="none" poster={video.poster} aria-label={video.title}>
-            <source src={video.src} type="video/mp4" />
-            Your browser does not support this video. <a href={video.src}>Open the MP4</a>.
-          </video>
-          <a className="astra-video-open" href={video.src} target="_blank" rel="noopener noreferrer">Open {video.title.toLowerCase()} in a new tab</a>
-        </figure>)}
+        <WalkthroughVideos section="brain" headingLevel={4} />
       </div>
       <CopyBlock label="Brain build prompt" text={prompts.brain} />
       <h3>How to make the result easier to understand</h3>
@@ -175,6 +182,7 @@ export default function Gpt6AstraGuide() {
       <p>This test moves from one 3D object to a whole environment. The goal was a city you could explore, with streets, gates, courtyards and landmarks that feel connected.</p>
       <DemoLink href={demos.city}>Open the Jerusalem explorer</DemoLink>
       <DemoLink href={demos.immersive}>Open the clean immersive view</DemoLink>
+      <WalkthroughVideos section="jerusalem" />
       <CopyBlock label="Jerusalem walkthrough prompt" text={prompts.city} />
       <h3>Build the environment in stages</h3>
       <ol className="asb-steps">
@@ -193,6 +201,7 @@ export default function Gpt6AstraGuide() {
       <p className="asb-num">BUILD 04</p><h2>Turn the city into a playable 3D game</h2>
       <p>I reused the Jerusalem environment for a target game. This is a good follow-up because the world is already there: the new work is movement, aiming, hit detection, scoring and the game state.</p>
       <DemoLink href={demos.game}>Play Jerusalem: Target Run</DemoLink>
+      <WalkthroughVideos section="game" />
       <p>Use this prompt in the same project as the walkthrough, and tell the agent to preserve the explorer routes.</p>
       <CopyBlock label="Jerusalem shooting game prompt" text={prompts.game} />
       <h3>What the completed game includes</h3><ul><li>21 artificial targets across three ranges.</li><li>A three-minute round with score, ammo and a timer.</li><li>WASD or arrow keys to move, mouse to look, click to shoot and R to reload.</li><li>Keys 1–3 to switch ranges.</li><li>Direct entry into the range, with the first click firing.</li></ul>
