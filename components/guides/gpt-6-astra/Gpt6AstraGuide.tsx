@@ -11,15 +11,23 @@ import "../ai-second-brain/ai-second-brain.css";
 import "./gpt-6-astra.css";
 
 const sections = [
-  ["demos", "Open the builds"], ["video-editing", "My fully edited video"],
-  ["community", "18 more creator examples"], ["specs", "The specs that matter"],
-  ["access", "How to access Astra"], ["workflow", "How to use these prompts"],
-  ["range-rover", "3D Range Rover website"], ["brain", "3D brain explorer"],
-  ["anatomy-videos", "Watch the anatomy walkthroughs"],
-  ["jerusalem", "Ancient Jerusalem walkthrough"], ["game", "3D shooting game"],
-  ["video", "AI clone video prompt"], ["dashboard", "Content dashboard prompt"],
-  ["content", "Content ideas & video script"], ["your-work", "Find your own use cases"],
-  ["publish", "Test and publish your build"], ["troubleshooting", "Fix common problems"],
+  ["human-atlas", "Human Atlas · female anatomy"],
+  ["brain", "Brain Atlas"],
+  ["jerusalem", "Ancient Jerusalem"],
+  ["driving-game", "Dusk Run · my car game"],
+  ["range-rover", "3D Range Rover website"],
+  ["game", "Jerusalem: Target Run"],
+  ["community", "18 more creator examples"],
+  ["specs", "The specs that matter"],
+  ["access", "How to access Astra"],
+  ["workflow", "How to use these prompts"],
+  ["your-work", "Find your own use cases"],
+  ["publish", "Test and publish your build"],
+  ["troubleshooting", "Fix common problems"],
+  ["video-editing", "My fully edited video"],
+  ["video", "AI clone video prompt"],
+  ["dashboard", "Content dashboard prompt"],
+  ["content", "Content ideas & video script"],
 ];
 
 function CopyBlock({ label, text }: { label: string; text: string }) {
@@ -113,7 +121,7 @@ function CommunityGallery() {
     </div>
     {matching.length === 0 && <div className="asb-note"><p>No examples match that search.</p><button className="astra-gallery-button" type="button" onClick={() => { setQuery(""); setCategory("All"); setShowAll(false); }}>Clear filters</button></div>}
     {matching.length > 6 && <button className="astra-gallery-button" type="button" aria-expanded={showAll} onClick={() => setShowAll(!showAll)}>{showAll ? "Show fewer examples" : `Show all ${matching.length} examples`}</button>}
-    <p className="astra-small">Choose one idea, adapt its prompt to your own subject, and check the result against a concrete task. The <a href="#workflow">prompt workflow</a> and <a href="#publish">publishing checklist</a> below explain the next steps.</p>
+    <p className="astra-small">Choose one idea, adapt its prompt to your own subject, and check the result against a concrete task. The <a href="#workflow">prompt workflow</a> and <a href="#publish">publishing checklist</a> explain the next steps.</p>
   </section>;
 }
 
@@ -123,34 +131,124 @@ export default function Gpt6AstraGuide() {
     <header className="asb-hero">
       <p className="asb-eyebrow">GPT-6 Astra · Builds, prompts & practical steps</p>
       <h1>I spent 48 hours building with GPT-6 Astra. Here’s what to try.</h1>
-      <p className="asb-lede">3D websites, games, anatomy models and a fully edited video. Watch my builds and 18 credited creator examples, then use the prompts and step-by-step instructions to try ideas for your own work.</p>
+      <p className="asb-lede">Start with my female Human Atlas, Brain Atlas, Jerusalem and Dusk Run car game. Explore my builds and 18 credited creator examples, then follow the prompts and practical steps. Content creation and video editing are at the end.</p>
       <p className="asb-meta">By Mercy Thaddeus · Updated 12 September 2026</p>
     </header>
 
     <section className="asb-section" id="demos">
-      <h2>Start with the builds</h2>
-      <p>Open an experience, try its controls, then come back for the prompt. The 3D demos are easiest to explore on a laptop with a mouse or trackpad. Give the models a moment to load.</p>
+      <h2>Start with my builds</h2>
+      <p>Begin with my female Human Atlas, then explore Brain Atlas, ancient Jerusalem and Dusk Run. Watch the recordings, open the live experiences and use the prompts alongside each build.</p>
       <div className="astra-demo-list">
-        <DemoLink href={demos.car}>Explore the Range Rover</DemoLink>
-        <DemoLink href={demos.brain}>Explore the 3D brain</DemoLink>
-        <DemoLink href={videos.page}>Open the full collection of {videos.items.length + community.items.length} videos</DemoLink>
-        <DemoLink href={demos.city}>Walk through ancient Jerusalem</DemoLink>
-        <DemoLink href={demos.immersive}>Open Jerusalem’s immersive view</DemoLink>
-        <DemoLink href={demos.game}>Play Jerusalem: Target Run</DemoLink>
+        <DemoLink href={demos.human}>01 · Human Atlas — female anatomy</DemoLink>
+        <DemoLink href={demos.brain}>02 · Brain Atlas</DemoLink>
+        <DemoLink href={demos.city}>03 · Ancient Jerusalem</DemoLink>
+        <DemoLink href={demos.driving}>04 · Dusk Run — my car game</DemoLink>
+        <DemoLink href={demos.car}>05 · Range Rover website</DemoLink>
+        <DemoLink href={demos.game}>06 · Jerusalem: Target Run</DemoLink>
       </div>
-      <p className="astra-small">Watch on this page: <a href="#range-rover-video">Range Rover website</a> · <a href="#anatomy-videos">Anatomy models</a> · <a href="#jerusalem-walkthrough-video">Jerusalem fly-through</a> · <a href="#jerusalem-game-video">Target Run gameplay</a>.</p>
-      <p className="astra-small"><a href="#video-editing">Watch my fully edited video</a> · <a href="#community">Browse 18 more creator examples</a></p>
-      <p className="astra-small">The AI clone video and content dashboard are included as prompts only.</p>
+      <p className="astra-small">Watch on this page: <a href="#human-atlas">Female Human Atlas</a> · <a href="#brain">Brain Atlas</a> · <a href="#jerusalem">Jerusalem</a> · <a href="#driving-game">Dusk Run</a> · <a href="#range-rover">Range Rover</a> · <a href="#game">Target Run</a>.</p>
+      <p className="astra-small">The 3D demos are easiest to explore on a laptop with a mouse or trackpad. Give the models a moment to load. <a href={videos.page} target="_blank" rel="noopener noreferrer">Open the full collection of {videos.items.length + community.items.length} videos</a>.</p>
       <nav className="astra-contents" aria-label="Inside this guide"><h2>Inside this guide</h2><ol>{sections.map(([id, label]) => <li key={id}><a href={`#${id}`}>{label}</a></li>)}</ol></nav>
     </section>
 
-    <section className="asb-section" id="video-editing">
-      <p className="asb-num">MY VIDEO EDIT</p>
-      <h2>My fully edited video</h2>
-      <p>This is the complete Astra edit from my ChatGPT and Claude video-editing comparison. Watch how the captions, cuts and motion graphics follow what I’m saying.</p>
-      <WalkthroughVideos section="video-editing" />
-      <p>For the source-file setup, editing brief and review process, follow my <Link href="/guide/edit-videos-chatgpt-claude">detailed video-editing guide</Link>.</p>
-      <CopyBlock label="Edit my video" text="Watch my attached video all the way through. Edit it into a polished short with clear cuts, accurate captions, cleaned audio and motion graphics that support what I am actually saying. Preserve my meaning and natural delivery. Use relevant B-roll only where it helps explain the story. Review the complete export, check the ending and deliver the final MP4 plus the editable project." />
+    <section className="asb-section" id="human-atlas">
+      <p className="asb-num">BUILD 01</p><h2>Human Atlas — the female anatomy version</h2>
+      <p>My female version of Human Atlas lets you explore the whole body, separate its structures and inspect individual parts. The live build is called Female Anatomy Blast, adapted from ashe’s open-source Human Atlas.</p>
+      <DemoLink href={demos.human}>Explore my female Human Atlas</DemoLink>
+      <div className="astra-videos" id="anatomy-videos"><WalkthroughVideos section="human-atlas" /></div>
+      <h3>Try this in the demo</h3>
+      <ul><li>Rotate and zoom around the full-body model.</li><li>Search for a structure and select it to inspect its details.</li><li>Toggle anatomy layers, including the female reproductive and breast anatomy.</li><li>Separate the model into its individual pieces, then reassemble it.</li></ul>
+      <h3>Build your own version</h3>
+      <CopyBlock label="Female Human Atlas build prompt" text="Adapt the open-source Human Atlas into an interactive female anatomy explorer. Inspect the existing project and model assets first. Preserve their source credits and licenses. Include selectable structures, search, anatomy layers, female reproductive and breast anatomy where supported by the assets, rotation, zoom and an exploded view that can reassemble cleanly. Show a readable name and explanation for the selected structure. Distinguish sourced anatomical geometry from simplified additions. Test the full model, selection, search, layers and reset before deploying a public Vercel demo." />
+      <ol className="asb-steps">
+        <li><strong>Start with the existing atlas and its assets.</strong>Ask the agent to inspect the model structure, identify the available anatomy and retain the original credits. A working viewer is the foundation for this adaptation.</li>
+        <li><strong>Define what makes your version different.</strong>Specify the female anatomy you want to explore and ask the agent to check whether those structures exist in the source assets before adding them.</li>
+        <li><strong>Make inspection straightforward.</strong>Keep search, layer controls and the selected structure’s details accessible while the model rotates or separates.</li>
+        <li><strong>Test the whole journey.</strong>Load the body, select several structures, hide and restore layers, separate the pieces and reset the model. Check that names and model parts remain connected.</li>
+      </ol>
+      <p className="astra-small">This is an educational visualization. The live app includes anatomy asset credits and explains its illustrative additions.</p>
+    </section>
+
+    <section className="asb-section" id="brain">
+      <p className="asb-num">BUILD 02</p><h2>Brain Atlas — an interactive 3D brain explorer</h2>
+      <p>The next idea applies the same interaction to anatomy: separate a complex object into sections so you can inspect the relationships between its parts.</p>
+      <DemoLink href={demos.brain}>Explore my Brain Atlas</DemoLink>
+      <div className="asb-note"><p>The linked Brain Atlas is a brain-only adaptation of Human Atlas, with selectable structures, regional layers, search, presets and a control to separate the visible pieces. It uses viewer controls rather than the exact scroll sequence in the prompt below. It is an educational visualization, not a clinically validated atlas.</p></div>
+      <WalkthroughVideos section="brain" />
+      <CopyBlock label="Brain build prompt" text={prompts.brain} />
+      <h3>How to make the result easier to understand</h3>
+      <ol className="asb-steps">
+        <li><strong>Ask for named sections.</strong>Give each major modeled part a readable label and a brief description. Ask the agent to distinguish sourced geometry from illustrative additions.</li>
+        <li><strong>Keep a consistent orientation.</strong>The camera should help you understand where each section belongs. Avoid a spin or sudden zoom every time you select a label.</li>
+        <li><strong>Separate without losing context.</strong>Use enough distance to distinguish sections, then make reassembly return them to their original positions.</li>
+        <li><strong>Test labels and reset.</strong>Select several parts, rotate the model and try the reset control after changing the view. Check that text stays readable on a smaller screen.</li>
+      </ol>
+      <CopyBlock label="Brain clarity follow-up" text={'Add labels for the major brain structures actually present in the model. Selecting a label should highlight the matching structure and show a short plain-language explanation. Keep labels readable while the model separates. Add a clear reset view and “Reassemble brain” control. Cite the anatomy asset sources and distinguish simplified illustrations from validated anatomical detail.'} />
+      <h3>Try this in the demo</h3><ul><li>Switch between All, Cortex and Deep brain presets.</li><li>Search for a structure, select it and inspect its source details.</li><li>Toggle regional display layers and change the camera angle.</li><li>Separate visible pieces into an inventory, then reset the view.</li></ul>
+    </section>
+
+    <section className="asb-section" id="jerusalem">
+      <p className="asb-num">BUILD 03</p><h2>A walk through ancient Jerusalem</h2>
+      <p>This test moves from one 3D object to a whole environment. The goal was a city you could explore, with streets, gates, courtyards and landmarks that feel connected.</p>
+      <DemoLink href={demos.city}>Open the Jerusalem explorer</DemoLink>
+      <DemoLink href={demos.immersive}>Open the clean immersive view</DemoLink>
+      <WalkthroughVideos section="jerusalem" />
+      <CopyBlock label="Jerusalem walkthrough prompt" text={prompts.city} />
+      <h3>Build the environment in stages</h3>
+      <ol className="asb-steps">
+        <li><strong>Set the period and scope.</strong>Specify late Second Temple Jerusalem and the areas you want to visit. The demo interprets the city around 30 CE.</li>
+        <li><strong>Build the connected layout.</strong>Ask for streets, elevation changes, the Temple area, walls and recognizable landmarks before adding decorative detail.</li>
+        <li><strong>Add navigation.</strong>Test both the aerial view and walking. Make sure movement works on steps and slopes, and that buildings do not trap the camera.</li>
+        <li><strong>Add a guided journey.</strong>Ask for named stops, a smooth camera route and pause, previous and next controls. The demo includes six landmarks and an interactive map.</li>
+        <li><strong>Refine the atmosphere.</strong>Add warm stone, paving, market objects, lighting and distant terrain. Review the city from street level as well as from above.</li>
+      </ol>
+      <CopyBlock label="Jerusalem immersive view prompt" text={'Keep the full explorer website. Add a separate /immersive route that fills the screen with only the 3D city: no text, labels, panels or controls. Preserve camera movement. Let F request full screen and Escape or a double-click restore the explorer interface. Keep the original / route available and test direct loading of both routes.'} />
+      <h3>Demo controls</h3><ul><li>Use the explorer’s aerial and walking modes, place list and guided journey.</li><li>Walk with WASD or arrow keys; drag to look around.</li><li>In the immersive view, press F for full screen. Escape or a double-click restores the interface.</li></ul>
+      <p className="astra-small">This is a visual interpretation, not an exact archaeological reconstruction. Building placement, dimensions, surfaces and terrain are approximate; the explorer includes its historical sources.</p>
+    </section>
+
+    <section className="asb-section" id="driving-game">
+      <p className="asb-num">BUILD 04</p><h2>Dusk Run — my 3D canyon car game</h2>
+      <p>This is the driving game I built: a sports car on a dusk canyon circuit, with turns, a start/finish line, lap timing and saved best laps. It runs from a single HTML file with its graphics engine and assets included.</p>
+      <DemoLink href={demos.driving}>Play my Dusk Run car game</DemoLink>
+      <h3>Controls</h3><ul><li>Click inside the game, then use WASD or the arrow keys to drive.</li><li>Press Space to brake and R to restart.</li><li>Complete the circuit to record a lap. The HUD shows the current lap, previous lap and best time.</li><li>On a touch screen, use the on-screen driving controls.</li></ul>
+      <h3>The original prompt</h3>
+      <CopyBlock label="Dusk Run driving game prompt" text={'Build a polished, playable 3D browser driving game in a single HTML file that I can open and play immediately.\n\nSet it on a dusk canyon highway with cinematic lighting and a proper responsive sports car, not simple cubes on a flat plane.\n\nControls:\n- WASD or arrow keys to drive\n- Space to brake\n\nMake it work on the first click with no blocking intro overlay. Include a short track with turns, a clear start/finish line, and a working lap timer.'} />
+      <h3>Build and test your version</h3>
+      <ol className="asb-steps"><li><strong>Get the driving loop working.</strong>Test acceleration, steering, braking and restart before adding scenery.</li><li><strong>Give the track readable turns.</strong>Use a clear road edge, guardrails and a camera that lets the player see where the road goes.</li><li><strong>Make lap timing reliable.</strong>Use ordered checkpoints so reversing over the finish line cannot count as a completed lap.</li><li><strong>Review the actual game.</strong>Drive a complete lap, restart, reopen the page and check saved best times. Try touch controls and the deployed URL too.</li></ol>
+      <CopyBlock label="Driving game testing follow-up" text="Test acceleration, steering, braking, reverse and restart. Drive a full lap and confirm the timer updates. Crossing the finish line backwards or skipping checkpoints must not count as a lap. Check that the best time survives reopening the page. Verify the keyboard and touch controls, then publish the standalone HTML on Vercel and return the public link." />
+    </section>
+
+    <section className="asb-section" id="range-rover">
+      <p className="asb-num">BUILD 05</p><h2>A 3D Range Rover that comes apart as you scroll</h2>
+      <p>I wanted to see whether a simple idea could become a polished 3D experience: a car in the center, its major parts separating as you scroll, and everything coming back together when you reverse direction.</p>
+      <DemoLink href={demos.car}>Open the Range Rover website</DemoLink>
+      <WalkthroughVideos section="range-rover" />
+      <h3>The original prompt</h3><CopyBlock label="Range Rover build prompt" text={prompts.car} />
+      <h3>How to build your version</h3>
+      <ol className="asb-steps">
+        <li><strong>Start with the car and its motion.</strong>Get the assembled view and scroll-controlled separation working before adding more sections. If you supply a model, ask the agent to check that its parts can move separately.</li>
+        <li><strong>Make the separation readable.</strong>Ask it to group the bodywork, windows, seats, wheels and mechanical assemblies. Each part should stay inside the camera frame as it moves.</li>
+        <li><strong>Test the return journey.</strong>Scroll fully down and back up several times. Every part should return to the same assembled position. Try “Fix the car” halfway through the sequence as well as at the bottom.</li>
+        <li><strong>Expand the site.</strong>Once the core interaction works, add the Design Studio, Engineering and project information pages. Then refine color changes, lighting and transitions.</li>
+      </ol>
+      <CopyBlock label="Range Rover expansion prompt" text={'Keep the working scroll-to-disassemble experience. Expand this into a complete website with a Design Studio, an Engineering page, an About/The Study page, navigation and a full footer. Add selectable paint finishes, smooth color cycling, moving studio lighting and scroll-revealed sections. Include an intensity control and respect reduced-motion preferences. Check every route and keep “Fix the car” working.'} />
+      <h3>Try this in the demo</h3><ul><li>Scroll to separate the vehicle; scroll back to rebuild.</li><li>Drag to inspect the model from another angle.</li><li>Choose a finish in the Design Studio and explore the Engineering controls.</li><li>Use the intensity switch to adjust the effects.</li></ul>
+      <p className="astra-small">The demo uses a stylized classic Range Rover and conceptual mechanical internals. It is an independent visual study, not a manufacturer’s engineering model.</p>
+    </section>
+
+    <section className="asb-section" id="game">
+      <p className="asb-num">BUILD 06</p><h2>Turn the city into a playable 3D game</h2>
+      <p>I reused the Jerusalem environment for a target game. This is a good follow-up because the world is already there: the new work is movement, aiming, hit detection, scoring and the game state.</p>
+      <DemoLink href={demos.game}>Play Jerusalem: Target Run</DemoLink>
+      <WalkthroughVideos section="game" />
+      <p>Use this prompt in the same project as the walkthrough, and tell the agent to preserve the explorer routes.</p>
+      <CopyBlock label="Jerusalem shooting game prompt" text={prompts.game} />
+      <h3>What the completed game includes</h3><ul><li>21 artificial targets across three ranges.</li><li>A three-minute round with score, ammo and a timer.</li><li>WASD or arrow keys to move, mouse to look, click to shoot and R to reload.</li><li>Keys 1–3 to switch ranges.</li><li>Direct entry into the range, with the first click firing.</li></ul>
+      <h3>Check the game, not just the scene</h3>
+      <p>Hit a target and check the score. Fire until the ammo runs out, reload, and try again. Aim through a wall to make sure hidden targets do not score. Walk the streets and steps, switch ranges and let the timer finish.</p>
+      <CopyBlock label="Game testing follow-up" text={'Test the game end to end. Check that the first click fires, visible targets register hits, walls block shots, ammo decreases correctly, R reloads, the timer ends the round, and restart resets score, ammo, targets and time. Check movement through streets and stairs. Fix any issues you find, then verify /, /immersive and /game still load directly.'} />
+      <p className="astra-small">A mouse and keyboard give the intended game controls. Browser mouse capture and full-screen behavior can vary; use the available drag-to-look fallback if needed.</p>
     </section>
 
     <CommunityGallery />
@@ -203,110 +301,6 @@ export default function Gpt6AstraGuide() {
       <CopyBlock label="Add a visual reference" text={'Use the attached image as a visual reference. Match its [COLORS], [LIGHTING], [SPACING] and [CAMERA ANGLE]. Build the actual interactive experience described in my brief. Before finishing, open the preview, check the main interaction and correct any visible layout problems.'} />
     </section>
 
-    <section className="asb-section" id="range-rover">
-      <p className="asb-num">BUILD 01</p><h2>A 3D Range Rover that comes apart as you scroll</h2>
-      <p>I wanted to see whether a simple idea could become a polished 3D experience: a car in the center, its major parts separating as you scroll, and everything coming back together when you reverse direction.</p>
-      <DemoLink href={demos.car}>Open the Range Rover website</DemoLink>
-      <WalkthroughVideos section="range-rover" />
-      <h3>The original prompt</h3><CopyBlock label="Range Rover build prompt" text={prompts.car} />
-      <h3>How to build your version</h3>
-      <ol className="asb-steps">
-        <li><strong>Start with the car and its motion.</strong>Get the assembled view and scroll-controlled separation working before adding more sections. If you supply a model, ask the agent to check that its parts can move separately.</li>
-        <li><strong>Make the separation readable.</strong>Ask it to group the bodywork, windows, seats, wheels and mechanical assemblies. Each part should stay inside the camera frame as it moves.</li>
-        <li><strong>Test the return journey.</strong>Scroll fully down and back up several times. Every part should return to the same assembled position. Try “Fix the car” halfway through the sequence as well as at the bottom.</li>
-        <li><strong>Expand the site.</strong>Once the core interaction works, add the Design Studio, Engineering and project information pages. Then refine color changes, lighting and transitions.</li>
-      </ol>
-      <CopyBlock label="Range Rover expansion prompt" text={'Keep the working scroll-to-disassemble experience. Expand this into a complete website with a Design Studio, an Engineering page, an About/The Study page, navigation and a full footer. Add selectable paint finishes, smooth color cycling, moving studio lighting and scroll-revealed sections. Include an intensity control and respect reduced-motion preferences. Check every route and keep “Fix the car” working.'} />
-      <h3>Try this in the demo</h3><ul><li>Scroll to separate the vehicle; scroll back to rebuild.</li><li>Drag to inspect the model from another angle.</li><li>Choose a finish in the Design Studio and explore the Engineering controls.</li><li>Use the intensity switch to adjust the effects.</li></ul>
-      <p className="astra-small">The demo uses a stylized classic Range Rover and conceptual mechanical internals. It is an independent visual study, not a manufacturer’s engineering model.</p>
-    </section>
-
-    <section className="asb-section" id="brain">
-      <p className="asb-num">BUILD 02</p><h2>An interactive 3D brain explorer</h2>
-      <p>The next idea applies the same interaction to anatomy: separate a complex object into sections so you can inspect the relationships between its parts.</p>
-      <DemoLink href={demos.brain}>Open the 3D brain explorer</DemoLink>
-      <div className="asb-note"><p>The linked Brain Atlas is a brain-only adaptation of Human Atlas, with selectable structures, regional layers, search, presets and a control to separate the visible pieces. It uses viewer controls rather than the exact scroll sequence in the prompt below. It is an educational visualization, not a clinically validated atlas.</p></div>
-      <div className="astra-videos" id="anatomy-videos">
-        <h3>Watch the builds in action</h3>
-        <p>Two short walkthroughs of the Brain Atlas and Female Anatomy models. Press play to watch, or use the player controls to turn on sound and open full screen.</p>
-        <WalkthroughVideos section="brain" headingLevel={4} />
-      </div>
-      <CopyBlock label="Brain build prompt" text={prompts.brain} />
-      <h3>How to make the result easier to understand</h3>
-      <ol className="asb-steps">
-        <li><strong>Ask for named sections.</strong>Give each major modeled part a readable label and a brief description. Ask the agent to distinguish sourced geometry from illustrative additions.</li>
-        <li><strong>Keep a consistent orientation.</strong>The camera should help you understand where each section belongs. Avoid a spin or sudden zoom every time you select a label.</li>
-        <li><strong>Separate without losing context.</strong>Use enough distance to distinguish sections, then make reassembly return them to their original positions.</li>
-        <li><strong>Test labels and reset.</strong>Select several parts, rotate the model and try the reset control after changing the view. Check that text stays readable on a smaller screen.</li>
-      </ol>
-      <CopyBlock label="Brain clarity follow-up" text={'Add labels for the major brain structures actually present in the model. Selecting a label should highlight the matching structure and show a short plain-language explanation. Keep labels readable while the model separates. Add a clear reset view and “Reassemble brain” control. Cite the anatomy asset sources and distinguish simplified illustrations from validated anatomical detail.'} />
-      <h3>Try this in the demo</h3><ul><li>Switch between All, Cortex and Deep brain presets.</li><li>Search for a structure, select it and inspect its source details.</li><li>Toggle regional display layers and change the camera angle.</li><li>Separate visible pieces into an inventory, then reset the view.</li></ul>
-    </section>
-
-    <section className="asb-section" id="jerusalem">
-      <p className="asb-num">BUILD 03</p><h2>A walk through ancient Jerusalem</h2>
-      <p>This test moves from one 3D object to a whole environment. The goal was a city you could explore, with streets, gates, courtyards and landmarks that feel connected.</p>
-      <DemoLink href={demos.city}>Open the Jerusalem explorer</DemoLink>
-      <DemoLink href={demos.immersive}>Open the clean immersive view</DemoLink>
-      <WalkthroughVideos section="jerusalem" />
-      <CopyBlock label="Jerusalem walkthrough prompt" text={prompts.city} />
-      <h3>Build the environment in stages</h3>
-      <ol className="asb-steps">
-        <li><strong>Set the period and scope.</strong>Specify late Second Temple Jerusalem and the areas you want to visit. The demo interprets the city around 30 CE.</li>
-        <li><strong>Build the connected layout.</strong>Ask for streets, elevation changes, the Temple area, walls and recognizable landmarks before adding decorative detail.</li>
-        <li><strong>Add navigation.</strong>Test both the aerial view and walking. Make sure movement works on steps and slopes, and that buildings do not trap the camera.</li>
-        <li><strong>Add a guided journey.</strong>Ask for named stops, a smooth camera route and pause, previous and next controls. The demo includes six landmarks and an interactive map.</li>
-        <li><strong>Refine the atmosphere.</strong>Add warm stone, paving, market objects, lighting and distant terrain. Review the city from street level as well as from above.</li>
-      </ol>
-      <CopyBlock label="Jerusalem immersive view prompt" text={'Keep the full explorer website. Add a separate /immersive route that fills the screen with only the 3D city: no text, labels, panels or controls. Preserve camera movement. Let F request full screen and Escape or a double-click restore the explorer interface. Keep the original / route available and test direct loading of both routes.'} />
-      <h3>Demo controls</h3><ul><li>Use the explorer’s aerial and walking modes, place list and guided journey.</li><li>Walk with WASD or arrow keys; drag to look around.</li><li>In the immersive view, press F for full screen. Escape or a double-click restores the interface.</li></ul>
-      <p className="astra-small">This is a visual interpretation, not an exact archaeological reconstruction. Building placement, dimensions, surfaces and terrain are approximate; the explorer includes its historical sources.</p>
-    </section>
-
-    <section className="asb-section" id="game">
-      <p className="asb-num">BUILD 04</p><h2>Turn the city into a playable 3D game</h2>
-      <p>I reused the Jerusalem environment for a target game. This is a good follow-up because the world is already there: the new work is movement, aiming, hit detection, scoring and the game state.</p>
-      <DemoLink href={demos.game}>Play Jerusalem: Target Run</DemoLink>
-      <WalkthroughVideos section="game" />
-      <p>Use this prompt in the same project as the walkthrough, and tell the agent to preserve the explorer routes.</p>
-      <CopyBlock label="Jerusalem shooting game prompt" text={prompts.game} />
-      <h3>What the completed game includes</h3><ul><li>21 artificial targets across three ranges.</li><li>A three-minute round with score, ammo and a timer.</li><li>WASD or arrow keys to move, mouse to look, click to shoot and R to reload.</li><li>Keys 1–3 to switch ranges.</li><li>Direct entry into the range, with the first click firing.</li></ul>
-      <h3>Check the game, not just the scene</h3>
-      <p>Hit a target and check the score. Fire until the ammo runs out, reload, and try again. Aim through a wall to make sure hidden targets do not score. Walk the streets and steps, switch ranges and let the timer finish.</p>
-      <CopyBlock label="Game testing follow-up" text={'Test the game end to end. Check that the first click fires, visible targets register hits, walls block shots, ammo decreases correctly, R reloads, the timer ends the round, and restart resets score, ammo, targets and time. Check movement through streets and stairs. Fix any issues you find, then verify /, /immersive and /game still load directly.'} />
-      <p className="astra-small">A mouse and keyboard give the intended game controls. Browser mouse capture and full-screen behavior can vary; use the available drag-to-look fallback if needed.</p>
-    </section>
-
-    <section className="asb-section" id="video">
-      <p className="asb-num">PROMPT ONLY</p><h2>AI clone video prompt</h2>
-      <p>Use this prompt with your own reference appearance, voice and a connected video tool.</p>
-      <CopyBlock label="AI clone video prompt" text={prompts.video} />
-    </section>
-
-    <section className="asb-section" id="dashboard">
-      <p className="asb-num">PROMPT ONLY</p><h2>A content dashboard with several AI agents</h2>
-      <p>I’m keeping this as a reusable prompt. There is no public dashboard demo in this guide.</p>
-      <p>The idea is to enter a topic once, then pass the work through research, ideas, hooks, scripts and captions. Each stage should build on the previous stage’s output.</p>
-      <CopyBlock label="Content dashboard build prompt" text={prompts.dashboard} />
-      <h3>How to turn it into a useful tool</h3>
-      <ol className="asb-steps">
-        <li><strong>Define the inputs.</strong>Start with topic, audience, platform, goal, tone and your own examples of good content.</li>
-        <li><strong>Give research a real source.</strong>If you want current trends, the system needs search or another live data source. Ask it to return source links and dates with its findings.</li>
-        <li><strong>Make the handoffs visible.</strong>Show the research used for each idea, the chosen hook for each script, and the script used for each caption.</li>
-        <li><strong>Let a person review the draft.</strong>Add editing, rerun and export controls. A generated hook is a suggestion, not evidence that the content will go viral.</li>
-        <li><strong>Connect the real services.</strong>Keep API keys on the server, save project state, and show failed or incomplete stages clearly. Label sample data during development.</li>
-      </ol>
-      <CopyBlock label="Make the dashboard functional" text={'Turn the dashboard into a working workflow. Accept topic, audience, platform, goal and tone. Save each stage’s inputs and outputs. Research must include source URLs and dates; label unverified ideas clearly. Let me edit, rerun and export each stage. Show progress and errors. Keep API keys on the server and clearly identify any stage still using demo data. Keep publishing manual.'} />
-    </section>
-
-    <section className="asb-section" id="content">
-      <h2>Content ideas and a short-form video script</h2>
-      <p>Once you have real results to show, use them as the material for a video. This was the content prompt from my test:</p>
-      <CopyBlock label="Content ideas and creator script" text={prompts.content} />
-      <p>Before using the script, replace the project list with what you actually completed. Describe the dashboard as a prompt experiment if you are using this guide’s version. Use your own footage and observations, and only keep the “48 hours” wording if it matches your experience.</p>
-      <CopyBlock label="Ground the script in your results" text={'Rewrite the script using only these projects I completed: [PROJECTS AND LINKS]. My actual observations were: [WHAT WORKED, WHAT NEEDED FIXING, WHAT SURPRISED ME]. Do not invent performance results or claim an unfinished experiment is live. Keep the language natural, include a clear visual cue for each demo, and end with [MY CALL TO ACTION].'} />
-    </section>
-
     <section className="asb-section" id="your-work">
       <h2>Find the best Astra use cases for your own work</h2>
       <p>You do not have to build a car, a city or a game. The useful question is which task in your work would benefit from software, research, files and several connected steps.</p>
@@ -344,7 +338,46 @@ export default function Gpt6AstraGuide() {
       ].map(([title, text]) => <div className="asb-problem" key={title}><h3>{title}</h3><p>{text}</p></div>)}
       <CopyBlock label="Fix a specific problem" text={'In [PAGE OR FEATURE], when I [EXACT ACTION], [ACTUAL RESULT] happens. I expected [EXPECTED RESULT]. Inspect the current implementation, reproduce the issue, fix the cause and test the same action again. Preserve the parts that already work. Here is my screenshot or error: [ATTACHMENT OR ERROR].'} />
       <p>Start with one prompt, inspect the first result, and keep the feedback specific. The demos are there to give you something concrete to explore before you build your own version.</p>
-      <footer className="asb-sig">Mercy Thaddeus · GPT-6 Astra field guide · 8 September 2026</footer>
     </section>
+
+    <section className="asb-section" id="video-editing">
+      <p className="asb-num">CONTENT & VIDEO EDITING</p>
+      <h2>My fully edited video</h2>
+      <p>This is the complete Astra edit from my ChatGPT and Claude video-editing comparison. Watch how the captions, cuts and motion graphics follow what I’m saying.</p>
+      <WalkthroughVideos section="video-editing" />
+      <p>For the source-file setup, editing brief and review process, follow my <Link href="/guide/edit-videos-chatgpt-claude">detailed video-editing guide</Link>.</p>
+      <CopyBlock label="Edit my video" text="Watch my attached video all the way through. Edit it into a polished short with clear cuts, accurate captions, cleaned audio and motion graphics that support what I am actually saying. Preserve my meaning and natural delivery. Use relevant B-roll only where it helps explain the story. Review the complete export, check the ending and deliver the final MP4 plus the editable project." />
+    </section>
+
+    <section className="asb-section" id="video">
+      <p className="asb-num">PROMPT ONLY</p><h2>AI clone video prompt</h2>
+      <p>Use this prompt with your own reference appearance, voice and a connected video tool.</p>
+      <CopyBlock label="AI clone video prompt" text={prompts.video} />
+    </section>
+
+    <section className="asb-section" id="dashboard">
+      <p className="asb-num">PROMPT ONLY</p><h2>A content dashboard with several AI agents</h2>
+      <p>I’m keeping this as a reusable prompt. There is no public dashboard demo in this guide.</p>
+      <p>The idea is to enter a topic once, then pass the work through research, ideas, hooks, scripts and captions. Each stage should build on the previous stage’s output.</p>
+      <CopyBlock label="Content dashboard build prompt" text={prompts.dashboard} />
+      <h3>How to turn it into a useful tool</h3>
+      <ol className="asb-steps">
+        <li><strong>Define the inputs.</strong>Start with topic, audience, platform, goal, tone and your own examples of good content.</li>
+        <li><strong>Give research a real source.</strong>If you want current trends, the system needs search or another live data source. Ask it to return source links and dates with its findings.</li>
+        <li><strong>Make the handoffs visible.</strong>Show the research used for each idea, the chosen hook for each script, and the script used for each caption.</li>
+        <li><strong>Let a person review the draft.</strong>Add editing, rerun and export controls. A generated hook is a suggestion, not evidence that the content will go viral.</li>
+        <li><strong>Connect the real services.</strong>Keep API keys on the server, save project state, and show failed or incomplete stages clearly. Label sample data during development.</li>
+      </ol>
+      <CopyBlock label="Make the dashboard functional" text={'Turn the dashboard into a working workflow. Accept topic, audience, platform, goal and tone. Save each stage’s inputs and outputs. Research must include source URLs and dates; label unverified ideas clearly. Let me edit, rerun and export each stage. Show progress and errors. Keep API keys on the server and clearly identify any stage still using demo data. Keep publishing manual.'} />
+    </section>
+
+    <section className="asb-section" id="content">
+      <h2>Content ideas and a short-form video script</h2>
+      <p>Once you have real results to show, use them as the material for a video. This was the content prompt from my test:</p>
+      <CopyBlock label="Content ideas and creator script" text={prompts.content} />
+      <p>Before using the script, replace the project list with what you actually completed. Describe the dashboard as a prompt experiment if you are using this guide’s version. Use your own footage and observations, and only keep the “48 hours” wording if it matches your experience.</p>
+      <CopyBlock label="Ground the script in your results" text={'Rewrite the script using only these projects I completed: [PROJECTS AND LINKS]. My actual observations were: [WHAT WORKED, WHAT NEEDED FIXING, WHAT SURPRISED ME]. Do not invent performance results or claim an unfinished experiment is live. Keep the language natural, include a clear visual cue for each demo, and end with [MY CALL TO ACTION].'} />
+    </section>
+    <footer className="asb-sig">Mercy Thaddeus · GPT-6 Astra field guide · 12 September 2026</footer>
   </article>;
 }

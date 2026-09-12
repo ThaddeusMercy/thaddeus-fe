@@ -2,15 +2,15 @@
   "page": "https://mercy-astra-anatomy-videos.vercel.app/",
   "items": [
     {
-      "id": "range-rover",
-      "section": "range-rover",
-      "title": "Range Rover website walkthrough",
-      "description": "See the car separate as the page scrolls, its paint colors change and the website’s sections come into view.",
-      "duration": "29 seconds",
-      "src": "https://mercy-astra-anatomy-videos.vercel.app/range-rover.mp4",
-      "poster": "https://mercy-astra-anatomy-videos.vercel.app/range-rover.jpg",
-      "width": 1440,
-      "height": 828
+      "id": "female-anatomy",
+      "title": "Human Atlas — female anatomy walkthrough",
+      "description": "Watch the full-body model separate into its anatomical structures, then select and inspect individual parts.",
+      "duration": "47 seconds",
+      "src": "https://mercy-astra-anatomy-videos.vercel.app/female-anatomy.mp4",
+      "poster": "https://mercy-astra-anatomy-videos.vercel.app/female-anatomy.jpg",
+      "section": "human-atlas",
+      "width": 1088,
+      "height": 576
     },
     {
       "id": "brain-atlas",
@@ -24,17 +24,6 @@
       "height": 720
     },
     {
-      "id": "female-anatomy",
-      "title": "Female Anatomy walkthrough",
-      "description": "Watch the full-body model separate into its anatomical structures, then select and inspect individual parts.",
-      "duration": "47 seconds",
-      "src": "https://mercy-astra-anatomy-videos.vercel.app/female-anatomy.mp4",
-      "poster": "https://mercy-astra-anatomy-videos.vercel.app/female-anatomy.jpg",
-      "section": "brain",
-      "width": 1088,
-      "height": 576
-    },
-    {
       "id": "jerusalem-walkthrough",
       "section": "jerusalem",
       "title": "Ancient Jerusalem fly-through",
@@ -44,6 +33,17 @@
       "poster": "https://mercy-astra-anatomy-videos.vercel.app/jerusalem-walkthrough.jpg",
       "width": 1440,
       "height": 716
+    },
+    {
+      "id": "range-rover",
+      "section": "range-rover",
+      "title": "Range Rover website walkthrough",
+      "description": "See the car separate as the page scrolls, its paint colors change and the website’s sections come into view.",
+      "duration": "29 seconds",
+      "src": "https://mercy-astra-anatomy-videos.vercel.app/range-rover.mp4",
+      "poster": "https://mercy-astra-anatomy-videos.vercel.app/range-rover.jpg",
+      "width": 1440,
+      "height": 828
     },
     {
       "id": "jerusalem-game",
