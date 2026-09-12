@@ -1,0 +1,21 @@
+{
+  "page": "https://mercy-astra-anatomy-videos.vercel.app/",
+  "items": [
+    {
+      "id": "brain-atlas",
+      "title": "Brain Atlas walkthrough",
+      "description": "Watch the brain separate into individual structures, inspect a selected part and return to the assembled model.",
+      "duration": "43 seconds",
+      "src": "https://mercy-astra-anatomy-videos.vercel.app/brain-atlas.mp4",
+      "poster": "https://mercy-astra-anatomy-videos.vercel.app/brain-atlas.jpg"
+    },
+    {
+      "id": "female-anatomy",
+      "title": "Female Anatomy walkthrough",
+      "description": "Watch the full-body model separate into its anatomical structures, then select and inspect individual parts.",
+      "duration": "47 seconds",
+      "src": "https://mercy-astra-anatomy-videos.vercel.app/female-anatomy.mp4",
+      "poster": "https://mercy-astra-anatomy-videos.vercel.app/female-anatomy.jpg"
+    }
+  ]
+}

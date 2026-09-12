@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft } from "@phosphor-icons/react";
 import prompts from "./prompts.json";
 import demos from "./demos.json";
+import videos from "./videos.json";
 import "../ai-second-brain/ai-second-brain.css";
 import "./gpt-6-astra.css";
 
@@ -12,6 +13,7 @@ const sections = [
   ["demos", "Open the builds"], ["specs", "The specs that matter"],
   ["access", "How to access Astra"], ["workflow", "How to use these prompts"],
   ["range-rover", "3D Range Rover website"], ["brain", "3D brain explorer"],
+  ["anatomy-videos", "Watch the anatomy walkthroughs"],
   ["jerusalem", "Ancient Jerusalem walkthrough"], ["game", "3D shooting game"],
   ["video", "AI clone video prompt"], ["dashboard", "Content dashboard prompt"],
   ["content", "Content ideas & video script"], ["your-work", "Find your own use cases"],
@@ -53,7 +55,7 @@ export default function Gpt6AstraGuide() {
       <p className="asb-eyebrow">GPT-6 Astra · Builds, prompts & practical steps</p>
       <h1>I spent 48 hours building with GPT-6 Astra. Here’s what to try.</h1>
       <p className="asb-lede">3D websites, a walkable city and a playable game, plus prompts for AI clone videos and content workflows. Explore the demos and follow the steps to build something useful for your own work.</p>
-      <p className="asb-meta">By Mercy Thaddeus · Updated 8 September 2026</p>
+      <p className="asb-meta">By Mercy Thaddeus · Updated 12 September 2026</p>
     </header>
 
     <section className="asb-section" id="demos">
@@ -62,6 +64,7 @@ export default function Gpt6AstraGuide() {
       <div className="astra-demo-list">
         <DemoLink href={demos.car}>Explore the Range Rover</DemoLink>
         <DemoLink href={demos.brain}>Explore the 3D brain</DemoLink>
+        <DemoLink href={videos.page}>Watch the anatomy walkthroughs</DemoLink>
         <DemoLink href={demos.city}>Walk through ancient Jerusalem</DemoLink>
         <DemoLink href={demos.immersive}>Open Jerusalem’s immersive view</DemoLink>
         <DemoLink href={demos.game}>Play Jerusalem: Target Run</DemoLink>
@@ -140,6 +143,21 @@ export default function Gpt6AstraGuide() {
       <p>The next idea applies the same interaction to anatomy: separate a complex object into sections so you can inspect the relationships between its parts.</p>
       <DemoLink href={demos.brain}>Open the 3D brain explorer</DemoLink>
       <div className="asb-note"><p>The linked Brain Atlas is a brain-only adaptation of Human Atlas, with selectable structures, regional layers, search, presets and a control to separate the visible pieces. It uses viewer controls rather than the exact scroll sequence in the prompt below. It is an educational visualization, not a clinically validated atlas.</p></div>
+      <div className="astra-videos" id="anatomy-videos">
+        <h3>Watch the builds in action</h3>
+        <p>Two short walkthroughs of the Brain Atlas and Female Anatomy models. Press play to watch, or use the player controls to turn on sound and open full screen.</p>
+        {videos.items.map((video) => <figure className="astra-video-card" key={video.id}>
+          <figcaption>
+            <div className="astra-video-heading"><h4>{video.title}</h4><span>{video.duration}</span></div>
+            <p>{video.description}</p>
+          </figcaption>
+          <video controls playsInline preload="none" poster={video.poster} aria-label={video.title}>
+            <source src={video.src} type="video/mp4" />
+            Your browser does not support this video. <a href={video.src}>Open the MP4</a>.
+          </video>
+          <a className="astra-video-open" href={video.src} target="_blank" rel="noopener noreferrer">Open {video.title.toLowerCase()} in a new tab</a>
+        </figure>)}
+      </div>
       <CopyBlock label="Brain build prompt" text={prompts.brain} />
       <h3>How to make the result easier to understand</h3>
       <ol className="asb-steps">
