@@ -55,6 +55,17 @@
       "poster": "https://mercy-astra-anatomy-videos.vercel.app/jerusalem-game.jpg",
       "width": 1440,
       "height": 784
+    },
+    {
+      "id": "mercy-video-edit",
+      "section": "video-editing",
+      "title": "My fully edited video",
+      "description": "The complete Astra-edited version from my video-editing comparison, with cuts, captions, sound and motion graphics.",
+      "duration": "46 seconds",
+      "src": "https://mercy-astra-anatomy-videos.vercel.app/mercy-video-edit.mp4",
+      "poster": "https://mercy-astra-anatomy-videos.vercel.app/mercy-video-edit.jpg",
+      "width": 1920,
+      "height": 1440
     }
   ]
 }

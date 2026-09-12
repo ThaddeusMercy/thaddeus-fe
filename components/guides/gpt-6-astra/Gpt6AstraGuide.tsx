@@ -6,11 +6,13 @@ import { ArrowLeft } from "@phosphor-icons/react";
 import prompts from "./prompts.json";
 import demos from "./demos.json";
 import videos from "./videos.json";
+import community from "./community.json";
 import "../ai-second-brain/ai-second-brain.css";
 import "./gpt-6-astra.css";
 
 const sections = [
-  ["demos", "Open the builds"], ["specs", "The specs that matter"],
+  ["demos", "Open the builds"], ["video-editing", "My fully edited video"],
+  ["community", "18 more creator examples"], ["specs", "The specs that matter"],
   ["access", "How to access Astra"], ["workflow", "How to use these prompts"],
   ["range-rover", "3D Range Rover website"], ["brain", "3D brain explorer"],
   ["anatomy-videos", "Watch the anatomy walkthroughs"],
@@ -63,13 +65,65 @@ function WalkthroughVideos({ section, headingLevel = 3 }: { section: string; hea
   </figure>);
 }
 
+function CommunityGallery() {
+  const [category, setCategory] = useState("All");
+  const [query, setQuery] = useState("");
+  const [showAll, setShowAll] = useState(false);
+  const categories = ["All", ...new Set(community.items.map((item) => item.category))];
+  const matching = community.items.filter((item) =>
+    (category === "All" || item.category === category) &&
+    `${item.title} ${item.creator} ${item.handle} ${item.category} ${item.tools} ${item.description}`.toLowerCase().includes(query.trim().toLowerCase())
+  );
+  const shown = showAll ? matching : matching.slice(0, 6);
+
+  return <section className="asb-section astra-community" id="community">
+    <p className="asb-num">CREATOR DEMONSTRATIONS</p>
+    <h2>18 more things to watch and try</h2>
+    <p>Explore short excerpts from other creators’ published demonstrations, with credits and links to their original posts. Each example includes a fresh starter prompt written for this guide.</p>
+    <p className="astra-small">Selected {community.checkedAt}. Model and tool attributions come from the creators’ posts. Open the original source for the full recording and workflow context.</p>
+    <label className="astra-search-label" htmlFor="astra-sample-search">Find an example</label>
+    <input id="astra-sample-search" className="astra-sample-search" type="search" placeholder="Search games, websites, tools or creators" value={query} onChange={(event) => { setQuery(event.target.value); setShowAll(false); }} />
+    <div className="astra-filters" role="group" aria-label="Filter creator examples">
+      {categories.map((name) => <button type="button" key={name} aria-pressed={category === name} onClick={() => { setCategory(name); setShowAll(false); }}>{name}<span>{name === "All" ? community.items.length : community.items.filter((item) => item.category === name).length}</span></button>)}
+    </div>
+    <p className="astra-small" role="status">Showing {shown.length} of {matching.length} matching examples</p>
+    <div className="astra-community-grid">
+      {shown.map((item) => <article className="astra-community-card" key={item.id}>
+        <div className="astra-community-meta"><span>{item.category}</span><span>{item.duration}s excerpt{item.audio ? " · Sound" : ""}</span></div>
+        <h3>{item.title}</h3>
+        <p className="astra-creator-credit">{item.creator} · @{item.handle}</p>
+        <video controls playsInline preload="none" poster={item.poster} aria-label={`${item.title} by ${item.creator}`}>
+          <source src={item.src} type="video/mp4" />
+          Your browser does not support this video. <a href={item.src}>Open the MP4</a>.
+        </video>
+        <p>{item.description}</p>
+        <p className="astra-community-note">{item.note}</p>
+        <p className="astra-community-tools">{item.tools}</p>
+        <div className="astra-community-links">
+          <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">{item.sourceLabel}</a>
+          <a href={item.src} target="_blank" rel="noopener noreferrer">Open video</a>
+          {"demoUrl" in item && item.demoUrl && <a href={item.demoUrl} target="_blank" rel="noopener noreferrer">Try the live demo</a>}
+        </div>
+        <details className="astra-example-prompt">
+          <summary>Try a similar idea</summary>
+          <p>Suggested prompt · written for this guide</p>
+          <CopyBlock label={`${item.title} starter prompt`} text={item.prompt} />
+        </details>
+      </article>)}
+    </div>
+    {matching.length === 0 && <div className="asb-note"><p>No examples match that search.</p><button className="astra-gallery-button" type="button" onClick={() => { setQuery(""); setCategory("All"); setShowAll(false); }}>Clear filters</button></div>}
+    {matching.length > 6 && <button className="astra-gallery-button" type="button" aria-expanded={showAll} onClick={() => setShowAll(!showAll)}>{showAll ? "Show fewer examples" : `Show all ${matching.length} examples`}</button>}
+    <p className="astra-small">Choose one idea, adapt its prompt to your own subject, and check the result against a concrete task. The <a href="#workflow">prompt workflow</a> and <a href="#publish">publishing checklist</a> below explain the next steps.</p>
+  </section>;
+}
+
 export default function Gpt6AstraGuide() {
   return <article className="asb-guide astra-guide">
     <Link href="/guide" className="asb-back"><ArrowLeft className="h-4 w-4" aria-hidden />All guides</Link>
     <header className="asb-hero">
       <p className="asb-eyebrow">GPT-6 Astra · Builds, prompts & practical steps</p>
       <h1>I spent 48 hours building with GPT-6 Astra. Here’s what to try.</h1>
-      <p className="asb-lede">3D websites, a walkable city and a playable game, plus prompts for AI clone videos and content workflows. Explore the demos and follow the steps to build something useful for your own work.</p>
+      <p className="asb-lede">3D websites, games, anatomy models and a fully edited video. Watch my builds and 18 credited creator examples, then use the prompts and step-by-step instructions to try ideas for your own work.</p>
       <p className="asb-meta">By Mercy Thaddeus · Updated 12 September 2026</p>
     </header>
 
@@ -79,15 +133,27 @@ export default function Gpt6AstraGuide() {
       <div className="astra-demo-list">
         <DemoLink href={demos.car}>Explore the Range Rover</DemoLink>
         <DemoLink href={demos.brain}>Explore the 3D brain</DemoLink>
-        <DemoLink href={videos.page}>Watch all five walkthroughs</DemoLink>
+        <DemoLink href={videos.page}>Open the full collection of {videos.items.length + community.items.length} videos</DemoLink>
         <DemoLink href={demos.city}>Walk through ancient Jerusalem</DemoLink>
         <DemoLink href={demos.immersive}>Open Jerusalem’s immersive view</DemoLink>
         <DemoLink href={demos.game}>Play Jerusalem: Target Run</DemoLink>
       </div>
       <p className="astra-small">Watch on this page: <a href="#range-rover-video">Range Rover website</a> · <a href="#anatomy-videos">Anatomy models</a> · <a href="#jerusalem-walkthrough-video">Jerusalem fly-through</a> · <a href="#jerusalem-game-video">Target Run gameplay</a>.</p>
+      <p className="astra-small"><a href="#video-editing">Watch my fully edited video</a> · <a href="#community">Browse 18 more creator examples</a></p>
       <p className="astra-small">The AI clone video and content dashboard are included as prompts only.</p>
       <nav className="astra-contents" aria-label="Inside this guide"><h2>Inside this guide</h2><ol>{sections.map(([id, label]) => <li key={id}><a href={`#${id}`}>{label}</a></li>)}</ol></nav>
     </section>
+
+    <section className="asb-section" id="video-editing">
+      <p className="asb-num">MY VIDEO EDIT</p>
+      <h2>My fully edited video</h2>
+      <p>This is the complete Astra edit from my ChatGPT and Claude video-editing comparison. Watch how the captions, cuts and motion graphics follow what I’m saying.</p>
+      <WalkthroughVideos section="video-editing" />
+      <p>For the source-file setup, editing brief and review process, follow my <Link href="/guide/edit-videos-chatgpt-claude">detailed video-editing guide</Link>.</p>
+      <CopyBlock label="Edit my video" text="Watch my attached video all the way through. Edit it into a polished short with clear cuts, accurate captions, cleaned audio and motion graphics that support what I am actually saying. Preserve my meaning and natural delivery. Use relevant B-roll only where it helps explain the story. Review the complete export, check the ending and deliver the final MP4 plus the editable project." />
+    </section>
+
+    <CommunityGallery />
 
     <section className="asb-section" id="specs">
       <h2>The GPT-6 Astra specs that matter</h2>
