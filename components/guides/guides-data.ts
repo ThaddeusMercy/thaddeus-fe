@@ -47,6 +47,97 @@ export type GuideEntry = {
 };
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
+{
+  "slug": "connect-chatgpt-to-socials",
+  "title": "Connect ChatGPT to all your socials",
+  "excerpt": "Connect ChatGPT to your Instagram, TikTok, LinkedIn, X, Facebook and other accounts so it can help you plan content, read your analytics, find your best posting times and schedule posts.",
+  "category": "GUIDE",
+  "topic": "setup",
+  "tools": [
+    "chatgpt"
+  ],
+  "publishedAt": "2026-09-14",
+  "sections": [
+    {
+      "heading": "How to set it up",
+      "body": "You can do this using the Metricool plugin inside ChatGPT."
+    },
+    {
+      "heading": "1. Open Plugins in ChatGPT",
+      "body": "Open ChatGPT and click on Plugins.\n\nDepending on your version of ChatGPT, this may appear under Apps."
+    },
+    {
+      "heading": "2. Search for Metricool",
+      "body": "Search for \"Metricool\" and select the Metricool social media plugin.\n\nClick Install or Connect."
+    },
+    {
+      "heading": "3. Sign in to Metricool",
+      "body": "You will be asked to sign in to Metricool.\n\nIf you do not have an account yet, create one and follow the setup process.\n\nMetricool has a free plan, so you can start there."
+    },
+    {
+      "heading": "4. Connect your social media accounts",
+      "body": "Inside Metricool, connect the accounts you want ChatGPT to work with.\n\nYou can connect platforms including:\n\n• Instagram\n• TikTok\n• Facebook\n• LinkedIn\n• X\n• YouTube\n• Pinterest\n• Threads\n• Google Business Profile\n\nYou can also connect platforms such as Meta Ads and Google Ads for ad analytics.\n\nOnce everything is connected, return to ChatGPT.\n\nThat's it.\n\nYou can now ask ChatGPT to work with the social media data available in your Metricool account."
+    },
+    {
+      "heading": "What you can do with it",
+      "body": "Use the prompts below to find content ideas, check your analytics, choose posting times, study competitors and plan your schedule."
+    },
+    {
+      "heading": "Find new content ideas",
+      "body": "Try:",
+      "prompt": "Look at my best performing content from the last 30 days and the competitor data available in Metricool. Give me 10 new content ideas based on the topics and formats that are performing best."
+    },
+    {
+      "heading": "Explore ideas around a topic",
+      "body": "Or:",
+      "prompt": "Analyze what has been performing around AI from the data available to you over the last week and give me 10 content ideas I can create next."
+    },
+    {
+      "heading": "Check your analytics",
+      "body": "Try:",
+      "prompt": "Pull my Instagram analytics from the last 30 days. Show me my best performing posts and explain what they have in common."
+    },
+    {
+      "heading": "Compare your platforms",
+      "body": "You can also ask:",
+      "prompt": "Compare my Instagram and TikTok performance over the last 30 days. Which platform is growing faster and what content is driving it?"
+    },
+    {
+      "heading": "Find your best posting time",
+      "body": "Try the prompt below. You can do the same for TikTok, Facebook, LinkedIn, X and other supported platforms.",
+      "prompt": "What are my best times to post on Instagram this week based on my audience data?"
+    },
+    {
+      "heading": "Study your competitors",
+      "body": "If you have competitors set up in Metricool, try the prompt below.\n\nCompetitor data depends on the social network and the accounts you have set up in Metricool.",
+      "prompt": "Look at the competitors I'm tracking. Which posts performed best this month? Break down the topics, formats and patterns I should pay attention to."
+    },
+    {
+      "heading": "Schedule your posts",
+      "body": "You can upload your content directly to ChatGPT and say:",
+      "prompt": "Schedule this video on Instagram and TikTok tomorrow at my best posting time."
+    },
+    {
+      "heading": "Choose the format and caption",
+      "body": "ChatGPT can check your Metricool data for the best time and create the scheduled post for you.\n\nYou can then see your scheduled content inside the Metricool content calendar.\n\nYou can also be more specific:",
+      "prompt": "Schedule this video as an Instagram Reel tomorrow at my best posting time. Use this caption: [PASTE CAPTION]."
+    },
+    {
+      "heading": "Plan a full week",
+      "body": "Once you have your content ideas, try:",
+      "prompt": "Based on my recent analytics, create a content plan for the next 7 days. Give me one idea per day, the platform I should post it on and the best time to publish."
+    },
+    {
+      "heading": "Turn your approved ideas into a schedule",
+      "body": "Then once you approve the ideas:",
+      "prompt": "Turn this into my schedule for the week."
+    },
+    {
+      "heading": "A few things to remember",
+      "body": "Review posts before they go live, especially captions, media and publishing settings.\n\nSome publishing options are different depending on the social network and the type of account you have connected.\n\nYour Metricool plan can also affect how many posts you can schedule and which features are available.\n\nThe interesting part is that ChatGPT is no longer giving you content advice without context.\n\nIt can look at your actual social media data, help you decide what to create next and then schedule the content from the same conversation."
+    }
+  ]
+},
   {
     slug: "5-github-repos-that-kill-ai-website-slop",
     title: "5 GitHub repos that kill AI website slop",
