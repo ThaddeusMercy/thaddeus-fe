@@ -48,6 +48,82 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "5-github-repos-that-kill-ai-website-slop",
+    title: "5 GitHub repos that kill AI website slop",
+    excerpt:
+      "AI can build websites fast, but without the right references, you often get the same gradients, cards, rounded boxes and generic layouts. These five GitHub repos give your AI coding tools better building blocks.",
+    category: "GUIDE",
+    topic: "creative",
+    tools: ["claude", "chatgpt", "multi-tool"],
+    publishedAt: "2026-09-14",
+    sections: [
+      {
+        heading: "1. Scroll World",
+        body: `Build immersive websites where scrolling moves you through a connected, 3D-looking world. Scroll World uses generated scenes and camera-flight videos driven by scroll position.
+
+Great for landing pages, product launches and more experimental websites.
+
+It can be installed as a skill in tools like Claude Code and Codex. Generating the scene assets can require paid image and video credits; check the repo's current setup requirements.
+
+Repo: https://github.com/oso95/scroll-world`,
+      },
+      {
+        heading: "2. React Three Fiber",
+        body: `Use Three.js inside React to build proper 3D experiences, interactive objects, scenes and animations.
+
+If you want AI to build websites that go beyond flat sections and cards, this is a good one to give it.
+
+React Three Fiber is a React renderer for Three.js.
+
+Repo: https://github.com/pmndrs/react-three-fiber`,
+      },
+      {
+        heading: "3. LiquidGlass.js",
+        body: `Add liquid glass effects to websites, including refraction, glass surfaces and interactive UI elements.
+
+Useful for navbars, buttons, cards, modals and interfaces where normal glassmorphism feels too basic.
+
+The library's main renderer uses SVG displacement on the live DOM and supports modern browsers. Some backdrop effects use different fallbacks depending on the browser.
+
+Repo: https://github.com/Amir-Abushanab/liquid-glass-js`,
+      },
+      {
+        heading: "4. ShaderGradient",
+        body: `Create animated 3D gradient backgrounds instead of using another basic CSS gradient.
+
+You can use it with React, and the project also supports workflows around Framer and Figma.
+
+It uses React Three Fiber and Three.js for its moving 3D gradients.
+
+Repo: https://github.com/ruucm/shadergradient`,
+      },
+      {
+        heading: "5. Liquid Logo",
+        body: `Turn a normal logo into a moving liquid-metal animation.
+
+Useful for hero sections, loading screens, brand intros and interactive landing pages.
+
+It is open source and uses WebGL shaders to create the liquid animation.
+
+Repo: https://github.com/collidingScopes/liquid-logo`,
+      },
+      {
+        heading: "How to use these with AI",
+        body: `You do not necessarily have to understand every line of code.
+
+Give the repo to your AI coding tool and tell it what you want to borrow from it.
+
+Paste the repository link, then use this prompt. Replace [EFFECT] with the effect you want:`,
+        prompt:
+          "Study this GitHub repo and use its approach to add [EFFECT] to my existing website. Keep my current content and structure, and make the effect responsive.",
+      },
+      {
+        heading: "Pick what fits your website",
+        body: "The goal is not to throw every effect into one website. Pick the ones that fit what you are building.",
+      },
+    ],
+  },
+  {
     slug: "edit-videos-chatgpt-claude",
     title: "How to edit your videos with ChatGPT and Claude",
     excerpt:
