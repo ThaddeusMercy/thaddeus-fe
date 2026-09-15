@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "create-canva-designs-in-chatgpt": () =>
+    import(
+      "@/components/guides/chatgpt-canva-designs/ChatGptCanvaDesignsGuide"
+    ),
   "edit-videos-chatgpt-claude": () =>
     import("@/components/guides/edit-videos-chatgpt-claude/EditVideosChatGptClaudeGuide"),
   "chatgpt-sort-files": () =>

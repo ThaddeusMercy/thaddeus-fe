@@ -48,6 +48,25 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
 {
+  "slug": "create-canva-designs-in-chatgpt",
+  "title": "Create Canva designs directly inside ChatGPT",
+  "excerpt": "Connect Canva to ChatGPT, create an editable Instagram carousel from visual references, improve the first result and batch your next 20 posts.",
+  "category": "GUIDE",
+  "topic": "creative",
+  "tools": [
+    "chatgpt",
+    "canva"
+  ],
+  "publishedAt": "2026-09-15",
+  "layout": "document",
+  "sections": [
+    {
+      "heading": "Create Canva designs directly inside ChatGPT",
+      "body": "A step-by-step setup guide with copyable prompts for one editable carousel, cleanup and a 20-post batch."
+    }
+  ]
+},
+{
   "slug": "connect-chatgpt-to-socials",
   "title": "Connect ChatGPT to all your socials",
   "excerpt": "Connect ChatGPT to your Instagram, TikTok, LinkedIn, X, Facebook and other accounts so it can help you plan content, read your analytics, find your best posting times and schedule posts.",
