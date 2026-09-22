@@ -47,6 +47,23 @@ export type GuideEntry = {
 };
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
+  {
+    slug: "chatgpt-storyboard-to-video",
+    title: "How to create a storyboard and turn it into a video inside ChatGPT",
+    excerpt:
+      "Start with a story, create character and location sheets, build a storyboard, and turn it into a 25-second video with ChatGPT and Higgsfield Seedance 2.5. Every prompt included.",
+    category: "GUIDE",
+    topic: "creative",
+    tools: ["chatgpt", "multi-tool"],
+    publishedAt: "2026-09-22",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to create a storyboard and turn it into a video inside ChatGPT",
+        body: "Story brief, character and location sheets, storyboard, and a 25-second video with ChatGPT + Higgsfield Seedance 2.5. Works for realistic humans, anime or 3D animation.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
+      },
+    ],
+  },
 {
   "slug": "create-canva-designs-in-chatgpt",
   "title": "Create Canva designs directly inside ChatGPT",
