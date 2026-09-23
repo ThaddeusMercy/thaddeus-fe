@@ -40,6 +40,15 @@ const nextConfig: NextConfig = {
   // SEO optimizations
   trailingSlash: false,
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/guide/5-github-repos-that-kill-ai-website-slop",
+        destination: "/guide/5-github-repos-better-ai-websites",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

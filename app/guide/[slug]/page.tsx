@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "5-github-repos-better-ai-websites": () =>
+    import(
+      "@/components/guides/five-github-repos-ai-websites/FiveGithubReposAiWebsitesGuide"
+    ),
   "chatgpt-storyboard-to-video": () =>
     import(
       "@/components/guides/chatgpt-storyboard-video/ChatGptStoryboardVideoGuide"

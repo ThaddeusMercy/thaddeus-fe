@@ -1,0 +1,322 @@
+/* 5 GitHub repos for better AI websites — white document */
+.fgh-guide {
+  --font-sans: "Inter";
+  --font-display: "Archivo";
+  --font-mono: "JetBrains Mono";
+
+  --ink: #1a1a1a;
+  --body: #3d3d3d;
+  --muted: #767676;
+  --rule: #e4e4e7;
+  --panel: #fafafa;
+  --paper: #ffffff;
+  --soft: #f5f5f5;
+
+  max-width: 740px;
+  margin: 24px auto;
+  padding: clamp(20px, 5vw, 44px) clamp(18px, 4vw, 32px) 72px;
+  background: var(--paper);
+  color: var(--body);
+  font-family: var(--font-sans), "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fgh-guide * {
+  box-sizing: border-box;
+}
+
+.fgh-guide p {
+  margin: 0 0 16px;
+  max-width: 44em;
+}
+
+.fgh-guide a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.fgh-guide a:hover {
+  color: var(--muted);
+}
+
+.fgh-guide code {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.84em;
+  background: var(--soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+
+.fgh-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 28px;
+}
+
+.fgh-back:hover {
+  text-decoration: underline;
+}
+
+.fgh-hero {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 36px;
+}
+
+.fgh-eyebrow {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.fgh-guide h1 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 6vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 16px;
+  max-width: min(100%, 18ch);
+}
+
+.fgh-lede {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0;
+  max-width: 42em;
+}
+
+.fgh-section {
+  margin-bottom: 44px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.fgh-section:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.fgh-guide h2 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 4vw, 30px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+
+.fgh-guide h3 {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 650;
+  font-size: 18px;
+  color: var(--ink);
+  margin: 24px 0 10px;
+}
+
+.fgh-repo-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.fgh-num {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  flex: 0 0 auto;
+}
+
+.fgh-repo-head h2 {
+  margin: 0;
+}
+
+.fgh-media {
+  margin: 18px 0 8px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--soft);
+}
+
+.fgh-media img,
+.fgh-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.fgh-caption {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 18px;
+}
+
+.fgh-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 8px;
+}
+
+.fgh-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none !important;
+}
+
+.fgh-link:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.fgh-note {
+  font-size: 15px;
+  color: var(--muted);
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 16px 0;
+}
+
+.fgh-list {
+  margin: 8px 0 18px;
+  padding-left: 1.2em;
+}
+
+.fgh-list li {
+  margin-bottom: 8px;
+}
+
+.fgh-olist {
+  margin: 8px 0 18px;
+  padding-left: 1.2em;
+}
+
+.fgh-olist li {
+  margin-bottom: 10px;
+}
+
+.fgh-block {
+  margin: 14px 0 18px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.fgh-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule);
+  background: #fff;
+}
+
+.fgh-block-label {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.fgh-copy {
+  font-family: var(--font-sans), "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  border-radius: 999px;
+  padding: 5px 12px;
+  cursor: pointer;
+  color: var(--body);
+}
+
+.fgh-copy:hover,
+.fgh-copy.fgh-done {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+.fgh-block pre {
+  margin: 0;
+  padding: 14px 16px 16px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.fgh-fill {
+  background: #efe9ff;
+  color: #4a3f8c;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.fgh-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 0;
+}
+
+.fgh-toc a {
+  font-size: 13px;
+  padding: 6px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  background: #fff;
+}
+
+.fgh-toc a:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .fgh-guide {
+    margin: 12px auto;
+    padding: 20px 16px 56px;
+  }
+
+  .fgh-guide h1 {
+    max-width: none;
+  }
+}
