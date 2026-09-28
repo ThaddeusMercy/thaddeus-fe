@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "get-started-building-with-opus-5-5": () =>
+    import(
+      "@/components/guides/opus-55-get-started/Opus55GetStartedGuide"
+    ),
   "5-github-repos-better-ai-websites": () =>
     import(
       "@/components/guides/five-github-repos-ai-websites/FiveGithubReposAiWebsitesGuide"

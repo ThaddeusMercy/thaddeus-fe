@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "get-started-building-with-opus-5-5",
+    title: "How to Get Started Building With Opus 5.5",
+    excerpt:
+      "Five practical ways to build and sell with Opus 5.5 this weekend — video edits, launch videos, motion graphics, a small SaaS, or a game — with starter briefs for each.",
+    category: "GUIDE",
+    topic: "side-hustles",
+    tools: ["claude", "multi-tool"],
+    publishedAt: "2026-09-28",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to Get Started Building With Opus 5.5",
+        body: "Pick one idea, build a sample this weekend, and put it in front of someone who might pay you. Includes starter briefs for video editing, launch videos, motion graphics, SaaS and games.\n\nhttps://academy.attentionfactory.io\n\nhttps://weekendsofai.com",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-storyboard-to-video",
     title: "How to create a storyboard and turn it into a video inside ChatGPT",
     excerpt:
