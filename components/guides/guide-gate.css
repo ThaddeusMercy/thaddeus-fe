@@ -1,0 +1,32 @@
+/* Guide email gate. Locked until the reader subscribes once; the unlock is
+   stored in localStorage and applies to every guide. */
+
+.guide-gate {
+  --guide-gate-preview: 1300px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .guide-gate {
+    --guide-gate-preview: 1500px;
+  }
+}
+
+.guide-gate:not([data-unlocked]) > .guide-gate-content {
+  position: relative;
+  max-height: var(--guide-gate-preview);
+  overflow: hidden;
+}
+
+.guide-gate:not([data-unlocked]) > .guide-gate-content::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 320px;
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0), #fff 85%);
+  pointer-events: none;
+}
+
+.guide-gate[data-unlocked] > .guide-gate-panel {
+  display: none;
+}
