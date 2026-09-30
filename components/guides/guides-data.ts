@@ -48,6 +48,25 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "chatgpt-dots-vs-grok-bot-vs-meta-muse",
+    title:
+      "ChatGPT dots vs Grok Bot vs Meta Muse: which AI agent should you use?",
+    excerpt:
+      "Compare ChatGPT dots, Grok Bot and Meta Muse — where each fits, how to set them up, and how to pick based on where your work already lives.",
+    category: "GUIDE",
+    topic: "ai-agents",
+    tools: ["chatgpt", "multi-tool"],
+    publishedAt: "2026-09-30",
+    layout: "document",
+    sections: [
+      {
+        heading:
+          "ChatGPT dots vs Grok Bot vs Meta Muse: which AI agent should you use?",
+        body: "Always-on AI agents that keep working after you leave. Comparison table, setup briefs for each, and a seven-day first job.",
+      },
+    ],
+  },
+  {
     slug: "get-started-building-with-opus-5-5",
     title: "How to Get Started Building With Opus 5.5",
     excerpt:

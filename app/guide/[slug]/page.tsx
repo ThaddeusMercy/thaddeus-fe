@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "chatgpt-dots-vs-grok-bot-vs-meta-muse": () =>
+    import(
+      "@/components/guides/ai-agents-dots-grok-muse/AiAgentsDotsGrokMuseGuide"
+    ),
   "get-started-building-with-opus-5-5": () =>
     import(
       "@/components/guides/opus-55-get-started/Opus55GetStartedGuide"
