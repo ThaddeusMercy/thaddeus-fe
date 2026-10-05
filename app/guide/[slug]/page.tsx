@@ -17,6 +17,8 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "chatgpt-ugc-video": () =>
+    import("@/components/guides/chatgpt-ugc-video/ChatGptUgcVideoGuide"),
   "chatgpt-dots-vs-grok-bot-vs-meta-muse": () =>
     import(
       "@/components/guides/ai-agents-dots-grok-muse/AiAgentsDotsGrokMuseGuide"

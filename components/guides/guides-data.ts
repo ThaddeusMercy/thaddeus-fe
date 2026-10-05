@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "chatgpt-ugc-video",
+    title: "Create a UGC product video inside ChatGPT",
+    excerpt:
+      "Connect Higgsfield to ChatGPT, upload one product image, generate UGC concepts, then create the video from the same conversation — with copy-paste prompts.",
+    category: "GUIDE",
+    topic: "creative",
+    tools: ["chatgpt", "multi-tool"],
+    publishedAt: "2026-10-05",
+    layout: "document",
+    sections: [
+      {
+        heading: "Create a UGC product video inside ChatGPT",
+        body: "Higgsfield MCP setup, product upload checklist, concept and video prompts, real-UGC polish, ad variations, and how to sell finished creatives to brands.",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-dots-vs-grok-bot-vs-meta-muse",
     title:
       "ChatGPT dots vs Grok Bot vs Meta Muse: which AI agent should you use?",
