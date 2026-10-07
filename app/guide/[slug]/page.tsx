@@ -17,6 +17,10 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "recreate-website-chatgpt-figma": () =>
+    import(
+      "@/components/guides/recreate-website-chatgpt-figma/RecreateWebsiteChatgptFigmaGuide"
+    ),
   "chatgpt-ugc-video": () =>
     import("@/components/guides/chatgpt-ugc-video/ChatGptUgcVideoGuide"),
   "chatgpt-dots-vs-grok-bot-vs-meta-muse": () =>

@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "recreate-website-chatgpt-figma",
+    title: "How to recreate a website you love with ChatGPT and Figma",
+    excerpt:
+      "Turn a full-page screenshot into an original Figma design and a working website — analyze the reference, customize for your brand, approve, then build and compare.",
+    category: "GUIDE",
+    topic: "creative",
+    tools: ["chatgpt", "multi-tool"],
+    publishedAt: "2026-10-07",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to recreate a website you love with ChatGPT and Figma",
+        body: "Screenshot → analyze → Figma → brand → approve → build → compare. Copy-paste prompts for every step, plus a master prompt and motion workflow.",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-ugc-video",
     title: "Create a UGC product video inside ChatGPT",
     excerpt:
