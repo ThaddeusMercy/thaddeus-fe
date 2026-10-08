@@ -331,18 +331,18 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
   },
   {
     slug: "chatgpt-study-codes",
-    title: "50 Secret ChatGPT Codes That Make Studying Easier",
+    title: "10 ChatGPT shortcuts to learn faster and understand better",
     excerpt:
-      "Copy 50 secret ChatGPT study codes for explanations, notes, visual learning, quizzes, exam practice, revision plans, active recall, and more.",
+      "Ten simple ChatGPT shortcuts for anime explainers, mind maps, sticky notes, exploded views, ELI5, comics, sketch notes, timelines, Socratic learning, and story mode.",
     category: "PROMPTS",
     topic: "prompts",
     tools: ["chatgpt"],
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-10-08",
     layout: "document",
     sections: [
       {
-        heading: "50 secret ChatGPT codes for studying",
-        body: "Fifty slash commands for understanding topics, organizing notes, visual learning, practice tests, and revision planning.",
+        heading: "10 ChatGPT shortcuts to learn faster and understand better",
+        body: "Copy-paste shortcuts for studying books, topics, and movies — plus how to use them and a Weekends of AI invite.",
       },
     ],
   },

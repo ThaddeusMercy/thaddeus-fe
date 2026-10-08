@@ -571,3 +571,87 @@
 .scs-guide .scs-hero h1 {
   max-width: min(100%, 28ch);
 }
+
+.scs-guide .scs-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 20px;
+}
+
+.scs-guide .scs-toc a {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: var(--soft);
+}
+
+.scs-guide .scs-toc a:hover {
+  color: var(--ink);
+  border-color: #cfcfd4;
+}
+
+.scs-guide .scs-shortcut-head--loose {
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.scs-guide .scs-shortcut-title {
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 3.8vw, 28px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.scs-guide .scs-try {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 8px !important;
+}
+
+.scs-guide .scs-cta-box {
+  margin-top: 8px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--rule);
+  background: linear-gradient(160deg, #f8fafc 0%, #f0fdfa 100%);
+  max-width: 44em;
+}
+
+.scs-guide .scs-cta-box p {
+  margin: 0 0 12px;
+}
+
+.scs-guide .scs-cta-box p:last-of-type {
+  margin-bottom: 16px;
+}
+
+.scs-guide .scs-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none !important;
+  background: var(--ink);
+  color: #fff !important;
+}
+
+.scs-guide .scs-cta-btn:hover {
+  opacity: 0.92;
+  color: #fff !important;
+}
