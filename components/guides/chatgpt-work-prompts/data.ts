@@ -1,6 +1,7 @@
 export const SLUG = "chatgpt-work-prompts";
 
-export const UNIVERSITY_URL = "https://academy.attentionfactory.io/ai-university";
+export const UNIVERSITY_URL =
+  "https://academy.attentionfactory.io/ai-university?ref=mercythaddeus";
 
 export type WorkPrompt = {
   id: string;

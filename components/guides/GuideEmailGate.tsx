@@ -161,7 +161,9 @@ export default function GuideEmailGate({
               {/* Honeypot: real readers never see or fill this. */}
               <input
                 type="text"
-                name="company"
+                // Not "company": browsers autofill that, which would skip Kit
+                // and silently drop a real reader's email.
+                name="hp_extra"
                 tabIndex={-1}
                 autoComplete="off"
                 aria-hidden="true"
