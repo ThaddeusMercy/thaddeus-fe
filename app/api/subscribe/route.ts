@@ -3,13 +3,18 @@ import { NextResponse } from "next/server";
 /**
  * Guide email gate → Kit (kit.com, formerly ConvertKit).
  *
- * Env (Cloudflare → Workers → thaddeus-fe → Settings → Variables and Secrets,
- * or `.dev.vars` locally):
- *   KIT_API_KEY  v4 API key (Kit → Settings → Developer). Store as a secret.
- *   KIT_FORM_ID  Numeric id of the Kit form new readers join (from the form URL).
+ * Works with no setup: readers join the public "Website guides" Kit form, the
+ * same endpoint Kit's own embedded forms post to, so no API key is needed.
+ *
+ * Optional env (Cloudflare → Workers → thaddeus-fe → Settings → Variables and
+ * Secrets, or `.dev.vars` locally):
+ *   KIT_FORM_ID  Numeric id of a different Kit form to use (from the form URL).
+ *   KIT_API_KEY  v4 API key. When set, signups go through Kit's API instead.
  */
 
 const KIT_API = "https://api.kit.com/v4";
+/** Kit → Landing pages & forms → Forms → "Website guides". */
+const DEFAULT_FORM_ID = "9979993";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type SubscribeBody = {
@@ -53,16 +58,8 @@ export async function POST(request: Request) {
     );
   }
 
-  // Checked after validation so a typo still gets a 400 the reader can fix.
   const apiKey = process.env.KIT_API_KEY;
-  const formId = process.env.KIT_FORM_ID;
-  if (!apiKey || !formId) {
-    console.error("subscribe: KIT_API_KEY or KIT_FORM_ID is not set");
-    return NextResponse.json(
-      { error: "Signups are not configured yet." },
-      { status: 500 }
-    );
-  }
+  const formId = process.env.KIT_FORM_ID || DEFAULT_FORM_ID;
 
   const firstName =
     typeof body.firstName === "string"
@@ -70,6 +67,10 @@ export async function POST(request: Request) {
       : "";
   const referrer =
     typeof body.referrer === "string" ? body.referrer.slice(0, 500) : "";
+
+  if (!apiKey) {
+    return subscribeViaPublicForm(formId, email, firstName, referrer);
+  }
 
   // 1. Create (or update) the subscriber. Kit keeps new records inactive until
   //    they join a form, so this never skips the form's opt-in settings.
@@ -109,4 +110,60 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.json({ ok: true });
+}
+
+/**
+ * Kit's public form endpoint: the one its embedded forms use. It answers 200
+ * with `{ status: "success" | "failed", errors? }`.
+ */
+async function subscribeViaPublicForm(
+  formId: string,
+  email: string,
+  firstName: string,
+  referrer: string
+) {
+  const params = new URLSearchParams({ email_address: email });
+  if (firstName) params.set("first_name", firstName);
+  if (referrer) params.set("referrer", referrer);
+
+  let res: Response;
+  try {
+    res = await fetch(`https://app.kit.com/forms/${formId}/subscriptions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Accept: "application/json",
+      },
+      body: params,
+    });
+  } catch (err) {
+    console.error("subscribe: Kit form request failed", err);
+    return NextResponse.json(
+      { error: "Could not sign you up. Try again in a minute." },
+      { status: 502 }
+    );
+  }
+
+  const data = (await res.json().catch(() => null)) as {
+    status?: string;
+    errors?: { fields?: string[]; messages?: string[] };
+  } | null;
+
+  if (res.ok && data?.status === "success") {
+    return NextResponse.json({ ok: true });
+  }
+
+  // Kit rejected the address itself: the reader can fix that.
+  if (data?.errors?.fields?.includes("email_address")) {
+    return NextResponse.json(
+      { error: data.errors.messages?.[0] || "Enter a valid email address." },
+      { status: 400 }
+    );
+  }
+
+  console.error("subscribe: Kit form signup failed", res.status, data);
+  return NextResponse.json(
+    { error: "Could not sign you up. Try again in a minute." },
+    { status: 502 }
+  );
 }
