@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { UNIVERSITY_URL } from "@/content/home-site";
+
 const AboutInfo = () => {
   // const pills = [
   //   "AI educator",
@@ -52,6 +54,19 @@ const AboutInfo = () => {
 
           I am currently building Attention Factory, a platform for AI education, training, and consulting for marketing, creative, ops, and founder teams.
           
+        </p>
+        <p>
+          And I just launched{" "}
+          <a
+            href={`${UNIVERSITY_URL}?ref=mercythaddeus`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#1a1a1a] underline underline-offset-2 hover:text-pink-500"
+          >
+            AI University
+          </a>
+          : nine structured programs that take you from zero to creating,
+          building and earning with AI.
         </p>
        
       </div>

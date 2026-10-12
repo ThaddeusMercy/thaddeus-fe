@@ -3,9 +3,21 @@ export const homeBanner = {
   emphasis: "the turning point.",
 } as const;
 
+export const UNIVERSITY_URL = "https://academy.attentionfactory.io/ai-university";
+
+/** Top-of-home launch strip (University launch, Oct 2026). */
+export const homeLaunch = {
+  label: "New",
+  text: "AI University is open.",
+  cta: "See the 9 programs",
+  href: `${UNIVERSITY_URL}?ref=mercythaddeus`,
+} as const;
+
 export type HomeFindItem = {
+  num: string;
   title: string;
   description: string;
+  cta: string;
   href: string;
   external?: boolean;
 };
@@ -14,29 +26,68 @@ export const homeFindHere: {
   heading: string;
   items: HomeFindItem[];
 } = {
-  heading: "What you'll find here",
+  heading: "Pick your next move",
   items: [
     {
+      num: "01",
+      title: "AI University",
+      description:
+        "Nine structured programs for people starting from zero. Learn to use AI properly, create with it, build with it and get paid for it, one practical lesson at a time.",
+      cta: "Explore the programs",
+      href: `${UNIVERSITY_URL}?ref=mercythaddeus`,
+      external: true,
+    },
+    {
+      num: "02",
       title: "Free guides",
       description:
-        "Bite-sized playbooks on Claude setup, workflows, skills, prompts, and career strategy — filter by tool and topic.",
+        "Copy-paste playbooks for ChatGPT, Claude, AI video, websites and your career. New ones every week.",
+      cta: "Browse the guides",
       href: "/guide",
     },
     {
-      title: "Prompt vault",
+      num: "03",
+      title: "Weekends of AI",
       description:
-        "Resume chain, image prompts, and more — open a playbook, copy what you need.",
-      href: "/guide?sub=prompts",
+        "Free live classes every Saturday. Practical AI for learning, content, business and everyday work.",
+      cta: "Join the next class",
+      href: "https://weekendsofai.com",
+      external: true,
     },
     {
-      title: "Attention Factory",
+      num: "04",
+      title: "Train your team",
       description:
-        "Corporate AI training, masterclasses, and consulting for marketing, creative, ops, and founder teams.",
+        "Corporate AI training, masterclasses and consulting through Attention Factory for marketing, creative, ops and founder teams.",
+      cta: "Work with Attention Factory",
       href: "https://attentionfactory.io?ref=mercythaddeus",
       external: true,
     },
   ],
 };
+
+export const homeRecentGuides = {
+  heading: "Recent free guides",
+  all: { label: "See all guides", href: "/guide" },
+  items: [
+    {
+      title: "10 ChatGPT prompts that give you hours back every week",
+      href: "/guide/chatgpt-work-prompts",
+    },
+    {
+      title: "10 ChatGPT shortcuts to learn faster and understand better",
+      href: "/guide/chatgpt-study-codes",
+    },
+    {
+      title: "How to recreate a website you love with ChatGPT and Figma",
+      href: "/guide/recreate-website-chatgpt-figma",
+    },
+    {
+      title: "Create a UGC product video inside ChatGPT",
+      href: "/guide/chatgpt-ugc-video",
+    },
+  ],
+} as const;
 
 export const homeConsult = {
   heading: "Implementing AI into your business?",
