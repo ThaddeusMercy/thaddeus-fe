@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "build-a-game-with-ai",
+    title: "Build your first game with AI in 7 steps",
+    excerpt:
+      "The exact process behind the Nigerian games going viral right now: pick an idea, let AI interview you, build it in one prompt, fix it, level it up, put it online and post it. Copy-paste prompts for every step, no coding needed.",
+    category: "GUIDE",
+    topic: "creative",
+    tools: ["claude", "chatgpt"],
+    publishedAt: "2026-10-13",
+    layout: "document",
+    sections: [
+      {
+        heading: "Build your first game with AI in 7 steps",
+        body: "Seven steps from idea to a live game with players, with a prompt to copy for each one. Works in Claude and ChatGPT, no coding needed.",
+      },
+    ],
+  },
+  {
     slug: "chatgpt-work-prompts",
     title: "10 ChatGPT prompts that give you hours back every week",
     excerpt:

@@ -71,6 +71,10 @@ export const homeRecentGuides = {
   all: { label: "See all guides", href: "/guide" },
   items: [
     {
+      title: "Build your first game with AI in 7 steps",
+      href: "/guide/build-a-game-with-ai",
+    },
+    {
       title: "10 ChatGPT prompts that give you hours back every week",
       href: "/guide/chatgpt-work-prompts",
     },
@@ -81,10 +85,6 @@ export const homeRecentGuides = {
     {
       title: "How to recreate a website you love with ChatGPT and Figma",
       href: "/guide/recreate-website-chatgpt-figma",
-    },
-    {
-      title: "Create a UGC product video inside ChatGPT",
-      href: "/guide/chatgpt-ugc-video",
     },
   ],
 } as const;

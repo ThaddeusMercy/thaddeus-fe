@@ -1,0 +1,101 @@
+/* Build a game with AI: reuses the study-codes styles, plus the launch-post
+   grid and the three hosting options. */
+.bg-guide .scs-note strong { color: var(--ink); }
+
+.bg-games {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 22px 0 8px;
+}
+
+.bg-game {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bg-game img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--soft);
+}
+
+.bg-game figcaption {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.bg-game figcaption strong {
+  color: var(--ink);
+  font-family: var(--font-display), "Archivo", system-ui, sans-serif;
+  font-size: 18px;
+}
+
+.bg-game figcaption span {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.bg-hosts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+
+.bg-host {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 14px 16px 6px;
+}
+
+.bg-host h3 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.bg-host ol {
+  list-style: decimal;
+  margin: 0 0 8px;
+  padding-left: 18px;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.bg-host li { margin-bottom: 6px; }
+
+.bg-guide .bg-need {
+  list-style: disc;
+  margin: 0 0 8px;
+  padding-left: 22px;
+}
+
+.bg-guide .bg-need li { margin-bottom: 10px; padding-left: 4px; }
+
+@media (max-width: 640px) {
+  .bg-guide .scs-toc {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: -18px;
+    padding-right: 18px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .bg-guide .scs-toc::-webkit-scrollbar { display: none; }
+  .bg-guide .scs-toc a { white-space: nowrap; flex: none; }
+
+  .bg-games { gap: 14px 10px; }
+  .bg-game figcaption strong { font-size: 15px; }
+  .bg-game figcaption span { font-size: 13px; }
+
+  .bg-hosts { grid-template-columns: 1fr; }
+}
