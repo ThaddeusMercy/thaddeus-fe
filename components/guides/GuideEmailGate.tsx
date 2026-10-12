@@ -8,6 +8,15 @@ import "./guide-gate.css";
 
 type Status = "idle" | "loading" | "error";
 
+/** After this, treat signup as failed and let the reader through. */
+const CLIENT_TIMEOUT_MS = 12000;
+
+/** Without JavaScript the form can't submit, so show the whole guide instead. */
+const NO_SCRIPT_UNLOCK =
+  "<style>.guide-gate>.guide-gate-content{max-height:none!important;overflow:visible!important}" +
+  ".guide-gate>.guide-gate-content::after{display:none!important}" +
+  ".guide-gate>.guide-gate-panel{display:none!important}</style>";
+
 export default function GuideEmailGate({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -18,16 +27,17 @@ export default function GuideEmailGate({
   const [error, setError] = useState("");
 
   useEffect(() => {
+    let stored = false;
     try {
-      if (window.localStorage.getItem(GUIDE_UNLOCK_KEY)) setUnlocked(true);
+      stored = Boolean(window.localStorage.getItem(GUIDE_UNLOCK_KEY));
     } catch {
       // Storage blocked (private mode etc.): reader sees the gate.
     }
+    // Decided here, not from `unlocked` state, so returning subscribers are
+    // never counted as gate views.
+    if (stored) setUnlocked(true);
+    else trackEvent("guide_gate_view", { guide: window.location.pathname });
   }, []);
-
-  useEffect(() => {
-    if (!unlocked) trackEvent("guide_gate_view", { guide: window.location.pathname });
-  }, [unlocked]);
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,6 +54,10 @@ export default function GuideEmailGate({
           company,
           referrer: window.location.href,
         }),
+        signal:
+          typeof AbortSignal.timeout === "function"
+            ? AbortSignal.timeout(CLIENT_TIMEOUT_MS)
+            : undefined,
       });
       const data = (await res.json().catch(() => ({}))) as { error?: string };
       // A bad email is the reader's to fix. Anything else (Kit down, keys not
@@ -71,8 +85,11 @@ export default function GuideEmailGate({
       setUnlocked(true);
       setStatus("idle");
     } catch (err) {
-      if (err instanceof TypeError) {
-        // Network failure: same rule, don't lock the reader out.
+      const timedOut =
+        err instanceof DOMException &&
+        (err.name === "TimeoutError" || err.name === "AbortError");
+      if (err instanceof TypeError || timedOut) {
+        // Network failure or timeout: same rule, don't lock the reader out.
         trackEvent("guide_gate_fail_open", { guide: window.location.pathname });
         setUnlocked(true);
         setStatus("idle");
@@ -89,6 +106,7 @@ export default function GuideEmailGate({
       data-unlocked={unlocked ? "true" : undefined}
       suppressHydrationWarning
     >
+      <noscript dangerouslySetInnerHTML={{ __html: NO_SCRIPT_UNLOCK }} />
       <div className="guide-gate-content">{children}</div>
 
       {!unlocked && (

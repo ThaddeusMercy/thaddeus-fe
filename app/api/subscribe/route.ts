@@ -16,6 +16,8 @@ const KIT_API = "https://api.kit.com/v4";
 /** Kit → Landing pages & forms → Forms → "Website guides". */
 const DEFAULT_FORM_ID = "9979993";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+/** Give up on Kit quickly so a stalled request still fails open for the reader. */
+const KIT_TIMEOUT_MS = 8000;
 
 type SubscribeBody = {
   email?: unknown;
@@ -34,6 +36,7 @@ function kitFetch(path: string, apiKey: string, body: unknown) {
       "X-Kit-Api-Key": apiKey,
     },
     body: JSON.stringify(body),
+    signal: AbortSignal.timeout(KIT_TIMEOUT_MS),
   });
 }
 
@@ -135,6 +138,7 @@ async function subscribeViaPublicForm(
         Accept: "application/json",
       },
       body: params,
+      signal: AbortSignal.timeout(KIT_TIMEOUT_MS),
     });
   } catch (err) {
     console.error("subscribe: Kit form request failed", err);
