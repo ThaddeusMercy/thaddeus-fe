@@ -3,8 +3,10 @@ import { NextResponse } from "next/server";
 /**
  * Guide email gate → Kit (kit.com, formerly ConvertKit).
  *
- * Works with no setup: readers join the public "Website guides" Kit form, the
- * same endpoint Kit's own embedded forms post to, so no API key is needed.
+ * The guide gate no longer calls this route: it posts to Kit's public form
+ * straight from the reader's browser (see lib/guide-gate.ts), because Kit
+ * blocks that endpoint for requests coming from Cloudflare Workers. Kept for
+ * the API-key path, which goes through api.kit.com instead.
  *
  * Optional env (Cloudflare → Workers → thaddeus-fe → Settings → Variables and
  * Secrets, or `.dev.vars` locally):

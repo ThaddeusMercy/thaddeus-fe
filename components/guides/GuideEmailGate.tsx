@@ -3,7 +3,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 
 import { trackEvent } from "@/lib/analytics";
-import { GUIDE_UNLOCK_KEY } from "@/lib/guide-gate";
+import { EMAIL_RE, GUIDE_UNLOCK_KEY, KIT_FORM_URL } from "@/lib/guide-gate";
 import "./guide-gate.css";
 
 type Status = "idle" | "loading" | "error";
@@ -46,34 +46,50 @@ export default function GuideEmailGate({
     setError("");
 
     try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          company,
-          referrer: window.location.href,
-        }),
-        signal:
-          typeof AbortSignal.timeout === "function"
-            ? AbortSignal.timeout(CLIENT_TIMEOUT_MS)
-            : undefined,
-      });
-      const data = (await res.json().catch(() => ({}))) as { error?: string };
-      // A bad email is the reader's to fix. Anything else (Kit down, keys not
-      // set yet) must never trap a reader behind the gate: let them through.
-      if (res.status === 400) {
-        throw new Error(data.error || "Enter a valid email address.");
-      }
-      if (!res.ok) {
-        // Unlock this page only, so they're asked again once signups work.
-        trackEvent("guide_gate_fail_open", {
-          guide: window.location.pathname,
-          status: res.status,
+      const address = email.trim().toLowerCase();
+      // Bots fill the hidden honeypot: skip Kit for them but act as if it worked.
+      if (!company.trim()) {
+        if (!EMAIL_RE.test(address) || address.length > 254) {
+          throw new Error("Enter a valid email address.");
+        }
+        const res = await fetch(KIT_FORM_URL, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          // The referrer lets Kit show which guide each subscriber came from.
+          body: new URLSearchParams({
+            email_address: address,
+            referrer: window.location.href,
+          }),
+          signal:
+            typeof AbortSignal.timeout === "function"
+              ? AbortSignal.timeout(CLIENT_TIMEOUT_MS)
+              : undefined,
         });
-        setUnlocked(true);
-        setStatus("idle");
-        return;
+        const data = (await res.json().catch(() => null)) as {
+          status?: string;
+          errors?: { fields?: unknown; messages?: unknown };
+        } | null;
+        const fields = data?.errors?.fields;
+        const messages = data?.errors?.messages;
+        // A bad email is the reader's to fix. Anything else (Kit down, form
+        // changed) must never trap a reader behind the gate: let them through.
+        if (Array.isArray(fields) && fields.includes("email_address")) {
+          throw new Error(
+            Array.isArray(messages) && typeof messages[0] === "string"
+              ? messages[0]
+              : "Enter a valid email address."
+          );
+        }
+        if (!res.ok || data?.status !== "success") {
+          // Unlock this page only, so they're asked again once signups work.
+          trackEvent("guide_gate_fail_open", {
+            guide: window.location.pathname,
+            status: res.status,
+          });
+          setUnlocked(true);
+          setStatus("idle");
+          return;
+        }
       }
 
       try {
