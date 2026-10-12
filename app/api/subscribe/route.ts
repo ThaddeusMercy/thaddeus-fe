@@ -33,16 +33,6 @@ function kitFetch(path: string, apiKey: string, body: unknown) {
 }
 
 export async function POST(request: Request) {
-  const apiKey = process.env.KIT_API_KEY;
-  const formId = process.env.KIT_FORM_ID;
-  if (!apiKey || !formId) {
-    console.error("subscribe: KIT_API_KEY or KIT_FORM_ID is not set");
-    return NextResponse.json(
-      { error: "Signups are not configured yet." },
-      { status: 500 }
-    );
-  }
-
   let body: SubscribeBody;
   try {
     body = (await request.json()) as SubscribeBody;
@@ -60,6 +50,17 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { error: "Enter a valid email address." },
       { status: 400 }
+    );
+  }
+
+  // Checked after validation so a typo still gets a 400 the reader can fix.
+  const apiKey = process.env.KIT_API_KEY;
+  const formId = process.env.KIT_FORM_ID;
+  if (!apiKey || !formId) {
+    console.error("subscribe: KIT_API_KEY or KIT_FORM_ID is not set");
+    return NextResponse.json(
+      { error: "Signups are not configured yet." },
+      { status: 500 }
     );
   }
 

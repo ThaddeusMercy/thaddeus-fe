@@ -46,7 +46,21 @@ export default function GuideEmailGate({
         }),
       });
       const data = (await res.json().catch(() => ({}))) as { error?: string };
-      if (!res.ok) throw new Error(data.error || "Something went wrong.");
+      // A bad email is the reader's to fix. Anything else (Kit down, keys not
+      // set yet) must never trap a reader behind the gate: let them through.
+      if (res.status === 400) {
+        throw new Error(data.error || "Enter a valid email address.");
+      }
+      if (!res.ok) {
+        // Unlock this page only, so they're asked again once signups work.
+        trackEvent("guide_gate_fail_open", {
+          guide: window.location.pathname,
+          status: res.status,
+        });
+        setUnlocked(true);
+        setStatus("idle");
+        return;
+      }
 
       try {
         window.localStorage.setItem(GUIDE_UNLOCK_KEY, new Date().toISOString());
@@ -57,6 +71,13 @@ export default function GuideEmailGate({
       setUnlocked(true);
       setStatus("idle");
     } catch (err) {
+      if (err instanceof TypeError) {
+        // Network failure: same rule, don't lock the reader out.
+        trackEvent("guide_gate_fail_open", { guide: window.location.pathname });
+        setUnlocked(true);
+        setStatus("idle");
+        return;
+      }
       setStatus("error");
       setError(err instanceof Error ? err.message : "Something went wrong.");
     }
