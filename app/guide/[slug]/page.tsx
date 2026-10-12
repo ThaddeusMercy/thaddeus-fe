@@ -17,6 +17,8 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "chatgpt-work-prompts": () =>
+    import("@/components/guides/chatgpt-work-prompts/ChatGptWorkPromptsGuide"),
   "recreate-website-chatgpt-figma": () =>
     import(
       "@/components/guides/recreate-website-chatgpt-figma/RecreateWebsiteChatgptFigmaGuide"

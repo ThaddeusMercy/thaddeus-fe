@@ -1,0 +1,15 @@
+/* Work prompts guide: reuses the study-codes styles, plus a compact TOC on
+   phones so the email-gate preview reaches the first full prompt. */
+@media (max-width: 640px) {
+  .wp-guide .scs-toc {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: -18px;
+    padding-right: 18px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .wp-guide .scs-toc::-webkit-scrollbar { display: none; }
+  .wp-guide .scs-toc a { white-space: nowrap; flex: none; }
+}
+.wp-guide .scs-note strong { color: var(--ink); }

@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "chatgpt-work-prompts",
+    title: "10 ChatGPT prompts that give you hours back every week",
+    excerpt:
+      "Copy-paste ChatGPT prompts for the boring parts of work: inbox, meeting notes, weekly plans, hard emails, long documents, spreadsheets, slides, decisions, to-do lists and end-of-day reviews.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["chatgpt"],
+    publishedAt: "2026-10-12",
+    layout: "document",
+    sections: [
+      {
+        heading: "10 ChatGPT prompts that give you hours back every week",
+        body: "Ten work prompts to copy, a free lesson on making ChatGPT useful for your actual job, and how to use them.",
+      },
+    ],
+  },
+  {
     slug: "recreate-website-chatgpt-figma",
     title: "How to recreate a website you love with ChatGPT and Figma",
     excerpt:
