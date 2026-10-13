@@ -21,6 +21,8 @@ export default function GuideEmailGate({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const [unlocked, setUnlocked] = useState(false);
+  // Signed up this visit: show "You're in" before opening the guide.
+  const [joined, setJoined] = useState(false);
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -98,7 +100,7 @@ export default function GuideEmailGate({
         // Unlock still applies for this page view.
       }
       trackEvent("guide_gate_unlock", { guide: window.location.pathname });
-      setUnlocked(true);
+      setJoined(true);
       setStatus("idle");
     } catch (err) {
       const timedOut =
@@ -131,63 +133,94 @@ export default function GuideEmailGate({
           aria-labelledby="guide-gate-title"
         >
           <div className="mx-auto max-w-lg rounded-2xl border border-border bg-white p-6 shadow-xl md:p-8">
-            <h2
-              id="guide-gate-title"
-              className="text-xl font-semibold leading-snug text-[#1a1a1a] md:text-2xl"
-            >
-              Keep reading for free
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-[#676767] md:text-base">
-              Drop your email to unlock the rest of this guide and every other
-              guide on the site. You&apos;ll also get my newsletter with new AI
-              guides and tools as they come out. Unsubscribe any time.
-            </p>
-
-            <form className="mt-5 space-y-3" onSubmit={submit} noValidate>
-              <label htmlFor="guide-gate-email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="guide-gate-email"
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                required
-                placeholder="you@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-full border border-border bg-white px-5 py-3 text-base text-[#1a1a1a] outline-none transition-colors placeholder:text-[#aaa] focus:border-[#1a1a1a]"
-              />
-              {/* Honeypot: real readers never see or fill this. */}
-              <input
-                type="text"
-                // Not "company": browsers autofill that, which would skip Kit
-                // and silently drop a real reader's email.
-                name="hp_extra"
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
-                className="absolute -left-[9999px] h-px w-px opacity-0"
-              />
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="w-full rounded-full bg-[#1a1a1a] px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#333] disabled:opacity-60"
-              >
-                {status === "loading" ? "Unlocking..." : "Unlock the guide"}
-              </button>
-              {status === "error" && (
-                <p role="alert" className="text-sm text-red-600">
-                  {error}
+            {joined ? (
+              <div role="status">
+                <h2
+                  id="guide-gate-title"
+                  className="text-xl font-semibold leading-snug text-[#1a1a1a] md:text-2xl"
+                >
+                  You&apos;re in
+                </h2>
+                <p className="mt-2 text-base leading-relaxed text-[#676767]">
+                  Thanks for joining my newsletter. Once a week I&apos;ll send
+                  you one practical AI guide or tool you can use straight away.
                 </p>
-              )}
-            </form>
+                <p className="mt-3 text-base leading-relaxed text-[#676767]">
+                  If you don&apos;t see my emails, check Spam or Promotions
+                  and move them to your inbox.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setUnlocked(true)}
+                  className="mt-5 min-h-12 w-full rounded-full bg-[#1a1a1a] px-4 py-3 text-base font-medium text-white transition-colors hover:bg-[#333]"
+                >
+                  Read the full guide
+                </button>
+                <p className="mt-3 text-sm text-[#999]">
+                  Every other guide on the site is unlocked too.
+                </p>
+              </div>
+            ) : (
+              <>
+                <h2
+                  id="guide-gate-title"
+                  className="text-xl font-semibold leading-snug text-[#1a1a1a] md:text-2xl"
+                >
+                  Get the full guide free
+                </h2>
+                <p className="mt-2 text-base leading-relaxed text-[#676767]">
+                  Join my newsletter to read the rest. You&apos;ll unlock this
+                  guide and every other guide on the site, and get one
+                  practical AI email from me each week. Unsubscribe any time.
+                </p>
 
-            <p className="mt-3 text-xs text-[#999]">
-              One email unlocks every guide.
-            </p>
+                <form className="mt-5 space-y-3" onSubmit={submit} noValidate>
+                  <label htmlFor="guide-gate-email" className="sr-only">
+                    Email address
+                  </label>
+                  <input
+                    id="guide-gate-email"
+                    type="email"
+                    inputMode="email"
+                    autoComplete="email"
+                    required
+                    placeholder="you@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="min-h-12 w-full rounded-full border border-border bg-white px-5 py-3 text-base text-[#1a1a1a] outline-none transition-colors placeholder:text-[#aaa] focus:border-[#1a1a1a]"
+                  />
+                  {/* Honeypot: real readers never see or fill this. */}
+                  <input
+                    type="text"
+                    // Not "company": browsers autofill that, which would skip Kit
+                    // and silently drop a real reader's email.
+                    name="hp_extra"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    className="absolute -left-[9999px] h-px w-px opacity-0"
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    className="min-h-12 w-full rounded-full bg-[#1a1a1a] px-4 py-3 text-base font-medium text-white transition-colors hover:bg-[#333] disabled:opacity-60"
+                  >
+                    {status === "loading" ? "Joining..." : "Join and read the guide"}
+                  </button>
+                  {status === "error" && (
+                    <p role="alert" className="text-base text-red-600">
+                      {error}
+                    </p>
+                  )}
+                </form>
+
+                <p className="mt-3 text-sm text-[#999]">
+                  One email unlocks every guide.
+                </p>
+              </>
+            )}
           </div>
         </section>
       )}

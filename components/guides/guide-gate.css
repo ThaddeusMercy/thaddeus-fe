@@ -1,14 +1,16 @@
 /* Guide email gate. Locked until the reader subscribes once; the unlock is
    stored in localStorage and applies to every guide. */
 
+/* Short preview: the title and intro, then the sign-up box, before the
+   first prompt. */
 .guide-gate {
-  --guide-gate-preview: 1300px;
+  --guide-gate-preview: 860px;
   position: relative;
 }
 
 @media (min-width: 768px) {
   .guide-gate {
-    --guide-gate-preview: 1500px;
+    --guide-gate-preview: 760px;
   }
 }
 
@@ -22,7 +24,7 @@
   content: "";
   position: absolute;
   inset: auto 0 0 0;
-  height: 320px;
+  height: 220px;
   background: linear-gradient(to bottom, rgb(255 255 255 / 0), #fff 85%);
   pointer-events: none;
 }
