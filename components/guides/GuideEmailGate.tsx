@@ -39,6 +39,9 @@ export default function GuideEmailGate({
   const [suggestion, setSuggestion] = useState<string | null>(null);
   const [suggestedFor, setSuggestedFor] = useState<string | null>(null);
   const submitRef = useRef<HTMLButtonElement>(null);
+  // Last fix offered, so it can come back if the unchanged address then
+  // turns out not to receive mail.
+  const lastSuggestionRef = useRef<string | null>(null);
 
   useEffect(() => {
     let stored = false;
@@ -80,6 +83,7 @@ export default function GuideEmailGate({
             trackEvent("guide_gate_email_check", { guide, result: "typo" });
             setSuggestedFor(address);
             setSuggestion(check.suggestion);
+            lastSuggestionRef.current = check.suggestion;
             setStatus("idle");
             return;
           }
@@ -92,6 +96,13 @@ export default function GuideEmailGate({
                   ? "no_mail"
                   : "invalid",
           });
+          if (
+            check.error === NO_MAIL_DOMAIN_ERROR &&
+            address === suggestedFor &&
+            lastSuggestionRef.current
+          ) {
+            setSuggestion(lastSuggestionRef.current);
+          }
           throw new Error(check.error);
         }
         const res = await fetch(KIT_FORM_URL, {
@@ -211,7 +222,7 @@ export default function GuideEmailGate({
                 >
                   Read the full guide
                 </button>
-                <p className="mt-3 text-base text-[#999]">
+                <p className="mt-3 text-base text-[#676767]">
                   Every other guide on the site is unlocked too.
                 </p>
               </div>
@@ -296,7 +307,7 @@ export default function GuideEmailGate({
                   )}
                 </form>
 
-                <p className="mt-3 text-base text-[#999]">
+                <p className="mt-3 text-base text-[#676767]">
                   One email unlocks every guide.
                 </p>
               </>

@@ -26,6 +26,7 @@ const code = bundled.outputFiles[0].text;
 const {
   checkEmail,
   suggestDomain,
+  domainCanReceiveMail,
   DISPOSABLE_EMAIL_ERROR,
   NO_MAIL_DOMAIN_ERROR,
   INVALID_EMAIL_ERROR,
@@ -167,6 +168,19 @@ await test("Nigerian domains get no suggestion and pass with an MX (offline)", a
 });
 
 // --- Extra cases ------------------------------------------------------------
+
+await test("Firefox Relay and Foxmail get no suggestion", async () => {
+  assert.equal(suggestDomain("mozmail.com"), null);
+  assert.equal(suggestDomain("foxmail.com"), null);
+});
+
+await test("a DNS lookup that never settles still lets the address through", async () => {
+  const hang = () => new Promise(() => {});
+  assert.equal(
+    await domainCanReceiveMail("slow-example-domain.com", { fetch: hang, timeoutMs: 50 }),
+    true
+  );
+});
 
 await test("proton.me's ending is never 'fixed' to a .com typo rule", async () => {
   assert.equal(suggestDomain("proton.co"), null);

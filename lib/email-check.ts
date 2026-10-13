@@ -72,8 +72,6 @@ const DISPOSABLE_DOMAINS = new Set([
   "yopmail.com",
   "yopmail.net",
   "yopmail.fr",
-  "trashmail.com",
-  "trashmail.de",
   "getnada.com",
   "nada.email",
   "maildrop.cc",
@@ -84,11 +82,9 @@ const DISPOSABLE_DOMAINS = new Set([
   "emailondeck.com",
   "mohmal.com",
   "tempail.com",
-  "burnermail.io",
   "mailnesia.com",
   "mytemp.email",
   "moakt.com",
-  "spamgourmet.com",
   "mailcatch.com",
   "inboxkitten.com",
   "tempr.email",
@@ -177,6 +173,8 @@ const REAL_LOOKALIKES = new Set([
   "zoho.com",
   "fastmail.com",
   "rocketmail.com",
+  "mozmail.com", // Firefox Relay
+  "foxmail.com", // Tencent
 ]);
 
 /**
@@ -344,6 +342,24 @@ const dnsVerdicts = new Map<string, boolean>();
 export async function domainCanReceiveMail(
   domain: string,
   options: { fetch?: typeof fetch; timeoutMs?: number } = {}
+): Promise<boolean> {
+  // Some browsers' fetch ignores abort signals, so also race a plain timer:
+  // a slow DNS lookup must never hold the reader on "Joining...".
+  const ms = (options.timeoutMs ?? DNS_TIMEOUT_MS) + 500;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const giveUp = new Promise<boolean>((resolve) => {
+    timer = setTimeout(() => resolve(true), ms);
+  });
+  try {
+    return await Promise.race([lookupDomain(domain, options), giveUp]);
+  } finally {
+    if (timer !== undefined) clearTimeout(timer);
+  }
+}
+
+async function lookupDomain(
+  domain: string,
+  options: { fetch?: typeof fetch; timeoutMs?: number }
 ): Promise<boolean> {
   const cached = dnsVerdicts.get(domain);
   if (cached !== undefined) return cached;
