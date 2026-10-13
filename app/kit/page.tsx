@@ -45,6 +45,16 @@ export default function KitPage() {
       name: "Instagram Campaign",
       price: "$1,800",
       includes: [...reelIncludes, "3 Story frames", "7-day bio placement"]
+    },
+    {
+      name: "TikTok Video",
+      price: "$800",
+      includes: [
+        "1 original TikTok video",
+        "Caption, brand tag and call to action",
+        "1 revision within the agreed brief",
+        "Report on available metrics 7 days after posting"
+      ]
     }
   ];
 
@@ -212,7 +222,7 @@ export default function KitPage() {
                 <span className="text-sm font-medium text-pink-600">Quoted separately</span>
               </div>
               <p className="text-sm text-gray-700 mt-3">
-                YouTube, TikTok, multi-platform campaigns and ongoing work.
+                YouTube, multi-platform campaigns and ongoing work.
               </p>
             </div>
           </div>
