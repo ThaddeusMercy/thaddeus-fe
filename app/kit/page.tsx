@@ -17,67 +17,35 @@ export default function KitPage() {
     { label: "Audience", value: "Tech-savvy creators, AI enthusiasts, GenAI Creators" }
   ];
 
-  const packages = [
+  const brands = ["Kimi", "Gamma", "Napkin", "Higgsfield", "Emergent", "Recall", "Relume"];
+
+  const selectedWork = [
     {
-      name: "Premium Package",
-      price: "$3,299",
-      bestFor: "Maximum reach & extended campaigns",
-      includes: [
-        "1 Professional Video (Instagram Reel)",
-        "Cross-post to TikTok",
-        "1 Youtube Dedicated video (longform. 3 Mins min)",
-        "3 Story slides (24-hour feature)",
-        "30-day link in bio (prime placement)",
-        "Collaboration post feature",
-        "Performance report (7 days after posting)",
-        "Usage rights for ads (60 days)"
-      ]
+      title: "Emergent",
+      description: "A practical tutorial on building business websites with AI.",
+      href: "https://www.instagram.com/reel/DXXEDstDYGm/"
     },
     {
-      name: "Professional Package",
-      price: "$2,199",
-      bestFor: "Focused Instagram campaigns",
-      includes: [
-        "1 Professional Video (Instagram Reel)",
-        "2 Story slides (24-hour feature)",
-        "14-day link in bio",
-        "Collaboration post feature",
-        "Basic performance report",
-        "Usage rights for ads (30 days)"
-      ]
-    },
-    {
-      name: "Starter Package",
-      price: "$1,500",
-      bestFor: "Test campaigns & first collaborations",
-      includes: [
-        "1 Video (Instagram Reel OR TikTok)",
-        "7-day link in bio",
-        "Collaboration post feature (optional)"
-      ]
+      title: "Napkin",
+      description: "A demonstration of creating slides that fit a presenter’s brand and goal.",
+      href: "https://www.instagram.com/reel/DavaN_8OII2/"
     }
   ];
 
-  const contentServices = [
-    { title: "Instagram Reel/Video (standalone)", price: "$1200" },
-    { title: "TikTok Video (standalone)", price: "$800" },
-    { title: "Carousel Post (5-10 slides)", price: "$600" },
-    { title: "Story Feature (3-5 slides, 24hrs)", price: "$400" }
+  const reelIncludes = [
+    "1 original Instagram Reel",
+    "Caption, brand tag and call to action",
+    "1 revision within the agreed brief",
+    "Results report 7 days after posting"
   ];
 
-  const linkInBio = [
-    { duration: "7 days", price: "$250" },
-    { duration: "14 days", price: "$450" },
-    { duration: "30 days", price: "$750" }
-  ];
-
-  const addOns = [
-    { title: "Usage Rights for ads (30 days)", price: "+$300" },
-    { title: "Usage Rights for ads (60 days)", price: "+$500" },
-    { title: "Usage Rights for ads (90 days)", price: "+$650" },
-    { title: "Exclusivity Agreement (30 days)", price: "+$500" },
-    { title: "Additional platform cross-post", price: "+$400-600/platform" },
-    { title: "Rush delivery (48-72 hours)", price: "+$500" }
+  const packages = [
+    { name: "Instagram Reel", price: "$1,200", includes: reelIncludes },
+    {
+      name: "Instagram Campaign",
+      price: "$1,800",
+      includes: [...reelIncludes, "3 Story frames", "7-day bio placement"]
+    }
   ];
 
   const allPackagesInclude = [
@@ -85,7 +53,7 @@ export default function KitPage() {
     "Authentic brand integration",
     "FTC-compliant disclosure",
     "On-time delivery",
-    "One round of revisions (if needed)",
+    "One revision within the agreed brief",
     "Direct communication throughout project"
   ];
 
@@ -107,15 +75,23 @@ export default function KitPage() {
             AI & Tech Content Creator
           </p>
           <p className="text-xs text-gray-500 uppercase tracking-widest">
-            Collaboration Rate Card
+            Brand Partnerships
           </p>
-          <a
-            href="/Mercy_Thaddeus_Partnerships_2026.pdf"
-            download
-            className="inline-flex items-center justify-center mt-5 rounded-full bg-pink-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-pink-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink-600"
-          >
-            Download media kit
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-5">
+            <a
+              href="mailto:collab@mercythaddeus.xyz?subject=Collaboration%20Inquiry"
+              className="inline-flex items-center justify-center rounded-full bg-pink-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-pink-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink-600"
+            >
+              Discuss a partnership
+            </a>
+            <a
+              href="/Mercy_Thaddeus_Partnerships_2026.pdf"
+              download
+              className="inline-flex items-center justify-center rounded-full border border-pink-600 px-5 py-3 text-sm font-semibold text-pink-600 transition-colors hover:bg-pink-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink-600"
+            >
+              Download media kit
+            </a>
+          </div>
         </motion.div>
 
         {/* Creator Stats */}
@@ -143,7 +119,62 @@ export default function KitPage() {
           </div>
         </motion.div>
 
-        {/* Collaboration Packages */}
+        {/* Previous Brands */}
+        <section className="mb-8 border border-gray-200 rounded-2xl p-6">
+          <h2 className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-4">
+            Brands I&apos;ve Worked With
+          </h2>
+          <ul className="flex flex-wrap gap-2">
+            {brands.map((brand) => (
+              <li key={brand} className="rounded-full bg-pink-50 px-4 py-2 text-sm font-medium text-pink-700">
+                {brand}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Selected Work */}
+        <section className="mb-8">
+          <h2 className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-4">
+            Selected Work
+          </h2>
+          <div className="border border-pink-600 rounded-2xl p-6 mb-4">
+            <p className="text-4xl font-bold text-pink-600">28M</p>
+            <p className="text-sm font-medium text-gray-900 mt-1">Selected public view count</p>
+            <h3 className="font-bold text-gray-900 mt-5">Food-bed AI video guide</h3>
+            <p className="text-xs text-gray-500 mt-1">Posted 4 January 2026</p>
+            <a
+              href="https://www.instagram.com/mercythaddeus_/reel/DTF77lnDR-1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-sm font-semibold text-pink-600 underline underline-offset-4 mt-3"
+            >
+              View the Reel
+            </a>
+            <p className="text-xs text-gray-500 leading-relaxed mt-4">
+              Rounded count shown on the Instagram Reel grid, captured 13 October 2026.
+              Organic/paid and Instagram/Facebook breakdowns are unavailable.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {selectedWork.map((work) => (
+              <div key={work.title} className="border border-gray-200 rounded-2xl p-5">
+                <h3 className="font-bold text-gray-900">{work.title}</h3>
+                <p className="text-sm text-gray-600 mt-2">{work.description}</p>
+                <a
+                  href={work.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-sm font-semibold text-pink-600 underline underline-offset-4 mt-3"
+                >
+                  View the {work.title} Reel
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Partnership Options */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -151,7 +182,7 @@ export default function KitPage() {
           className="mb-8"
         >
           <h2 className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-4">
-            Collaboration Packages
+            Partnership Options
           </h2>
           <div className="space-y-4">
             {packages.map((pkg, index) => (
@@ -161,12 +192,9 @@ export default function KitPage() {
                   index === 0 ? "border-pink-600" : "border-gray-200"
                 }`}
               >
-                <div className="flex justify-between items-start mb-2">
-                  <div>
-                    <h3 className="font-bold text-gray-900">{pkg.name}</h3>
-                    <p className="text-xs text-gray-500">Best for: {pkg.bestFor}</p>
-                  </div>
-                  <span className="text-xl font-bold text-pink-600">{pkg.price}</span>
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                  <h3 className="font-bold text-gray-900">{pkg.name}</h3>
+                  <span className="text-xl font-bold text-pink-600 whitespace-nowrap">{pkg.price}</span>
                 </div>
                 <ul className="mt-4 space-y-2">
                   {pkg.includes.map((item, i) => (
@@ -178,73 +206,19 @@ export default function KitPage() {
                 </ul>
               </div>
             ))}
-          </div>
-        </motion.div>
-
-        {/* A La Carte Services */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mb-8 border border-gray-200 rounded-2xl p-6"
-        >
-          <h2 className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-4">
-            A La Carte Services
-          </h2>
-
-          {/* Content Creation */}
-          <div className="mb-6">
-            <h3 className="text-xs text-gray-500 uppercase tracking-wide mb-3">
-              Content Creation
-            </h3>
-            <div className="space-y-2">
-              {contentServices.map((service) => (
-                <div
-                  key={service.title}
-                  className="flex justify-between items-center py-1"
-                >
-                  <span className="text-gray-700 text-sm">{service.title}</span>
-                  <span className="font-medium text-gray-900 text-sm">{service.price}</span>
-                </div>
-              ))}
+            <div className="border border-gray-200 rounded-2xl p-5">
+              <div className="flex flex-wrap justify-between items-start gap-2">
+                <h3 className="font-bold text-gray-900">Custom</h3>
+                <span className="text-sm font-medium text-pink-600">Quoted separately</span>
+              </div>
+              <p className="text-sm text-gray-700 mt-3">
+                YouTube, TikTok, multi-platform campaigns and ongoing work.
+              </p>
             </div>
           </div>
-
-          {/* Link in Bio */}
-          <div className="mb-6">
-            <h3 className="text-xs text-gray-500 uppercase tracking-wide mb-3">
-              Link in Bio Placement
-            </h3>
-            <div className="space-y-2">
-              {linkInBio.map((item) => (
-                <div
-                  key={item.duration}
-                  className="flex justify-between items-center py-1"
-                >
-                  <span className="text-gray-700 text-sm">{item.duration}</span>
-                  <span className="font-medium text-gray-900 text-sm">{item.price}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Add-Ons */}
-          <div>
-            <h3 className="text-xs text-gray-500 uppercase tracking-wide mb-3">
-              Add-Ons
-            </h3>
-            <div className="space-y-2">
-              {addOns.map((addon) => (
-                <div
-                  key={addon.title}
-                  className="flex justify-between items-center py-1"
-                >
-                  <span className="text-gray-700 text-sm">{addon.title}</span>
-                  <span className="font-medium text-gray-900 text-sm">{addon.price}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <p className="text-sm text-gray-600 leading-relaxed mt-4">
+            Ad rights, reposting, raw footage and exclusivity are quoted separately.
+          </p>
         </motion.div>
 
         {/* What's Included */}
@@ -267,27 +241,28 @@ export default function KitPage() {
           </ul>
         </motion.div>
 
-        {/* Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.45 }}
-          className="mb-8 border border-gray-200 rounded-2xl p-6"
-        >
+        {/* Partnership Terms */}
+        <section className="mb-8 border border-gray-200 rounded-2xl p-6">
           <h2 className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-4">
-            Timeline
+            Partnership Terms
           </h2>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span className="text-gray-700">Standard delivery</span>
-              <span className="text-gray-900 font-medium">5-7 business days</span>
+          <dl className="space-y-4 text-sm">
+            <div>
+              <dt className="font-medium text-gray-900">Payment</dt>
+              <dd className="text-gray-600 mt-1">50% upfront; balance before posting.</dd>
             </div>
-            <div className="flex justify-between">
-              <span className="text-gray-700">Rush delivery</span>
-              <span className="text-gray-900 font-medium">48-72 hours (+$500)</span>
+            <div>
+              <dt className="font-medium text-gray-900">First draft</dt>
+              <dd className="text-gray-600 mt-1">
+                Within 5–7 business days after the brief, access and deposit are received.
+              </dd>
             </div>
-          </div>
-        </motion.div>
+            <div>
+              <dt className="font-medium text-gray-900">Revision</dt>
+              <dd className="text-gray-600 mt-1">One revision within the agreed brief.</dd>
+            </div>
+          </dl>
+        </section>
 
         {/* Contact */}
         <motion.div
@@ -348,7 +323,7 @@ export default function KitPage() {
 
         {/* Footer */}
         <p className="text-center text-xs text-gray-400 mt-6">
-          Rates effective January 2026. All prices in USD.
+          Rates effective October 2026. All prices in USD.
         </p>
       </div>
     </div>
