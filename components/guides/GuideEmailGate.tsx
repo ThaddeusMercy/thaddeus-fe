@@ -142,8 +142,9 @@ export default function GuideEmailGate({
                   You&apos;re in
                 </h2>
                 <p className="mt-2 text-base leading-relaxed text-[#676767]">
-                  Thanks for joining my newsletter. Once a week I&apos;ll send
-                  you one practical AI guide or tool you can use straight away.
+                  Thanks for joining my newsletter. You&apos;ll get every new
+                  guide the day it goes live, plus one practical AI email from
+                  me each week.
                 </p>
                 <p className="mt-3 text-base leading-relaxed text-[#676767]">
                   If you don&apos;t see my emails, check Spam or Promotions
@@ -170,8 +171,9 @@ export default function GuideEmailGate({
                 </h2>
                 <p className="mt-2 text-base leading-relaxed text-[#676767]">
                   Join my newsletter to read the rest. You&apos;ll unlock this
-                  guide and every other guide on the site, and get one
-                  practical AI email from me each week. Unsubscribe any time.
+                  guide and every other guide on the site, get new guides the
+                  day they go live, and one practical AI email from me each
+                  week. Unsubscribe any time.
                 </p>
 
                 <form className="mt-5 space-y-3" onSubmit={submit} noValidate>
