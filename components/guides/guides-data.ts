@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "make-a-short-drama-with-ai",
+    title: "Make your first AI short drama in 7 steps",
+    excerpt:
+      "The exact process behind the AI short dramas pulling millions of views: pick a plot or bring your own story, let AI write it and refine it, cast your characters, break it into short scenes, turn each scene into an image, make them talk with the right video tool for your budget, and cut it on a cliffhanger. Copy-paste prompts for every step.",
+    category: "GUIDE",
+    topic: "creative",
+    tools: ["claude", "chatgpt", "multi-tool"],
+    publishedAt: "2026-10-14",
+    layout: "document",
+    sections: [
+      {
+        heading: "Make your first AI short drama in 7 steps",
+        body: "Seven steps from idea to episode one, with a prompt to copy for each one. Works with Claude or ChatGPT, an image tool and an AI video tool with sound.",
+      },
+    ],
+  },
+  {
     slug: "build-a-game-with-ai",
     title: "Build your first game with AI in 7 steps",
     excerpt:

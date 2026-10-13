@@ -1,0 +1,120 @@
+/* Make a short drama with AI: reuses the study-codes styles, plus the
+   stat cards for the viral dramas and the "what you need" list. */
+.sd-guide .scs-note strong { color: var(--ink); }
+
+.sd-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 22px 0 8px;
+}
+
+.sd-stat {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 18px 22px;
+}
+
+.sd-stat-num {
+  flex: none;
+  width: 150px;
+  color: var(--ink);
+  font-family: var(--font-display), "Archivo", system-ui, sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.sd-stat-num span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sd-stat-body strong {
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.sd-stat-body p {
+  margin: 4px 0 6px;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+.sd-stat-body a {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sd-budget {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 8px;
+}
+
+.sd-tier {
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 16px 18px;
+}
+
+.sd-tier-level {
+  display: block;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sd-tier strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.sd-tier p {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.sd-guide .sd-need {
+  list-style: disc;
+  margin: 0 0 8px;
+  padding-left: 22px;
+}
+
+.sd-guide .sd-need li { margin-bottom: 10px; padding-left: 4px; }
+
+@media (max-width: 640px) {
+  .sd-guide .scs-toc {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: -18px;
+    padding-right: 18px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .sd-guide .scs-toc::-webkit-scrollbar { display: none; }
+  .sd-guide .scs-toc a { white-space: nowrap; flex: none; }
+
+  .sd-stat { gap: 16px; padding: 16px; align-items: flex-start; }
+  .sd-budget { grid-template-columns: 1fr; }
+  .sd-stat-num { width: 104px; font-size: 30px; }
+}
