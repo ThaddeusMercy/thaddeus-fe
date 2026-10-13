@@ -10,7 +10,9 @@ export const GUIDE_UNLOCK_SCRIPT = `try{if(localStorage.getItem(${JSON.stringify
 )})){var s=document.currentScript,g=s&&s.closest(".guide-gate");if(g)g.setAttribute("data-unlocked","")}}catch(e){}`;
 
 /**
- * Kit → Landing pages & forms → Forms → "Website guides" (double opt-in off).
+ * Kit → Landing pages & forms → Forms → "Website guides" (double opt-in on:
+ * Kit still answers "success", but the reader only joins the list once they
+ * click Confirm in the email Kit sends from hello@mercythaddeus.xyz).
  * Readers post to it straight from the browser, exactly like Kit's own
  * embedded forms: Kit allows that cross-origin, but blocks the same request
  * when it comes from our Cloudflare Worker.

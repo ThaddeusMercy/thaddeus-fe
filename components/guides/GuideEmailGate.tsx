@@ -1,9 +1,16 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 
 import { trackEvent } from "@/lib/analytics";
-import { EMAIL_RE, GUIDE_UNLOCK_KEY, KIT_FORM_URL } from "@/lib/guide-gate";
+import {
+  checkEmail,
+  DISPOSABLE_EMAIL_ERROR,
+  NO_MAIL_DOMAIN_ERROR,
+  normaliseEmail,
+  type EmailCheckResult,
+} from "@/lib/email-check";
+import { GUIDE_UNLOCK_KEY, KIT_FORM_URL } from "@/lib/guide-gate";
 import "./guide-gate.css";
 
 type Status = "idle" | "loading" | "error";
@@ -21,12 +28,17 @@ export default function GuideEmailGate({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const [unlocked, setUnlocked] = useState(false);
-  // Signed up this visit: show "You're in" before opening the guide.
+  // Signed up this visit: ask them to confirm by email before opening the guide.
   const [joined, setJoined] = useState(false);
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  // "Did you mean …?" fix, and the address it was offered for. Submitting
+  // that same address again means the reader knows best: let it through.
+  const [suggestion, setSuggestion] = useState<string | null>(null);
+  const [suggestedFor, setSuggestedFor] = useState<string | null>(null);
+  const submitRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     let stored = false;
@@ -46,13 +58,41 @@ export default function GuideEmailGate({
     if (status === "loading") return;
     setStatus("loading");
     setError("");
+    setSuggestion(null);
 
     try {
-      const address = email.trim().toLowerCase();
+      const address = normaliseEmail(email);
       // Bots fill the hidden honeypot: skip Kit for them but act as if it worked.
       if (!company.trim()) {
-        if (!EMAIL_RE.test(address) || address.length > 254) {
-          throw new Error("Enter a valid email address.");
+        // Format, throwaway inbox, typo and "can this domain get mail" check.
+        // It's a helper, never a wall: if it breaks, carry on to Kit.
+        let check: EmailCheckResult = { ok: true };
+        try {
+          check = await checkEmail(address, {
+            skipSuggestion: address === suggestedFor,
+          });
+        } catch {
+          // Fall through with ok: true.
+        }
+        if (!check.ok) {
+          const guide = window.location.pathname;
+          if ("suggestion" in check) {
+            trackEvent("guide_gate_email_check", { guide, result: "typo" });
+            setSuggestedFor(address);
+            setSuggestion(check.suggestion);
+            setStatus("idle");
+            return;
+          }
+          trackEvent("guide_gate_email_check", {
+            guide,
+            result:
+              check.error === DISPOSABLE_EMAIL_ERROR
+                ? "throwaway"
+                : check.error === NO_MAIL_DOMAIN_ERROR
+                  ? "no_mail"
+                  : "invalid",
+          });
+          throw new Error(check.error);
         }
         const res = await fetch(KIT_FORM_URL, {
           method: "POST",
@@ -118,6 +158,18 @@ export default function GuideEmailGate({
     }
   };
 
+  const acceptSuggestion = () => {
+    if (!suggestion) return;
+    trackEvent("guide_gate_email_check", {
+      guide: window.location.pathname,
+      result: "typo_fixed",
+    });
+    setEmail(suggestion);
+    setSuggestion(null);
+    // The fix button disappears, so hand focus to the next step.
+    submitRef.current?.focus();
+  };
+
   return (
     <div
       className="guide-gate"
@@ -139,16 +191,18 @@ export default function GuideEmailGate({
                   id="guide-gate-title"
                   className="text-xl font-semibold leading-snug text-[#1a1a1a] md:text-2xl"
                 >
-                  You&apos;re in
+                  Almost there! <span aria-hidden="true">💌</span>
                 </h2>
-                <p className="mt-2 text-base leading-relaxed text-[#676767]">
-                  Thanks for joining my newsletter. You&apos;ll get every new
-                  guide the day it goes live, plus one practical AI email from
-                  me each week.
+                <p className="mt-2 break-words text-base leading-relaxed text-[#676767]">
+                  I just sent you an email from{" "}
+                  <span className="font-medium text-[#1a1a1a]">
+                    hello@mercythaddeus.xyz
+                  </span>
+                  . Tap the Confirm button in it so you get every new guide
+                  and my weekly AI email.
                 </p>
                 <p className="mt-3 text-base leading-relaxed text-[#676767]">
-                  If you don&apos;t see my emails, check Spam or Promotions
-                  and move them to your inbox.
+                  Can&apos;t find it? Check Spam or Promotions.
                 </p>
                 <button
                   type="button"
@@ -157,7 +211,7 @@ export default function GuideEmailGate({
                 >
                   Read the full guide
                 </button>
-                <p className="mt-3 text-sm text-[#999]">
+                <p className="mt-3 text-base text-[#999]">
                   Every other guide on the site is unlocked too.
                 </p>
               </div>
@@ -180,17 +234,40 @@ export default function GuideEmailGate({
                   <label htmlFor="guide-gate-email" className="sr-only">
                     Email address
                   </label>
-                  <input
-                    id="guide-gate-email"
-                    type="email"
-                    inputMode="email"
-                    autoComplete="email"
-                    required
-                    placeholder="you@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="min-h-12 w-full rounded-full border border-border bg-white px-5 py-3 text-base text-[#1a1a1a] outline-none transition-colors placeholder:text-[#aaa] focus:border-[#1a1a1a]"
-                  />
+                  <div>
+                    <input
+                      id="guide-gate-email"
+                      type="email"
+                      inputMode="email"
+                      autoComplete="email"
+                      required
+                      placeholder="you@example.com"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        setSuggestion(null);
+                      }}
+                      className="min-h-12 w-full rounded-full border border-border bg-white px-5 py-3 text-base text-[#1a1a1a] outline-none transition-colors placeholder:text-[#aaa] focus:border-[#1a1a1a]"
+                    />
+                    {/* Always mounted so screen readers announce the fix. */}
+                    <div aria-live="polite">
+                      {suggestion && (
+                        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl bg-[#f5f5f5] px-4 py-3">
+                          <p className="min-w-0 break-words text-base text-[#1a1a1a]">
+                            Did you mean{" "}
+                            <span className="font-medium">{suggestion}</span>?
+                          </p>
+                          <button
+                            type="button"
+                            onClick={acceptSuggestion}
+                            className="min-h-12 min-w-12 rounded-full border border-[#1a1a1a] bg-white px-5 py-2 text-base font-medium text-[#1a1a1a] transition-colors hover:bg-[#1a1a1a] hover:text-white"
+                          >
+                            Yes, fix it
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                   {/* Honeypot: real readers never see or fill this. */}
                   <input
                     type="text"
@@ -205,6 +282,7 @@ export default function GuideEmailGate({
                     className="absolute -left-[9999px] h-px w-px opacity-0"
                   />
                   <button
+                    ref={submitRef}
                     type="submit"
                     disabled={status === "loading"}
                     className="min-h-12 w-full rounded-full bg-[#1a1a1a] px-4 py-3 text-base font-medium text-white transition-colors hover:bg-[#333] disabled:opacity-60"
@@ -218,7 +296,7 @@ export default function GuideEmailGate({
                   )}
                 </form>
 
-                <p className="mt-3 text-sm text-[#999]">
+                <p className="mt-3 text-base text-[#999]">
                   One email unlocks every guide.
                 </p>
               </>
