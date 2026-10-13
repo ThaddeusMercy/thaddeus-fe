@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 export default function KitPage() {
   const stats = [
-    { label: "Following", value: "191,000+" },
+    { label: "Instagram followers", value: "205K" },
     { label: "Platforms", value: "Instagram, TikTok, Youtube" },
     { label: "Niche", value: "AI Tools & Content Creation" },
     { label: "Audience", value: "Tech-savvy creators, AI enthusiasts, GenAI Creators" }
@@ -109,6 +109,13 @@ export default function KitPage() {
           <p className="text-xs text-gray-500 uppercase tracking-widest">
             Collaboration Rate Card
           </p>
+          <a
+            href="/Mercy_Thaddeus_Partnerships_2026.pdf"
+            download
+            className="inline-flex items-center justify-center mt-5 rounded-full bg-pink-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-pink-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink-600"
+          >
+            Download media kit
+          </a>
         </motion.div>
 
         {/* Creator Stats */}
