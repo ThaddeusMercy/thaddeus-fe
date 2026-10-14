@@ -1,0 +1,176 @@
+/* 7 AI jobs you're probably already qualified for: reuses the study-codes
+   styles, plus background tags, the pay box, places list and search chips. */
+.ajq-guide .scs-note strong { color: var(--ink); }
+
+/* "Find your match" list: keep the number dark and large. */
+.ajq-guide .scs-map-item .scs-map-n {
+  font-size: 18px;
+  color: var(--ink);
+}
+
+.ajq-guide .scs-map-item span { display: block; }
+
+.ajq-guide .scs-map-item .ajq-map-pay {
+  margin-top: 6px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ajq-guide .scs-section h3:first-of-type { margin-top: 22px; }
+
+.ajq-source {
+  margin: -6px 0 16px !important;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.ajq-guide .ajq-source a {
+  color: var(--muted);
+}
+
+.ajq-guide .scs-hero .ajq-source {
+  margin: 10px 0 16px !important;
+}
+
+.ajq-for {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 4px 0 6px;
+}
+
+.ajq-for-label {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ajq-guide .ajq-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ajq-guide .ajq-tags li {
+  margin: 0;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: #fff4c2;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ajq-pay {
+  margin: 4px 0 8px;
+  padding: 14px 18px 4px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid #ffd60a;
+  border-radius: 0 10px 10px 0;
+  background: var(--panel);
+}
+
+.ajq-pay-label {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ajq-guide .ajq-pay p { margin: 0 0 8px; font-size: 15.5px; }
+.ajq-guide .ajq-pay .ajq-source { margin: 0 0 10px !important; }
+
+.ajq-guide .ajq-places {
+  list-style: none;
+  margin: 8px 0 12px;
+  padding: 0;
+}
+
+.ajq-guide .ajq-places li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 15.5px;
+}
+
+.ajq-guide .ajq-places li:first-child { border-top: 1px solid var(--rule); }
+
+.ajq-guide .ajq-places strong { color: var(--ink); }
+
+.ajq-guide .ajq-small {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ajq-guide .ajq-search-label {
+  margin: 18px 0 8px;
+  font-size: 15px;
+  color: var(--body);
+}
+
+.ajq-guide .ajq-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.ajq-guide .ajq-terms li { margin: 0; }
+
+.ajq-guide .ajq-terms a {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--ink);
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12.5px;
+  text-decoration: none;
+}
+
+.ajq-guide .ajq-terms a:hover {
+  border-color: #cfcfd4;
+  color: var(--ink);
+}
+
+.ajq-guide .ajq-related {
+  margin: -6px 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ajq-guide .scs-steps > li p { margin: 0; }
+
+@media (max-width: 640px) {
+  .ajq-guide .scs-toc {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: -18px;
+    padding-right: 18px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .ajq-guide .scs-toc::-webkit-scrollbar { display: none; }
+  .ajq-guide .scs-toc a { white-space: nowrap; flex: none; }
+
+  .ajq-pay { padding: 12px 14px 2px; }
+}

@@ -1,0 +1,114 @@
+/* 7 AI tools every content creator should know: reuses the study-codes
+   styles, plus the free/paid plan boxes, the "new in 2026" card and the
+   official-site link for each tool. */
+.atc-guide .scs-note strong { color: var(--ink); }
+
+.atc-guide .atc-intro {
+  font-size: 16px;
+  margin: 14px 0 0;
+}
+
+.atc-guide .atc-job {
+  margin: -4px 0 18px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.atc-guide .scs-map-item .scs-map-n {
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.atc-plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0 0;
+}
+
+.atc-plan {
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 16px 18px;
+}
+
+.atc-plan-label,
+.atc-new-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.atc-guide .atc-plan ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.atc-guide .atc-plan li {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.atc-guide .atc-plan li:last-child { margin-bottom: 0; }
+
+.atc-new {
+  margin: 12px 0 0;
+  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid #ffd60a;
+  border-radius: 0 12px 12px 0;
+  background: var(--paper);
+}
+
+.atc-guide .atc-new p {
+  margin: 0 0 8px;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.atc-guide .atc-source {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.atc-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin: 18px 0 0;
+}
+
+.atc-guide .atc-site {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.atc-guide .atc-site:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.atc-guide .atc-related {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .atc-plans { grid-template-columns: 1fr; }
+}

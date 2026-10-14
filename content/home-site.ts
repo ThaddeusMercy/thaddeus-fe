@@ -71,20 +71,20 @@ export const homeRecentGuides = {
   all: { label: "See all guides", href: "/guide" },
   items: [
     {
+      title: "7 AI tools every content creator should know",
+      href: "/guide/ai-tools-for-content-creators",
+    },
+    {
+      title: "3 GitHub repos you should save this week",
+      href: "/guide/github-repos-of-the-week-1",
+    },
+    {
+      title: "7 AI jobs you're probably already qualified for",
+      href: "/guide/ai-jobs-youre-already-qualified-for",
+    },
+    {
       title: "How to edit your photos with ChatGPT like a pro",
       href: "/guide/edit-photos-with-chatgpt",
-    },
-    {
-      title: "Make your first AI short drama in 7 steps",
-      href: "/guide/make-a-short-drama-with-ai",
-    },
-    {
-      title: "Build your first game with AI in 7 steps",
-      href: "/guide/build-a-game-with-ai",
-    },
-    {
-      title: "10 ChatGPT prompts that give you hours back every week",
-      href: "/guide/chatgpt-work-prompts",
     },
   ],
 } as const;

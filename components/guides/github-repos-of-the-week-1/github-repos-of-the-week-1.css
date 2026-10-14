@@ -1,0 +1,250 @@
+/* GitHub repos of the week, week 1: reuses the study-codes styles, plus the
+   repo screenshot, the "try this weekend" box, the facts list and the
+   repo link buttons. */
+.grw-guide .scs-note strong { color: var(--ink); }
+
+.grw-guide .scs-hero .scs-lede { margin-bottom: 16px; }
+
+.grw-guide .grw-tagline {
+  margin: -4px 0 4px;
+  font-size: 18px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.grw-guide .grw-slug {
+  margin: 0 0 18px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.grw-shot {
+  margin: 0 0 22px;
+}
+
+.grw-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--soft);
+}
+
+.grw-shot figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.grw-try {
+  margin: 6px 0 20px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: #fff8d6;
+  border: 1px solid #f3e39a;
+}
+
+.grw-try-label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b5a00;
+}
+
+.grw-guide .grw-try p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.grw-facts {
+  margin: 0 0 22px;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.grw-facts > div {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.grw-facts dt {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 3px;
+}
+
+.grw-facts dd {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--body);
+}
+
+.grw-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 4px;
+}
+
+.grw-guide a.grw-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid #cfcfd4;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.grw-guide a.grw-link:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.grw-guide a.grw-link--main {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.grw-guide a.grw-link--main:hover {
+  color: #fff;
+  opacity: 0.9;
+}
+
+.grw-guide .grw-steps {
+  list-style: decimal;
+  margin: 4px 0 20px;
+  padding-left: 22px;
+}
+
+.grw-guide .grw-steps li {
+  margin-bottom: 14px;
+  padding-left: 4px;
+}
+
+.grw-guide .grw-steps strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.grw-guide .grw-steps p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* "4 more worth a look": lighter cards for the extra repos. */
+.grw-mini {
+  margin: 28px 0 0;
+  padding: 26px 0 0;
+  border-top: 1px solid var(--rule);
+}
+
+.grw-mini-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.grw-mini-num {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.grw-guide .grw-mini h3 {
+  margin: 0;
+  font-family: var(--font-display), "Archivo", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.grw-guide .grw-mini .grw-mini-tagline {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.grw-guide .grw-mini .grw-meta {
+  margin: 0 0 16px;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.grw-mini .grw-shot { margin-bottom: 16px; }
+
+.grw-mini .grw-shot img { max-height: 500px; }
+
+.grw-guide .grw-mini p { font-size: 16px; }
+
+.grw-guide .grw-mini .grw-need {
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: var(--body);
+}
+
+.grw-guide .grw-need strong,
+.grw-guide .grw-mini-note strong { color: var(--ink); }
+
+.grw-guide .grw-mini .grw-mini-note {
+  margin: 4px 0 0;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+.grw-mini .grw-links { margin-top: 14px; }
+
+@media (max-width: 640px) {
+  .grw-guide .scs-toc {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: -18px;
+    padding-right: 18px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .grw-guide .scs-toc::-webkit-scrollbar { display: none; }
+  .grw-guide .scs-toc a { white-space: nowrap; flex: none; }
+
+  .grw-facts > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .grw-guide a.grw-link {
+    width: 100%;
+    justify-content: center;
+  }
+}

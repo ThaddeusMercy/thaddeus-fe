@@ -17,6 +17,18 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "ai-tools-for-content-creators": () =>
+    import(
+      "@/components/guides/ai-tools-for-content-creators/AiToolsForCreatorsGuide"
+    ),
+  "github-repos-of-the-week-1": () =>
+    import(
+      "@/components/guides/github-repos-of-the-week-1/GithubReposWeek1Guide"
+    ),
+  "ai-jobs-youre-already-qualified-for": () =>
+    import(
+      "@/components/guides/ai-jobs-youre-already-qualified-for/AiJobsQualifiedGuide"
+    ),
   "edit-photos-with-chatgpt": () =>
     import(
       "@/components/guides/edit-photos-with-chatgpt/EditPhotosWithChatgptGuide"

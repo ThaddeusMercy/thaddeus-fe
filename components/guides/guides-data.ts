@@ -48,6 +48,57 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "ai-tools-for-content-creators",
+    title: "7 AI tools every content creator should know",
+    excerpt:
+      "One AI tool for every part of a creator's job: ChatGPT for ideas and scripts, Nano Banana for thumbnails and covers, Google Flow for video, OpusClip for short clips, ElevenLabs for voiceovers, Canva for carousels and Metricool for scheduling. A prompt to try, what the free plan gives you, US prices and what's new in 2026 for each one.",
+    category: "GUIDE",
+    topic: "creative",
+    tools: ["chatgpt", "gemini", "canva", "multi-tool"],
+    publishedAt: "2026-10-18",
+    layout: "document",
+    sections: [
+      {
+        heading: "7 AI tools every content creator should know",
+        body: "Seven AI tools, one for each part of making content, with a prompt to try, the free plan, US prices and what's new this year.",
+      },
+    ],
+  },
+  {
+    slug: "github-repos-of-the-week-1",
+    title: "3 GitHub repos you should save this week",
+    excerpt:
+      "Week 1 of my Saturday series on GitHub repos worth saving. PhotoCraft is a free, open-source Photoshop alternative, VoiceStudio is a free voice cloning and dubbing studio that runs on your computer, and HyperFrames is HeyGen's free tool that lets Claude Code make MP4 videos. Plus 4 more worth a look: Impeccable, Diagram Design, PPT Master and Anatomy. Screenshots, install steps and links for every one.",
+    category: "GUIDE",
+    topic: "creative",
+    tools: ["claude", "multi-tool"],
+    publishedAt: "2026-10-17",
+    layout: "document",
+    sections: [
+      {
+        heading: "3 GitHub repos you should save this week",
+        body: "This week's top three free, open-source tools from GitHub, plus four more worth a look, with install steps you can follow without coding.",
+      },
+    ],
+  },
+  {
+    slug: "ai-jobs-youre-already-qualified-for",
+    title: "7 AI jobs you're probably already qualified for",
+    excerpt:
+      "Seven AI jobs that use skills you already have, from writing and teaching to customer service, admin, marketing and project management. For each one: who it suits, what you'd do, US pay with sources, where to find openings, what to learn first and a prompt to make your first portfolio sample.",
+    category: "GUIDE",
+    topic: "career",
+    tools: ["chatgpt", "claude"],
+    publishedAt: "2026-10-16",
+    layout: "document",
+    sections: [
+      {
+        heading: "7 AI jobs you're probably already qualified for",
+        body: "Seven AI roles matched to the work you've already done, with US pay, where to apply and a prompt to build your first sample.",
+      },
+    ],
+  },
+  {
     slug: "edit-photos-with-chatgpt",
     title: "How to edit your photos with ChatGPT like a pro",
     excerpt:
