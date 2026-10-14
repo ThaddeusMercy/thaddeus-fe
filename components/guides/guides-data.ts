@@ -116,6 +116,23 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     ],
   },
   {
+    slug: "chatgpt-photo-commands",
+    title: "26 ChatGPT photo commands",
+    excerpt:
+      "26 short slash commands that turn one selfie into a full photoshoot in ChatGPT: new scenes like /beachsunset and /rooftopbluehour, camera tricks like /fisheye, /droneview and /nighttimeflash, /clones and /photobooth, and two-photo transfers that copy an outfit, pose, background, colour grade or makeup onto you. A before and after for each one, plus the full prompt to paste when ChatGPT misreads a command.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["chatgpt"],
+    publishedAt: "2026-10-14",
+    layout: "document",
+    sections: [
+      {
+        heading: "26 ChatGPT photo commands",
+        body: "Twenty-six slash commands for ChatGPT photos, each with a before and after and a full prompt you can paste instead.",
+      },
+    ],
+  },
+  {
     slug: "make-a-short-drama-with-ai",
     title: "Make your first AI short drama in 7 steps",
     excerpt:
