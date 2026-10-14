@@ -117,9 +117,9 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
   },
   {
     slug: "chatgpt-photo-commands",
-    title: "26 ChatGPT photo commands",
+    title: "26 ChatGPT photo codes",
     excerpt:
-      "26 short slash commands that turn one selfie into a full photoshoot in ChatGPT: new scenes like /beachsunset and /rooftopbluehour, camera tricks like /fisheye, /droneview and /nighttimeflash, /clones and /photobooth, and two-photo transfers that copy an outfit, pose, background, colour grade or makeup onto you. A before and after for each one, plus the full prompt to paste when ChatGPT misreads a command.",
+      "26 short slash codes that turn one selfie into a full photoshoot in ChatGPT: new scenes like /beachsunset and /rooftopbluehour, camera tricks like /fisheye, /droneview and /nighttimeflash, /clones and /photobooth, and two-photo transfers that copy an outfit, pose, background, colour grade or makeup onto you. A before and after for each one, plus the full prompt to paste when ChatGPT misreads a code.",
     category: "PROMPTS",
     topic: "prompts",
     tools: ["chatgpt"],
@@ -127,8 +127,8 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     layout: "document",
     sections: [
       {
-        heading: "26 ChatGPT photo commands",
-        body: "Twenty-six slash commands for ChatGPT photos, each with a before and after and a full prompt you can paste instead.",
+        heading: "26 ChatGPT photo codes",
+        body: "Twenty-six slash codes for ChatGPT photos, each with a before and after and a full prompt you can paste instead.",
       },
     ],
   },

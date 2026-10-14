@@ -71,7 +71,7 @@ export const homeRecentGuides = {
   all: { label: "See all guides", href: "/guide" },
   items: [
     {
-      title: "26 ChatGPT photo commands",
+      title: "26 ChatGPT photo codes",
       href: "/guide/chatgpt-photo-commands",
     },
     {

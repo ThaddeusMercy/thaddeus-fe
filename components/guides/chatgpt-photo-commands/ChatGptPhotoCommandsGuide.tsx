@@ -95,10 +95,10 @@ function CommandCard({ item }: { item: PhotoCommand }) {
     <article className="cpc-card" id={item.id} aria-label={item.code}>
       <p className="cpc-num">{item.num}</p>
       <CopyBlock
-        label="Command"
+        label="Code"
         text={item.code}
         variant="command"
-        track={`Command · ${item.code}`}
+        track={`Code · ${item.code}`}
       />
       <p className="cpc-does">{item.does}</p>
 
@@ -164,11 +164,11 @@ export default function ChatGptPhotoCommandsGuide() {
 
       <header className="cpc-hero">
         <p className="cpc-eyebrow">
-          Prompts guide · ChatGPT Images · {total} commands
+          Prompts guide · ChatGPT Images · {total} codes
         </p>
-        <h1>{total} ChatGPT photo commands</h1>
+        <h1>{total} ChatGPT photo codes</h1>
         <p className="cpc-lede">
-          Turn one selfie into a full photoshoot with one short command.
+          Turn one selfie into a full photoshoot with one short code.
         </p>
         <p>
           New places, new camera angles, three of you in one shot, or someone
@@ -191,14 +191,14 @@ export default function ChatGptPhotoCommandsGuide() {
         <h2>How to use them</h2>
         <ol className="cpc-steps">
           <li>Open ChatGPT and attach a clear photo of yourself.</li>
-          <li>Type one command, like /beachsunset, and send it.</li>
+          <li>Type one code, like /beachsunset, and send it.</li>
           <li>
-            For transfer commands, attach two photos in order. Photo 1 is the
+            For transfer codes, attach two photos in order. Photo 1 is the
             one you copy from. Photo 2 is you.
           </li>
         </ol>
         <p>
-          You can stack commands. These three combos are straight from the
+          You can stack codes. These three combos are straight from the
           videos:
         </p>
         <div className="cpc-combos">
@@ -210,11 +210,11 @@ export default function ChatGptPhotoCommandsGuide() {
           <p>
             <strong>A quick, honest note.</strong>{" "}
             They&apos;re shorthand prompts, not built-in ChatGPT features.
-            ChatGPT reads the command as a short instruction, so results vary
+            ChatGPT reads the code as a short instruction, so results vary
             from photo to photo.
           </p>
           <p>
-            If it misreads one, paste the full prompt under the command
+            If it misreads one, paste the full prompt under the code
             instead. If your face changes, reply &ldquo;keep my face exactly
             the same as my photo&rdquo; and it will try again.
           </p>
@@ -237,15 +237,15 @@ export default function ChatGptPhotoCommandsGuide() {
       })}
 
       <section className="cpc-section" id="all">
-        <h2>Copy all {total} commands</h2>
+        <h2>Copy all {total} codes</h2>
         <p>
           Save these in your notes so the next photoshoot is one paste away.
         </p>
-        <CopyBlock label={`All ${total} photo commands`} text={ALL_COMMANDS} />
+        <CopyBlock label={`All ${total} photo codes`} text={ALL_COMMANDS} />
       </section>
 
       <section className="cpc-section" id="attention-hq">
-        <h2>Want to go further than commands?</h2>
+        <h2>Want to go further than codes?</h2>
         <div className="cpc-cta-box">
           <p>
             <strong>Join Attention HQ.</strong> It&apos;s where AI University
@@ -253,7 +253,7 @@ export default function ChatGptPhotoCommandsGuide() {
             click-by-click lessons and a community building alongside you.
           </p>
           <p>
-            You go from photo commands in ChatGPT to creating AI videos,
+            You go from photo codes in ChatGPT to creating AI videos,
             building websites and automating your work. Every program is
             practical, and every one ends with something you&apos;ve made.
           </p>
