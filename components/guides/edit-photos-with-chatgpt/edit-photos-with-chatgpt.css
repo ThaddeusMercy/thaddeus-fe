@@ -1,0 +1,58 @@
+/* Edit your photos with ChatGPT: reuses the study-codes styles, plus the
+   before/after pair for each prompt and the numbered how-to list. */
+.ep-guide .scs-note strong { color: var(--ink); }
+
+.ep-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+
+.ep-shot {
+  position: relative;
+  margin: 0;
+}
+
+.ep-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--soft);
+}
+
+.ep-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(17, 17, 17, 0.82);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ep-tag--after {
+  background: #ffd60a;
+  color: #111;
+}
+
+.ep-guide .ep-steps {
+  list-style: decimal;
+  margin: 0 0 8px;
+  padding-left: 22px;
+}
+
+.ep-guide .ep-steps li { margin-bottom: 10px; padding-left: 4px; }
+
+@media (max-width: 640px) {
+  .ep-pair { gap: 8px; }
+  .ep-tag { top: 8px; left: 8px; font-size: 11px; padding: 3px 8px; }
+}

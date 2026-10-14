@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "edit-photos-with-chatgpt",
+    title: "How to edit your photos with ChatGPT like a pro",
+    excerpt:
+      "10 copy-and-paste ChatGPT prompts that take any picture from a 10 to a 100: blurry to HD, fix bad lighting, natural skin retouch, DSLR portrait mode, golden hour, a professional headshot, the G7X and iPhone blurry effects, change your location and restore an old photo. Real before and after for every prompt.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["chatgpt"],
+    publishedAt: "2026-10-15",
+    layout: "document",
+    sections: [
+      {
+        heading: "How to edit your photos with ChatGPT like a pro",
+        body: "Ten photo editing prompts for ChatGPT, each with a real before and after. Works on the free plan.",
+      },
+    ],
+  },
+  {
     slug: "make-a-short-drama-with-ai",
     title: "Make your first AI short drama in 7 steps",
     excerpt:
