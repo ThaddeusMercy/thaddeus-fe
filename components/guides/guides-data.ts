@@ -51,24 +51,24 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     slug: "ai-tools-for-content-creators",
     title: "7 AI tools every content creator should know",
     excerpt:
-      "One AI tool for every part of a creator's job: ChatGPT for ideas and scripts, Nano Banana for thumbnails and covers, Google Flow for video, OpusClip for short clips, ElevenLabs for voiceovers, Canva for carousels and Metricool for scheduling. A prompt to try, what the free plan gives you, US prices and what's new in 2026 for each one.",
+      "One AI tool for every part of a creator's job: ChatGPT for ideas and hooks, Claude for scripts and captions in your voice, Canva for carousels and covers, CapCut for editing and auto captions, Higgsfield for AI video, ManyChat for comment-to-DM and Metricool for scheduling. A screenshot, something to try, the free plan and the cheapest US price for each one.",
     category: "GUIDE",
     topic: "creative",
-    tools: ["chatgpt", "gemini", "canva", "multi-tool"],
+    tools: ["chatgpt", "claude", "canva", "multi-tool"],
     publishedAt: "2026-10-18",
     layout: "document",
     sections: [
       {
         heading: "7 AI tools every content creator should know",
-        body: "Seven AI tools, one for each part of making content, with a prompt to try, the free plan, US prices and what's new this year.",
+        body: "Seven AI tools, one for each part of making content, with a screenshot, something to try, the free plan and the cheapest US price for each.",
       },
     ],
   },
   {
     slug: "github-repos-of-the-week-1",
-    title: "3 GitHub repos you should save this week",
+    title: "5 GitHub repos you should save this week",
     excerpt:
-      "Week 1 of my Saturday series on GitHub repos worth saving. PhotoCraft is a free, open-source Photoshop alternative, VoiceStudio is a free voice cloning and dubbing studio that runs on your computer, and HyperFrames is HeyGen's free tool that lets Claude Code make MP4 videos. Plus 4 more worth a look: Impeccable, Diagram Design, PPT Master and Anatomy. Screenshots, install steps and links for every one.",
+      "Week 1 of my Saturday series on GitHub repos worth saving. PhotoCraft is a free, open-source Photoshop alternative, VoiceStudio is a free voice cloning and dubbing studio that runs on your computer, HyperFrames is HeyGen's free tool that lets Claude Code make MP4 videos, Impeccable stops AI-built websites looking AI-made, and Diagram Design draws clean diagrams from a plain-English request. Plus 2 more worth a look: PPT Master and Anatomy. Screenshots, install steps and links for every one.",
     category: "GUIDE",
     topic: "creative",
     tools: ["claude", "multi-tool"],
@@ -76,8 +76,8 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     layout: "document",
     sections: [
       {
-        heading: "3 GitHub repos you should save this week",
-        body: "This week's top three free, open-source tools from GitHub, plus four more worth a look, with install steps you can follow without coding.",
+        heading: "5 GitHub repos you should save this week",
+        body: "This week's top five free, open-source tools from GitHub, plus two more worth a look, with install steps you can follow without coding.",
       },
     ],
   },

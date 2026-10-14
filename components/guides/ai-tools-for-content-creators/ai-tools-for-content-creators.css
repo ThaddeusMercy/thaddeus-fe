@@ -1,6 +1,6 @@
 /* 7 AI tools every content creator should know: reuses the study-codes
-   styles, plus the free/paid plan boxes, the "new in 2026" card and the
-   official-site link for each tool. */
+   styles, plus the tool screenshot, the free/paid plan boxes, the "worth
+   knowing" card and the official-site link for each tool. */
 .atc-guide .scs-note strong { color: var(--ink); }
 
 .atc-guide .atc-intro {
@@ -13,6 +13,28 @@
   color: var(--muted);
   font-size: 15px;
   font-weight: 600;
+}
+
+.atc-shot {
+  margin: 0 0 22px;
+}
+
+.atc-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--soft);
+}
+
+.atc-shot figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
 .atc-guide .scs-map-item .scs-map-n {
@@ -59,6 +81,12 @@
 }
 
 .atc-guide .atc-plan li:last-child { margin-bottom: 0; }
+
+.atc-guide .atc-checked {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
 
 .atc-new {
   margin: 12px 0 0;

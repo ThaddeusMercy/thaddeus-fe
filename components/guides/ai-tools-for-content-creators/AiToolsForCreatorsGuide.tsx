@@ -9,9 +9,11 @@ import {
   ALL_PROMPTS,
   CHECKED_ON,
   CREATOR_TOOLS,
+  PRICES_NOTE,
   UNIVERSITY_URL,
   WHERE_NEXT,
   type CreatorTool,
+  type ToolImage,
 } from "./data";
 import "../chatgpt-study-codes/chatgpt-study-codes.css";
 import "./ai-tools-for-content-creators.css";
@@ -61,6 +63,22 @@ function CopyBlock({ label, text }: { label: string; text: string }) {
   );
 }
 
+function Shot({ image }: { image: ToolImage }) {
+  return (
+    <figure className="atc-shot">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        loading="lazy"
+      />
+      <figcaption>{image.caption}</figcaption>
+    </figure>
+  );
+}
+
 function ToolCard({ tool }: { tool: CreatorTool }) {
   return (
     <section className="scs-section atc-tool" id={tool.id}>
@@ -69,14 +87,24 @@ function ToolCard({ tool }: { tool: CreatorTool }) {
         <h2 className="scs-shortcut-title">{tool.name}</h2>
       </div>
       <p className="atc-job">{tool.job}</p>
+      <Shot image={tool.image} />
       {tool.what.map((para) => (
         <p key={para}>{para}</p>
       ))}
 
       <p className="scs-try">Try this</p>
       <p>{tool.tryIntro}</p>
+      {tool.steps?.length ? (
+        <ol className="scs-steps">
+          {tool.steps.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
+      ) : null}
       {tool.promptIntro ? <p>{tool.promptIntro}</p> : null}
-      <CopyBlock label={tool.promptLabel} text={tool.prompt} />
+      {tool.prompt ? (
+        <CopyBlock label={tool.promptLabel ?? "Prompt"} text={tool.prompt} />
+      ) : null}
       {tool.tip ? (
         <div className="scs-note">
           <p>
@@ -95,7 +123,7 @@ function ToolCard({ tool }: { tool: CreatorTool }) {
           </ul>
         </div>
         <div className="atc-plan">
-          <span className="atc-plan-label">Paid plans (US prices)</span>
+          <span className="atc-plan-label">Cheapest paid plan</span>
           <ul>
             {tool.paid.map((item) => (
               <li key={item}>{item}</li>
@@ -103,6 +131,7 @@ function ToolCard({ tool }: { tool: CreatorTool }) {
           </ul>
         </div>
       </div>
+      <p className="atc-checked">{PRICES_NOTE}</p>
 
       <div className="atc-new">
         <span className="atc-new-label">{tool.newLabel}</span>
@@ -154,14 +183,14 @@ export default function AiToolsForCreatorsGuide() {
         <p className="scs-eyebrow">Creators · AI tools · 7 tools</p>
         <h1>7 AI tools every content creator should know</h1>
         <p className="scs-lede">
-          One tool for each part of the job: ideas and scripts, images and
-          thumbnails, video, clips, voice, design and scheduling. Most of them
-          have a free plan, and you don&apos;t need all seven on day one.
+          One tool for each part of the job: ideas, writing in your voice,
+          design, video editing, AI video, DMs and scheduling. Every one has a
+          free plan, and you don&apos;t need all seven on day one.
         </p>
         <p className="atc-intro">
-          For each tool you get the job it does, a prompt to try today, what
-          the free plan gives you, what the paid plans cost and what&apos;s new
-          this year.
+          For each tool you get what it does, a screenshot of it in action,
+          something to try today, what the free plan gives you, the cheapest
+          paid plan and one thing worth knowing.
         </p>
         <p className="atc-intro">
           Prices on this page are US prices, checked on {CHECKED_ON}. Some
@@ -176,7 +205,7 @@ export default function AiToolsForCreatorsGuide() {
             </a>
           ))}
           <a href="#start">Where to start</a>
-          <a href="#all">Copy all</a>
+          <a href="#all">Copy the prompts</a>
         </nav>
       </header>
 
@@ -203,9 +232,9 @@ export default function AiToolsForCreatorsGuide() {
       <section className="scs-section" id="start">
         <h2>Where to start</h2>
         <p>
-          If you only pick two, start with ChatGPT for your ideas and scripts,
-          plus one visual tool. Pick Nano Banana for images and thumbnails,
-          Canva for carousels and posts, or Google Flow if you make video.
+          If you only pick two, start with ChatGPT or Claude for your ideas
+          and scripts, plus Canva or CapCut to make the post. All four have
+          free plans.
         </p>
         <p>Then add the rest as your content grows:</p>
         <ul className="scs-check">
@@ -215,20 +244,21 @@ export default function AiToolsForCreatorsGuide() {
         </ul>
         <div className="scs-note">
           <p>
-            <strong>Save money:</strong> Nano Banana 2.1 and the extra Flow
-            credits both come with Google AI Plus, so one Google plan covers
-            two tools on this list.
+            <strong>Save money:</strong> every tool on this list has a free
+            plan, so start there and only pay when a limit starts slowing you
+            down. If you already pay for Canva Pro, try its social scheduling
+            before you add Metricool.
           </p>
         </div>
       </section>
 
       <section className="scs-section" id="all">
-        <h2>Copy all 7 prompts</h2>
+        <h2>Copy every prompt in one go</h2>
         <p>
           Save these in your notes, so the next time you sit down to make
-          content, every tool is one paste away.
+          content, every prompt and the ManyChat DM are one paste away.
         </p>
-        <CopyBlock label="All 7 creator tool prompts" text={ALL_PROMPTS} />
+        <CopyBlock label="Every prompt from this guide" text={ALL_PROMPTS} />
       </section>
 
       <section className="scs-section" id="attention-hq">

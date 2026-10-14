@@ -213,7 +213,7 @@ export default function GithubReposWeek1Guide() {
 
       <header className="scs-hero">
         <p className="scs-eyebrow">GitHub repos of the week · Week 1</p>
-        <h1>3 GitHub repos you should save this week</h1>
+        <h1>5 GitHub repos you should save this week</h1>
         <p className="scs-lede">
           Welcome to week 1 of my new Saturday series. Every Saturday I share
           the GitHub repos worth saving, picked for people who don&apos;t code.
@@ -230,10 +230,12 @@ export default function GithubReposWeek1Guide() {
           have a new tool running on your computer the same afternoon.
         </p>
         <p>
-          This week&apos;s top three: a free Photoshop alternative, a free voice
-          studio that runs on your computer, and a tool that lets Claude Code
-          make videos. After those, I&apos;ve added four more worth a look if
-          you want extra to try this weekend.
+          This week&apos;s top five: a free Photoshop alternative, a free voice
+          studio that runs on your computer, a tool that lets Claude Code make
+          videos, an add-on that stops AI-built websites looking AI-made, and
+          a skill that draws clean diagrams from a plain-English request.
+          After those, I&apos;ve added two more worth a look if you want extra
+          to try this weekend.
         </p>
         <nav className="scs-toc" aria-label="Repos">
           <a href="#how">How to use a repo</a>
@@ -242,7 +244,7 @@ export default function GithubReposWeek1Guide() {
               {repo.num} {repo.name}
             </a>
           ))}
-          <a href="#more">4 more</a>
+          <a href="#more">2 more</a>
           <a href="#all">All links</a>
         </nav>
       </header>
@@ -282,9 +284,9 @@ export default function GithubReposWeek1Guide() {
       ))}
 
       <section className="scs-section grw-more" id="more">
-        <h2>4 more worth a look this week</h2>
+        <h2>2 more worth a look this week</h2>
         <p>
-          These didn&apos;t make the top three, but each one is worth saving if
+          These didn&apos;t make the top five, but each one is worth saving if
           it fits what you make. Shorter notes here, with the install steps and
           links so you can try any of them.
         </p>
@@ -296,7 +298,7 @@ export default function GithubReposWeek1Guide() {
       <section className="scs-section" id="all">
         <h2>Copy this week&apos;s links</h2>
         <p>
-          Save these in your notes, the top three first and then the four
+          Save these in your notes, the top five first and then the two
           extras, so they&apos;re one paste away when you sit down to try them.
           New repos every Saturday.
         </p>

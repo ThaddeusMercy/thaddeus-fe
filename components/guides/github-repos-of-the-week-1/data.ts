@@ -19,7 +19,7 @@ export type RepoImage = {
   caption: string;
 };
 
-/** One of this week's top three, with the full write-up. */
+/** One of this week's top five, with the full write-up. */
 export type Repo = {
   id: string;
   num: string;
@@ -199,9 +199,6 @@ claude plugin install hyperframes@hyperframes`,
       },
     ],
   },
-];
-
-export const MORE_REPOS: MoreRepo[] = [
   {
     id: "impeccable",
     num: "04",
@@ -209,11 +206,18 @@ export const MORE_REPOS: MoreRepo[] = [
     slug: "pbakaus/impeccable",
     url: "https://github.com/pbakaus/impeccable",
     tagline: "Stop your AI-built website from looking AI-made",
-    summary:
-      "A design add-on for your AI coding tool. It teaches the AI to skip the giveaways of an AI-made site, like the same Inter font everywhere, purple-to-blue gradients and cards stacked inside cards. Then you use commands like /impeccable polish, critique and bolder to ask for the design pass you want.",
-    need: "Node.js for the installer, plus Claude Code, Cursor, Gemini CLI or Codex.",
-    free: "Free, Apache-2.0",
+    what: [
+      "Impeccable is a design add-on for your AI coding tool. Ask an AI to build a website and you often get the same giveaways: the Inter font everywhere, purple-to-blue gradients and cards stacked inside cards. Impeccable teaches the AI to skip them.",
+      "Then you ask for the design pass you want with simple commands like /impeccable polish, critique, bolder or quieter. There are 24 commands in all, including an audit that checks things like accessibility and how your page works on phones.",
+    ],
+    tryThis:
+      "Open a website you built with AI, run /impeccable polish on it and compare the before and after. If it still feels flat, try /impeccable bolder.",
+    need: "A little terminal setup. You need Node.js for the installer, plus an AI coding tool like Claude Code, Cursor, Gemini CLI or Codex.",
+    free: "Free and open source. Apache-2.0 licence.",
+    worksWith:
+      "Claude Code, Cursor, Gemini CLI, Codex, GitHub Copilot in VS Code and other AI coding tools.",
     stars: "80.8k",
+    buzz: "#8 on GitHub's weekly Trending list for JavaScript on Oct 14, with 3,216 new stars that week.",
     image: {
       src: `${IMG}/4-impeccable.webp`,
       width: 1440,
@@ -244,11 +248,18 @@ export const MORE_REPOS: MoreRepo[] = [
     slug: "cathrynlavery/diagram-design",
     url: "https://github.com/cathrynlavery/diagram-design",
     tagline: "Clean, designer-quality diagrams from a plain-English request",
-    summary:
-      "A skill for your AI coding tool. Ask in plain words for a flowchart, timeline, org chart or any of its 45 diagram types and it draws a clean one. Point it at your website once and every diagram after that matches your brand colours and fonts.",
-    need: "Claude Code, Codex, Cursor, GitHub Copilot or Gemini CLI.",
-    free: "Free, MIT",
+    what: [
+      "Diagram Design is a skill for your AI coding tool. Ask in plain words for a flowchart, timeline, org chart or any of its 45 diagram types, and it draws a clean one as a single file you can open in your browser.",
+      "Point it at your website once and every diagram after that matches your brand colours and fonts. You can export each one as a PNG or SVG, ready for your slides, carousels or docs.",
+    ],
+    tryThis:
+      "Onboard it to your website, then ask for a flowchart of how you take on a new client. Drop the PNG into your next carousel or slide deck.",
+    need: "No coding. You need an AI coding tool like Claude Code, Codex, Cursor, GitHub Copilot or Gemini CLI.",
+    free: "Free and open source. MIT licence.",
+    worksWith:
+      "Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI and other tools that read Agent Skills.",
     stars: "54.2k",
+    buzz: "#5 on GitHub's daily Trending list on Oct 14, with 1,815 new stars that day and 9,867 that week.",
     image: {
       src: `${IMG}/5-diagram-design.webp`,
       width: 1600,
@@ -280,6 +291,9 @@ Make me a flowchart of how I onboard a new client: [list your steps]`,
     caveat:
       "PNG export needs a one-time extra install (Playwright). Your AI tool can set it up the first time you ask for a PNG.",
   },
+];
+
+export const MORE_REPOS: MoreRepo[] = [
   {
     id: "ppt-master",
     num: "06",
@@ -360,9 +374,9 @@ pip install -r requirements.txt`,
 ];
 
 export const ALL_LINKS = [
-  "This week's top 3",
+  "This week's top 5",
   ...REPOS.map((repo) => `${repo.name}: ${repo.url}`),
   "",
-  "4 more worth a look",
+  "2 more worth a look",
   ...MORE_REPOS.map((repo) => `${repo.name}: ${repo.url}`),
 ].join("\n");

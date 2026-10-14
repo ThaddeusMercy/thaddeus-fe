@@ -75,7 +75,7 @@ export const homeRecentGuides = {
       href: "/guide/ai-tools-for-content-creators",
     },
     {
-      title: "3 GitHub repos you should save this week",
+      title: "5 GitHub repos you should save this week",
       href: "/guide/github-repos-of-the-week-1",
     },
     {
