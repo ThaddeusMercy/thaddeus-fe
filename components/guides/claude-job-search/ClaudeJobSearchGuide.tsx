@@ -87,7 +87,7 @@ export default function ClaudeJobSearchGuide() {
 
       <section id="before" className="scs-section"><span className="scs-num">01 / BEFORE YOU START</span><h2>Get the right version of Claude.</h2>
 <p><a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">AI Job Search</a> is an open-source project by Mads Lorentzen, built around <strong>Claude Code</strong>. It includes the instructions, commands and templates for a repeatable job-search workflow.</p>
-<div className="scs-note"><p><strong>The repo is free. Claude Code access can cost money.</strong> Use an eligible Claude subscription or API billing. This guide follows the terminal setup; pasting the repo link into an ordinary Claude chat does not install the local workflow.</p>
+<div className="scs-note"><p>This guide follows the terminal setup; pasting the repo link into an ordinary Claude chat does not install the local workflow.</p>
 </div>
 <p className="js-sources">Sources: <a href="https://github.com/MadsLorentzen/ai-job-search#readme">Project README</a> · <a href="https://code.claude.com/docs/en/quickstart">Claude Code quickstart</a></p>
 <div className="js-requirements"><div className="js-requirement"><strong>A computer + Claude Code</strong><p>Use the <a href="https://code.claude.com/docs/en/quickstart">official installation guide</a> for Mac, Windows or Linux, then sign in.</p>
