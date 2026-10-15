@@ -48,6 +48,20 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "claude-job-search",
+    title: "Run your job search with Claude",
+    excerpt: "Set up the free AI Job Search project in Claude Code, find suitable roles, tailor your CV and cover letter, and practise role-specific interview questions. Includes the repo, setup steps and copyable prompts.",
+    category: "GUIDE",
+    topic: "career",
+    tools: ["claude"],
+    publishedAt: "2026-10-15",
+    layout: "document",
+    sections: [{
+      heading: "Run your job search with Claude",
+      body: "The GitHub repo, setup steps and prompts for finding jobs, tailoring applications and practising interviews with Claude Code.",
+    }],
+  },
+  {
     slug: "ai-tools-for-content-creators",
     title: "7 AI tools every content creator should know",
     excerpt:

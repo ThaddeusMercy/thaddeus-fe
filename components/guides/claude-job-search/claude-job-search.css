@@ -1,0 +1,33 @@
+/* Use the same monochrome document system as the other guides. */
+.js-guide .scs-num { display: block; }
+.js-guide .scs-section { scroll-margin-top: 90px; }
+.js-guide .scs-block pre { overflow-wrap: anywhere; white-space: pre-wrap; }
+.js-guide .scs-block-head { gap: 12px; }
+.js-guide .scs-copy { flex-shrink: 0; }
+.js-guide .scs-copy.scs-done { background: var(--ink); }
+.js-guide .js-sources, .js-guide .js-small { font-size: 12px; color: var(--muted); }
+.js-guide .js-sources { margin-top: 18px; }
+.js-guide .js-requirements { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 26px; margin: 24px 0; }
+.js-guide .js-requirement { border-top: 1px solid var(--rule); padding-top: 14px; font-size: 14px; }
+.js-guide .js-requirement strong { display: block; color: var(--ink); margin-bottom: 6px; }
+.js-guide .scs-note { margin-bottom: 20px; }
+.js-guide details { border: 1px solid var(--rule); border-radius: 8px; margin: 14px 0; }
+.js-guide summary { padding: 16px; cursor: pointer; font-weight: 600; font-size: 15px; color: var(--ink); }
+.js-guide details > div { padding: 0 16px 16px; font-size: 15px; }
+.js-guide details p:last-child { margin-bottom: 0; }
+.js-guide .js-review { list-style: none; padding: 0; }
+.js-guide .js-review li { border-bottom: 1px solid var(--rule); margin: 0; padding: 13px 0; }
+.js-guide .js-review label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 15px; }
+.js-guide .js-review input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 4px; accent-color: var(--ink); }
+.js-guide .js-table-wrap { overflow-x: auto; }
+.js-guide table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.js-guide th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.js-guide th, .js-guide td { padding: 14px 14px 14px 0; border-bottom: 1px solid var(--rule); }
+.js-guide td:first-child { white-space: nowrap; }
+.js-guide .js-credit { margin-top: 36px; }
+.js-guide :is(a, button, input, summary):focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+@media (max-width: 640px) {
+  .js-guide .js-requirements { grid-template-columns: 1fr; gap: 12px; }
+  .js-guide .scs-toc { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
+  .js-guide .scs-toc a { white-space: nowrap; flex: none; }
+}
