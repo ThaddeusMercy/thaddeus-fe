@@ -1,0 +1,20 @@
+/* Fallback until the guide measures the intro. The component then sets
+   --guide-gate-preview so the signup box sits just after the list. */
+.guide-gate:has(.acp-guide) {
+  --guide-gate-preview: 1960px;
+}
+
+@media (min-width: 768px) {
+  .guide-gate:has(.acp-guide) {
+    --guide-gate-preview: 1300px;
+  }
+}
+
+.acp-guide .scs-hero .scs-check {
+  margin-bottom: 0;
+}
+
+.acp-guide .scs-steps > li strong {
+  display: inline;
+  margin-bottom: 0;
+}

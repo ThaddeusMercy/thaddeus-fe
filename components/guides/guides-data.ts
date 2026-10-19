@@ -48,6 +48,23 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "ai-council-prompt",
+    title: "The AI Council Prompt: Get AI to Stop Agreeing With You",
+    excerpt:
+      "AI agrees with you 49% more than people do. This free prompt turns ChatGPT or Claude into a council of 5 advisers that challenge your big decisions.",
+    category: "PROMPTS",
+    topic: "prompts",
+    tools: ["chatgpt", "claude", "gemini"],
+    publishedAt: "2026-10-19",
+    layout: "document",
+    sections: [
+      {
+        heading: "The AI Council prompt: make AI stop agreeing with you",
+        body: "One prompt that turns ChatGPT, Claude or Gemini into a council of five advisers. They review each other, then a chairman gives you one decision.",
+      },
+    ],
+  },
+  {
     slug: "claude-job-search",
     title: "Run your job search with Claude",
     excerpt: "Set up the free AI Job Search project in Claude Code, find suitable roles, tailor your CV and cover letter, and practise role-specific interview questions. Includes the repo, setup steps and copyable prompts.",
