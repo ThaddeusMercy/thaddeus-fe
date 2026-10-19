@@ -19,6 +19,8 @@ const GUIDE_LOADERS: Record<
 > = {
   "ai-council-prompt": () =>
     import("@/components/guides/ai-council-prompt/AiCouncilPromptGuide"),
+  "four-ai-systems": () =>
+    import("@/components/guides/four-ai-systems/FourAiSystemsGuide"),
   "claude-job-search": () =>
     import("@/components/guides/claude-job-search/ClaudeJobSearchGuide"),
   "chatgpt-photo-commands": () =>

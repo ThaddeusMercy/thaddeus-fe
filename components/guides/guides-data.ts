@@ -48,6 +48,20 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "four-ai-systems",
+    title: "The 4 AI systems you can build in one weekend",
+    excerpt: "Build an AI second brain, an always-on agent, an executive assistant and a marketing and content agent. What each one does, which tools to use, a weekend plan and copyable prompts.",
+    category: "GUIDE",
+    topic: "ai-agents",
+    tools: ["multi-tool"],
+    publishedAt: "2026-10-19",
+    layout: "document",
+    sections: [{
+      heading: "The 4 AI systems you can build in one weekend",
+      body: "A weekend plan, the tools for each system and copyable prompts for your second brain, always-on agent, chief of staff and marketing agent.",
+    }],
+  },
+  {
     slug: "ai-council-prompt",
     title: "The AI Council Prompt: Get AI to Stop Agreeing With You",
     excerpt:
