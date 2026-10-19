@@ -161,7 +161,7 @@ export default function GuidesIndex() {
           </p>
           <p className="max-w-2xl leading-relaxed">
             Setup playbooks, prompts, workflows, and career notes, the same
-            material I use persoanlly and in corporate trainings, free to read
+            material I use personally and in corporate trainings, free to read
             and steal.
           </p>
         </header>
