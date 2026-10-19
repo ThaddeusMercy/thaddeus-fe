@@ -9,6 +9,7 @@ import type {
   PromptVaultCollection,
   PromptVaultEntry,
 } from "@/components/blog/prompt-vault-data";
+import GuideCapture from "@/components/guides/GuideCapture";
 import { trackEvent } from "@/lib/analytics";
 
 type PromptVaultCollectionViewProps = {
@@ -181,6 +182,8 @@ export default function PromptVaultCollectionView({
           ))}
         </div>
       ) : null}
+
+      {analyticsPlacement === "guide_route" ? <GuideCapture /> : null}
     </motion.article>
   );
 }

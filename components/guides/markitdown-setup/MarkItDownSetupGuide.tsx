@@ -318,11 +318,11 @@ export default function MarkItDownSetupGuide() {
               <strong>Claude Desktop download</strong> —{" "}
               <a
                 className="md-link"
-                href="https://claude.ai/download"
+                href="https://claude.com/download"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                claude.ai/download
+                claude.com/download
               </a>
             </li>
           </ul>

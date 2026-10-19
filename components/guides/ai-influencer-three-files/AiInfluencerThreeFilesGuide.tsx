@@ -248,8 +248,6 @@ export default function AiInfluencerThreeFilesGuide() {
           AI influencer
           <span>/</span>
           three files
-          <span>/</span>
-          updated July 2026
         </p>
         <div className="aif-hero">
           <div>

@@ -1,13 +1,13 @@
 export const FABLE_FIVE_SLUG = "fable-five-prompts";
 
 export const HOW_STEPS = [
-  "Open a fresh project on Fable 5 for each prompt. Use high effort; use xhigh for the audit and build jobs.",
+  "Open a fresh project on the current Fable model for each prompt. Use high effort. Use xhigh for the audit and build jobs.",
   "Give it access to what it needs: files, MCPs, repo, second brain. Don't surface context-budget countdowns if your harness shows them.",
-  "Paste the full prompt and walk away. These are built for long autonomous runs — minutes to hours.",
+  "Paste the full prompt and walk away. These are built for long autonomous runs, from minutes to hours.",
   "Come back to finished deliverables. Save the outputs; they'll keep working on Opus or Sonnet later.",
 ] as const;
 
-const AUTONOMOUS_SCAFFOLD = `Operating mode (Fable 5):
+const AUTONOMOUS_SCAFFOLD = `Operating mode (Fable):
 You are operating autonomously. I am not watching in real time and cannot answer questions mid-task. Do not ask "Want me to…?" or "Shall I…?" — proceed on reversible actions that follow from this request. Pause only for destructive or irreversible actions, a real scope change, or input only I can provide. If you hit one of those, ask and end the turn.
 
 When you have enough information to act, act. Do not re-derive facts already established, re-litigate decisions I've made, or narrate options you won't pursue.
@@ -29,11 +29,11 @@ export const PROMPTS = [
 
 Task: Audit my entire Claude setup so the improvements survive after I drop back to a smaller model.
 
-Context: I'm on Fable 5 through July 12 and want durable assets — rewritten skills, MCP notes, and workflows explicit enough for Sonnet or Haiku to run without Fable covering for weak instructions.
+Context: I'm on the current Fable model and want durable assets: rewritten skills, MCP notes, and workflows explicit enough for Sonnet or Haiku to run without Fable covering for weak instructions.
 
 Step 1 — Inventory (use parallel subagents). Delegate independent areas to subagents and keep working while they run: every custom skill, every connected MCP server and its tools, and every saved workflow or automation. For each item, record what it's supposed to do, what it actually does, and where it's thin, vague, or breakable. Point to evidence (file paths, tool names, config).
 
-Step 2 — Score and triage. Score each item on clarity, reliability, and how well its instructions will hold up on a weaker model. Flag items that only work because a strong model is covering for weak instructions. Also flag skills that are over-prescriptive for Fable 5 — instructions that degrade output when a capable model no longer needs them.
+Step 2 — Score and triage. Score each item on clarity, reliability, and how well its instructions will hold up on a weaker model. Flag items that only work because a strong model is covering for weak instructions. Also flag skills that are over-prescriptive for Fable. Those are instructions that degrade output when a capable model no longer needs them.
 
 Step 3 — Rewrite. For every skill and workflow:
 - Remove redundant or over-prescriptive instructions if default Fable behavior is better without them.

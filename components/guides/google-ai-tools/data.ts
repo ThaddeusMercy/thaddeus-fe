@@ -132,7 +132,7 @@ export const TOOLS: ToolEntry[] = [
       "Turning source material into audio",
     ],
     links: [
-      { label: "Try Gemini Notebook", href: "https://notebooklm.google/" },
+      { label: "Try Gemini Notebook", href: "https://notebook.google.com/" },
     ],
   },
   {
@@ -210,7 +210,7 @@ export const TOOLS: ToolEntry[] = [
     links: [
       {
         label: "Existing users",
-        href: "https://studio.firebase.google.com/",
+        href: "https://firebase.studio/",
       },
       {
         label: "Migration guide",
@@ -292,7 +292,7 @@ export const TOOLS: ToolEntry[] = [
     links: [
       {
         label: "Gemini Code Assist",
-        href: "https://developers.google.com/gemini-code-assist",
+        href: "https://codeassist.google/products/business",
       },
       {
         label: "Consumer access update",

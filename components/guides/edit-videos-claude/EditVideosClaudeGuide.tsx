@@ -266,11 +266,12 @@ export default function EditVideosClaudeGuide() {
           you can make money with the videos you produce.
         </p>
         <p>
-          Once your company hits four or more people you need the Company
-          Licence, which starts at a $100 per month minimum. Full terms are on
-          the Remotion site under licence and pricing, and if you&apos;re unsure
-          which side of the line you fall on they run free 20 minute calls to
-          sort it out.
+          Once your company hits four or more people you need a Company
+          Licence. Remotion for Creators is $25 per seat per month. Remotion
+          for Automators is $0.01 per render, with a $100 per month minimum.
+          Full terms are on the Remotion site under licence and pricing, and if
+          you&apos;re unsure which side of the line you fall on they run free 20
+          minute calls to sort it out.
         </p>
       </section>
 

@@ -1,6 +1,6 @@
 # The tools
 
-Everything below is what the stack looks like as of July 2026. Prices move and models get replaced every few weeks, so check before you commit to anything on an annual plan. The files stay the same regardless of which tool you pick, which is the whole reason the system is files and not a subscription.
+Prices move and models get replaced, so check before you commit to anything on an annual plan. The files stay the same regardless of which tool you pick, which is the whole reason the system is files and not a subscription.
 
 You do not need all of these. The minimum to get started is one image model, one voice tool, and one place to keep the files.
 

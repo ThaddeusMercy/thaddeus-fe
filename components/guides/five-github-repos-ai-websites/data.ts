@@ -54,7 +54,7 @@ export const REPOS: RepoGuide[] = [
     ],
     repoUrl: "https://github.com/pmndrs/react-three-fiber",
     repoLabel: "Get the GitHub repo",
-    secondaryUrl: "https://docs.pmnd.rs/react-three-fiber",
+    secondaryUrl: "https://r3f.docs.pmnd.rs/",
     secondaryLabel: "See the documentation and examples",
     media: {
       kind: "image",
@@ -143,7 +143,7 @@ Check the required tools and accounts first. Show me the scene plan and estimate
     ],
     repoUrl: "https://github.com/paper-design/liquid-logo",
     repoLabel: "Get the GitHub repo",
-    secondaryUrl: "https://liquid.paper.design/",
+    secondaryUrl: "https://app.paper.design/playground/liquid-metal",
     secondaryLabel: "Try it with your logo",
     media: {
       kind: "image",
