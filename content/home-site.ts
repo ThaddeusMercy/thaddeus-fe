@@ -3,7 +3,7 @@ export const homeBanner = {
   emphasis: "the turning point.",
 } as const;
 
-export const UNIVERSITY_URL = "https://academy.attentionfactory.io/ai-university";
+export const UNIVERSITY_URL = "https://university.attentionfactory.io/";
 
 /** Top-of-home launch strip (University launch, Oct 2026). */
 export const homeLaunch = {

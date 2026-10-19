@@ -1,7 +1,7 @@
 export const SLUG = "chatgpt-photo-commands";
 
 export const UNIVERSITY_URL =
-  "https://academy.attentionfactory.io/ai-university?ref=mercythaddeus";
+  "https://university.attentionfactory.io/?ref=mercythaddeus";
 
 const IMG = "/guides/chatgpt-photo-commands";
 
