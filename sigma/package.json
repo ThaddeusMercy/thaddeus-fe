@@ -1,0 +1,27 @@
+{
+  "name": "sigma",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sigma: a self-hosted team of AI teammates for Discord and the web",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "croner": "^10.0.1",
+    "discord.js": "^14.27.0",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

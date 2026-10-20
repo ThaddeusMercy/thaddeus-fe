@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sigma</title>
+<style>
+  :root {
+    --bg: #ffffff; --panel: #f6f6f7; --line: #e6e6e9; --text: #16161a; --muted: #6b6b76;
+    --bubble: #f0f0f2; --mine: #16161a; --mine-text: #fff; --accent: #2f6bff; --warn: #f5a524; --ok: #17c964; --bad: #f31260;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111114; --panel: #18181c; --line: #2a2a30; --text: #ececf1; --muted: #9a9aa6;
+      --bubble: #222228; --mine: #ececf1; --mine-text: #111114; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); }
+  button, input, textarea, select { font: inherit; color: inherit; }
+  button { cursor: pointer; border: 1px solid var(--line); background: var(--bg); border-radius: 10px; padding: 6px 12px; }
+  button.primary { background: var(--mine); color: var(--mine-text); border-color: var(--mine); }
+  input, textarea, select { width: 100%; border: 1px solid var(--line); background: var(--bg); border-radius: 10px; padding: 8px 10px; }
+  textarea { resize: vertical; min-height: 80px; }
+  .app { display: grid; grid-template-columns: 280px 1fr 340px; height: 100vh; }
+  aside, .details { background: var(--panel); border-right: 1px solid var(--line); overflow-y: auto; }
+  .details { border-right: 0; border-left: 1px solid var(--line); padding: 20px; }
+  .chief { text-align: center; padding: 22px 12px 12px; cursor: pointer; }
+  .chief .avatar { width: 64px; height: 64px; font-size: 26px; margin: 0 auto 6px; }
+  .tag { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; }
+  .section { font-size: 12px; color: var(--muted); padding: 16px 16px 6px; display: flex; justify-content: space-between; align-items: center; }
+  .section button { padding: 0 8px; font-size: 16px; line-height: 22px; }
+  .item { display: flex; gap: 10px; align-items: center; padding: 8px 12px; margin: 0 6px; border-radius: 10px; cursor: pointer; }
+  .item:hover, .item.active { background: var(--line); }
+  .item .meta { min-width: 0; flex: 1; }
+  .item .title { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .item .sub { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .avatar { width: 36px; height: 36px; border-radius: 40%; display: grid; place-items: center; color: #fff; font-weight: 700; flex-shrink: 0; background-size: cover; background-position: center; }
+  .stack { display: flex; }
+  .stack .avatar { width: 22px; height: 22px; font-size: 10px; margin-right: -6px; border: 2px solid var(--panel); }
+  main { display: flex; flex-direction: column; min-width: 0; }
+  header { padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; }
+  header h1 { font-size: 16px; margin: 0; flex: 1; }
+  .budget { font-size: 12px; color: var(--muted); }
+  .feed { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+  .msg { max-width: 640px; display: flex; gap: 10px; }
+  .msg .avatar { width: 28px; height: 28px; font-size: 12px; }
+  .msg .who { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+  .msg .body { background: var(--bubble); border-radius: 14px; padding: 10px 14px; white-space: pre-wrap; word-break: break-word; }
+  .msg.human { align-self: flex-end; flex-direction: row-reverse; }
+  .msg.human .body { background: var(--mine); color: var(--mine-text); }
+  .msg.system { align-self: center; max-width: 80%; }
+  .msg.system .body { background: transparent; border: 1px dashed var(--line); color: var(--muted); font-size: 13px; }
+  .typing { color: var(--muted); font-size: 13px; padding: 0 20px 6px; min-height: 20px; }
+  .approval { margin: 0 20px 12px; border: 1px solid var(--warn); border-radius: 14px; padding: 12px 14px; background: color-mix(in srgb, var(--warn) 10%, transparent); }
+  .approval pre { margin: 6px 0; white-space: pre-wrap; font-size: 12px; max-height: 160px; overflow: auto; }
+  .approval .row { display: flex; gap: 8px; }
+  form.composer { display: flex; gap: 8px; padding: 12px 20px 20px; }
+  form.composer textarea { min-height: 44px; height: 44px; }
+  .details h2 { text-align: center; margin: 8px 0 2px; font-size: 18px; }
+  .details .center { text-align: center; color: var(--muted); }
+  .tabs { display: flex; gap: 4px; justify-content: center; margin: 14px 0; flex-wrap: wrap; }
+  .tabs button { border: 0; background: transparent; color: var(--muted); }
+  .tabs button.on { background: var(--line); color: var(--text); }
+  .card { border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; background: var(--bg); white-space: pre-wrap; word-break: break-word; }
+  .card small { color: var(--muted); }
+  .field { margin-bottom: 10px; }
+  .field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips label { border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; font-size: 12px; cursor: pointer; display: flex; gap: 4px; align-items: center; }
+  .chips input { width: auto; }
+  dialog { border: 1px solid var(--line); border-radius: 16px; background: var(--bg); color: var(--text); width: min(560px, 92vw); padding: 20px; }
+  dialog::backdrop { background: rgb(0 0 0 / 40%); }
+  .empty { color: var(--muted); text-align: center; margin: auto; }
+  .login { max-width: 360px; margin: 18vh auto; padding: 0 16px; }
+  @media (max-width: 1000px) { .app { grid-template-columns: 240px 1fr; } .details { display: none; } .details.open { display: block; position: fixed; inset: 0; z-index: 5; } }
+  @media (max-width: 680px) { .app { grid-template-columns: 1fr; } aside { display: none; } aside.open { display: block; position: fixed; inset: 0; z-index: 5; } }
+</style>
+</head>
+<body>
+<div id="login" class="login" hidden>
+  <h2>Sigma</h2>
+  <p class="center" style="color:var(--muted)">Enter the admin token from your .env (SIGMA_ADMIN_TOKEN).</p>
+  <div class="field"><input id="tokenInput" type="password" placeholder="Admin token" /></div>
+  <div class="field"><input id="nameInput" placeholder="Your name (shown to the bots)" /></div>
+  <button class="primary" id="loginBtn">Open</button>
+</div>
+
+<div class="app" id="app" hidden>
+  <aside id="sidebar">
+    <div class="chief" id="chief"></div>
+    <div class="section">Groups <button id="newGroup" title="New group">+</button></div>
+    <div id="groups"></div>
+    <div class="section">Channels</div>
+    <div id="channels"></div>
+    <div class="section">Team <button id="newBot" title="Hire a teammate">+</button></div>
+    <div id="bots"></div>
+  </aside>
+
+  <main>
+    <header>
+      <button id="menuBtn" style="display:none">☰</button>
+      <h1 id="roomTitle">Sigma</h1>
+      <span class="budget" id="budget"></span>
+      <button id="detailsBtn">Details</button>
+    </header>
+    <div class="feed" id="feed"><div class="empty">Pick a teammate or a group.</div></div>
+    <div id="approvals"></div>
+    <div class="typing" id="typing"></div>
+    <form class="composer" id="composer">
+      <textarea id="input" placeholder="Message… tag teammates with @Name, or @everyone"></textarea>
+      <button class="primary">Send</button>
+    </form>
+  </main>
+
+  <section class="details" id="details"></section>
+</div>
+
+<dialog id="groupDialog">
+  <h3 style="margin-top:0">New group</h3>
+  <div class="field"><label>Name</label><input id="groupName" placeholder="Cohort launch posts" /></div>
+  <div class="field"><label>Teammates (up to 6)</label><div class="chips" id="groupBots"></div></div>
+  <div class="field"><label>Kickoff (the outcome, the stages, an @owner per stage)</label><textarea id="groupKickoff"></textarea></div>
+  <div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" data-close>Cancel</button><button class="primary" id="groupCreate">Create</button></div>
+</dialog>
+
+<dialog id="botDialog">
+  <h3 style="margin-top:0" id="botDialogTitle">Hire a teammate</h3>
+  <div class="field"><label>Id</label><input id="botId" placeholder="tiktok" /></div>
+  <div class="field"><label>Name</label><input id="botName" placeholder="Tia" /></div>
+  <div class="field"><label>Role</label><input id="botRole" placeholder="TikTok scripts" /></div>
+  <div class="field"><label>Avatar URL (optional)</label><input id="botAvatar" /></div>
+  <div class="field"><label>Model (blank = team default)</label>
+    <select id="botModel"><option value="">Team default</option><option>claude-opus-5-5</option><option>claude-sonnet-5-5</option><option>claude-haiku-5-5</option><option>claude-fable-5-1</option></select></div>
+  <div class="field"><label>Instructions</label><textarea id="botInstructions" style="min-height:140px" placeholder="Who they are, what they own, how they work, what they must never do."></textarea></div>
+  <div class="field"><label>Tools (pick "all" for a teammate that can do anything)</label><div class="chips" id="botTools"></div></div>
+  <div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" data-close>Cancel</button><button class="primary" id="botSave">Save</button></div>
+</dialog>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const COLORS = ["#22c55e", "#f97316", "#ef4444", "#14b8a6", "#8b5cf6", "#0ea5e9", "#eab308", "#ec4899", "#64748b"];
+let token = localStorage.getItem("sigma.token") || "";
+let me = localStorage.getItem("sigma.name") || "";
+let state = null, current = null, detailTab = "details", detailBot = null, editing = null;
+const typing = new Map();
+
+async function api(path, opts = {}) {
+  const res = await fetch(path, {
+    ...opts,
+    headers: { "content-type": "application/json", authorization: `Bearer ${token}` },
+    body: opts.body ? JSON.stringify({ as: me, ...opts.body }) : undefined,
+  });
+  if (res.status === 401) { showLogin(); throw new Error("unauthorized"); }
+  const data = await res.json();
+  if (!res.ok) { alert(data.error || res.statusText); throw new Error(data.error); }
+  return data;
+}
+
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const bot = (id) => state.bots.find((b) => b.id === id);
+function avatar(b, extra = "") {
+  if (!b) return `<div class="avatar ${extra}" style="background:#64748b">?</div>`;
+  const color = COLORS[[...b.id].reduce((a, c) => a + c.charCodeAt(0), 0) % COLORS.length];
+  return b.avatar
+    ? `<div class="avatar ${extra}" style="background-image:url('${esc(b.avatar)}')"></div>`
+    : `<div class="avatar ${extra}" style="background:${color}">${esc(b.name[0])}</div>`;
+}
+
+function showLogin() { $("app").hidden = true; $("login").hidden = false; $("tokenInput").value = token; $("nameInput").value = me; }
+$("loginBtn").onclick = () => {
+  token = $("tokenInput").value.trim(); me = $("nameInput").value.trim() || "Boss";
+  localStorage.setItem("sigma.token", token); localStorage.setItem("sigma.name", me); boot();
+};
+
+async function boot() {
+  state = await api("/api/state");
+  $("login").hidden = true; $("app").hidden = false;
+  document.title = state.team_name;
+  renderSidebar(); renderApprovals(); renderBudget();
+  const chief = state.bots.find((b) => b.chief);
+  if (!current && chief) openRoom(`web:dm:${chief.id}`);
+  connect();
+}
+
+function renderBudget() { $("budget").textContent = `$${state.spent_week.toFixed(2)} / $${state.weekly_budget} this week`; }
+
+function renderSidebar() {
+  const chief = state.bots.find((b) => b.chief);
+  $("chief").innerHTML = chief ? `${avatar(chief)}<div><b>${esc(chief.name)}</b></div><span class="tag">${esc(chief.role)}</span>` : "";
+  $("chief").onclick = () => chief && openRoom(`web:dm:${chief.id}`);
+  const roomItem = (r) => `<div class="item ${current === r.id ? "active" : ""}" data-room="${esc(r.id)}">
+      <div class="stack">${r.bots.slice(0, 3).map((id) => avatar(bot(id))).join("")}</div>
+      <div class="meta"><div class="title">${esc(r.name)}</div><div class="sub">${r.bots.map((id) => bot(id)?.name ?? id).join(", ")}</div></div></div>`;
+  $("groups").innerHTML = state.rooms.filter((r) => r.kind === "group").map(roomItem).join("") || `<div class="item sub" style="cursor:default">No groups yet</div>`;
+  $("channels").innerHTML = state.rooms.filter((r) => r.kind === "channel").map(roomItem).join("") || `<div class="item sub" style="cursor:default">Discord channels show up here</div>`;
+  $("bots").innerHTML = state.bots.filter((b) => !b.chief).map((b) => `<div class="item ${current === "web:dm:" + b.id ? "active" : ""}" data-room="web:dm:${esc(b.id)}">
+      ${avatar(b)}<div class="meta"><div class="title">${esc(b.name)} <span class="tag">${esc(b.role)}</span></div>
+      <div class="sub">${b.tools === "all" ? "Can use every tool" : (b.tools || []).join(", ") || "Core tools"}</div></div></div>`).join("");
+  document.querySelectorAll("[data-room]").forEach((el) => (el.onclick = () => openRoom(el.dataset.room)));
+}
+
+async function openRoom(id) {
+  if (id.startsWith("web:dm:") && !state.rooms.some((r) => r.id === id)) {
+    const room = await api(`/api/dm/${id.slice(7)}`, { method: "POST", body: {} });
+    state.rooms.push(room);
+  }
+  current = id;
+  $("sidebar").classList.remove("open");
+  const room = state.rooms.find((r) => r.id === id);
+  $("roomTitle").textContent = room?.name ?? id;
+  renderSidebar(); renderApprovals(); renderTyping();
+  const msgs = await api(`/api/rooms/${encodeURIComponent(id)}/messages`);
+  $("feed").innerHTML = "";
+  msgs.forEach(addMessage);
+  if (!msgs.length) $("feed").innerHTML = `<div class="empty">Say hi. Tag teammates with @Name.</div>`;
+  if (room) showDetails(room.kind === "dm" ? room.bots[0] : room.bots[0]);
+}
+
+function addMessage(m) {
+  const empty = $("feed").querySelector(".empty"); if (empty) empty.remove();
+  const b = m.author_kind === "bot" ? bot(m.author_id) : null;
+  const el = document.createElement("div");
+  el.className = `msg ${m.author_kind}`;
+  const who = m.author_kind === "human" ? `${esc(m.author_name)}${m.origin === "discord" ? " · Discord" : ""}` : esc(m.author_name);
+  el.innerHTML = `${m.author_kind === "bot" ? avatar(b) : ""}<div><div class="who">${who} · ${new Date(m.created_at + "Z").toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</div><div class="body">${esc(m.content)}</div></div>`;
+  if (b) el.querySelector(".avatar").onclick = () => showDetails(b.id);
+  $("feed").appendChild(el);
+  $("feed").scrollTop = $("feed").scrollHeight;
+}
+
+function renderTyping() {
+  const names = [...typing.entries()].filter(([k]) => k.startsWith(current + "|")).map(([, n]) => n);
+  $("typing").textContent = names.length ? `${names.join(", ")} ${names.length > 1 ? "are" : "is"} working…` : "";
+}
+
+function renderApprovals() {
+  const pending = state.approvals.filter((a) => a.status === "pending");
+  $("approvals").innerHTML = pending.map((a) => `<div class="approval">
+    <b>${esc(bot(a.bot_id)?.name ?? a.bot_id)}</b> wants to run <b>${esc(a.action)}</b> <small>(#${a.id}, from ${esc(a.room_id)})</small>
+    <pre>${esc(JSON.stringify(JSON.parse(a.input), null, 2))}</pre>
+    <div class="row"><button class="primary" data-approve="${a.id}">Approve</button><button data-reject="${a.id}">Reject</button></div></div>`).join("");
+  document.querySelectorAll("[data-approve]").forEach((el) => (el.onclick = () => decide(el.dataset.approve, true)));
+  document.querySelectorAll("[data-reject]").forEach((el) => (el.onclick = () => decide(el.dataset.reject, false)));
+}
+async function decide(id, approve) {
+  const a = await api(`/api/approvals/${id}`, { method: "POST", body: { approve } });
+  state.approvals = state.approvals.filter((x) => x.id !== a.id); renderApprovals();
+}
+
+$("composer").onsubmit = async (e) => {
+  e.preventDefault();
+  const content = $("input").value.trim();
+  if (!content || !current) return;
+  $("input").value = "";
+  await api(`/api/rooms/${encodeURIComponent(current)}/messages`, { method: "POST", body: { content } });
+};
+$("input").onkeydown = (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("composer").requestSubmit(); } };
+
+async function showDetails(botId) {
+  if (!botId) return;
+  detailBot = botId;
+  const data = await api(`/api/bots/${botId}`);
+  const b = data.bot;
+  const tabs = ["details", "memory", "skills", "routines"];
+  let body = "";
+  if (detailTab === "details") {
+    body = `<div class="card"><small>Model</small>\n${esc(b.model || "team default")} · effort ${esc(b.effort || "default")}</div>
+      <div class="card"><small>Tools</small>\n${b.tools === "all" ? "Everything (all tools, plugins, MCP servers, webhooks)" : esc((b.tools || []).join(", ") || "core team tools only")}</div>
+      <div class="card"><small>Instructions</small>\n${esc(b.instructions)}</div>
+      ${b.custom ? `<div style="display:flex;gap:8px"><button id="editBot">Edit</button><button id="deleteBot">Remove</button></div>` : `<small style="color:var(--muted)">Defined in sigma.config.yaml</small>`}`;
+  } else if (detailTab === "memory") {
+    body = data.memories.map((m) => `<div class="card">${esc(m.content)}\n<small>#${m.id} · ${esc(m.created_at)}</small> <button data-forget="${m.id}" style="float:right;padding:0 8px">×</button></div>`).join("") || `<p class="center">No memories yet.</p>`;
+  } else if (detailTab === "skills") {
+    body = data.skills.map((s) => `<div class="card"><b>${esc(s.name)}</b>\n${esc(s.body)}</div>`).join("") || `<p class="center">No skills yet. Ask ${esc(b.name)} to save one.</p>`;
+  } else {
+    body = data.routines.map((r) => `<div class="card"><b>${esc(r.name)}</b> <small>${esc(r.cron || "webhook only")} · ${r.enabled ? "on" : "off"}</small>
+      <small>\nNext: ${esc(r.next_run || "—")} · Last: ${esc(r.last_status || "never")}\nWebhook: POST /hooks/${esc(r.id)}?secret=${esc(r.webhook_secret)}</small>
+      \n${esc(r.prompt)}\n<button data-run="${esc(r.id)}">Run now</button> <button data-toggle="${esc(r.id)}" data-on="${r.enabled}">${r.enabled ? "Pause" : "Resume"}</button></div>`).join("") || `<p class="center">No routines.</p>`;
+  }
+  $("details").innerHTML = `${avatar(b, "")}<h2>${esc(b.name)}</h2><div class="center">${esc(b.role)}</div>
+    <div class="tabs">${tabs.map((t) => `<button class="${t === detailTab ? "on" : ""}" data-tab="${t}">${t[0].toUpperCase() + t.slice(1)}</button>`).join("")}</div>${body}`;
+  $("details").querySelector(".avatar").style.cssText += ";width:72px;height:72px;font-size:28px;margin:0 auto";
+  $("details").querySelectorAll("[data-tab]").forEach((el) => (el.onclick = () => { detailTab = el.dataset.tab; showDetails(botId); }));
+  $("details").querySelectorAll("[data-forget]").forEach((el) => (el.onclick = async () => { await api(`/api/bots/${botId}/memories/${el.dataset.forget}`, { method: "DELETE" }); showDetails(botId); }));
+  $("details").querySelectorAll("[data-run]").forEach((el) => (el.onclick = () => api(`/api/routines/${el.dataset.run}/run`, { method: "POST", body: {} })));
+  $("details").querySelectorAll("[data-toggle]").forEach((el) => (el.onclick = async () => { await api(`/api/routines/${el.dataset.toggle}`, { method: "PATCH", body: { enabled: el.dataset.on !== "1" } }); showDetails(botId); }));
+  const edit = $("editBot"); if (edit) edit.onclick = () => openBotDialog(b);
+  const del = $("deleteBot"); if (del) del.onclick = async () => { if (confirm(`Remove ${b.name}?`)) { await api(`/api/bots/${b.id}`, { method: "DELETE" }); } };
+}
+$("detailsBtn").onclick = () => $("details").classList.toggle("open");
+
+$("newGroup").onclick = () => {
+  $("groupBots").innerHTML = state.bots.map((b) => `<label><input type="checkbox" value="${esc(b.id)}" />${esc(b.name)}</label>`).join("");
+  $("groupDialog").showModal();
+};
+$("groupCreate").onclick = async () => {
+  const bots = [...$("groupBots").querySelectorAll("input:checked")].map((i) => i.value);
+  const room = await api("/api/rooms", { method: "POST", body: { name: $("groupName").value, bots, kickoff: $("groupKickoff").value } });
+  $("groupDialog").close(); state.rooms.push(room); openRoom(room.id);
+};
+
+function openBotDialog(existing) {
+  editing = existing || null;
+  $("botDialogTitle").textContent = existing ? `Edit ${existing.name}` : "Hire a teammate";
+  $("botId").value = existing?.id || ""; $("botId").disabled = Boolean(existing);
+  $("botName").value = existing?.name || ""; $("botRole").value = existing?.role || "";
+  $("botAvatar").value = existing?.avatar || ""; $("botModel").value = existing?.model || "";
+  $("botInstructions").value = existing?.instructions || "";
+  const granted = existing?.tools === "all" ? ["all"] : existing?.tools || ["workspace", "routines", "web"];
+  const groups = { all: "Everything", ...state.tool_groups };
+  $("botTools").innerHTML = Object.entries(groups).map(([g, d]) => `<label title="${esc(d)}"><input type="checkbox" value="${esc(g)}" ${granted.includes(g) ? "checked" : ""} />${esc(g)}</label>`).join("");
+  $("botDialog").showModal();
+}
+$("newBot").onclick = () => openBotDialog();
+$("botSave").onclick = async () => {
+  const tools = [...$("botTools").querySelectorAll("input:checked")].map((i) => i.value);
+  const body = { id: $("botId").value, name: $("botName").value, role: $("botRole").value, avatar: $("botAvatar").value,
+    model: $("botModel").value, instructions: $("botInstructions").value, tools };
+  const { result } = editing ? await api(`/api/bots/${editing.id}`, { method: "PUT", body }) : await api("/api/bots", { method: "POST", body });
+  $("botDialog").close(); alert(result);
+};
+document.querySelectorAll("[data-close]").forEach((el) => (el.onclick = () => el.closest("dialog").close()));
+
+function connect() {
+  const es = new EventSource(`/api/events?token=${encodeURIComponent(token)}`);
+  es.addEventListener("message", (e) => { const m = JSON.parse(e.data); if (m.room_id === current) addMessage(m); });
+  es.addEventListener("room", (e) => { const r = JSON.parse(e.data); state.rooms = state.rooms.filter((x) => x.id !== r.id).concat(r); renderSidebar(); });
+  es.addEventListener("approval", (e) => { const a = JSON.parse(e.data); state.approvals = state.approvals.filter((x) => x.id !== a.id).concat(a.status === "pending" ? [a] : []); renderApprovals(); });
+  es.addEventListener("bots", (e) => { state.bots = JSON.parse(e.data); renderSidebar(); if (detailBot) showDetails(detailBot); });
+  es.addEventListener("typing", (e) => {
+    const t = JSON.parse(e.data); const key = `${t.room_id}|${t.bot_id}`;
+    if (t.active) typing.set(key, bot(t.bot_id)?.name ?? t.bot_id); else typing.delete(key);
+    renderTyping();
+  });
+  es.onerror = () => { es.close(); setTimeout(connect, 3000); };
+  setInterval(async () => { try { const s = await api("/api/state"); state.spent_week = s.spent_week; renderBudget(); } catch {} }, 60_000);
+}
+
+if (matchMedia("(max-width: 680px)").matches) { $("menuBtn").style.display = ""; $("menuBtn").onclick = () => $("sidebar").classList.toggle("open"); }
+token || me ? boot().catch(showLogin) : showLogin();
+</script>
+</body>
+</html>

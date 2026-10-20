@@ -1,0 +1,191 @@
+# Sigma team config. Bots here are fixed; you can also hire bots at runtime from the dashboard
+# or by asking Mia in chat. Restart Sigma after editing this file.
+
+team_name: Sigma
+timezone: Africa/Lagos
+
+# Every bot uses this unless it sets its own `model`. Options: claude-opus-5-5 ($4/$20 per M tokens),
+# claude-sonnet-5-5 ($2/$10), claude-haiku-5-5 ($0.10/$0.50), claude-fable-5-1 ($10/$50).
+default_model: claude-opus-5-5
+# low | medium | high | xhigh | max. Lower effort = fewer tokens. Chat bots do well on low.
+default_effort: low
+
+# Hard stop: bots pause when the last 7 days of usage cross this.
+weekly_budget_usd: 25
+
+# How many times bots can tag each other in a row before Sigma stops the chain.
+max_hops: 6
+
+# Hosts http_request may call without approval for POST/PUT/PATCH/DELETE (GET never needs approval).
+http_allowlist: []
+
+# approval: every shell command waits for a human. open: commands run straight away.
+shell_mode: approval
+
+# Tool groups you can grant a bot with `tools:` (or `tools: all` for everything):
+#   workspace   shared team drive (list/read/write files)
+#   routines    let the bot schedule its own recurring jobs
+#   web         web search + reading pages
+#   http        call any API or webhook
+#   shell       run commands in the workspace
+#   discord     read channels, create threads, find members, DM, give roles
+#   team_admin  hire, edit and remove teammates
+#   action:<name>  one of the webhooks under `actions` (action:* for all)
+#   mcp:<name>     one of the MCP servers under `mcp_servers` (mcp:* for all)
+#   plugin:<name>  a plugin from plugins/ (plugin:* for all)
+# Every bot always has the core tools: ask_bot, create_group, post_to_room, list_rooms,
+# remember/forget, save_skill/delete_skill.
+
+bots:
+  - id: mia
+    name: Mia
+    role: Chief of staff
+    chief: true
+    tools: [workspace, routines, web, team_admin, discord]
+    instructions: |
+      You run the team for Mercy and Joshua at Attention Factory. Every untagged request lands with you.
+      Answer quick questions yourself. Route real work to the right teammate by tagging them, or open a group
+      with a clear owner per stage. Bring the humans one clear answer, not a pile of updates.
+      When asked to hire someone new, use create_bot with a sharp role and only the tools they need.
+
+  - id: promise
+    name: Promise
+    role: AI University support
+    tools: [workspace, routines, discord, "mcp:attentionhq"]
+    instructions: |
+      You look after AI University learners in Discord: submissions, lesson progress, access and pod questions.
+      Check facts in AttentionHQ before answering. You can't unlock lessons yourself; when a learner is stuck,
+      explain exactly why and ask Mercy or Josh to decide. Be warm and brief with learners. Never promise
+      refunds, grades or certificates.
+
+  - id: janet
+    name: Janet
+    role: AI University ops
+    tools: [workspace, routines, discord, "mcp:attentionhq"]
+    instructions: |
+      You run AI University scheduling and cohort ops: live sessions, reminders, pods and announcements.
+      Draft announcements and post them with post_to_room (it goes through approval).
+
+  - id: xia
+    name: Xia
+    role: X (Twitter)
+    tools: [workspace, web, "action:post_to_x"]
+    instructions: |
+      You write and post for Mercy's X account: AI tools, practical tips, launches. Punchy, specific, no hype.
+      Never use em dashes. Drafts go to the workspace under x/. Posting always goes through approval.
+
+  - id: lincoln
+    name: Lincoln
+    role: LinkedIn
+    tools: [workspace, web, "action:post_to_linkedin"]
+    instructions: |
+      You write and post for Mercy's LinkedIn: credibility, lessons from running Attention Factory and
+      AI University, corporate AI training stories. Short paragraphs, no em dashes, no "it's not X, it's Y".
+
+  - id: kemi
+    name: Kemi
+    role: Newsletter & guides
+    tools: [workspace, web, routines, "action:schedule_newsletter"]
+    instructions: |
+      You write the daily newsletter and the Saturday roundup: table of contents first, 2 to 4 sentence
+      summaries, a "what this means for you" after each story, quick hits at the bottom. Casual and personal.
+
+  - id: script
+    name: Script
+    role: Writing
+    tools: [workspace, web]
+    instructions: |
+      You are the team's writer: video scripts, X threads, long posts, captions. 50 to 65 second listicle
+      scripts end with a "comment [WORD] and I'll send" CTA. After any script, score Hook, Body, Flow, CTA and
+      Content idea out of 10 and give an overall score.
+
+  - id: forge
+    name: Forge
+    role: Builder
+    tools: all
+    instructions: |
+      You build things: automations, small scripts, integrations, data pulls. You have every tool Sigma has,
+      including shell and http. Explain what you're about to run before running anything that changes data.
+
+# Outbound webhooks. Point these at n8n (or Make, Zapier, your own API). Sigma POSTs
+# {"action": "<name>", "input": {...}} with header x-sigma-secret if secret_env is set.
+actions:
+  post_to_x:
+    description: Publish a post or thread on Mercy's X account.
+    url_env: N8N_POST_TO_X_URL
+    secret_env: SIGMA_WEBHOOK_SECRET
+    requires_approval: true
+    fields:
+      text: { type: string, description: "Post text. Separate thread posts with a line containing only ---" }
+      schedule_at: { type: string, description: "ISO time to schedule, or empty to post now", optional: true }
+  post_to_linkedin:
+    description: Publish a post on Mercy's LinkedIn.
+    url_env: N8N_POST_TO_LINKEDIN_URL
+    secret_env: SIGMA_WEBHOOK_SECRET
+    requires_approval: true
+    fields:
+      text: { type: string, description: "Post text" }
+      image_url: { type: string, description: "Optional image URL", optional: true }
+  schedule_newsletter:
+    description: Create and schedule the newsletter in Kit.
+    url_env: N8N_NEWSLETTER_URL
+    secret_env: SIGMA_WEBHOOK_SECRET
+    requires_approval: true
+    fields:
+      subject: { type: string, description: "Subject line" }
+      body_markdown: { type: string, description: "Full newsletter in markdown" }
+      send_at: { type: string, description: "ISO send time" }
+
+# MCP servers. `url` alone = called through Anthropic's MCP connector (nothing runs locally).
+# `command` = a local stdio server Sigma starts. `local: true` with a url = Sigma connects over HTTP itself.
+# Only local ones support `require_approval`.
+mcp_servers:
+  attentionhq:
+    url: ${ATTENTIONHQ_MCP_URL}
+    token_env: ATTENTIONHQ_MCP_TOKEN
+  # notion:
+  #   url: https://mcp.notion.com/mcp
+  #   token_env: NOTION_MCP_TOKEN
+  # github:
+  #   url: https://api.githubcopilot.com/mcp/
+  #   token_env: GITHUB_TOKEN
+  # filesystem-example:
+  #   command: npx
+  #   args: ["-y", "@modelcontextprotocol/server-filesystem", "./data/workspace"]
+  #   require_approval: [write_file, move_file]
+
+# Scheduled or webhook-triggered jobs. Each one gets a webhook at POST /hooks/<id>?secret=...
+# (the secret is shown on the dashboard), so n8n, Polar, GitHub or Discord events can fire them.
+routines:
+  - id: au-submissions
+    bot: promise
+    name: AU submission webhook
+    prompt: A learner submitted work. Check it in AttentionHQ, then tell the room what it is and whether it needs a human.
+    room: web:ops
+  - id: morning-digest
+    bot: mia
+    name: Morning digest
+    cron: "50 7 * * 1-5"
+    prompt: Give Mercy a 5-line morning digest of what the team did yesterday and what needs her today.
+    room: web:ops
+
+discord:
+  # Channel where approval cards with Approve/Reject buttons are posted.
+  approvals_channel: ""
+  # Channel where groups the bots create become threads.
+  groups_channel: ""
+  # Discord user ids allowed to press Approve. Empty = anyone in the approvals channel.
+  approvers: []
+  # Discord user ids who can command the bots. Empty = anyone. Public rooms ignore this.
+  operators: []
+  # Channel id -> which bots live there.
+  rooms: {}
+  #   "123456789012345678":
+  #     name: "#au-help"
+  #     bots: [promise, janet]
+  #     listen: mentions   # or "all" to reply to every message
+  #     public: true       # learners can talk to the bots here
+  #   "234567890123456789":
+  #     name: "#content"
+  #     bots: [mia, xia, lincoln, kemi, script]
+  #     owners: { draft: script, x: xia, linkedin: lincoln }
