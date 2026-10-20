@@ -296,9 +296,11 @@ export default function CloneYourselfHeygenGuide() {
         <p>
           HeyGen does not offer unlimited Avatar V creation. The number of
           videos you can make depends on your plan, available credits, the
-          avatar model, the type of Look, and the length of the output. HeyGen
-          currently charges Avatar V by generated output length, and generated
-          Looks also consume credits.
+          avatar model, the type of Look, and the length of the output. HeyGen&apos;s
+          credit guide lists Avatar V at 48 credits a minute for a photo Look
+          and 48 credits a minute for a video Look. Generated Looks use credits
+          too. The app shows the cost before you generate, so read that number
+          before a long render, because the rate can change.
         </p>
         <p>
           The free plan can be used to test the product, but it has limits.

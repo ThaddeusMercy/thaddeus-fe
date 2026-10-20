@@ -26,7 +26,7 @@ export const SECTIONS: SectionEntry[] = [
       {
         name: "Google Flow",
         body: "Helps you create AI films, scenes and stories.",
-        href: "https://labs.google/flow/about",
+        href: "https://flow.google.com/",
       },
       {
         name: "Higgsfield",
@@ -36,12 +36,12 @@ export const SECTIONS: SectionEntry[] = [
       {
         name: "Runway",
         body: "Generates and edits video with AI.",
-        href: "https://runwayml.com",
+        href: "https://runway.com/",
       },
       {
         name: "Kling AI",
         body: "Turns text and images into videos.",
-        href: "https://klingai.com",
+        href: "https://kling.ai/",
       },
       {
         name: "Freepik AI",
@@ -71,9 +71,9 @@ export const SECTIONS: SectionEntry[] = [
         href: "https://www.perplexity.ai",
       },
       {
-        name: "NotebookLM",
-        body: "Turns your own sources into summaries, notes, scripts and audio discussions.",
-        href: "https://notebooklm.google.com",
+        name: "Gemini Notebook",
+        body: "Turns your own sources into summaries, notes, scripts and audio discussions. This is the tool that used to be called NotebookLM.",
+        href: "https://notebook.google.com/",
       },
       {
         name: "Canva",
@@ -132,7 +132,7 @@ export const SECTIONS: SectionEntry[] = [
       {
         name: "Publer",
         body: "Schedules, recycles and manages social posts.",
-        href: "https://publer.io",
+        href: "https://publer.com/",
       },
       {
         name: "Later",
@@ -159,7 +159,7 @@ export const SECTIONS: SectionEntry[] = [
       {
         name: "Cavalry",
         body: "Built for 2D motion design and procedural animation.",
-        href: "https://cavalry.scribblemotion.com",
+        href: "https://cavalry.studio",
       },
       {
         name: "Rive",
@@ -201,7 +201,7 @@ export const SECTIONS: SectionEntry[] = [
       {
         name: "v0",
         body: "Generates web interfaces and working applications.",
-        href: "https://v0.dev",
+        href: "https://v0.app/",
       },
       {
         name: "Base44",
@@ -317,9 +317,9 @@ export const SECTIONS: SectionEntry[] = [
     title: "Learning anything better",
     tools: [
       {
-        name: "NotebookLM",
-        body: "Helps you learn from documents, websites, videos and other sources you provide.",
-        href: "https://notebooklm.google.com",
+        name: "Gemini Notebook",
+        body: "Helps you learn from documents, websites, videos and other sources you provide. This is the tool that used to be called NotebookLM.",
+        href: "https://notebook.google.com/",
       },
       {
         name: "Khanmigo",

@@ -71,15 +71,15 @@ export default function ChatGptUpgradeGuide() {
       </Link>
 
       <header className="cgu-hero">
-        <p className="cgu-eyebrow">Attention Factory · Field Guide · July 2026</p>
+        <p className="cgu-eyebrow">Attention Factory · Field Guide</p>
         <h1>
           The ChatGPT upgrade you can actually <em>use</em>
         </h1>
         <p className="cgu-lede">
-          GPT-5.6 shipped as three models. ChatGPT Work shipped as an agent that
-          finishes jobs. Sites shipped as a way to publish what it builds. Here
-          is what each one is, who it is for, and the exact prompts to run
-          today.
+          ChatGPT ships a lineup, not one model. The names in the picker move.
+          The habit does not: pick a lane, hand Work a real job, and publish
+          the result when a link would save you another status meeting. Here
+          are the prompts I still run.
         </p>
         <p className="cgu-byline">
           Mercy Thaddeus · attentionfactory.io · Read time: 9 minutes
@@ -90,13 +90,24 @@ export default function ChatGptUpgradeGuide() {
         <p className="cgu-sec-label">Start here</p>
         <h2>The one-paragraph version</h2>
         <p className="cgu-lead">
-          OpenAI stopped shipping one model and started shipping a lineup.
-          GPT-5.6 comes in three tiers, so the skill now is picking the right
-          one instead of defaulting to the biggest. Alongside it, ChatGPT Work
-          turns the chat window into an agent that plans a project, touches your
-          connected apps, and hands back finished files. Sites lets it publish a
-          working web app or dashboard at a shareable link. The upgrade is not
-          that ChatGPT answers better, it is that ChatGPT now delivers.
+          OpenAI stopped shipping one model and started shipping a lineup, so
+          the skill is picking the right lane instead of defaulting to the
+          biggest name. Chat on Plus, Pro, Business, and Enterprise currently
+          uses GPT-6 Sol. Free and Go chat uses GPT-6 Luna. GPT-6 Astra is the
+          model for heavier builds, and Ultrafast for Astra and GPT-6.1 Sol is
+          only on the $500 Pro plan. Work and Codex can sit on a different
+          model than Chat, so open the picker before you start. Alongside that,
+          ChatGPT Work turns the chat window into an agent that plans a
+          project, touches your connected apps, and hands back finished files.
+          Sites lets it publish a working web app or dashboard at a shareable
+          link.
+        </p>
+        <p>
+          For the builds I would try on the current flagship, start with the{" "}
+          <Link href="/guide/gpt-6-astra">GPT-6 Astra guide</Link>. The lane
+          table below uses the Sol, Terra, and Luna names from the earlier
+          lineup so you can see the split. Match the job, then read the name
+          in your picker.
         </p>
         <Callout title="If you only do one thing">
           Open ChatGPT, connect one app you actually live in (Gmail, Slack, or
@@ -108,12 +119,13 @@ export default function ChatGptUpgradeGuide() {
 
       <section className="cgu-section">
         <p className="cgu-sec-label">Part one</p>
-        <h2>GPT-5.6: Sol, Terra, Luna</h2>
+        <h2>Three lanes: flagship, everyday, fast</h2>
         <p>
-          The number is the generation. The names are capability tiers that can
-          improve on their own schedule, which means &quot;Sol&quot; will keep
-          meaning &quot;the flagship&quot; even after the version number moves.
-          Stop thinking in versions and start thinking in lanes.
+          The number is the generation. The names are capability lanes, and
+          they get renamed. Stop memorising the version and start matching the
+          job. A name that meant &quot;flagship&quot; in one release can mean
+          &quot;everyday chat&quot; in the next, which is exactly what happened
+          when Sol moved from the GPT-5.6 flagship to GPT-6 chat.
         </p>
 
         <div className="cgu-tiers">
@@ -156,20 +168,19 @@ export default function ChatGptUpgradeGuide() {
         <Callout title="The part nobody tells you">
           Cost per solved task matters more than price per token. A cheap model
           that takes six attempts is more expensive than an expensive model that
-          lands on the first. Run the same task through Terra and Sol once,
-          compare the finished output, and let that decide your default. Do not
-          pick a tier from a pricing table.
+          lands on the first. Run the same task through your everyday model and
+          your deepest model once, compare the finished output, and let that
+          decide your default. Do not pick a tier from a pricing table.
         </Callout>
 
         <h3 className="cgu-h3">The design jump</h3>
         <p>
           The visible upgrade for most people is what comes out the other end.
-          GPT-5.6 produces noticeably better presentations, documents, and
-          spreadsheets, including fully editable decks built from a prompt and
-          your own source material, with real layout and hierarchy instead of a
-          wall of bullets. It also follows your templates and reference files
-          far more closely, which is the difference between a deck you rebuild
-          and a deck you tweak.
+          Presentations, documents, and spreadsheets can come back as editable
+          files, with real layout and hierarchy instead of a wall of bullets.
+          The model also follows your templates and reference files more
+          closely, which is the difference between a deck you rebuild and a
+          deck you tweak.
         </p>
 
         <PromptBox {...DECK_PROMPT} />

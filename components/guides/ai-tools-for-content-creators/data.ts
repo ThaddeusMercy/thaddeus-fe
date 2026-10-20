@@ -1,7 +1,7 @@
 export const SLUG = "ai-tools-for-content-creators";
 
 export const UNIVERSITY_URL =
-  "https://academy.attentionfactory.io/ai-university?ref=mercythaddeus";
+  "https://university.attentionfactory.io/?ref=mercythaddeus";
 
 export const CHECKED_ON = "14 October 2026";
 

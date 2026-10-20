@@ -33,8 +33,7 @@
       "src": "https://mercy-astra-anatomy-videos.vercel.app/community/model-x.mp4",
       "poster": "https://mercy-astra-anatomy-videos.vercel.app/community/model-x.jpg",
       "audio": false,
-      "sourceLabel": "Original creator post",
-      "demoUrl": "https://model-x-studio.vercel.app/"
+      "sourceLabel": "Original creator post"
     },
     {
       "id": "house",

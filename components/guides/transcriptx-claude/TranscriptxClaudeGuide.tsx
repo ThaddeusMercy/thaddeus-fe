@@ -156,8 +156,8 @@ export default function TranscriptxClaudeGuide() {
           ))}
         </ol>
         <p className="txc-note">
-          Replace <code className="txc-chip">YOUR_TOKEN</code> with the personal
-          token from your{" "}
+          Sign in first. Then replace <code className="txc-chip">YOUR_TOKEN</code>{" "}
+          with the personal token from your{" "}
           <a href={TOKEN_PAGE} target="_blank" rel="noopener noreferrer">
             /account/mcp
           </a>{" "}

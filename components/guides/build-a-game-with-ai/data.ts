@@ -1,7 +1,7 @@
 export const SLUG = "build-a-game-with-ai";
 
 export const UNIVERSITY_URL =
-  "https://academy.attentionfactory.io/ai-university?ref=mercythaddeus";
+  "https://university.attentionfactory.io/?ref=mercythaddeus";
 
 const IMG = "/guides/build-a-game-with-ai";
 

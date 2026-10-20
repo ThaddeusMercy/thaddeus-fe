@@ -89,7 +89,7 @@ export default function HeyGenTranslateGuide() {
                 Go to <strong>heygen.com</strong> and sign up, then find the{" "}
                 <strong>Video Translate</strong> tool. The free plan lets you
                 translate up to <span className="hg-pill">3 videos a month</span>
-                , each up to 3 minutes long, which is more than enough to try it
+                , each up to 1 minute long, which is enough to try it
                 before you decide whether to pay for anything.
               </p>
             </div>
@@ -201,7 +201,7 @@ export default function HeyGenTranslateGuide() {
         <div className="hg-callout">
           <b className="hg-serif">One honest note</b>
           <p>
-            The free plan caps you at 3 videos a month and 3 minutes each.
+            The free plan caps you at 3 videos a month and 1 minute each.
             That&apos;s a genuine testing ground, but if this becomes part of
             how you publish, the paid plans unlock more languages, longer
             videos, and sharper voice quality. Pricing and limits change over

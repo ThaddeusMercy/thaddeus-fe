@@ -79,23 +79,19 @@ export default function FableFiveGuide() {
       </Link>
 
       <header className="fb5-hero">
-        <span className="fb5-eyebrow">Attention Factory · Fable 5 Playbook</span>
+        <span className="fb5-eyebrow">Attention Factory · Fable Playbook</span>
         <h1>
           The three prompts
-          <span className="fb5-thin"> I&apos;d run before Fable 5 goes.</span>
+          <span className="fb5-thin"> I&apos;d run on Fable.</span>
         </h1>
         <p className="fb5-lede">
-          Fable 5 is the strongest Claude model right now, and it&apos;s included
-          on paid plans <strong>only through July 12</strong>. After that it
-          moves to usage credits. The play isn&apos;t to chat with it. It&apos;s
-          to hand it big, one-shot jobs that leave you with assets you keep
-          running on cheaper models after it&apos;s gone. Here are the exact
-          prompts.
-        </p>
-
-        <p className="fb5-clock">
-          <span className="fb5-dot" aria-hidden />
-          Included through July 12, 2026 · 11:59 PM PT
+          Fable 5.1 is the current Fable model. Fable 5 is the older one. Free
+          plans do not include Fable. On Pro it draws from usage credits. On
+          Max, and on Team premium seats, it sits inside half of your weekly
+          limits. Enterprise includes it. The useful move is still a big
+          one-shot job that leaves you with assets you can keep running on
+          Sonnet or Haiku. Plan access changes, so check Claude&apos;s pricing
+          page before you assume yours includes it. Here are the exact prompts.
         </p>
       </header>
 
@@ -118,7 +114,10 @@ export default function FableFiveGuide() {
 
       <footer className="fb5-foot">
         <p className="fb5-brand">Attention Factory</p>
-        <p className="fb5-foot-note">Save this. Run one before the 12th.</p>
+        <p className="fb5-foot-note">
+          Save this. Run one when the job is big enough to leave you something
+          you can reuse.
+        </p>
       </footer>
     </div>
   );

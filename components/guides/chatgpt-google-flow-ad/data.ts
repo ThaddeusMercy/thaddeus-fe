@@ -11,5 +11,5 @@ export const WORKFLOW =
 
 export const USEFUL_LINKS = [
   { label: "ChatGPT", href: "https://chatgpt.com" },
-  { label: "Google Flow", href: "https://labs.google/flow" },
+  { label: "Google Flow", href: "https://flow.google.com/" },
 ] as const;

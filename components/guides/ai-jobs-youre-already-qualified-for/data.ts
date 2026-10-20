@@ -1,7 +1,7 @@
 export const SLUG = "ai-jobs-youre-already-qualified-for";
 
 export const UNIVERSITY_URL =
-  "https://academy.attentionfactory.io/ai-university?ref=mercythaddeus";
+  "https://university.attentionfactory.io/?ref=mercythaddeus";
 
 export type SourceLink = {
   label: string;

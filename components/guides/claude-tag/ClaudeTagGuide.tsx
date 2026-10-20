@@ -73,9 +73,12 @@ export default function ClaudeTagGuide() {
             everyone keeps moving.
           </p>
           <p>
-            It runs on Claude Opus 4.8 and launched on June 23, 2026, in beta
-            for Claude Enterprise and Team plans. Slack is the first home for
-            it, with other platforms planned next.
+            You bring it into a Slack channel and tag @Claude. It is on Team
+            and Enterprise plans, in beta, and it is not on Free, Pro, or Max.
+            It does not stay locked to one model. Ask which models you can use,
+            or tell it to switch. The footer of each reply names the model that
+            answered. Opus 4.8 is an older model, so do not plan around it.
+            Slack is the first home for it, with other platforms planned next.
           </p>
         </section>
 
@@ -210,15 +213,13 @@ export default function ClaudeTagGuide() {
             <span className="ct-n">06</span> If you already use Claude in Slack
           </div>
           <div className="ct-banner">
-            <div className="ct-tagline ct-mono">Action required</div>
-            <h3>The old app is being retired</h3>
+            <div className="ct-tagline ct-mono">If the old app is still installed</div>
+            <h3>Move the workspace onto Claude Tag</h3>
             <p>
-              Claude Tag replaces the existing Claude in Slack app, which is set
-              to retire on August 3, 2026. Administrators have a 30-day window to
-              opt in and migrate — configuring channel access, tool connections,
-              and memory scope before the deadline. Eligible Enterprise and Team
-              organisations get an introductory launch credit so the whole
-              company can try it.
+              Claude Tag is the current way to put Claude in Slack. The older
+              Claude in Slack app has been retired. If your workspace still has
+              it, set up Claude Tag and confirm channel access, tool connections,
+              and a spend limit before you point a busy channel at it.
             </p>
           </div>
         </section>
@@ -256,10 +257,10 @@ export default function ClaudeTagGuide() {
             <span>@attention_factory</span>
           </div>
           <p className="ct-disclaimer">
-            Guide compiled from Anthropic&apos;s official Claude Tag announcement
-            and product documentation (June 2026). Product names, availability,
-            and dates are accurate as of publication and may change as the beta
-            expands. Not affiliated with or endorsed by Anthropic.
+            Guide compiled from Anthropic&apos;s Claude Tag docs. Product names,
+            models, and which plans include it can change. Check the current
+            docs before you roll this out to a team. Not affiliated with or
+            endorsed by Anthropic.
           </p>
         </footer>
       </main>

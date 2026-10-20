@@ -1,7 +1,7 @@
 export const SLUG = "github-repos-of-the-week-1";
 
 export const UNIVERSITY_URL =
-  "https://academy.attentionfactory.io/ai-university?ref=mercythaddeus";
+  "https://university.attentionfactory.io/?ref=mercythaddeus";
 
 export const STARS_AS_OF = "Oct 14, 2026";
 
