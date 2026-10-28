@@ -48,6 +48,20 @@ export type GuideEntry = {
 
 export const GUIDE_ENTRIES: GuideEntry[] = [
   {
+    slug: "black-october-security-audit",
+    title: "Black October Security Audit",
+    excerpt: "October 2026 brought a wave of AI-linked hacks. 5 steps to protect your passwords, email, apps and phone, with every tap for iPhone and Android, plus the free AUDIT prompt.",
+    category: "GUIDE",
+    topic: "setup",
+    tools: ["chatgpt", "claude"],
+    publishedAt: "2026-10-28",
+    layout: "document",
+    sections: [{
+      heading: "Black October Security Audit",
+      body: "5 security steps with every tap for iPhone and Android, and a copyable prompt that turns ChatGPT or Claude into your own security coach.",
+    }],
+  },
+  {
     slug: "four-ai-systems",
     title: "The 4 AI systems you can build in one weekend",
     excerpt: "Build an AI second brain, an always-on agent, an executive assistant and a marketing and content agent. What each one does, which tools to use, a weekend plan and copyable prompts.",

@@ -17,6 +17,8 @@ const GUIDE_LOADERS: Record<
   string,
   () => Promise<{ default: ComponentType }>
 > = {
+  "black-october-security-audit": () =>
+    import("@/components/guides/black-october-security-audit/BlackOctoberSecurityAuditGuide"),
   "ai-council-prompt": () =>
     import("@/components/guides/ai-council-prompt/AiCouncilPromptGuide"),
   "four-ai-systems": () =>
