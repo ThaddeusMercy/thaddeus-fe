@@ -29,7 +29,7 @@ export default function FiveAiToolsGuide() {
         <div className="fat-cover-meta">
           <div className="fat-name">Mercy Thaddeus</div>
           <div>Attention Factory</div>
-          <div className="fat-dim">Prices checked 3 August 2026</div>
+          <div className="fat-dim">Check each vendor page before you pay</div>
         </div>
         <Handle />
       </header>
@@ -73,19 +73,17 @@ export default function FiveAiToolsGuide() {
               <tr>
                 <td>ChatGPT Pro</td>
                 <td>Research, files, images, coding and deep work</td>
-                <td>$100 or $200/month</td>
+                <td>$100, $200, or $500/month</td>
               </tr>
               <tr>
                 <td>Higgsfield</td>
                 <td>AI images and video</td>
-                <td>
-                  $9 / $49 / $129 listed; live promotion may change checkout
-                </td>
+                <td>$19 / $59 / $129 a month</td>
               </tr>
               <tr>
                 <td>Apify</td>
                 <td>Web data and scraping</td>
-                <td>Free, then $29 / $199 / $999 plus extra usage</td>
+                <td>Free, then $19 / $199 / $999 plus extra usage</td>
               </tr>
               <tr>
                 <td>OpenRouter</td>
@@ -179,20 +177,24 @@ export default function FiveAiToolsGuide() {
           research, and turn the result into something I can send.
         </p>
         <p>
-          Pro makes sense when Plus is no longer enough. The two Pro tiers have
-          the same main capabilities. The difference is how much you can use
-          them.
+          Pro makes sense when Plus is no longer enough. There are three Pro
+          plans. Pro 200 includes more usage than Pro 100. Pro 500 includes the
+          most, and it is the only Pro plan with Ultrafast.
         </p>
 
         <h3>Current price</h3>
         <div className="fat-prices">
           <div>
-            <span className="fat-lbl">Pro 5x</span>
+            <span className="fat-lbl">Pro 100</span>
             <span>$100 per month</span>
           </div>
           <div>
-            <span className="fat-lbl">Pro 20x</span>
+            <span className="fat-lbl">Pro 200</span>
             <span>$200 per month</span>
+          </div>
+          <div>
+            <span className="fat-lbl">Pro 500</span>
+            <span>$500 per month, includes Ultrafast</span>
           </div>
           <div>
             <span className="fat-lbl">ChatGPT Plus</span>
@@ -246,22 +248,23 @@ export default function FiveAiToolsGuide() {
         <h3>Current price</h3>
         <div className="fat-prices">
           <div>
-            <span className="fat-lbl">Basic</span>
-            <span>$9 per month, 120 credits</span>
+            <span className="fat-lbl">Starter</span>
+            <span>$19 per month, 270 credits</span>
           </div>
           <div>
             <span className="fat-lbl">Plus</span>
-            <span>$49 per month, 1,000 credits</span>
+            <span>$59 per month, or $47 billed annually, 1,200 credits</span>
           </div>
           <div>
             <span className="fat-lbl">Ultra</span>
-            <span>$129 per month, 3,000 credits</span>
+            <span>$129 per month, or $99 billed annually, from 3,000 credits</span>
           </div>
         </div>
         <p className="fat-fine">
-          These figures appear in Higgsfield&apos;s July 2026 guides. The live
-          pricing page is currently advertising 30% off, so checkout may differ
-          by promotion, billing cycle or region.
+          Starter stays $19 on annual billing. Plus and Ultra are the plans
+          that drop when you pay for the year. Ultra also offers higher credit
+          amounts. A promotion can change the number at checkout, and video
+          models spend credits at different rates.
         </p>
 
         <h3>What to watch</h3>
@@ -318,7 +321,7 @@ export default function FiveAiToolsGuide() {
           </div>
           <div>
             <span className="fat-lbl">Starter</span>
-            <span>$29 per month, with $29 included to spend</span>
+            <span>$19 per month, with $19 included to spend</span>
           </div>
           <div>
             <span className="fat-lbl">Scale</span>
@@ -330,9 +333,9 @@ export default function FiveAiToolsGuide() {
           </div>
         </div>
         <p className="fat-fine">
-          The plan price is not always the final cost. Some Actors charge
-          separately, and compute, proxies, storage or extra usage can add to the
-          bill.
+          Paid plans are 10% less when you pay annually. The plan price is not
+          always the final cost. Some Actors charge separately, and compute,
+          proxies, storage or extra usage can add to the bill.
         </p>
 
         <h3>Who should pay for it</h3>

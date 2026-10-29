@@ -3,7 +3,7 @@ export const HEYGEN_TRANSLATE_SLUG = "heygen-video-translate";
 export const STATS = [
   { value: "175+", label: "languages & dialects" },
   { value: "10", label: "languages per video at once" },
-  { value: "Free", label: "3 videos/mo, up to 3 min each" },
+  { value: "Free", label: "3 videos/mo, up to 1 min each" },
 ] as const;
 
 export const TIPS = [

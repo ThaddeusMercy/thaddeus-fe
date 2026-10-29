@@ -1,7 +1,6 @@
 export const CLAUDE_TAG_SLUG = "claude-tag-playbook";
 
 export const HERO_META = [
-  { label: "Updated", value: "June 2026" },
   { label: "Read", value: "7 min" },
   { label: "For", value: "founders & team leads" },
 ] as const;
@@ -101,10 +100,10 @@ export const SAFETY_CHECKLIST = [
 ] as const;
 
 export const FAST_FACTS = [
-  { k: "Launched", v: "June 23, 2026" },
-  { k: "Model", v: "Claude Opus 4.8" },
-  { k: "Available on", v: "Enterprise & Team (beta)" },
+  { k: "You call it", v: "@Claude in Slack" },
+  { k: "Model", v: "You choose Opus or Sonnet" },
+  { k: "Available on", v: "Team and Enterprise" },
+  { k: "Not on", v: "Free, Pro, or Max" },
   { k: "First platform", v: "Slack" },
-  { k: "Old app retires", v: "August 3, 2026" },
   { k: "Internal proof", v: "65% of Anthropic's product code" },
 ] as const;

@@ -1,7 +1,7 @@
 export const SLUG = "make-a-short-drama-with-ai";
 
 export const UNIVERSITY_URL =
-  "https://academy.attentionfactory.io/ai-university?ref=mercythaddeus";
+  "https://university.attentionfactory.io/?ref=mercythaddeus";
 
 export type ViralDrama = {
   stat: string;

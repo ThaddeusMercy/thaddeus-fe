@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowSquareOut } from "@phosphor-icons/react";
 
+import GuideCapture from "@/components/guides/GuideCapture";
 import {
   TOOLKIT_ENTRIES,
   TOOLKIT_META,
@@ -140,6 +141,8 @@ export default function ToolkitView() {
           <ToolSection key={entry.id} entry={entry} />
         ))}
       </div>
+
+      <GuideCapture />
     </motion.div>
   );
 }

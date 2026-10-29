@@ -107,7 +107,7 @@ export const CRITERIA_ROWS = [
 export const REFS = [
   {
     label: "OpenAI prompt guidance",
-    href: "https://platform.openai.com/docs/guides/prompt-engineering",
+    href: "https://developers.openai.com/api/docs/guides/prompt-engineering",
   },
   {
     label: "ChatGPT Search",
@@ -115,10 +115,10 @@ export const REFS = [
   },
   {
     label: "Anthropic prompt guidance",
-    href: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+    href: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview",
   },
   {
     label: "Claude web search",
-    href: "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/web-search-tool",
+    href: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool",
   },
 ] as const;

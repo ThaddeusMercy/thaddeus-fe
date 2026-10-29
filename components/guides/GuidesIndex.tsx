@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 
+import GuideCapture from "@/components/guides/GuideCapture";
 import ToolkitView from "@/components/guides/ToolkitView";
 import {
   GUIDE_ENTRIES,
@@ -214,18 +215,23 @@ export default function GuidesIndex() {
 
       {isToolkit ? (
         <ToolkitView />
-      ) : filtered.length === 0 ? (
-        <p className="rounded-xl border border-dashed border-border bg-white px-4 py-12 text-center text-sm text-[#999]">
-          No guides match those filters yet. Try resetting one of them.
-        </p>
       ) : (
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((entry) => (
-            <li key={entry.slug}>
-              <GuideCard entry={entry} />
-            </li>
-          ))}
-        </ul>
+        <>
+          {filtered.length === 0 ? (
+            <p className="rounded-xl border border-dashed border-border bg-white px-4 py-12 text-center text-sm text-[#999]">
+              No guides match those filters yet. Try resetting one of them.
+            </p>
+          ) : (
+            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {filtered.map((entry) => (
+                <li key={entry.slug}>
+                  <GuideCard entry={entry} />
+                </li>
+              ))}
+            </ul>
+          )}
+          <GuideCapture />
+        </>
       )}
     </motion.div>
   );

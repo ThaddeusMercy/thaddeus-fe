@@ -1004,7 +1004,7 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     slug: "chatgpt-upgrade-playbook",
     title: "The ChatGPT Upgrade You Can Actually Use",
     excerpt:
-      "GPT-5.6 Sol, Terra, and Luna — plus ChatGPT Work and Sites. Model routing, copy-ready agent tasks, Sites prompts, and a 30-minute setup.",
+      "How to pick a ChatGPT lane, hand Work a real job, and publish with Sites. The model names move. The prompts below are the part you can still run.",
     category: "SETUP",
     topic: "setup",
     tools: ["chatgpt", "multi-tool"],
@@ -1013,15 +1013,15 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     sections: [
       {
         heading: "The ChatGPT Upgrade You Can Actually Use",
-        body: "Field guide to GPT-5.6 tiers, ChatGPT Work agent tasks, Sites publishing, and the 30-minute setup — with exact prompts to run today.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+        body: "Field guide to choosing a ChatGPT lane, ChatGPT Work agent tasks, Sites publishing, and a 30-minute setup, with prompts to run.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
       },
     ],
   },
   {
     slug: "fable-five-prompts",
-    title: "The 3 Prompts I'd Run Before Fable 5 Goes",
+    title: "The 3 Prompts I'd Run on Fable",
     excerpt:
-      "Three one-shot Fable 5 prompts aligned with Anthropic's long-run scaffolding: audit your setup, security review, and build a months-long asset before July 12.",
+      "Three one-shot prompts for the current Fable model: audit your setup, run a security review, and build an asset you can keep running on Sonnet or Haiku.",
     category: "PROMPTS",
     topic: "prompts",
     tools: ["claude"],
@@ -1029,8 +1029,8 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     layout: "document",
     sections: [
       {
-        heading: "The 3 Prompts I'd Run Before Fable 5 Goes",
-        body: "Three copy-ready prompts for Fable 5: audit and upgrade every skill, MCP, and workflow; run a full security audit; build a big project or plan you can run for months on cheaper models after July 12.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
+        heading: "The 3 Prompts I'd Run on Fable",
+        body: "Three copy-ready prompts for the current Fable model: audit and upgrade every skill, MCP, and workflow; run a full security audit; build a big project or plan you can keep running on Sonnet or Haiku.\n\nhttps://attentionfactory.io\n\nhttps://instagram.com/mercythaddeus_",
       },
     ],
   },
@@ -1115,7 +1115,7 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     sections: [
       {
         heading: "The Claude Tag Playbook",
-        body: "How to put Claude inside your team. What Claude Tag is, why it's different from a Slack bot, the four-step admin setup, team playbooks, governance, and the migration deadline.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
+        body: "How to put Claude inside your team. What Claude Tag is, why it's different from a Slack bot, the four-step admin setup, team playbooks, and how to govern it.\n\nhttps://attentionfactory.io/launch\n\nhttps://instagram.com/mercythaddeus_",
       },
     ],
   },
@@ -1285,7 +1285,7 @@ export const GUIDE_ENTRIES: GuideEntry[] = [
     sections: [
       {
         heading: "MarkItDown MCP setup",
-        body: "Stop wasting 70% of your tokens in Claude. Install markitdown-mcp, connect to Claude Desktop, convert PDFs Word docs slide decks spreadsheets and YouTube links to Markdown.\n\nhttps://github.com/microsoft/markitdown\n\nhttps://claude.ai/download\n\nhttps://instagram.com/mercythaddeus_",
+        body: "Stop wasting 70% of your tokens in Claude. Install markitdown-mcp, connect to Claude Desktop, convert PDFs Word docs slide decks spreadsheets and YouTube links to Markdown.\n\nhttps://github.com/microsoft/markitdown\n\nhttps://claude.com/download\n\nhttps://instagram.com/mercythaddeus_",
       },
     ],
   },

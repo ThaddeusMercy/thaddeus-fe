@@ -23,13 +23,13 @@ export const TIERS: Tier[] = [
     id: "sol",
     name: "Sol",
     role: "Flagship · deepest reasoning",
-    body: "The one to reach for when the task needs persistence: long-running agent work, big codebases, research that spans dozens of steps, anything where you would rather wait and get it right. In ChatGPT it powers the Medium, High, and Extra High reasoning settings on paid plans, with a Sol Pro option on Pro and Enterprise.",
+    body: "The lane for work that needs persistence: long-running agent jobs, big codebases, research that spans dozens of steps, anything where you would rather wait and get it right. In the earlier lineup this was the flagship, with a Sol Pro option on Pro and Enterprise. Open the picker and see which model holds that job now.",
   },
   {
     id: "terra",
     name: "Terra",
     role: "Balanced · everyday default",
-    body: "Roughly the performance you were getting from the previous flagship, at a fraction of the price. This is the sane default for scoped work: drafting, first-pass review, everyday agentic tasks, most content and ops workflows. Free and Go users get Terra inside Work and Codex.",
+    body: "This was the sane default for scoped work: drafting, first-pass review, everyday agentic tasks, most content and ops workflows. Do not assume Free, Go, Work, or Codex still lands on Terra. Open the model menu and see what your plan actually offers.",
   },
   {
     id: "luna",
@@ -149,8 +149,8 @@ export const SETUP_STEPS = [
     body: "Start with the one holding the context you repeat most often. For most people that is email or Drive.",
   },
   {
-    title: "Pick your default lane.",
-    body: "Terra for everyday. Sol when the task is long or the stakes are real. Luna for volume.",
+    title: "Pick your lane.",
+    body: "Everyday model for scoped work. The deepest model you have when the task is long or the stakes are real. The fastest model for volume. Match the job, then check the name in the picker.",
   },
   {
     title: "Run one known task.",

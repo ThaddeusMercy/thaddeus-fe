@@ -72,7 +72,7 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   {
     id: "04",
     name: "TranscriptX",
-    href: "https://transcriptx.com",
+    href: "https://transcriptx.xyz",
     tagline: "Video transcription",
     whatFor:
       "TranscriptX transcribes video and audio files fast. I use it to turn long videos, meetings, and voice notes into text I can actually work with.",
@@ -87,13 +87,13 @@ export const TOOLKIT_ENTRIES: ToolkitEntry[] = [
   },
   {
     id: "05",
-    name: "NotebookLM",
-    href: "https://notebooklm.google.com",
+    name: "Gemini Notebook",
+    href: "https://notebook.google.com/",
     tagline: "Learn from your own documents",
     whatFor:
-      "NotebookLM lets you upload your own documents and have AI conversations about them. I use it to study reports, analyze long PDFs, and prep for meetings or trainings.",
+      "Gemini Notebook lets you upload your own documents and have AI conversations about them. I use it to study reports, analyze long PDFs, and prep for meetings or trainings. It used to be called NotebookLM.",
     whyMatters:
-      "Most AI tools only know what's on the internet. NotebookLM knows YOUR documents. Upload a contract, a research paper, or meeting notes and ask it anything.",
+      "Most AI tools only know what's on the internet. Gemini Notebook knows YOUR documents. Upload a contract, a research paper, or meeting notes and ask it anything.",
     howTo: [
       "Upload PDFs, docs, or notes you want to learn from",
       "Ask questions about the content in plain English",

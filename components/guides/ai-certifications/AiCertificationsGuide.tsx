@@ -108,9 +108,8 @@ export default function AiCertificationsGuide() {
           </div>
           <p className="ac-disc">
             Course details, durations, and free vs paid certificate terms are
-            set by each provider and can change. The information on this page
-            was accurate as of June 2026. Always confirm current terms on the
-            provider&apos;s own page before you enrol.
+            set by each provider and can change. Confirm the current terms on
+            the provider&apos;s own page before you enrol.
           </p>
         </footer>
       </div>
